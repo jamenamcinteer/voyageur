@@ -1,0 +1,190 @@
+import React, { useContext, useState } from "react";
+import { Store } from "../Store";
+import { Link } from "react-router-dom";
+import Header from "./Navigation/Header";
+import ButtonLink from "./Buttons/ButtonLink";
+import Button from "./Buttons/Button";
+import TripCard from "./Cards/TripCard";
+import moment from "moment";
+import Modal from "react-modal";
+import styled from "styled-components";
+import {} from "twix";
+
+Modal.setAppElement("#root");
+
+const ModalHeader = styled.h3`
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+  margin-top: 0;
+`;
+
+const ModalLink = styled(Link)`
+  display: block;
+  color: ${props => props.theme.darkFont};
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
+  border-top: 1px solid ${props => props.theme.themeColorSecondary};
+  text-decoration: none;
+  margin-left: -20px;
+  margin-right: -20px;
+`;
+
+const Dashboard = props => {
+  const { state } = useContext(Store);
+
+  const [addExpenseModal, setAddExpenseModal] = useState(false);
+  const containerStyles = {
+    margin: "0 20px"
+  };
+  const buttonContainerStyles = {
+    display: "flex",
+    justifyContent: "space-between",
+    margin: "20px 10px"
+  };
+
+  // const rawTrips = JSON.parse(localStorage.getItem("trips"));
+  // trips.sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
+
+  const today = new Date();
+
+  // let trips = [];
+  let futureTrips = [];
+  let pastTrips = [];
+  // get all trips in the future from "closest" to "farthest"
+  state.trips &&
+    state.trips.map(trip => {
+      if (trip.endDate >= moment(today).valueOf()) {
+        futureTrips.push(trip);
+      }
+      return true;
+    });
+  futureTrips.sort((a, b) => parseInt(a.endDate) - parseInt(b.endDate));
+  // get all trips in the past from "closest" to "farthest"
+  state.trips &&
+    state.trips.map(trip => {
+      if (trip.endDate < moment(today).valueOf()) {
+        pastTrips.push(trip);
+      }
+      return true;
+    });
+  pastTrips.sort((a, b) => parseInt(b.endDate) - parseInt(a.endDate));
+
+  // const allTrips = [...futureTrips, ...pastTrips];
+
+  // React.useEffect(() => {
+  //   console.log(state.trips);
+  // }, [state.trips]);
+
+  const getDates = (startDate, endDate) => {
+    return moment(startDate)
+      .twix(endDate, { allDay: true })
+      .format({ monthFormat: "MMM", dayFormat: "D" });
+  };
+
+  return (
+    <div>
+      <Header title="My Trips" theme={props.theme} backHide={true} />
+      <div style={{ ...containerStyles, ...buttonContainerStyles }}>
+        <ButtonLink
+          to="/trip/add"
+          buttonText="Add a Trip"
+          buttonType="secondary"
+          buttonWidth="50%"
+          theme={props.theme}
+        />
+        <Button
+          handleClick={e => setAddExpenseModal(true)}
+          buttonText="Add Expense"
+          buttonType="primary"
+          buttonWidth="50%"
+          theme={props.theme}
+        />
+      </div>
+      <Modal
+        isOpen={addExpenseModal}
+        onRequestClose={e => setAddExpenseModal(false)}
+        contentLabel="Add Expense Modal"
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0,0,0,.5)"
+          },
+          content: {
+            borderRadius: "0",
+            minHeight: "20vh",
+            maxHeight: "40vh",
+            overflowY: "auto",
+            width: "80vw",
+            top: "30vh",
+            left: "10vw",
+            right: "auto",
+            bottom: "auto"
+          }
+        }}
+      >
+        <ModalHeader>Choose a Trip:</ModalHeader>
+        {futureTrips.length > 0 &&
+          futureTrips.map(trip => {
+            return (
+              <ModalLink to={`/trip/${trip.id}/add-expense`} key={trip.id}>
+                {trip.destination} ({getDates(trip.startDate, trip.endDate)})
+              </ModalLink>
+            );
+          })}
+      </Modal>
+      <div style={containerStyles}>
+        {/* <h4 style={{ color: props.theme.darkFont }}>Upcoming Trips</h4> */}
+        {futureTrips.length > 0 &&
+          futureTrips.map(trip => {
+            const budgetItems = state.budgetItems.filter(
+              bItem => bItem.tripId === trip.id
+            );
+            const expenses = state.expenses.filter(
+              expense => expense.tripId === trip.id
+            );
+            return (
+              <TripCard
+                key={trip.id}
+                destination={trip.destination}
+                photo={trip.photo}
+                photoAttribution={trip.photoAttribution}
+                to={`/trip/${trip.id}`}
+                startDate={trip.startDate}
+                endDate={trip.endDate}
+                budgetItems={budgetItems}
+                expenses={expenses}
+                theme={props.theme}
+              />
+            );
+          })}
+        <h4 style={{ color: props.theme.darkFont }}>Past Trips</h4>
+        {pastTrips.length > 0 &&
+          pastTrips.map(trip => {
+            const budgetItems = state.budgetItems.filter(
+              bItem => bItem.tripId === trip.id
+            );
+            const expenses = state.expenses.filter(
+              expense => expense.tripId === trip.id
+            );
+            return (
+              <TripCard
+                key={trip.id}
+                destination={trip.destination}
+                photo={trip.photo}
+                photoAttribution={trip.photoAttribution}
+                to={`/trip/${trip.id}`}
+                startDate={trip.startDate}
+                endDate={trip.endDate}
+                budgetItems={budgetItems}
+                expenses={expenses}
+                theme={props.theme}
+              />
+            );
+          })}
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

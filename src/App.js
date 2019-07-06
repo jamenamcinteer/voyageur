@@ -1,25 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Store } from "./Store";
+import AppRouter from "./routers/AppRouter";
+import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { startSetBudgetCategories } from "./actions/budgetCategories";
+import { startSetBudgetItems } from "./actions/budgetItems";
+import { startSetExpenses } from "./actions/expenses";
+import { startSetTrips } from "./actions/trips";
 
 function App() {
+  const { state, dispatch } = React.useContext(Store);
+  // console.log("App.js", state);
+
+  const theme = {
+    themeColor: "#1aae9f",
+    themeColorLight: "#a3ded8",
+    themeColorRed: "#d85b6e",
+    themeColorSecondary: "#c7d2db",
+    darkFont: "#4b5c6b"
+  };
+
+  // change to async/await when getting data from mongodb
+  // const fetchTripsAction = React.useCallback(() => {
+  //   const trips = JSON.parse(localStorage.getItem("trips"));
+  //   return dispatch({
+  //     type: "FETCH_TRIPS",
+  //     payload: trips
+  //   });
+  // }, [dispatch]);
+  // const fetchBudgetCategoriesAction = React.useCallback(() => {
+  //   const budgetCategories = JSON.parse(
+  //     localStorage.getItem("budgetCategories")
+  //   );
+  //   return dispatch({
+  //     type: "FETCH_BUDGET_CATEGORIES",
+  //     payload: budgetCategories
+  //   });
+  // }, [dispatch]);
+  // const fetchBudgetItemsAction = React.useCallback(() => {
+  //   const budgetItems = JSON.parse(localStorage.getItem("budgetItems"));
+  //   return dispatch({
+  //     type: "FETCH_BUDGET_ITEMS",
+  //     payload: budgetItems
+  //   });
+  // }, [dispatch]);
+  // const fetchExpensesAction = React.useCallback(() => {
+  //   const expenses = JSON.parse(localStorage.getItem("expenses"));
+  //   return dispatch({
+  //     type: "FETCH_EXPENSES",
+  //     payload: expenses
+  //   });
+  // }, [dispatch]);
+
+  React.useEffect(() => {
+    // state.trips.length === 0 && fetchTripsAction();
+    state.trips.length === 0 && startSetTrips(state, dispatch);
+    state.budgetCategories.length === 0 &&
+      startSetBudgetCategories(state, dispatch);
+    state.budgetItems.length === 0 && startSetBudgetItems(state, dispatch);
+    state.expenses.length === 0 && startSetExpenses(state, dispatch);
+  }, [
+    state.trips.length,
+    state.budgetCategories.length,
+    state.budgetItems.length,
+    state.expenses.length
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppRouter theme={theme} />
+    </ThemeProvider>
   );
 }
 
