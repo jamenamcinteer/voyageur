@@ -17,7 +17,9 @@ function App() {
     themeColorLight: "#a3ded8",
     themeColorRed: "#d85b6e",
     themeColorSecondary: "#c7d2db",
-    darkFont: "#4b5c6b"
+    themeColorSecondaryLight: "#dfe7ed",
+    darkFont: "#4b5c6b",
+    lightFont: "#788896"
   };
 
   // change to async/await when getting data from mongodb

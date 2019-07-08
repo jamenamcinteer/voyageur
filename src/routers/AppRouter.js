@@ -7,6 +7,7 @@ import AddBudgetCategory from "../components/AddBudgetCategory";
 import EditBudgetCategory from "../components/EditBudgetCategory";
 import AddBudgetItem from "../components/AddBudgetItem";
 import EditBudgetItem from "../components/EditBudgetItem";
+import ViewBudgetItem from "../components/ViewBudgetItem";
 import AddExpense from "../components/AddExpense";
 import EditExpense from "../components/EditExpense";
 import Trip from "../components/Trip";
@@ -49,6 +50,11 @@ const AppRouter = props => {
         <Route
           path="/trip/:id/budget-category/:budgetCategoryId/add-budget-item"
           render={() => <AddBudgetItem {...props} />}
+          exact={true}
+        />
+        <Route
+          path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId"
+          render={() => <ViewBudgetItem {...props} />}
           exact={true}
         />
         <Route

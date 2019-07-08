@@ -17,7 +17,7 @@ function reducer(state, action) {
       return { ...state, budgetCategories: action.payload };
     case "FETCH_BUDGET_ITEMS":
       return { ...state, budgetItems: action.payload };
-    case "FETCH_EXPENSE":
+    case "FETCH_EXPENSES":
       return { ...state, expenses: action.payload };
     case "DELETE_TRIP":
       return {

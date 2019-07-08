@@ -16,13 +16,19 @@ const EditExpense = props => {
 
   return (
     <div>
-      <TripHeader
-        title="Add Expense"
-        theme={props.theme}
-        backTo={`/trip/${props.match.params.id}`}
-        trip={trip}
-      />
-      <ExpenseForm expense={expense} theme={props.theme} />
+      {expense && (
+        <div>
+          <TripHeader
+            title="Edit Expense"
+            theme={props.theme}
+            backTo={`/trip/${props.match.params.id}/budget-category/${
+              expense.budgetCategoryId
+            }/budget-item/${expense.budgetItemId}`}
+            trip={trip}
+          />
+          <ExpenseForm expense={expense} theme={props.theme} />
+        </div>
+      )}
     </div>
   );
 };

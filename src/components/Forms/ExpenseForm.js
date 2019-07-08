@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Store } from "../../Store";
 import { withRouter } from "react-router-dom";
 import TextInput from "../FormElements/TextInput";
@@ -13,16 +13,25 @@ import { Container } from "../StyledComponents/Layout";
 import { ButtonContainer, MainButtons } from "../StyledComponents/Forms";
 import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
+import moment from "moment";
 
 const ExpenseForm = props => {
   const { state, dispatch } = useContext(Store);
 
   const [budgetCategoryId, setBudgetCategoryId] = useState(
-    props.expense ? props.expense.budgetCategoryId : ""
+    props.expense
+      ? props.expense.budgetCategoryId
+      : props.budgetCategoryId
+      ? props.budgetCategoryId
+      : ""
   );
   const [budgetItemOptions, setBudgetItemOptions] = useState([]);
   const [budgetItemId, setBudgetItemId] = useState(
-    props.expense ? props.expense.budgetItemId : ""
+    props.expense
+      ? props.expense.budgetItemId
+      : props.budgetItemId
+      ? props.budgetItemId
+      : ""
   );
   const [summary, setSummary] = useState(
     props.expense ? props.expense.summary : ""
@@ -31,7 +40,9 @@ const ExpenseForm = props => {
     props.expense ? props.expense.currency : "USD"
   );
   const [cost, setCost] = useState(props.expense ? props.expense.cost : "");
-  const [date, setDate] = useState(props.expense ? props.expense.date : "");
+  const [date, setDate] = useState(
+    props.expense ? moment(props.expense.date).format("MM/DD/YY") : ""
+  );
   const [notes, setNotes] = useState(props.expense ? props.expense.notes : "");
   const [deleteModal, setDeleteModal] = useState(false);
 
@@ -46,6 +57,18 @@ const ExpenseForm = props => {
       text: bCategory.budgetCategory
     };
   });
+
+  useEffect(() => {
+    if (budgetItemId)
+      setBudgetItemOptions(
+        state.budgetItems.map(bItem => {
+          return {
+            value: bItem.id,
+            text: bItem.budgetItem
+          };
+        })
+      );
+  }, [state.budgetItems, budgetItemId]);
 
   const currencyOptions = [
     {
@@ -75,7 +98,7 @@ const ExpenseForm = props => {
         currency,
         originalCost: cost,
         cost,
-        date,
+        date: moment(date).valueOf(),
         notes
       };
 
@@ -92,7 +115,7 @@ const ExpenseForm = props => {
         currency,
         originalCost: cost,
         cost,
-        date,
+        date: moment(date).valueOf(),
         notes
       };
 
