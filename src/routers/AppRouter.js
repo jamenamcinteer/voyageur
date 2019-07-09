@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Dashboard from "../components/Dashboard";
+import Login from "../components/Login";
 import AddTrip from "../components/AddTrip";
 import EditTrip from "../components/EditTrip";
 import AddBudgetCategory from "../components/AddBudgetCategory";
@@ -17,6 +18,7 @@ const AppRouter = props => {
     <BrowserRouter>
       <Switch>
         <Route path="/" render={() => <Dashboard {...props} />} exact={true} />
+        <Route path="/login" render={() => <Login {...props} />} exact={true} />
         <Route
           path="/trip/add"
           render={() => <AddTrip {...props} />}

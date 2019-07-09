@@ -11,6 +11,18 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
+    case "LOGIN":
+      return {
+        ...state,
+        auth: {
+          uid: action.uid,
+          displayName: action.displayName,
+          email: action.email,
+          photoURL: action.photoURL
+        }
+      };
+    case "LOGOUT":
+      return { ...state, auth: {} };
     case "FETCH_TRIPS":
       return { ...state, trips: action.payload };
     case "FETCH_BUDGET_CATEGORIES":
