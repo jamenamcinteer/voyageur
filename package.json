@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.1",
     "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -28,10 +29,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "server-build": "babel server -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "npm run server-build && node dist/index.js"
+    "server-watch": "nodemon --watch server --exec yarn server-start",
+    "server-start": "yarn server-build && yarn server",
+    "server-build": "babel server -d dist",
+    "server": "node dist/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"

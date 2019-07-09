@@ -5,10 +5,10 @@ var cors = require("cors");
 
 var app = express();
 
-var whitelist = ["http://localhost:3000"];
+var whitelist = ["http://localhost"];
 var corsOptions = {
   origin: function(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
@@ -34,10 +34,6 @@ let authenticationUrl = unsplash.auth.getAuthenticationUrl([
   "read_collections"
 ]);
 
-// console.log(userAuthentication(code));
-// photos();
-// collections();
-
 app.get("/photos", function(req, res) {
   var keyword = req.param("keyword");
   unsplash.photos
@@ -54,89 +50,5 @@ app.get("/photos", function(req, res) {
       res.send(json);
     });
 });
-
-// function userAuthentication(code) {
-//   return unsplash.auth.userAuthentication(code)
-//     .then(toJson)
-//     .then(json => json.access_token);
-// }
-
-function photos() {
-  console.log("\nPhotos");
-
-  unsplash.photos
-    .listPhotos(1, 10)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.photos
-    .searchPhotos("bear", undefined, 1, 1)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.photos
-    .getPhoto("kZ8dyUT0h30")
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.photos
-    .getRandomPhoto({ featured: true })
-    .then(toJson)
-    .then(json => {
-      console.log(json.links.html);
-    });
-}
-
-function collections() {
-  console.log("\nCollections");
-
-  unsplash.collections
-    .listCollections(1, 10)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.collections
-    .listCuratedCollections(1, 10)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.collections
-    .getCollection(151165)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.collections
-    .getCuratedCollection(94)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.collections
-    .getCollectionPhotos(151165)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-
-  unsplash.collections
-    .getCuratedCollectionPhotos(94)
-    .then(toJson)
-    .then(json => {
-      console.log(json);
-    });
-}
 
 app.listen(3001, function() {});
