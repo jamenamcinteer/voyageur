@@ -16,11 +16,13 @@ const CardBackground = styled.div`
 const CardHeader = styled.h1`
   font-size: 1.2em;
   font-weight: normal;
+  color: ${props => props.theme.darkFont};
 `;
 
 const CardSubheader = styled.h2`
   font-size: 1em;
   font-weight: normal;
+  color: ${props => props.theme.darkFont};
 `;
 
 const CardImageContainer = styled.div`
