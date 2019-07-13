@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
 import Textarea from "../FormElements/Textarea";
+import Error from "../FormElements/Error";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
 import {
@@ -33,16 +34,34 @@ const BudgetItemForm = props => {
     props.budgetItem ? props.budgetItem.notes : ""
   );
   const [deleteModal, setDeleteModal] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   const trip = props.trip;
   const budgetCategory = props.budgetCategory;
 
   const handleClick = () => {
+    let errorsArr = [];
+    if (!budgetItem) {
+      errorsArr.push({
+        field: "budgetItem",
+        error: "Name of budget item is required."
+      });
+    }
+    if (parseFloat(estimatedCost).toFixed(2) === "NaN") {
+      errorsArr.push({
+        field: "estimatedCost",
+        error: "Estimated cost must be a valid amount."
+      });
+    }
+
+    setErrors(errorsArr);
+    if (errorsArr.length > 0) return;
+
     if (props.budgetItem) {
       const updatedBudgetItem = {
         ...props.budgetItem,
         budgetItem,
-        estimatedCost,
+        estimatedCost: parseFloat(estimatedCost).toFixed(2),
         notes
       };
 
@@ -53,7 +72,7 @@ const BudgetItemForm = props => {
         tripId: trip._id,
         budgetCategoryId: budgetCategory._id,
         budgetItem,
-        estimatedCost,
+        estimatedCost: parseFloat(estimatedCost).toFixed(2),
         notes
       };
 
@@ -100,6 +119,7 @@ const BudgetItemForm = props => {
         value={budgetItem}
         handleChange={setBudgetItem}
       />
+      <Error errors={errors} field="budgetItem" />
       <TextInput
         theme={props.theme}
         label="Estimated Cost ($)"
@@ -107,9 +127,10 @@ const BudgetItemForm = props => {
         value={estimatedCost}
         handleChange={setEstimatedCost}
       />
+      <Error errors={errors} field="estimatedCost" />
       <Textarea
         theme={props.theme}
-        label="Notes"
+        label="Notes (optional)"
         value={notes}
         handleChange={setNotes}
       />

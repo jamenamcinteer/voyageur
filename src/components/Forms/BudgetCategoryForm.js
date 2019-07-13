@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
 import Textarea from "../FormElements/Textarea";
+import Error from "../FormElements/Error";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
 import {
@@ -24,10 +25,22 @@ const BudgetCategoryForm = props => {
     props.budgetCategory ? props.budgetCategory.notes : ""
   );
   const [deleteModal, setDeleteModal] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   const trip = props.trip;
 
   const handleClick = () => {
+    let errorsArr = [];
+    if (!budgetCategory) {
+      errorsArr.push({
+        field: "budgetCategory",
+        error: "Name of budget category is required."
+      });
+    }
+
+    setErrors(errorsArr);
+    if (errorsArr.length > 0) return;
+
     if (props.budgetCategory) {
       const updatedBudgetCategory = {
         ...props.budgetCategory,
@@ -79,7 +92,12 @@ const BudgetCategoryForm = props => {
         handleChange={setBudgetCategory}
         placeholder="Example: Airfare, Food, Activities, etc."
       />
-      <Textarea label="Notes" value={notes} handleChange={setNotes} />
+      <Error errors={errors} field="budgetCategory" />
+      <Textarea
+        label="Notes (optional)"
+        value={notes}
+        handleChange={setNotes}
+      />
       <ButtonContainer showDelete={props.budgetCategory}>
         {props.budgetCategory && (
           <div>

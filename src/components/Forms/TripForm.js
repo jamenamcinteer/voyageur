@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
+import Error from "../FormElements/Error";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
 import moment from "moment";
@@ -77,6 +78,7 @@ const TripForm = props => {
   );
   const [deleteModal, setDeleteModal] = useState(false);
   const [focusedInput, setFocusedInput] = useState(null);
+  const [errors, setErrors] = useState([]);
 
   const getPhoto = async () => {
     if (destination) {
@@ -119,6 +121,29 @@ const TripForm = props => {
     setPhotoAttribution(generateAttribution(newPhotoSelection));
   };
   const handleClick = async () => {
+    let errorsArr = [];
+    if (!destination) {
+      errorsArr.push({
+        field: "destination",
+        error: "Destination is required."
+      });
+    }
+    if (isNaN(moment(startDate).valueOf())) {
+      errorsArr.push({
+        field: "dates",
+        error: "Start Date must be valid."
+      });
+    }
+    if (isNaN(moment(endDate).valueOf())) {
+      errorsArr.push({
+        field: "dates",
+        error: "End Date must be valid."
+      });
+    }
+
+    setErrors(errorsArr);
+    if (errorsArr.length > 0) return;
+
     if (props.trip) {
       const updatedTrip = {
         ...props.trip,
@@ -179,6 +204,7 @@ const TripForm = props => {
           handleChange={setDestination}
           handleBlur={getPhoto}
         />
+        <Error errors={errors} field="destination" />
         <DateRangePicker
           startDateId="startDate"
           endDateId="endDate"
@@ -196,6 +222,7 @@ const TripForm = props => {
           numberOfMonths={1}
           // verticalHeight={350}
         />
+        <Error errors={errors} field="dates" style={{ marginTop: "10px" }} />
         {/* <TextInput
           theme={props.theme}
           label="Start Date"
