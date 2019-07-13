@@ -38,22 +38,22 @@ ReactDOM.render(<LoadingPage />, document.getElementById("root"));
 store.dispatch(startLogin()).then(() => {
   if (store.getState().auth.uid) {
     store.dispatch(startSetUsers(store.getState().auth.uid)).then(() => {
-      renderApp();
-      if (history.location.pathname === "/") {
-        history.push("/login");
-      }
-    });
-  } else {
-    store.dispatch(startSetTrips()).then(() => {
-      store.dispatch(startSetBudgetCategories()).then(() => {
-        store.dispatch(startSetBudgetItems()).then(() => {
-          store.dispatch(startSetExpenses()).then(() => {
-            renderApp();
-            // history.push("/");
+      store.dispatch(startSetTrips()).then(() => {
+        store.dispatch(startSetBudgetCategories()).then(() => {
+          store.dispatch(startSetBudgetItems()).then(() => {
+            store.dispatch(startSetExpenses()).then(() => {
+              renderApp();
+              // history.push("/");
+            });
           });
         });
       });
     });
+  } else {
+    renderApp();
+    if (history.location.pathname === "/") {
+      history.push("/login");
+    }
   }
 });
 
