@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
-import uniqid from "uniqid";
 import moment from "moment";
 import styled from "styled-components";
 import {
@@ -18,6 +17,7 @@ import { ModalText } from "../StyledComponents/Modals";
 import { Container } from "../StyledComponents/Layout";
 import { MainButtons, ButtonContainer } from "../StyledComponents/Forms";
 import { connect } from "react-redux";
+import { DateRangePicker } from "react-dates";
 
 const PhotoOptions = styled.div`
   display: grid;
@@ -41,7 +41,7 @@ const Img = styled.img`
 
 const FigCaption = styled.figcaption`
   position: absolute;
-  bottom: 4px;
+  bottom: ${props => (props.selected ? 0 : "4px")};
   background-color: #333;
   color: #fff;
   opacity: 0.7;
@@ -55,25 +55,15 @@ const PhotoLabel = styled.h4`
   font-weight: bold;
 `;
 
-// const Container = styled.div`
-//   margin: 20px;
-// `;
-
-// const ButtonContainer = styled.div`
-//   margin: 0 -10px;
-//   display: flex;
-//   justify-content: flex-end;
-// `;
-
 const TripForm = props => {
   const [destination, setDestination] = useState(
     props.trip ? props.trip.destination : ""
   );
   const [startDate, setStartDate] = useState(
-    props.trip ? moment(props.trip.startDate).format("MM/DD/YY") : ""
+    props.trip ? moment(props.trip.startDate).format("MM/DD/YY") : null
   );
   const [endDate, setEndDate] = useState(
-    props.trip ? moment(props.trip.endDate).format("MM/DD/YY") : ""
+    props.trip ? moment(props.trip.endDate).format("MM/DD/YY") : null
   );
   const [photo, setPhoto] = useState(props.trip ? props.trip.photo : "");
   const [photoAttribution, setPhotoAttribution] = useState(
@@ -86,13 +76,12 @@ const TripForm = props => {
     photo ? false : true
   );
   const [deleteModal, setDeleteModal] = useState(false);
+  const [focusedInput, setFocusedInput] = useState(null);
 
   const getPhoto = async () => {
     if (destination) {
       let response = await fetch(`/photos?keyword=${destination}`);
       let data = await response.json();
-
-      console.log(data);
 
       let newPhotoOptions = [];
 
@@ -145,7 +134,7 @@ const TripForm = props => {
       props.history.push(`/trip/${props.trip._id}`);
     } else {
       const newTrip = {
-        id: uniqid(),
+        // id: uniqid(),
         destination,
         startDate: moment(startDate).valueOf(),
         endDate: moment(endDate).valueOf(),
@@ -190,7 +179,24 @@ const TripForm = props => {
           handleChange={setDestination}
           handleBlur={getPhoto}
         />
-        <TextInput
+        <DateRangePicker
+          startDateId="startDate"
+          endDateId="endDate"
+          startDate={startDate}
+          endDate={endDate}
+          onDatesChange={({ startDate, endDate }) => {
+            setStartDate(startDate);
+            setEndDate(endDate);
+          }}
+          focusedInput={focusedInput}
+          onFocusChange={focusedInput => {
+            setFocusedInput(focusedInput);
+          }}
+          orientation="horizontal"
+          numberOfMonths={1}
+          // verticalHeight={350}
+        />
+        {/* <TextInput
           theme={props.theme}
           label="Start Date"
           value={startDate}
@@ -201,7 +207,7 @@ const TripForm = props => {
           label="End Date"
           value={endDate}
           handleChange={setEndDate}
-        />
+        /> */}
 
         {!showPhotoOptions && (
           <Button
@@ -214,7 +220,7 @@ const TripForm = props => {
         )}
         {showPhotoOptions && (
           <div>
-            <PhotoLabel>Photo</PhotoLabel>
+            {photoOptions.length > 0 && <PhotoLabel>Photo</PhotoLabel>}
             <PhotoOptions>
               {photoOptions.length > 0 &&
                 photos.map(aPhoto => {
@@ -224,7 +230,9 @@ const TripForm = props => {
                       selected={aPhoto.id === selectedPhotoOption}
                     >
                       <Img
-                        src={`${aPhoto.urls.raw}&w=150`}
+                        src={`${
+                          aPhoto.urls.raw
+                        }&w=150&h=90&fit=crop&crop=focalpoint`}
                         alt=""
                         onClick={e => handleSelectPhoto(aPhoto.id)}
                       />
@@ -232,6 +240,7 @@ const TripForm = props => {
                         dangerouslySetInnerHTML={{
                           __html: generateAttribution(aPhoto)
                         }}
+                        selected={aPhoto.id === selectedPhotoOption}
                       />
                     </PhotoOption>
                   );
