@@ -2,6 +2,14 @@
   width: calc(50% - 12px);
 }
 
+.SingleDatePicker {
+  width: 100%;
+}
+
+.SingleDatePicker .DateInput {
+  width: 100%;
+}
+
 .DateInput_input {
   /* color: #4b5c6b; */
   color: #000;
@@ -11,11 +19,16 @@
   padding: 7px 10px 5px 10px;
 }
 
+.SingleDatePickerInput {
+  width: 100%;
+}
+
 .DateInput_input__focused {
   border-bottom: 2px solid #1aae9f;
 }
 
-.DateRangePickerInput__withBorder {
+.DateRangePickerInput__withBorder,
+.SingleDatePickerInput__withBorder {
   border: 2px solid #c7d2db;
   border-radius: 5px;
 }

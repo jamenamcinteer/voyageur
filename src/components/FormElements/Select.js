@@ -17,6 +17,7 @@ const StyledSelect = styled.select`
   border: 2px solid ${props => props.theme.themeColorSecondary};
   font-size: 1em;
   padding: 7px 10px;
+  background: #fff;
 
   &:focus {
     outline: 0;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextInput from "../FormElements/TextInput";
 import Select from "../FormElements/Select";
 import Textarea from "../FormElements/Textarea";
+import Error from "../FormElements/Error";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
 import { startAddExpense, startEditExpense } from "../../actions/expenses";
@@ -12,6 +13,14 @@ import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
 import moment from "moment";
 import { connect } from "react-redux";
+import { SingleDatePicker } from "react-dates";
+import styled from "styled-components";
+
+const DateLabel = styled.h4`
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 0;
+`;
 
 const ExpenseForm = props => {
   const [budgetCategoryId, setBudgetCategoryId] = useState(
@@ -37,10 +46,12 @@ const ExpenseForm = props => {
   );
   const [cost, setCost] = useState(props.expense ? props.expense.cost : "");
   const [date, setDate] = useState(
-    props.expense ? moment(props.expense.date).format("MM/DD/YY") : ""
+    props.expense ? moment(props.expense.date).format("MM/DD/YY") : null
   );
   const [notes, setNotes] = useState(props.expense ? props.expense.notes : "");
   const [deleteModal, setDeleteModal] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   const trip = props.trip;
   const budgetCategories = props.budgetCategories.filter(
@@ -71,20 +82,62 @@ const ExpenseForm = props => {
       value: "USD",
       text: "USD ($)",
       symbol: "$"
-    },
-    {
-      value: "EUR",
-      text: "EUR (€)",
-      symbol: "€"
-    },
-    {
-      value: "GBP",
-      text: "GBP (£)",
-      symbol: "£"
     }
+    // {
+    //   value: "EUR",
+    //   text: "EUR (€)",
+    //   symbol: "€"
+    // },
+    // {
+    //   value: "GBP",
+    //   text: "GBP (£)",
+    //   symbol: "£"
+    // }
   ];
 
   const handleClick = () => {
+    // validation
+    let errorsArr = [];
+    if (!budgetCategoryId) {
+      errorsArr.push({
+        field: "budgetCategory",
+        error: "Budget category is required."
+      });
+    }
+    if (!budgetItemId) {
+      errorsArr.push({
+        field: "budgetItem",
+        error: "Budget item is required."
+      });
+    }
+    if (!summary) {
+      errorsArr.push({
+        field: "summary",
+        error: "Summary is required."
+      });
+    }
+    if (!currency) {
+      errorsArr.push({
+        field: "currency",
+        error: "Currency is required."
+      });
+    }
+    if (parseFloat(cost).toFixed(2) === "NaN") {
+      errorsArr.push({
+        field: "amount",
+        error: "Amount spent must be a valid amount."
+      });
+    }
+    if (isNaN(moment(date).valueOf())) {
+      errorsArr.push({
+        field: "date",
+        error: "Date must be valid."
+      });
+    }
+
+    setErrors(errorsArr);
+    if (errorsArr.length > 0) return;
+
     if (props.expense) {
       const updatedExpense = {
         ...props.expense,
@@ -92,8 +145,8 @@ const ExpenseForm = props => {
         budgetItemId,
         summary,
         currency,
-        originalCost: cost,
-        cost,
+        originalCost: parseFloat(cost).toFixed(2),
+        cost: parseFloat(cost).toFixed(2),
         date: moment(date).valueOf(),
         notes
       };
@@ -108,8 +161,8 @@ const ExpenseForm = props => {
         budgetItemId,
         summary,
         currency,
-        originalCost: cost,
-        cost,
+        originalCost: parseFloat(cost).toFixed(2),
+        cost: parseFloat(cost).toFixed(2),
         date: moment(date).valueOf(),
         notes
       };
@@ -153,6 +206,19 @@ const ExpenseForm = props => {
         placeholder="Select category..."
         handleChange={handleBudgetCategoryChange}
       />
+      {/* {errors.find(err => err.field === "budgetCategory") && (
+        <Error>
+          {errors.find(err => err.field === "budgetCategory").error}
+        </Error>
+      )} */}
+      {/* {errors.filter(err => err.field === "budgetCategory").length > 0 &&
+        errors.map((err, index) => {
+          if (err.field === "budgetCategory") {
+            return <StyledError key={index}>{err.error}</StyledError>;
+          }
+          return true;
+        })} */}
+      <Error errors={errors} field="budgetCategory" />
       <Select
         theme={props.theme}
         label="Budget Item"
@@ -161,12 +227,14 @@ const ExpenseForm = props => {
         placeholder="Select budget item..."
         handleChange={setBudgetItemId}
       />
+      <Error errors={errors} field="budgetItem" />
       <TextInput
         theme={props.theme}
         label="Summary of Expense"
         value={summary}
         handleChange={setSummary}
       />
+      <Error errors={errors} field="summary" />
       <Select
         theme={props.theme}
         label="Currency"
@@ -174,6 +242,7 @@ const ExpenseForm = props => {
         options={currencyOptions}
         handleChange={setCurrency}
       />
+      <Error errors={errors} field="currency" />
       <TextInput
         theme={props.theme}
         label={`Amount Spent (${
@@ -185,15 +254,25 @@ const ExpenseForm = props => {
         value={cost}
         handleChange={setCost}
       />
-      <TextInput
-        theme={props.theme}
-        label="Date of Expense"
-        value={date}
-        handleChange={setDate}
+      <Error errors={errors} field="amount" />
+      <DateLabel>Date of Expense</DateLabel>
+      <SingleDatePicker
+        id="date"
+        date={date}
+        onDateChange={date => {
+          setDate(date);
+        }}
+        focused={focused}
+        onFocusChange={({ focused }) => {
+          setFocused(focused);
+        }}
+        orientation="horizontal"
+        numberOfMonths={1}
       />
+      <Error errors={errors} field="date" style={{ marginTop: "10px" }} />
       <Textarea
         theme={props.theme}
-        label="Notes"
+        label="Notes (optional)"
         value={notes}
         handleChange={setNotes}
       />
