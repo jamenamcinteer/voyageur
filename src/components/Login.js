@@ -1,7 +1,4 @@
-// import React, { useContext, useState } from "react";
 import React from "react";
-// import { Store } from "../Store";
-// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {} from "twix";
 import ButtonLink from "./Buttons/ButtonLink";
@@ -13,25 +10,38 @@ const App = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("login-background.jpg");
+    background-size: cover;
+    background-position: top left;
+    filter: blur(1px) brightness(90%) grayscale(50%) sepia(10%);
+  }
 `;
 
 const AppContainer = styled.div`
   width: 100%;
+  position: relative;
 `;
 
 const AppTitle = styled.h1`
-  color: ${props => props.theme.darkFont};
+  color: #fff;
   font-family: "Roboto", sans-serif;
 `;
 
 const AppSubtitle = styled.h2`
-  color: ${props => props.theme.darkFont};
+  color: #fff;
   font-family: "Roboto", sans-serif;
 `;
 
 const Login = props => {
-  // const { state } = useContext(Store);
-
   return (
     <div>
       <App>
@@ -42,9 +52,6 @@ const Login = props => {
             to="/auth/google"
             buttonText="Sign In with Google"
             buttonType="primary"
-            // buttonWidth="50%"
-            // customStyles={{ width: "auto", display: "inline-block" }}
-            theme={props.theme}
           />
         </AppContainer>
       </App>

@@ -22,7 +22,7 @@ const AppRouter = props => {
     <Router history={history} theme={props.theme}>
       <Switch>
         <Route path="/" component={Dashboard} exact={true} />
-        <Route path="/login" components={Login} exact={true} />
+        <Route path="/login" component={Login} exact={true} />
         <Route path="/trip/add" component={AddTrip} exact={true} />
         <Route path="/trip/:id" component={Trip} exact={true} />
         <Route path="/trip/:id/edit" component={EditTrip} exact={true} />
