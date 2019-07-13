@@ -18,6 +18,7 @@ const StyledTextarea = styled.textarea`
   font-size: 1em;
   padding: 7px 10px;
   height: 75px;
+  font-family: "Roboto", sans-serif;
 
   &:focus {
     outline: 0;

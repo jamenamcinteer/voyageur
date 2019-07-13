@@ -26,6 +26,11 @@ const ModalLink = styled(Link)`
   text-decoration: none;
   margin-left: -20px;
   margin-right: -20px;
+  color: ${props => props.theme.darkFont};
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -126,7 +131,7 @@ const Dashboard = props => {
               },
               content: {
                 borderRadius: "0",
-                minHeight: "20vh",
+                // minHeight: "20vh",
                 maxHeight: "40vh",
                 overflowY: "auto",
                 width: "80vw",

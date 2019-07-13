@@ -77,6 +77,7 @@ const BudgetCategoryForm = props => {
         label="Name of Budget Category"
         value={budgetCategory}
         handleChange={setBudgetCategory}
+        placeholder="Example: Airfare, Food, Activities, etc."
       />
       <Textarea label="Notes" value={notes} handleChange={setNotes} />
       <ButtonContainer showDelete={props.budgetCategory}>

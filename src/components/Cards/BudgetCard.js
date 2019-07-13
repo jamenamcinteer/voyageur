@@ -16,7 +16,8 @@ const CardBackground = styled.div`
 const CardHeader = styled.h3`
   font-size: 1.2em;
   font-weight: normal;
-  margin: 20px 0 5px 0;
+  // margin: 20px 0 5px 0;
+  margin: 0 0 5px 0;
   display: flex;
   justify-content: space-between;
 `;

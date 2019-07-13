@@ -56,20 +56,22 @@ const Trip = props => {
             budgetItems={props.budgetItems}
             expenses={props.expenses}
           />
-          <Container style={{ ...{ textAlign: "center" } }}>
-            <ButtonLink
-              to={`/trip/${trip._id}/add-expense`}
-              buttonText="Add Expense"
-              buttonType="primary"
-              theme={props.theme}
-              customStyles={{
-                background: {
-                  display: "inline-block",
-                  width: "auto"
-                }
-              }}
-            />
-          </Container>
+          {props.budgetCategories.length > 0 && props.budgetItems.length > 0 && (
+            <Container style={{ ...{ textAlign: "center" } }}>
+              <ButtonLink
+                to={`/trip/${trip._id}/add-expense`}
+                buttonText="Add Expense"
+                buttonType="primary"
+                theme={props.theme}
+                customStyles={{
+                  background: {
+                    display: "inline-block",
+                    width: "auto"
+                  }
+                }}
+              />
+            </Container>
+          )}
           <Container>
             {budgetCategories.length > 0 &&
               budgetCategories.map(budgetCategory => {
@@ -90,7 +92,9 @@ const Trip = props => {
             <ButtonLink
               to={`/trip/${trip._id}/add-budget-category`}
               buttonText="Add Budget Category"
-              buttonType="secondary"
+              buttonType={
+                props.budgetCategories.length > 0 ? "secondary" : "primary"
+              }
               theme={props.theme}
               customStyles={{
                 background: {
