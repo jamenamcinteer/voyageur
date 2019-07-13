@@ -1,15 +1,12 @@
-import React, { useContext } from "react";
-import { Store } from "../Store";
-import { withRouter } from "react-router-dom";
+import React from "react";
 import TripHeader from "./Navigation/TripHeader";
 import BudgetCategoryForm from "./Forms/BudgetCategoryForm";
+import { connect } from "react-redux";
 
-const AddBudgetCategory = props => {
-  const { state } = useContext(Store);
-
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
-  const budgetCategory = state.budgetCategories.find(
-    i => i.id === props.match.params.budgetCategoryId
+const EditBudgetCategory = props => {
+  const trip = props.trips.find(trip => trip._id === props.match.params.id);
+  const budgetCategory = props.budgetCategories.find(
+    i => i._id === props.match.params.budgetCategoryId
   );
 
   return (
@@ -21,10 +18,14 @@ const AddBudgetCategory = props => {
             theme={props.theme}
             backTo={`/trip/${props.match.params.id}`}
             trip={trip}
+            budgetItems={props.budgetItems}
+            expenses={props.expenses}
           />
           <BudgetCategoryForm
             theme={props.theme}
+            trip={trip}
             budgetCategory={budgetCategory}
+            history={props.history}
           />
         </div>
       )}
@@ -32,4 +33,13 @@ const AddBudgetCategory = props => {
   );
 };
 
-export default withRouter(AddBudgetCategory);
+const mapStateToProps = (state, props) => {
+  return {
+    trips: state.trips,
+    budgetCategories: state.budgetCategories,
+    budgetItems: state.budgetItems,
+    expenses: state.expenses
+  };
+};
+
+export default connect(mapStateToProps)(EditBudgetCategory);

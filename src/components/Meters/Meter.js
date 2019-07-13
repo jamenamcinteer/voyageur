@@ -1,4 +1,5 @@
 import React from "react";
+import theme from "../../theme";
 
 const Meter = props => {
   const displayOverviewBudget = () => {
@@ -12,10 +13,12 @@ const Meter = props => {
     let budgeted = props.budgeted;
 
     let width = (actual / budgeted) * 100;
-    let backgroundColor = props.theme.themeColor;
+    // let backgroundColor = props.theme.themeColor;
+    let backgroundColor = theme.themeColor;
 
     if (width > 100) {
       width = 100;
+      // backgroundColor = props.theme.themeColorRed;
       backgroundColor = props.theme.themeColorRed;
     }
     if (budgeted === 0) {

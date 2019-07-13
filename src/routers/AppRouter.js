@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
+// import createHistory from "history/createBrowserHistory";
+import { createBrowserHistory } from "history";
 import Dashboard from "../components/Dashboard";
 import Login from "../components/Login";
 import AddTrip from "../components/AddTrip";
@@ -13,65 +15,54 @@ import AddExpense from "../components/AddExpense";
 import EditExpense from "../components/EditExpense";
 import Trip from "../components/Trip";
 
+export const history = createBrowserHistory();
+
 const AppRouter = props => {
   return (
-    <BrowserRouter>
+    <Router history={history} theme={props.theme}>
       <Switch>
-        <Route path="/" render={() => <Dashboard {...props} />} exact={true} />
-        <Route path="/login" render={() => <Login {...props} />} exact={true} />
-        <Route
-          path="/trip/add"
-          render={() => <AddTrip {...props} />}
-          exact={true}
-        />
-        <Route
-          path="/trip/:id"
-          render={() => <Trip {...props} />}
-          exact={true}
-        />
-        <Route
-          path="/trip/:id/edit"
-          render={() => <EditTrip {...props} />}
-          exact={true}
-        />
+        <Route path="/" component={Dashboard} exact={true} />
+        <Route path="/login" components={Login} exact={true} />
+        <Route path="/trip/add" component={AddTrip} exact={true} />
+        <Route path="/trip/:id" component={Trip} exact={true} />
+        <Route path="/trip/:id/edit" component={EditTrip} exact={true} />
         <Route
           path="/trip/:id/add-budget-category"
-          render={() => <AddBudgetCategory {...props} />}
+          component={AddBudgetCategory}
           exact={true}
         />
         <Route
           path="/trip/:id/add-expense"
-          render={() => <AddExpense {...props} />}
+          component={AddExpense}
           exact={true}
         />
         <Route
           path="/trip/:id/budget-category/:budgetCategoryId/edit"
-          render={() => <EditBudgetCategory {...props} />}
+          component={EditBudgetCategory}
           exact={true}
         />
         <Route
           path="/trip/:id/budget-category/:budgetCategoryId/add-budget-item"
-          render={() => <AddBudgetItem {...props} />}
+          component={AddBudgetItem}
           exact={true}
         />
         <Route
           path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId"
-          render={() => <ViewBudgetItem {...props} />}
+          component={ViewBudgetItem}
           exact={true}
         />
         <Route
           path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId/edit"
-          render={() => <EditBudgetItem {...props} />}
+          component={EditBudgetItem}
           exact={true}
         />
         <Route
           path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId/expense/:expenseId"
-          render={() => <EditExpense {...props} />}
+          component={EditExpense}
           exact={true}
         />
-        {/* <Route path="/trip/:id/edit" component={Dashboard} exact={true} /> */}
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
 

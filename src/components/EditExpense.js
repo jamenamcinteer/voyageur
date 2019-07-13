@@ -1,17 +1,14 @@
-import React, { useContext } from "react";
-import { Store } from "../Store";
-import { withRouter } from "react-router-dom";
+import React from "react";
 import TripHeader from "./Navigation/TripHeader";
+import { connect } from "react-redux";
 
 import ExpenseForm from "./Forms/ExpenseForm";
 
 const EditExpense = props => {
-  const { state } = useContext(Store);
+  const trip = props.trips.find(trip => trip._id === props.match.params.id);
 
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
-
-  const expense = state.expenses.find(
-    i => i.id === props.match.params.expenseId
+  const expense = props.expenses.find(
+    i => i._id === props.match.params.expenseId
   );
 
   return (
@@ -25,12 +22,30 @@ const EditExpense = props => {
               expense.budgetCategoryId
             }/budget-item/${expense.budgetItemId}`}
             trip={trip}
+            budgetItems={props.budgetItems}
+            expenses={props.expenses}
           />
-          <ExpenseForm expense={expense} theme={props.theme} />
+          <ExpenseForm
+            expense={expense}
+            theme={props.theme}
+            trip={trip}
+            budgetCategories={props.budgetCategories}
+            budgetItems={props.budgetItems}
+            history={props.history}
+          />
         </div>
       )}
     </div>
   );
 };
 
-export default withRouter(EditExpense);
+const mapStateToProps = (state, props) => {
+  return {
+    trips: state.trips,
+    budgetItems: state.budgetItems,
+    budgetCategories: state.budgetCategories,
+    expenses: state.expenses
+  };
+};
+
+export default connect(mapStateToProps)(EditExpense);

@@ -1,12 +1,23 @@
-export const login = async (state, dispatch) => {
-  let response = await fetch(`http://localhost:3001/auth/current_user`);
-  let data = await response.json();
+import axios from "axios";
 
-  return dispatch({
-    type: "LOGIN",
-    uid: data._id,
-    displayName: data.displayName,
-    email: data.email,
-    photoURL: data.photoURL
-  });
+export const login = (uid, displayName, email, photoURL) => ({
+  type: "LOGIN",
+  uid,
+  displayName,
+  email,
+  photoURL
+});
+
+export const startLogin = () => {
+  return async dispatch => {
+    const res = await axios.get("/auth/current_user");
+    dispatch(
+      login(
+        res.data._id,
+        res.data.displayName,
+        res.data.email,
+        res.data.photoURL
+      )
+    );
+  };
 };

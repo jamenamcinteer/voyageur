@@ -1,42 +1,48 @@
-import React, { useContext } from "react";
-import { Store } from "../../Store";
+import React from "react";
 import Meter from "../Meters/Meter";
 import ButtonLink from "../Buttons/ButtonLink";
 import BudgetCardItem from "./BudgetCardItem";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
+import styled from "styled-components";
+
+const CardBackground = styled.div`
+  background-color: #ffffff;
+  border: 1px solid ${props => props.theme.themeColorSecondary};
+  margin: 20px 0;
+  margin-top: 0;
+  padding: 20px;
+`;
+
+const CardHeader = styled.h3`
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+  margin: 20px 0 5px 0;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Divider = styled.hr`
+  border: 1px solid ${props => props.theme.themeColorSecondary};
+  margin: 20px 0;
+`;
 
 const BudgetCard = props => {
-  const { state } = useContext(Store);
-  const backgroundStyles = {
-    backgroundColor: "#ffffff",
-    border: `1px solid ${props.theme.themeColorSecondary}`,
-    margin: "20px 0",
-    padding: "20px"
-  };
-  const headerStyles = {
-    fontSize: "1.2em",
-    fontFamily: "Roboto",
-    fontWeight: "normal",
-    color: props.theme.darkFont,
-    margin: "20px 0 5px 0",
-    display: "flex",
-    justifyContent: "space-between"
-  };
-
-  const budgetItems = state.budgetItems.filter(
-    bItem => bItem.budgetCategoryId === props.budgetCategory.id
+  const budgetItems = props.budgetItems.filter(
+    bItem => bItem.budgetCategoryId === props.budgetCategory._id
   );
-  const expenses = state.expenses.filter(
-    expense => expense.budgetCategoryId === props.budgetCategory.id
+  const expenses = props.expenses.filter(
+    expense => expense.budgetCategoryId === props.budgetCategory._id
   );
 
   return (
-    <div style={backgroundStyles}>
-      <h3 style={{ ...headerStyles, ...{ marginTop: "0" } }}>
+    <CardBackground>
+      <CardHeader>
         <span>{props.budgetCategory.budgetCategory}</span>
         <ButtonLink
           to={`/trip/${props.budgetCategory.tripId}/budget-category/${
-            props.budgetCategory.id
+            props.budgetCategory._id
           }/edit`}
           theme={props.theme}
           buttonType="link"
@@ -50,30 +56,26 @@ const BudgetCard = props => {
             }
           }}
         />
-      </h3>
+      </CardHeader>
       <Meter
         theme={props.theme}
         actual={useBudgetCalculation("actual", expenses)}
         budgeted={useBudgetCalculation("budgeted", budgetItems)}
       />
-      <hr
-        style={{
-          border: `1px solid ${props.theme.themeColorSecondary}`,
-          margin: "20px 0"
-        }}
-      />
+      <Divider />
       {budgetItems.length > 0 &&
         budgetItems.map(budgetItem => (
           <BudgetCardItem
-            key={budgetItem.id}
+            key={budgetItem._id}
             theme={props.theme}
             budgetItem={budgetItem}
+            expenses={expenses}
           />
         ))}
       <div style={{ textAlign: "center" }}>
         <ButtonLink
           to={`/trip/${props.budgetCategory.tripId}/budget-category/${
-            props.budgetCategory.id
+            props.budgetCategory._id
           }/add-budget-item`}
           buttonText="Add Budget Item"
           buttonType="secondary"
@@ -87,7 +89,7 @@ const BudgetCard = props => {
           }}
         />
       </div>
-    </div>
+    </CardBackground>
   );
 };
 

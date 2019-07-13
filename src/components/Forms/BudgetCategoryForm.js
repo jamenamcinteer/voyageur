@@ -1,11 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Store } from "../../Store";
-import { withRouter } from "react-router-dom";
+import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
 import Textarea from "../FormElements/Textarea";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
-import uniqid from "uniqid";
 import {
   startAddBudgetCategory,
   startEditBudgetCategory,
@@ -17,10 +14,9 @@ import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
 import { Container } from "../StyledComponents/Layout";
 import { MainButtons, ButtonContainer } from "../StyledComponents/Forms";
+import { connect } from "react-redux";
 
 const BudgetCategoryForm = props => {
-  const { state, dispatch } = useContext(Store);
-
   const [budgetCategory, setBudgetCategory] = useState(
     props.budgetCategory ? props.budgetCategory.budgetCategory : ""
   );
@@ -29,8 +25,7 @@ const BudgetCategoryForm = props => {
   );
   const [deleteModal, setDeleteModal] = useState(false);
 
-  // const trips = JSON.parse(localStorage.getItem("trips"));
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
+  const trip = props.trip;
 
   const handleClick = () => {
     if (props.budgetCategory) {
@@ -40,64 +35,54 @@ const BudgetCategoryForm = props => {
         notes
       };
 
-      startEditBudgetCategory(
-        props.budgetCategory.id,
-        updatedBudgetCategory,
-        state,
-        dispatch
+      props.startEditBudgetCategory(
+        props.budgetCategory._id,
+        updatedBudgetCategory
       );
-      props.history.push(`/trip/${props.match.params.id}`);
+      props.history.push(`/trip/${trip._id}`);
     } else {
       const newBudgetCategory = {
-        id: uniqid(),
-        tripId: trip.id,
+        // id: uniqid(),
+        tripId: trip._id,
         budgetCategory,
         notes
       };
 
-      startAddBudgetCategory(newBudgetCategory, state, dispatch);
+      props.startAddBudgetCategory(newBudgetCategory);
 
-      props.history.push(`/trip/${props.match.params.id}`);
+      props.history.push(`/trip/${trip._id}`);
     }
   };
 
   const deleteBudgetCategory = () => {
-    startRemoveBudgetCategory(props.budgetCategory.id, state, dispatch);
+    props.startRemoveBudgetCategory(props.budgetCategory._id);
 
-    state.budgetItems.map(i => {
-      if (i.budgetCategoryId === props.budgetCategory.id)
-        startRemoveBudgetItem(i.id, state, dispatch);
+    props.budgetItems.map(i => {
+      if (i.budgetCategoryId === props.budgetCategory._id)
+        props.startRemoveBudgetItem(i._id);
       return true;
     });
 
-    state.expenses.map(i => {
-      if (i.budgetCategoryId === trip.id)
-        startRemoveExpense(i.id, state, dispatch);
+    props.expenses.map(i => {
+      if (i.budgetCategoryId === trip._id) props.startRemoveExpense(i._id);
       return true;
     });
 
-    props.history.push(`/trip/${props.match.params.id}`);
+    props.history.push(`/trip/${trip._id}`);
   };
 
   return (
     <Container>
       <TextInput
-        theme={props.theme}
         label="Name of Budget Category"
         value={budgetCategory}
         handleChange={setBudgetCategory}
       />
-      <Textarea
-        theme={props.theme}
-        label="Notes"
-        value={notes}
-        handleChange={setNotes}
-      />
+      <Textarea label="Notes" value={notes} handleChange={setNotes} />
       <ButtonContainer showDelete={props.budgetCategory}>
         {props.budgetCategory && (
           <div>
             <Button
-              theme={props.theme}
               handleClick={e => setDeleteModal(true)}
               buttonText="Delete"
               buttonWidth="auto"
@@ -132,7 +117,6 @@ const BudgetCategoryForm = props => {
               </ModalText>
               <MainButtons>
                 <Button
-                  theme={props.theme}
                   handleClick={e => setDeleteModal(false)}
                   buttonText="Cancel"
                   buttonWidth="auto"
@@ -141,7 +125,6 @@ const BudgetCategoryForm = props => {
                   customStyles={{ background: { padding: "10px 0" } }}
                 />
                 <Button
-                  theme={props.theme}
                   handleClick={deleteBudgetCategory}
                   buttonText="Yes, Delete"
                   buttonWidth="auto"
@@ -154,8 +137,7 @@ const BudgetCategoryForm = props => {
         )}
         <MainButtons>
           <ButtonLink
-            theme={props.theme}
-            to={`/trip/${props.match.params.id}`}
+            to={`/trip/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
             buttonType="link"
@@ -163,7 +145,6 @@ const BudgetCategoryForm = props => {
             customStyles={{ background: { padding: "10px 0" } }}
           />
           <Button
-            theme={props.theme}
             buttonText="Save"
             buttonWidth="auto"
             buttonDisplay="inline"
@@ -175,4 +156,16 @@ const BudgetCategoryForm = props => {
   );
 };
 
-export default withRouter(BudgetCategoryForm);
+const mapDispatchToProps = (dispatch, props) => ({
+  startAddBudgetCategory: updates => dispatch(startAddBudgetCategory(updates)),
+  startEditBudgetCategory: (id, updates) =>
+    dispatch(startEditBudgetCategory(id, updates)),
+  startRemoveBudgetCategory: id => dispatch(startRemoveBudgetCategory(id)),
+  startRemoveBudgetItem: id => dispatch(startRemoveBudgetItem(id)),
+  startRemoveExpense: id => dispatch(startRemoveExpense(id))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(BudgetCategoryForm);

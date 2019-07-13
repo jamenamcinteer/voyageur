@@ -1,42 +1,50 @@
-export const startSetTrips = (state, dispatch) => {
-  const trips = JSON.parse(localStorage.getItem("trips"));
-  return dispatch({
-    type: "FETCH_TRIPS",
-    payload: trips
-  });
+import axios from "axios";
+
+export const addTrip = trip => ({
+  type: "ADD_TRIP",
+  trip
+});
+
+export const startAddTrip = trip => {
+  return async dispatch => {
+    const res = await axios.post("/api/trips", trip);
+    dispatch(addTrip(res.data));
+  };
 };
 
-export const startRemoveTrip = (id, state, dispatch) => {
-  localStorage.setItem(
-    "trips",
-    JSON.stringify(state.trips.filter(i => i.id !== id))
-  );
+export const removeTrip = ({ id } = {}) => ({
+  type: "REMOVE_TRIP",
+  id
+});
 
-  return dispatch({
-    type: "DELETE_TRIP",
-    id
-  });
+export const startRemoveTrip = ({ id } = {}) => {
+  return async dispatch => {
+    await axios.delete(`/api/trips/${id}`);
+    dispatch(removeTrip(id));
+  };
 };
 
-export const startEditTrip = (id, updates, state, dispatch) => {
-  let arr = state.trips.filter(i => i.id !== id);
-  arr.push(updates);
-  localStorage.setItem("trips", JSON.stringify(arr));
+export const editTrip = (id, updates) => ({
+  type: "EDIT_TRIP",
+  id,
+  updates
+});
 
-  return dispatch({
-    type: "UPDATE_TRIP",
-    id,
-    updates
-  });
+export const startEditTrip = (id, updates) => {
+  return async dispatch => {
+    await axios.put(`/api/trips/${id}`, updates);
+    dispatch(editTrip(id, updates));
+  };
 };
 
-export const startAddTrip = (data, state, dispatch) => {
-  let arr = state.trips;
-  arr.push(data);
-  localStorage.setItem("trips", JSON.stringify(arr));
+export const setTrips = trips => ({
+  type: "SET_TRIPS",
+  trips
+});
 
-  return dispatch({
-    type: "ADD_TRIP",
-    data
-  });
+export const startSetTrips = () => {
+  return async dispatch => {
+    const res = await axios.get("/api/trips");
+    dispatch(setTrips(res.data));
+  };
 };

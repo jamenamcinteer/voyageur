@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Store } from "../../Store";
+import React from "react";
 import Header from "./Header";
 import Meter from "../Meters/Meter";
 import moment from "moment";
@@ -7,8 +6,6 @@ import {} from "twix";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
 
 const TripHeader = props => {
-  const { state } = useContext(Store);
-
   const subheaderBackgroundStyles = {
     backgroundImage: `url(${
       props.trip.photo
@@ -36,11 +33,11 @@ const TripHeader = props => {
     height: "90px"
   };
 
-  const budgetItems = state.budgetItems.filter(
-    bItem => bItem.tripId === props.trip.id
+  const budgetItems = props.budgetItems.filter(
+    bItem => bItem.tripId === props.trip._id
   );
-  const expenses = state.expenses.filter(
-    expense => expense.tripId === props.trip.id
+  const expenses = props.expenses.filter(
+    expense => expense.tripId === props.trip._id
   );
 
   const actual = useBudgetCalculation("actual", expenses);

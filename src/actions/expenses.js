@@ -1,42 +1,50 @@
-export const startSetExpenses = (state, dispatch) => {
-  const expenses = JSON.parse(localStorage.getItem("expenses"));
-  return dispatch({
-    type: "FETCH_EXPENSES",
-    payload: expenses
-  });
+import axios from "axios";
+
+export const addExpense = expense => ({
+  type: "ADD_EXPENSE",
+  expense
+});
+
+export const startAddExpense = expense => {
+  return async dispatch => {
+    const res = await axios.post("/api/expenses", expense);
+    dispatch(addExpense(res.data));
+  };
 };
 
-export const startRemoveExpense = (id, state, dispatch) => {
-  localStorage.setItem(
-    "expenses",
-    JSON.stringify(state.expenses.filter(i => i.id !== id))
-  );
+export const removeExpense = ({ id } = {}) => ({
+  type: "REMOVE_EXPENSE",
+  id
+});
 
-  return dispatch({
-    type: "DELETE_EXPENSE",
-    id
-  });
+export const startRemoveExpense = ({ id } = {}) => {
+  return async dispatch => {
+    await axios.delete(`/api/expenses/${id}`);
+    dispatch(removeExpense(id));
+  };
 };
 
-export const startEditExpense = (id, updates, state, dispatch) => {
-  let arr = state.expenses.filter(i => i.id !== id);
-  arr.push(updates);
-  localStorage.setItem("expenses", JSON.stringify(arr));
+export const editExpense = (id, updates) => ({
+  type: "EDIT_EXPENSE",
+  id,
+  updates
+});
 
-  return dispatch({
-    type: "UPDATE_EXPENSE",
-    id,
-    updates
-  });
+export const startEditExpense = (id, updates) => {
+  return async dispatch => {
+    await axios.put(`/api/expenses/${id}`, updates);
+    dispatch(editExpense(id, updates));
+  };
 };
 
-export const startAddExpense = (data, state, dispatch) => {
-  let arr = state.expenses;
-  arr.push(data);
-  localStorage.setItem("expenses", JSON.stringify(arr));
+export const setExpenses = expenses => ({
+  type: "SET_EXPENSES",
+  expenses
+});
 
-  return dispatch({
-    type: "ADD_EXPENSE",
-    data
-  });
+export const startSetExpenses = () => {
+  return async dispatch => {
+    const res = await axios.get("/api/expenses");
+    dispatch(setExpenses(res.data));
+  };
 };

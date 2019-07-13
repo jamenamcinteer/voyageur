@@ -4,32 +4,36 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import {} from "twix";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
+import styled from "styled-components";
+
+const CardBackground = styled.div`
+  background-color: #fff;
+  border: 1px solid ${props => props.theme.themeColorSecondary};
+  margin: 20px 0;
+  padding: 20px;
+`;
+
+const CardHeader = styled.h1`
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+`;
+
+const CardSubheader = styled.h2`
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+`;
+
+const CardImageContainer = styled.div`
+  width: calc(100% + 40px);
+  margin: -20px -20px 0 -20px;
+  position: relative;
+`;
 
 const TripCard = props => {
-  const backgroundStyles = {
-    backgroundColor: "#ffffff",
-    border: `1px solid ${props.theme.themeColorSecondary}`,
-    margin: "20px 0",
-    padding: "20px"
-  };
-  const headerStyles = {
-    fontSize: "1.2em",
-    fontFamily: "Roboto",
-    fontWeight: "normal",
-    color: props.theme.darkFont
-  };
-  const subheaderStyles = {
-    fontSize: "1em",
-    fontFamily: "Roboto",
-    fontWeight: "normal",
-    color: props.theme.darkFont
-  };
-  const imageStyles = {
-    width: "calc(100% + 40px)",
-    margin: "-20px -20px 0 -20px",
-    position: "relative"
-  };
-
   const actual = useBudgetCalculation("actual", props.expenses);
   const budgeted = useBudgetCalculation("budgeted", props.budgetItems);
 
@@ -38,8 +42,8 @@ const TripCard = props => {
     .format({ monthFormat: "MMM", dayFormat: "D" });
   return (
     <Link to={props.to} style={{ textDecoration: "none" }}>
-      <div style={backgroundStyles}>
-        <div style={imageStyles}>
+      <CardBackground>
+        <CardImageContainer>
           <img
             src={`${props.photo}&w=333&h=200&fit=crop&crop=focalpoint`}
             alt=""
@@ -58,11 +62,11 @@ const TripCard = props => {
             }}
             dangerouslySetInnerHTML={{ __html: props.photoAttribution }}
           />
-        </div>
-        <h1 style={headerStyles}>{props.destination}</h1>
-        <h2 style={subheaderStyles}>{dates}</h2>
+        </CardImageContainer>
+        <CardHeader>{props.destination}</CardHeader>
+        <CardSubheader>{dates}</CardSubheader>
         <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
-      </div>
+      </CardBackground>
     </Link>
   );
 };

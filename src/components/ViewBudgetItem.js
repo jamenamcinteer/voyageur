@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { Store } from "../Store";
-import { withRouter, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import TripHeader from "./Navigation/TripHeader";
 import { Container } from "./StyledComponents/Layout";
 import ButtonLink from "./Buttons/ButtonLink";
 import styled from "styled-components";
 import useSortDescendingNumerical from "../hooks/useSortDescendingNumerical";
 import moment from "moment";
+import { connect } from "react-redux";
 
 const BudgetItemHeader = styled.h3`
   width: 100%;
@@ -87,20 +87,18 @@ const ExpenseItemNotes = styled.p`
 `;
 
 const ViewBudgetItem = props => {
-  const { state } = useContext(Store);
-
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
+  const trip = props.trips.find(trip => trip._id === props.match.params.id);
 
   // const budgetCategory = state.budgetCategories.find(
   //   budgetCategory => budgetCategory.id === props.match.params.budgetCategoryId
   // );
 
-  const budgetItem = state.budgetItems.find(
-    budgetItem => budgetItem.id === props.match.params.budgetItemId
+  const budgetItem = props.budgetItems.find(
+    budgetItem => budgetItem._id === props.match.params.budgetItemId
   );
 
   const expenses = useSortDescendingNumerical(
-    state.expenses.filter(
+    props.expenses.filter(
       i => i.budgetItemId === props.match.params.budgetItemId
     ),
     "date"
@@ -113,14 +111,16 @@ const ViewBudgetItem = props => {
           <TripHeader
             title="Expenses"
             theme={props.theme}
-            backTo={`/trip/${props.match.params.id}`}
+            backTo={`/trip/${trip._id}`}
             trip={trip}
+            budgetItems={props.budgetItems}
+            expenses={props.expenses}
           />
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
-              to={`/trip/${trip.id}/add-expense?budgetCategory=${
+              to={`/trip/${trip._id}/add-expense?budgetCategory=${
                 props.match.params.budgetCategoryId
-              }&budgetItem=${budgetItem.id}`}
+              }&budgetItem=${budgetItem._id}`}
               buttonText="Add Expense"
               buttonType="primary"
               theme={props.theme}
@@ -139,10 +139,10 @@ const ViewBudgetItem = props => {
             expenses.map(expense => {
               return (
                 <ExpenseItem
-                  key={expense.id}
+                  key={expense._id}
                   to={`/trip/${expense.tripId}/budget-category/${
                     expense.budgetCategoryId
-                  }/budget-item/${expense.budgetItemId}/expense/${expense.id}`}
+                  }/budget-item/${expense.budgetItemId}/expense/${expense._id}`}
                 >
                   <ExpenseItemFirstLine>
                     <ExpenseItemDate>
@@ -164,4 +164,12 @@ const ViewBudgetItem = props => {
   );
 };
 
-export default withRouter(ViewBudgetItem);
+const mapStateToProps = state => {
+  return {
+    trips: state.trips,
+    budgetItems: state.budgetItems,
+    expenses: state.expenses
+  };
+};
+
+export default connect(mapStateToProps)(ViewBudgetItem);

@@ -1,18 +1,13 @@
-import React, { useContext } from "react";
-import { Store } from "../Store";
-import { withRouter } from "react-router-dom";
+import React from "react";
 import TripHeader from "./Navigation/TripHeader";
 import BudgetItemForm from "./Forms/BudgetItemForm";
+import { connect } from "react-redux";
 
 const AddBudgetItem = props => {
-  const { state } = useContext(Store);
+  const trip = props.trips.find(trip => trip._id === props.match.params.id);
 
-  // const trips = JSON.parse(localStorage.getItem("trips"));
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
-  // const budgetCategories = JSON.parse(localStorage.getItem("budgetCategories"));
-
-  const budgetCategory = state.budgetCategories.find(
-    budgetCategory => budgetCategory.id === props.match.params.budgetCategoryId
+  const budgetCategory = props.budgetCategories.find(
+    budgetCategory => budgetCategory._id === props.match.params.budgetCategoryId
   );
 
   return (
@@ -24,12 +19,28 @@ const AddBudgetItem = props => {
             theme={props.theme}
             backTo={`/trip/${props.match.params.id}`}
             trip={trip}
+            budgetItems={props.budgetItems}
+            expenses={props.expenses}
           />
-          <BudgetItemForm theme={props.theme} />
+          <BudgetItemForm
+            theme={props.theme}
+            trip={trip}
+            budgetCategory={budgetCategory}
+            history={props.history}
+          />
         </div>
       )}
     </div>
   );
 };
 
-export default withRouter(AddBudgetItem);
+const mapStateToProps = (state, props) => {
+  return {
+    trips: state.trips,
+    budgetCategories: state.budgetCategories,
+    budgetItems: state.budgetItems,
+    expenses: state.expenses
+  };
+};
+
+export default connect(mapStateToProps)(AddBudgetItem);

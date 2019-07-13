@@ -8,6 +8,10 @@ const bodyParser = require("body-parser");
 var express = require("express");
 var cors = require("cors");
 require("./models/User");
+require("./models/Trip");
+require("./models/BudgetCategory");
+require("./models/BudgetItem");
+require("./models/Expense");
 require("./services/passport");
 
 mongoose.connect(config.get("MONGO_URI"));
@@ -16,9 +20,11 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var whitelist = ["http://localhost"];
+var whitelist = ["http://localhost:3000/", "http://localhost:3001/"];
 var corsOptions = {
   origin: function(origin, callback) {
+    // console.log(origin);
+    // console.log(whitelist.indexOf(origin));
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
@@ -45,6 +51,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+require("./routes/apiRoutes/trips")(app);
+require("./routes/apiRoutes/budgetCategories")(app);
+require("./routes/apiRoutes/budgetItems")(app);
+require("./routes/apiRoutes/expenses")(app);
+require("./routes/apiRoutes/users")(app);
 
 const unsplash = new Unsplash({
   applicationId: config.get("UNSPLASH_APPLICATION_ID"),
@@ -52,7 +63,7 @@ const unsplash = new Unsplash({
   callbackUrl: config.get("UNSPLASH_CALLBACK_URL")
 });
 
-let authenticationUrl = unsplash.auth.getAuthenticationUrl([
+unsplash.auth.getAuthenticationUrl([
   "public",
   "read_photos",
   "read_collections"

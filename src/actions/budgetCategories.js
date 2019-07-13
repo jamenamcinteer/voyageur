@@ -1,42 +1,50 @@
-export const startSetBudgetCategories = (state, dispatch) => {
-  const budgetCategories = JSON.parse(localStorage.getItem("budgetCategories"));
-  return dispatch({
-    type: "FETCH_BUDGET_CATEGORIES",
-    payload: budgetCategories
-  });
+import axios from "axios";
+
+export const addBudgetCategory = budgetCategory => ({
+  type: "ADD_BUDGET_CATEGORY",
+  budgetCategory
+});
+
+export const startAddBudgetCategory = budgetCategory => {
+  return async dispatch => {
+    const res = await axios.post("/api/budgetCategories", budgetCategory);
+    dispatch(addBudgetCategory(res.data));
+  };
 };
 
-export const startRemoveBudgetCategory = (id, state, dispatch) => {
-  localStorage.setItem(
-    "budgetCategories",
-    JSON.stringify(state.budgetCategories.filter(i => i.id !== id))
-  );
+export const removeBudgetCategory = ({ id } = {}) => ({
+  type: "REMOVE_BUDGET_CATEGORY",
+  id
+});
 
-  return dispatch({
-    type: "DELETE_BUDGET_CATEGORY",
-    id
-  });
+export const startRemoveBudgetCategory = ({ id } = {}) => {
+  return async dispatch => {
+    await axios.delete(`/api/budgetCategories/${id}`);
+    dispatch(removeBudgetCategory(id));
+  };
 };
 
-export const startEditBudgetCategory = (id, updates, state, dispatch) => {
-  let arr = state.budgetCategories.filter(i => i.id !== id);
-  arr.push(updates);
-  localStorage.setItem("budgetCategories", JSON.stringify(arr));
+export const editBudgetCategory = (id, updates) => ({
+  type: "EDIT_BUDGET_CATEGORY",
+  id,
+  updates
+});
 
-  return dispatch({
-    type: "UPDATE_BUDGET_CATEGORY",
-    id,
-    updates
-  });
+export const startEditBudgetCategory = (id, updates) => {
+  return async dispatch => {
+    await axios.put(`/api/budgetCategories/${id}`, updates);
+    dispatch(editBudgetCategory(id, updates));
+  };
 };
 
-export const startAddBudgetCategory = (data, state, dispatch) => {
-  let arr = state.budgetCategories;
-  arr.push(data);
-  localStorage.setItem("budgetCategories", JSON.stringify(arr));
+export const setBudgetCategories = budgetCategories => ({
+  type: "SET_BUDGET_CATEGORIES",
+  budgetCategories
+});
 
-  return dispatch({
-    type: "ADD_BUDGET_CATEGORY",
-    data
-  });
+export const startSetBudgetCategories = () => {
+  return async dispatch => {
+    const res = await axios.get("/api/budgetCategories");
+    dispatch(setBudgetCategories(res.data));
+  };
 };

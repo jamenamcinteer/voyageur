@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { Store } from "../Store";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Navigation/Header";
 import ButtonLink from "./Buttons/ButtonLink";
@@ -9,6 +8,7 @@ import moment from "moment";
 import Modal from "react-modal";
 import styled from "styled-components";
 import {} from "twix";
+import { connect } from "react-redux";
 
 Modal.setAppElement("#root");
 
@@ -31,9 +31,11 @@ const ModalLink = styled(Link)`
   margin-right: -20px;
 `;
 
-const Dashboard = props => {
-  const { state } = useContext(Store);
+const DashboardHeader = styled.h4`
+  color: ${props => props.theme.darkFont};
+`;
 
+const Dashboard = props => {
   const [addExpenseModal, setAddExpenseModal] = useState(false);
   const containerStyles = {
     margin: "0 20px"
@@ -53,8 +55,8 @@ const Dashboard = props => {
   let futureTrips = [];
   let pastTrips = [];
   // get all trips in the future from "closest" to "farthest"
-  state.trips &&
-    state.trips.map(trip => {
+  props.trips &&
+    props.trips.map(trip => {
       if (trip.endDate >= moment(today).valueOf()) {
         futureTrips.push(trip);
       }
@@ -62,8 +64,8 @@ const Dashboard = props => {
     });
   futureTrips.sort((a, b) => parseInt(a.endDate) - parseInt(b.endDate));
   // get all trips in the past from "closest" to "farthest"
-  state.trips &&
-    state.trips.map(trip => {
+  props.trips &&
+    props.trips.map(trip => {
       if (trip.endDate < moment(today).valueOf()) {
         pastTrips.push(trip);
       }
@@ -125,9 +127,9 @@ const Dashboard = props => {
       >
         <ModalHeader>Choose a Trip:</ModalHeader>
         {futureTrips.length > 0 &&
-          futureTrips.map(trip => {
+          futureTrips.map((trip, index) => {
             return (
-              <ModalLink to={`/trip/${trip.id}/add-expense`} key={trip.id}>
+              <ModalLink to={`/trip/${trip._id}/add-expense`} key={trip._id}>
                 {trip.destination} ({getDates(trip.startDate, trip.endDate)})
               </ModalLink>
             );
@@ -137,19 +139,19 @@ const Dashboard = props => {
         {/* <h4 style={{ color: props.theme.darkFont }}>Upcoming Trips</h4> */}
         {futureTrips.length > 0 &&
           futureTrips.map(trip => {
-            const budgetItems = state.budgetItems.filter(
-              bItem => bItem.tripId === trip.id
+            const budgetItems = props.budgetItems.filter(
+              bItem => bItem.tripId === trip._id
             );
-            const expenses = state.expenses.filter(
-              expense => expense.tripId === trip.id
+            const expenses = props.expenses.filter(
+              expense => expense.tripId === trip._id
             );
             return (
               <TripCard
-                key={trip.id}
+                key={trip._id}
                 destination={trip.destination}
                 photo={trip.photo}
                 photoAttribution={trip.photoAttribution}
-                to={`/trip/${trip.id}`}
+                to={`/trip/${trip._id}`}
                 startDate={trip.startDate}
                 endDate={trip.endDate}
                 budgetItems={budgetItems}
@@ -158,22 +160,22 @@ const Dashboard = props => {
               />
             );
           })}
-        <h4 style={{ color: props.theme.darkFont }}>Past Trips</h4>
+        <DashboardHeader>Past Trips</DashboardHeader>
         {pastTrips.length > 0 &&
           pastTrips.map(trip => {
-            const budgetItems = state.budgetItems.filter(
-              bItem => bItem.tripId === trip.id
+            const budgetItems = props.budgetItems.filter(
+              bItem => bItem.tripId === trip._id
             );
-            const expenses = state.expenses.filter(
-              expense => expense.tripId === trip.id
+            const expenses = props.expenses.filter(
+              expense => expense.tripId === trip._id
             );
             return (
               <TripCard
-                key={trip.id}
+                key={trip._id}
                 destination={trip.destination}
                 photo={trip.photo}
                 photoAttribution={trip.photoAttribution}
-                to={`/trip/${trip.id}`}
+                to={`/trip/${trip._id}`}
                 startDate={trip.startDate}
                 endDate={trip.endDate}
                 budgetItems={budgetItems}
@@ -187,4 +189,12 @@ const Dashboard = props => {
   );
 };
 
-export default Dashboard;
+const mapStateToProps = state => {
+  return {
+    trips: state.trips,
+    budgetItems: state.budgetItems,
+    expenses: state.expenses
+  };
+};
+
+export default connect(mapStateToProps)(Dashboard);

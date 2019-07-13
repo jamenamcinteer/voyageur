@@ -1,12 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Store } from "../../Store";
-import { withRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import TextInput from "../FormElements/TextInput";
 import Select from "../FormElements/Select";
 import Textarea from "../FormElements/Textarea";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
-import uniqid from "uniqid";
 import { startAddExpense, startEditExpense } from "../../actions/expenses";
 import { startRemoveExpense } from "../../actions/expenses";
 import { Container } from "../StyledComponents/Layout";
@@ -14,10 +11,9 @@ import { ButtonContainer, MainButtons } from "../StyledComponents/Forms";
 import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
 import moment from "moment";
+import { connect } from "react-redux";
 
 const ExpenseForm = props => {
-  const { state, dispatch } = useContext(Store);
-
   const [budgetCategoryId, setBudgetCategoryId] = useState(
     props.expense
       ? props.expense.budgetCategoryId
@@ -46,14 +42,14 @@ const ExpenseForm = props => {
   const [notes, setNotes] = useState(props.expense ? props.expense.notes : "");
   const [deleteModal, setDeleteModal] = useState(false);
 
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
-  const budgetCategories = state.budgetCategories.filter(
-    bCategory => bCategory.tripId === trip.id
+  const trip = props.trip;
+  const budgetCategories = props.budgetCategories.filter(
+    bCategory => bCategory.tripId === trip._id
   );
 
   const budgetCategoryOptions = budgetCategories.map(bCategory => {
     return {
-      value: bCategory.id,
+      value: bCategory._id,
       text: bCategory.budgetCategory
     };
   });
@@ -61,14 +57,14 @@ const ExpenseForm = props => {
   useEffect(() => {
     if (budgetItemId)
       setBudgetItemOptions(
-        state.budgetItems.map(bItem => {
+        props.budgetItems.map(bItem => {
           return {
-            value: bItem.id,
+            value: bItem._id,
             text: bItem.budgetItem
           };
         })
       );
-  }, [state.budgetItems, budgetItemId]);
+  }, [props.budgetItems, budgetItemId]);
 
   const currencyOptions = [
     {
@@ -102,13 +98,12 @@ const ExpenseForm = props => {
         notes
       };
 
-      startEditExpense(props.expense.id, updatedExpense, state, dispatch);
+      props.startEditExpense(props.expense._id, updatedExpense);
 
-      props.history.push(`/trip/${props.match.params.id}`);
+      props.history.push(`/trip/${trip._id}`);
     } else {
       const newExpense = {
-        id: uniqid(),
-        tripId: trip.id,
+        tripId: trip._id,
         budgetCategoryId,
         budgetItemId,
         summary,
@@ -119,23 +114,23 @@ const ExpenseForm = props => {
         notes
       };
 
-      startAddExpense(newExpense, state, dispatch);
+      props.startAddExpense(newExpense);
 
-      props.history.push(`/trip/${props.match.params.id}`);
+      props.history.push(`/trip/${trip._id}`);
     }
   };
 
   const handleBudgetCategoryChange = newValue => {
     setBudgetCategoryId(newValue);
 
-    const budgetItems = state.budgetItems.filter(
+    const budgetItems = props.budgetItems.filter(
       bItem => bItem.budgetCategoryId === newValue
     );
 
     setBudgetItemOptions(
       budgetItems.map(bItem => {
         return {
-          value: bItem.id,
+          value: bItem._id,
           text: bItem.budgetItem
         };
       })
@@ -143,9 +138,9 @@ const ExpenseForm = props => {
   };
 
   const deleteExpense = () => {
-    startRemoveExpense(props.expense.id, state, dispatch);
+    startRemoveExpense(props.expense._id);
 
-    props.history.push(`/trip/${props.match.params.id}`);
+    props.history.push(`/trip/${trip._id}`);
   };
 
   return (
@@ -263,7 +258,7 @@ const ExpenseForm = props => {
         <MainButtons>
           <ButtonLink
             theme={props.theme}
-            to={`/trip/${props.match.params.id}`}
+            to={`/trip/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
             buttonType="link"
@@ -283,4 +278,13 @@ const ExpenseForm = props => {
   );
 };
 
-export default withRouter(ExpenseForm);
+const mapDispatchToProps = (dispatch, props) => ({
+  startAddExpense: updates => dispatch(startAddExpense(updates)),
+  startEditExpense: (id, updates) => dispatch(startEditExpense(id, updates)),
+  startRemoveExpense: id => dispatch(startRemoveExpense(id))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ExpenseForm);

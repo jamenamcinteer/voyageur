@@ -1,10 +1,8 @@
-import React, { useContext, useState } from "react";
-import { withRouter } from "react-router-dom";
+import React, { useState } from "react";
 import TripHeader from "./Navigation/TripHeader";
 import ButtonLink from "./Buttons/ButtonLink";
 import Button from "./Buttons/Button";
 import BudgetCard from "./Cards/BudgetCard";
-import { Store } from "../Store";
 import { startRemoveTrip } from "../actions/trips";
 import { startRemoveBudgetCategory } from "../actions/budgetCategories";
 import { startRemoveBudgetItem } from "../actions/budgetItems";
@@ -14,56 +12,34 @@ import Modal from "react-modal";
 import { ModalText } from "./StyledComponents/Modals";
 import { Container } from "./StyledComponents/Layout";
 import { MainButtons } from "./StyledComponents/Forms";
+import { connect } from "react-redux";
 
 const Trip = props => {
-  const { state, dispatch } = useContext(Store);
-
   const [deleteModal, setDeleteModal] = useState(false);
 
-  // const trips = JSON.parse(localStorage.getItem("trips"));
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
-  // console.log("Trip.js", state.budgetCategories);
+  const trip = props.trips.find(trip => trip._id === props.match.params.id);
   const budgetCategories = useSortAscendingAlphabetical(
-    state.budgetCategories.filter(bCategory => bCategory.tripId === trip.id),
+    props.budgetCategories.filter(bCategory => bCategory.tripId === trip._id),
     "budgetCategory"
   );
 
   const deleteTrip = () => {
-    // TODO: Add a modal to warn about deleting being permanent
-    // let cleanData = [];
-    // let oldTrips = state.trips;
-    // cleanData = oldTrips.filter(i => i.id !== trip.id);
-    // localStorage.setItem("trips", JSON.stringify(cleanData));
+    startRemoveTrip(trip._id);
 
-    startRemoveTrip(trip.id, state, dispatch);
-
-    state.budgetCategories.map(i => {
-      if (i.tripId === trip.id)
-        startRemoveBudgetCategory(i.id, state, dispatch);
+    props.budgetCategories.map(i => {
+      if (i.tripId === trip._id) startRemoveBudgetCategory(i._id);
       return true;
     });
 
-    state.budgetItems.map(i => {
-      if (i.tripId === trip.id) startRemoveBudgetItem(i.id, state, dispatch);
+    props.budgetItems.map(i => {
+      if (i.tripId === trip._id) startRemoveBudgetItem(i._id);
       return true;
     });
 
-    state.expenses.map(i => {
-      if (i.tripId === trip.id) startRemoveExpense(i.id, state, dispatch);
+    props.expenses.map(i => {
+      if (i.tripId === trip._id) startRemoveExpense(i._id);
       return true;
     });
-
-    // let oldBudgetCategories = state.budgetCategories;
-    // cleanData = oldBudgetCategories.filter(i => i.tripId !== trip.id);
-    // localStorage.setItem("budgetCategories", JSON.stringify(cleanData));
-
-    // let oldBudgetItems = state.budgetItems;
-    // cleanData = oldBudgetItems.filter(i => i.tripId !== trip.id);
-    // localStorage.setItem("budgetItems", JSON.stringify(cleanData));
-
-    // let oldExpenses = state.expenses;
-    // cleanData = oldExpenses.filter(i => i.tripId !== trip.id);
-    // localStorage.setItem("expenses", JSON.stringify(cleanData));
 
     props.history.push("/");
   };
@@ -77,10 +53,12 @@ const Trip = props => {
             theme={props.theme}
             backTo="/"
             trip={trip}
+            budgetItems={props.budgetItems}
+            expenses={props.expenses}
           />
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
-              to={`/trip/${trip.id}/add-expense`}
+              to={`/trip/${trip._id}/add-expense`}
               buttonText="Add Expense"
               buttonType="primary"
               theme={props.theme}
@@ -97,18 +75,20 @@ const Trip = props => {
               budgetCategories.map(budgetCategory => {
                 return (
                   <BudgetCard
-                    key={budgetCategory.id}
+                    key={budgetCategory._id}
                     actual={2130}
                     budgeted={3760}
                     theme={props.theme}
                     budgetCategory={budgetCategory}
+                    budgetItems={props.budgetItems}
+                    expenses={props.expenses}
                   />
                 );
               })}
           </Container>
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
-              to={`/trip/${trip.id}/add-budget-category`}
+              to={`/trip/${trip._id}/add-budget-category`}
               buttonText="Add Budget Category"
               buttonType="secondary"
               theme={props.theme}
@@ -121,7 +101,7 @@ const Trip = props => {
             />
             <br />
             <ButtonLink
-              to={`/trip/${trip.id}/edit`}
+              to={`/trip/${trip._id}/edit`}
               buttonText="Edit Trip"
               buttonType="link"
               theme={props.theme}
@@ -197,4 +177,13 @@ const Trip = props => {
   );
 };
 
-export default withRouter(Trip);
+const mapStateToProps = state => {
+  return {
+    trips: state.trips,
+    budgetCategories: state.budgetCategories,
+    budgetItems: state.budgetItems,
+    expenses: state.expenses
+  };
+};
+
+export default connect(mapStateToProps)(Trip);

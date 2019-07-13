@@ -1,8 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Store } from "../../Store";
-import { withRouter } from "react-router-dom";
+import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
-// import Select from "../FormElements/Select";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
 import uniqid from "uniqid";
@@ -20,6 +17,7 @@ import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
 import { Container } from "../StyledComponents/Layout";
 import { MainButtons, ButtonContainer } from "../StyledComponents/Forms";
+import { connect } from "react-redux";
 
 const PhotoOptions = styled.div`
   display: grid;
@@ -70,8 +68,6 @@ const PhotoLabel = styled.h4`
 // `;
 
 const TripForm = props => {
-  const { state, dispatch } = useContext(Store);
-
   const [destination, setDestination] = useState(
     props.trip ? props.trip.destination : ""
   );
@@ -95,9 +91,7 @@ const TripForm = props => {
 
   const getPhoto = async () => {
     if (destination) {
-      let response = await fetch(
-        `http://localhost:3001/photos?keyword=${destination}`
-      );
+      let response = await fetch(`/photos?keyword=${destination}`);
       let data = await response.json();
 
       console.log(data);
@@ -148,16 +142,9 @@ const TripForm = props => {
         photoAttribution
       };
 
-      // let trips = state.trips;
-      // let keepTrips = trips.filter(trip => trip.id !== props.trip.id);
-      // keepTrips.push(updatedTrip);
-      // trips = JSON.stringify(keepTrips);
+      props.startEditTrip(props.trip._id, updatedTrip);
 
-      // localStorage.setItem("trips", trips);
-
-      startEditTrip(props.trip.id, updatedTrip, state, dispatch);
-
-      props.history.push(`/trip/${props.trip.id}`);
+      props.history.push(`/trip/${props.trip._id}`);
     } else {
       const newTrip = {
         id: uniqid(),
@@ -168,36 +155,28 @@ const TripForm = props => {
         photoAttribution
       };
 
-      // let trips = state.trips;
+      console.log(newTrip);
 
-      // trips.push(newTrip);
-
-      // trips = JSON.stringify(trips);
-
-      // localStorage.setItem("trips", trips);
-
-      startAddTrip(newTrip, state, dispatch);
+      props.startAddTrip(newTrip);
 
       props.history.push("/");
     }
   };
   const deleteTrip = () => {
-    startRemoveTrip(props.trip.id, state, dispatch);
+    props.startRemoveTrip(props.trip._id);
 
-    state.budgetCategories.map(i => {
-      if (i.tripId === props.trip.id)
-        startRemoveBudgetCategory(i.id, state, dispatch);
+    props.budgetCategories.map(i => {
+      if (i.tripId === props.trip._id) props.startRemoveBudgetCategory(i._id);
       return true;
     });
 
-    state.budgetItems.map(i => {
-      if (i.tripId === props.trip.id)
-        startRemoveBudgetItem(i.id, state, dispatch);
+    props.budgetItems.map(i => {
+      if (i.tripId === props.trip._id) props.startRemoveBudgetItem(i._id);
       return true;
     });
 
-    state.expenses.map(i => {
-      if (i.tripId === props.trip.id) startRemoveExpense(i.id, state, dispatch);
+    props.expenses.map(i => {
+      if (i.tripId === props.trip._id) props.startRemoveExpense(i._id);
       return true;
     });
 
@@ -345,4 +324,16 @@ const TripForm = props => {
   );
 };
 
-export default withRouter(TripForm);
+const mapDispatchToProps = (dispatch, props) => ({
+  startAddTrip: updates => dispatch(startAddTrip(updates)),
+  startEditTrip: (id, updates) => dispatch(startEditTrip(id, updates)),
+  startRemoveTrip: id => dispatch(startRemoveTrip(id)),
+  startRemoveBudgetCategory: id => dispatch(startRemoveBudgetCategory(id)),
+  startRemoveBudgetItem: id => dispatch(startRemoveBudgetItem(id)),
+  startRemoveExpense: id => dispatch(startRemoveExpense(id))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(TripForm);

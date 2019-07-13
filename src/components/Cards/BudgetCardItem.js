@@ -1,36 +1,35 @@
-import React, { useContext } from "react";
-import { Store } from "../../Store";
+import React from "react";
 import Meter from "../Meters/Meter";
 import ButtonLink from "../Buttons/ButtonLink";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
+import styled from "styled-components";
+
+const CardHeader = styled.h3`
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+  margin: 20px 0 5px 0;
+  display: flex;
+  justify-content: space-between;
+`;
 
 const BudgetCardItem = props => {
-  const { state } = useContext(Store);
-  const headerStyles = {
-    fontSize: "1.2em",
-    fontFamily: "Roboto",
-    fontWeight: "normal",
-    color: props.theme.darkFont,
-    margin: "20px 0 5px 0",
-    display: "flex",
-    justifyContent: "space-between"
-  };
-
-  const expenses = state.expenses.filter(
+  const expenses = props.expenses.filter(
     expense =>
       expense.budgetCategoryId === props.budgetItem.budgetCategoryId &&
-      expense.budgetItemId === props.budgetItem.id
+      expense.budgetItemId === props.budgetItem._id
   );
 
   const actual = useBudgetCalculation("actual", expenses);
   return (
     <div>
-      <h3 style={headerStyles}>
+      <CardHeader>
         <span>{props.budgetItem.budgetItem}</span>
         <ButtonLink
           to={`/trip/${props.budgetItem.tripId}/budget-category/${
             props.budgetItem.budgetCategoryId
-          }/budget-item/${props.budgetItem.id}`}
+          }/budget-item/${props.budgetItem._id}`}
           theme={props.theme}
           buttonType="link"
           buttonText="View Expenses"
@@ -46,7 +45,7 @@ const BudgetCardItem = props => {
         <ButtonLink
           to={`/trip/${props.budgetItem.tripId}/budget-category/${
             props.budgetItem.budgetCategoryId
-          }/budget-item/${props.budgetItem.id}/edit`}
+          }/budget-item/${props.budgetItem._id}/edit`}
           theme={props.theme}
           buttonType="link"
           buttonText="Edit"
@@ -59,7 +58,7 @@ const BudgetCardItem = props => {
             }
           }}
         />
-      </h3>
+      </CardHeader>
       <Meter
         theme={props.theme}
         actual={actual}

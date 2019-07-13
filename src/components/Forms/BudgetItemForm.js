@@ -1,11 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Store } from "../../Store";
-import { withRouter } from "react-router-dom";
+import React, { useState } from "react";
 import TextInput from "../FormElements/TextInput";
 import Textarea from "../FormElements/Textarea";
 import Button from "../Buttons/Button";
 import ButtonLink from "../Buttons/ButtonLink";
-import uniqid from "uniqid";
 import {
   startAddBudgetItem,
   startEditBudgetItem,
@@ -16,10 +13,18 @@ import { Container } from "../StyledComponents/Layout";
 import { ButtonContainer, MainButtons } from "../StyledComponents/Forms";
 import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
+import styled from "styled-components";
+import { connect } from "react-redux";
+
+const BudgetCategoryHeader = styled.h3`
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+`;
 
 const BudgetItemForm = props => {
-  const { state, dispatch } = useContext(Store);
-
   const [budgetItem, setBudgetItem] = useState(
     props.budgetItem ? props.budgetItem.budgetItem : ""
   );
@@ -31,12 +36,8 @@ const BudgetItemForm = props => {
   );
   const [deleteModal, setDeleteModal] = useState(false);
 
-  // const trips = JSON.parse(localStorage.getItem("trips"));
-  const trip = state.trips.find(trip => trip.id === props.match.params.id);
-  // const budgetCategories = JSON.parse(localStorage.getItem("budgetCategories"));
-  const budgetCategory = state.budgetCategories.find(
-    budgetCategory => budgetCategory.id === props.match.params.budgetCategoryId
-  );
+  const trip = props.trip;
+  const budgetCategory = props.budgetCategory;
 
   const handleClick = () => {
     if (props.budgetItem) {
@@ -47,55 +48,41 @@ const BudgetItemForm = props => {
         notes
       };
 
-      startEditBudgetItem(
-        props.budgetItem.id,
-        updatedBudgetItem,
-        state,
-        dispatch
-      );
-      props.history.push(`/trip/${props.match.params.id}`);
+      props.startEditBudgetItem(props.budgetItem._id, updatedBudgetItem);
+      props.history.push(`/trip/${trip._id}`);
     } else {
       const newBudgetItem = {
-        id: uniqid(),
-        tripId: trip.id,
-        budgetCategoryId: budgetCategory.id,
+        tripId: trip._id,
+        budgetCategoryId: budgetCategory._id,
         budgetItem,
         estimatedCost,
         notes
       };
 
-      startAddBudgetItem(newBudgetItem, state, dispatch);
+      props.startAddBudgetItem(newBudgetItem);
 
-      props.history.push(`/trip/${props.match.params.id}`);
+      props.history.push(`/trip/${trip._id}`);
     }
   };
 
   const deleteBudgetItem = () => {
-    startRemoveBudgetItem(props.budgetItem.id, state, dispatch);
+    props.startRemoveBudgetItem(props.budgetItem._id);
 
-    state.expenses.map(i => {
-      if (i.budgetItemId === props.budgetItem.id)
-        startRemoveExpense(i.id, state, dispatch);
+    props.expenses.map(i => {
+      if (i.budgetItemId === props.budgetItem._id)
+        props.startRemoveExpense(i._id);
       return true;
     });
 
-    props.history.push(`/trip/${props.match.params.id}`);
+    props.history.push(`/trip/${trip._id}`);
   };
 
   return (
     <Container>
-      <h3
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          fontFamily: "Roboto, sans-serif",
-          fontWeight: "normal",
-          color: props.theme.darkFont
-        }}
-      >
+      <BudgetCategoryHeader>
         <span>Budget Category: {budgetCategory.budgetCategory}</span>
         <ButtonLink
-          to={`/trip/${props.match.params.id}`}
+          to={`/trip/${trip._id}`}
           theme={props.theme}
           buttonType="link"
           buttonText="Change"
@@ -108,7 +95,7 @@ const BudgetItemForm = props => {
             }
           }}
         />
-      </h3>
+      </BudgetCategoryHeader>
       <TextInput
         theme={props.theme}
         label="Name of Budget Item"
@@ -190,7 +177,7 @@ const BudgetItemForm = props => {
         <MainButtons>
           <ButtonLink
             theme={props.theme}
-            to={`/trip/${props.match.params.id}`}
+            to={`/trip/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
             buttonType="link"
@@ -210,4 +197,15 @@ const BudgetItemForm = props => {
   );
 };
 
-export default withRouter(BudgetItemForm);
+const mapDispatchToProps = (dispatch, props) => ({
+  startAddBudgetItem: updates => dispatch(startAddBudgetItem(updates)),
+  startEditBudgetItem: (id, updates) =>
+    dispatch(startEditBudgetItem(id, updates)),
+  startRemoveBudgetItem: id => dispatch(startRemoveBudgetItem(id)),
+  startRemoveExpense: id => dispatch(startRemoveExpense(id))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(BudgetItemForm);

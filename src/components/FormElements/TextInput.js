@@ -1,33 +1,32 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin: 20px 0;
+`;
+const Label = styled.label`
+  display: block;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: ${props => props.theme.darkFont};
+`;
+
+const Input = styled.input`
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid ${props => props.theme.themeColorSecondary};
+  font-size: 1em;
+  padding: 7px 10px;
+  color: ${props => props.theme.darkFont};
+
+  &:focus {
+    outline: 0;
+    border: 2px solid ${props => props.theme.themeColor};
+  }
+`;
 
 const TextInput = props => {
-  const style = {
-    container: {
-      margin: "20px 0"
-    },
-    label: {
-      display: "block",
-      fontSize: ".8em",
-      fontFamily: "Roboto",
-      fontWeight: "bold",
-      color: props.theme.darkFont
-    },
-    input: {
-      width: "100%",
-      borderRadius: "5px",
-      border: `2px solid ${props.theme.themeColorSecondary}`,
-      fontSize: "1em",
-      padding: "7px 10px",
-      color: props.theme.darkFont
-    },
-    inputFocus: {
-      outline: "0",
-      border: `2px solid ${props.theme.themeColor}`
-    }
-  };
-
-  const [inputStyles, setInputStyles] = useState(style.input);
-
   const ID =
     "_" +
     Math.random()
@@ -37,27 +36,22 @@ const TextInput = props => {
   const [inputValue, setInputValue] = useState(props.value ? props.value : "");
 
   return (
-    <div style={style.container}>
-      <label style={style.label} htmlFor={ID}>
-        {props.label}
-      </label>
-      <input
-        style={inputStyles}
+    <Container>
+      <Label htmlFor={ID}>{props.label}</Label>
+      <Input
         placeholder={props.placeholder}
-        onFocus={e => setInputStyles({ ...style.input, ...style.inputFocus })}
-        onBlur={e => {
-          setInputStyles(style.input);
-          if (props.handleBlur) props.handleBlur();
-        }}
         onChange={e => {
           setInputValue(e.target.value);
           props.handleChange(e.target.value);
+        }}
+        onBlur={e => {
+          props.handleBlur ? props.handleBlur() : void 0;
         }}
         value={inputValue}
         type="text"
         id={ID}
       />
-    </div>
+    </Container>
   );
 };
 

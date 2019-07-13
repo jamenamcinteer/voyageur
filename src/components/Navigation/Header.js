@@ -1,27 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import theme from "../../theme";
+
+const HeaderBackground = styled.div`
+  background-color: ${props => props.theme.themeColorLight};
+  padding: 10px 20px;
+  text-align: center;
+`;
+
+const HeaderText = styled.div`
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: ${props => props.theme.darkFont};
+`;
 
 const Header = props => {
-  const backgroundStyles = {
-    backgroundColor: props.theme.themeColorLight,
-    padding: "10px 20px",
-    textAlign: "center"
-  };
-  const headerStyles = {
-    fontSize: "1.2em",
-    fontFamily: "Roboto",
-    fontWeight: "normal",
-    color: props.theme.darkFont
-  };
   const svgStyles = {
-    fill: props.theme.darkFont,
+    fill: theme.darkFont,
     width: "20px",
     height: "20px",
     float: "left",
-    marginTop: "15px"
+    // marginTop: "15px"
+    marginTop: "2px"
   };
   return (
-    <div style={backgroundStyles}>
+    <HeaderBackground>
       {!props.backHide && (
         <Link to={props.backTo}>
           <svg
@@ -36,8 +41,8 @@ const Header = props => {
           </svg>
         </Link>
       )}
-      <h1 style={headerStyles}>{props.title}</h1>
-    </div>
+      <HeaderText>{props.title}</HeaderText>
+    </HeaderBackground>
   );
 };
 

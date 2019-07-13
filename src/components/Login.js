@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
-import { Store } from "../Store";
-import { Link } from "react-router-dom";
+// import React, { useContext, useState } from "react";
+import React from "react";
+// import { Store } from "../Store";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {} from "twix";
 import ButtonLink from "./Buttons/ButtonLink";
@@ -29,7 +30,7 @@ const AppSubtitle = styled.h2`
 `;
 
 const Login = props => {
-  const { state } = useContext(Store);
+  // const { state } = useContext(Store);
 
   return (
     <div>
