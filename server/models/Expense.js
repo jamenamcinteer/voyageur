@@ -10,7 +10,8 @@ const expenseSchema = new Schema({
   currency: String,
   notes: String,
   originalCost: String,
-  summary: String
+  summary: String,
+  uid: String
 });
 
 mongoose.model("expenses", expenseSchema);

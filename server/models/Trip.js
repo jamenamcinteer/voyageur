@@ -6,7 +6,8 @@ const tripSchema = new Schema({
   endDate: Number,
   startDate: Number,
   photo: String,
-  photoAttribution: String
+  photoAttribution: String,
+  uid: String
 });
 
 mongoose.model("trips", tripSchema);

@@ -6,7 +6,8 @@ const budgetItemSchema = new Schema({
   tripId: String,
   budgetItem: String,
   estimatedCost: String,
-  notes: String
+  notes: String,
+  uid: String
 });
 
 mongoose.model("budgetItems", budgetItemSchema);
