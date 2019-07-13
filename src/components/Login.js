@@ -19,7 +19,7 @@ const App = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("login-background.jpg");
+    background-image: url("/login-background.jpg");
     background-size: cover;
     background-position: top left;
     filter: blur(1px) brightness(90%) grayscale(50%) sepia(10%);

@@ -9,6 +9,7 @@ import Modal from "react-modal";
 import styled from "styled-components";
 import {} from "twix";
 import { connect } from "react-redux";
+// import { Container } from "./StyledComponents/Layout";
 
 Modal.setAppElement("#root");
 
@@ -27,25 +28,46 @@ const ModalLink = styled(Link)`
   margin-right: -20px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px;
+`;
+
+const Container0Top = styled.div`
+  margin: 0 20px;
+`;
+
+const OneButtonContainer = styled.div`
+  height: calc(100vh - 23px);
+  width: 100vw;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/dashboard-background.jpg");
+    background-size: cover;
+    background-position: top right;
+    filter: blur(1px) brightness(40%) grayscale(50%) sepia(10%);
+  }
+`;
+
 const DashboardHeader = styled.h4``;
 
 const Dashboard = props => {
   const [addExpenseModal, setAddExpenseModal] = useState(false);
-  const containerStyles = {
-    margin: "0 20px"
-  };
-  const buttonContainerStyles = {
-    display: "flex",
-    justifyContent: "space-between",
-    margin: "20px 10px"
-  };
-
-  // const rawTrips = JSON.parse(localStorage.getItem("trips"));
-  // trips.sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
 
   const today = new Date();
 
-  // let trips = [];
   let futureTrips = [];
   let pastTrips = [];
   // get all trips in the future from "closest" to "farthest"
@@ -67,12 +89,6 @@ const Dashboard = props => {
     });
   pastTrips.sort((a, b) => parseInt(b.endDate) - parseInt(a.endDate));
 
-  // const allTrips = [...futureTrips, ...pastTrips];
-
-  // React.useEffect(() => {
-  //   console.log(state.trips);
-  // }, [state.trips]);
-
   const getDates = (startDate, endDate) => {
     return moment(startDate)
       .twix(endDate, { allDay: true })
@@ -82,103 +98,127 @@ const Dashboard = props => {
   return (
     <div>
       <Header title="My Trips" theme={props.theme} backHide={true} />
-      <div style={{ ...containerStyles, ...buttonContainerStyles }}>
-        <ButtonLink
-          to="/trip/add"
-          buttonText="Add a Trip"
-          buttonType="secondary"
-          buttonWidth="50%"
-          theme={props.theme}
-        />
-        <Button
-          handleClick={e => setAddExpenseModal(true)}
-          buttonText="Add Expense"
-          buttonType="primary"
-          buttonWidth="50%"
-          theme={props.theme}
-        />
-      </div>
-      <Modal
-        isOpen={addExpenseModal}
-        onRequestClose={e => setAddExpenseModal(false)}
-        contentLabel="Add Expense Modal"
-        style={{
-          overlay: {
-            backgroundColor: "rgba(0,0,0,.5)"
-          },
-          content: {
-            borderRadius: "0",
-            minHeight: "20vh",
-            maxHeight: "40vh",
-            overflowY: "auto",
-            width: "80vw",
-            top: "30vh",
-            left: "10vw",
-            right: "auto",
-            bottom: "auto"
-          }
-        }}
-      >
-        <ModalHeader>Choose a Trip:</ModalHeader>
-        {futureTrips.length > 0 &&
-          futureTrips.map((trip, index) => {
-            return (
-              <ModalLink to={`/trip/${trip._id}/add-expense`} key={trip._id}>
-                {trip.destination} ({getDates(trip.startDate, trip.endDate)})
-              </ModalLink>
-            );
-          })}
-      </Modal>
-      <div style={containerStyles}>
-        {/* <h4>Upcoming Trips</h4> */}
-        {futureTrips.length > 0 &&
-          futureTrips.map(trip => {
-            const budgetItems = props.budgetItems.filter(
-              bItem => bItem.tripId === trip._id
-            );
-            const expenses = props.expenses.filter(
-              expense => expense.tripId === trip._id
-            );
-            return (
-              <TripCard
-                key={trip._id}
-                destination={trip.destination}
-                photo={trip.photo}
-                photoAttribution={trip.photoAttribution}
-                to={`/trip/${trip._id}`}
-                startDate={trip.startDate}
-                endDate={trip.endDate}
-                budgetItems={budgetItems}
-                expenses={expenses}
-                theme={props.theme}
-              />
-            );
-          })}
-        <DashboardHeader>Past Trips</DashboardHeader>
-        {pastTrips.length > 0 &&
-          pastTrips.map(trip => {
-            const budgetItems = props.budgetItems.filter(
-              bItem => bItem.tripId === trip._id
-            );
-            const expenses = props.expenses.filter(
-              expense => expense.tripId === trip._id
-            );
-            return (
-              <TripCard
-                key={trip._id}
-                destination={trip.destination}
-                photo={trip.photo}
-                photoAttribution={trip.photoAttribution}
-                to={`/trip/${trip._id}`}
-                startDate={trip.startDate}
-                endDate={trip.endDate}
-                budgetItems={budgetItems}
-                expenses={expenses}
-                theme={props.theme}
-              />
-            );
-          })}
-      </div>
+      {props.trips.length > 0 && (
+        <div>
+          <ButtonContainer>
+            <ButtonLink
+              to="/trip/add"
+              buttonText="Add a Trip"
+              buttonType="secondary"
+              buttonWidth="50%"
+              theme={props.theme}
+            />
+            <Button
+              handleClick={e => setAddExpenseModal(true)}
+              buttonText="Add Expense"
+              buttonType="primary"
+              buttonWidth="50%"
+              theme={props.theme}
+            />
+          </ButtonContainer>
+          <Modal
+            isOpen={addExpenseModal}
+            onRequestClose={e => setAddExpenseModal(false)}
+            contentLabel="Add Expense Modal"
+            style={{
+              overlay: {
+                backgroundColor: "rgba(0,0,0,.5)"
+              },
+              content: {
+                borderRadius: "0",
+                minHeight: "20vh",
+                maxHeight: "40vh",
+                overflowY: "auto",
+                width: "80vw",
+                top: "30vh",
+                left: "10vw",
+                right: "auto",
+                bottom: "auto"
+              }
+            }}
+          >
+            <ModalHeader>Choose a Trip:</ModalHeader>
+            {futureTrips.length > 0 &&
+              futureTrips.map((trip, index) => {
+                return (
+                  <ModalLink
+                    to={`/trip/${trip._id}/add-expense`}
+                    key={trip._id}
+                  >
+                    {trip.destination} ({getDates(trip.startDate, trip.endDate)}
+                    )
+                  </ModalLink>
+                );
+              })}
+          </Modal>
+          <Container0Top>
+            {/* <h4>Upcoming Trips</h4> */}
+            {futureTrips.length > 0 &&
+              futureTrips.map(trip => {
+                const budgetItems = props.budgetItems.filter(
+                  bItem => bItem.tripId === trip._id
+                );
+                const expenses = props.expenses.filter(
+                  expense => expense.tripId === trip._id
+                );
+                return (
+                  <TripCard
+                    key={trip._id}
+                    destination={trip.destination}
+                    photo={trip.photo}
+                    photoAttribution={trip.photoAttribution}
+                    to={`/trip/${trip._id}`}
+                    startDate={trip.startDate}
+                    endDate={trip.endDate}
+                    budgetItems={budgetItems}
+                    expenses={expenses}
+                    theme={props.theme}
+                  />
+                );
+              })}
+            {pastTrips.length > 0 && (
+              <DashboardHeader>Past Trips</DashboardHeader>
+            )}
+            {pastTrips.length > 0 &&
+              pastTrips.map(trip => {
+                const budgetItems = props.budgetItems.filter(
+                  bItem => bItem.tripId === trip._id
+                );
+                const expenses = props.expenses.filter(
+                  expense => expense.tripId === trip._id
+                );
+                return (
+                  <TripCard
+                    key={trip._id}
+                    destination={trip.destination}
+                    photo={trip.photo}
+                    photoAttribution={trip.photoAttribution}
+                    to={`/trip/${trip._id}`}
+                    startDate={trip.startDate}
+                    endDate={trip.endDate}
+                    budgetItems={budgetItems}
+                    expenses={expenses}
+                    theme={props.theme}
+                  />
+                );
+              })}
+          </Container0Top>
+        </div>
+      )}
+      {props.trips.length === 0 && (
+        <OneButtonContainer>
+          <div style={{ position: "relative", width: "100%" }}>
+            <ButtonLink
+              to="/trip/add"
+              buttonText="Add a Trip"
+              buttonType="primary"
+              customStyles={{
+                text: { fontSize: "1.5em" }
+              }}
+            />
+          </div>
+        </OneButtonContainer>
+      )}
     </div>
   );
 };
