@@ -20,9 +20,9 @@ export const setUsers = users => ({
   users
 });
 
-export const startSetUsers = () => {
+export const startSetUsers = id => {
   return async (dispatch, getState) => {
-    const res = await axios.get("/api/users");
+    const res = await axios.get(`/api/users/${id}`);
     dispatch(setUsers(res.data));
   };
 };
