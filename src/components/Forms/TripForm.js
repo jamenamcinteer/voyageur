@@ -52,9 +52,7 @@ const FigCaption = styled.figcaption`
 
 const PhotoLabel = styled.h4`
   font-size: 0.8em;
-  font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: ${props => props.theme.darkFont};
 `;
 
 // const Container = styled.div`

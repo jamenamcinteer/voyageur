@@ -8,9 +8,7 @@ const Container = styled.div`
 const Label = styled.label`
   display: block;
   font-size: 0.8em;
-  font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: ${props => props.theme.darkFont};
 `;
 
 const StyledSelect = styled.select`
@@ -19,7 +17,6 @@ const StyledSelect = styled.select`
   border: 2px solid ${props => props.theme.themeColorSecondary};
   font-size: 1em;
   padding: 7px 10px;
-  color: ${props => props.theme.darkFont};
 
   &:focus {
     outline: 0;

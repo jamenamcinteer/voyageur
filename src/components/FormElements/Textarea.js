@@ -8,9 +8,7 @@ const Container = styled.div`
 const Label = styled.label`
   display: block;
   font-size: 0.8em;
-  font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: ${props => props.theme.darkFont};
 `;
 
 const StyledTextarea = styled.textarea`
@@ -18,9 +16,7 @@ const StyledTextarea = styled.textarea`
   border-radius: 5px;
   border: 2px solid ${props => props.theme.themeColorSecondary};
   font-size: 1em;
-  font-family: "Roboto", sans-serif;
   padding: 7px 10px;
-  color: ${props => props.theme.darkFont};
   height: 75px;
 
   &:focus {

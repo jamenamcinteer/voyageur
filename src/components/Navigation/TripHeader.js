@@ -20,7 +20,6 @@ const TripHeader = props => {
     padding: "0 20px",
     color: "#fff",
     fontSize: "1em",
-    fontFamily: "Roboto, sans-serif",
     fontWeight: "normal",
     position: "absolute",
     width: "100%",

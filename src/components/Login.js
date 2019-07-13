@@ -33,12 +33,10 @@ const AppContainer = styled.div`
 
 const AppTitle = styled.h1`
   color: #fff;
-  font-family: "Roboto", sans-serif;
 `;
 
 const AppSubtitle = styled.h2`
   color: #fff;
-  font-family: "Roboto", sans-serif;
 `;
 
 const Login = props => {

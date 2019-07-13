@@ -11,9 +11,7 @@ const HeaderBackground = styled.div`
 
 const HeaderText = styled.div`
   font-size: 1.2em;
-  font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color: ${props => props.theme.darkFont};
 `;
 
 const Header = props => {

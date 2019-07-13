@@ -19,9 +19,7 @@ import { connect } from "react-redux";
 const BudgetCategoryHeader = styled.h3`
   display: flex;
   justify-content: space-between;
-  font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color: ${props => props.theme.darkFont};
 `;
 
 const BudgetItemForm = props => {

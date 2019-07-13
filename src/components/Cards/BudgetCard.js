@@ -15,9 +15,7 @@ const CardBackground = styled.div`
 
 const CardHeader = styled.h3`
   font-size: 1.2em;
-  font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color: ${props => props.theme.darkFont};
   margin: 20px 0 5px 0;
   display: flex;
   justify-content: space-between;

@@ -11,8 +11,6 @@ import { connect } from "react-redux";
 const BudgetItemHeader = styled.h3`
   width: 100%;
   background: ${props => props.theme.themeColorSecondaryLight};
-  color: ${props => props.theme.darkFont};
-  font-family: "Roboto", sans-serif;
   font-size: 1.2em;
   font-weight: normal;
   text-align: center;
@@ -25,7 +23,6 @@ const BudgetItemNotes = styled.p`
   margin: 0;
   padding: 5px 20px;
   color: ${props => props.theme.lightFont};
-  font-family: "Roboto", sans-serif;
   font-size: 1em;
   font-style: italic;
 `;
@@ -34,8 +31,6 @@ const ExpenseItem = styled(Link)`
   border-bottom: 1px solid ${props => props.theme.themeColorSecondary};
   display: block;
   padding: 10px 20px;
-  color: ${props => props.theme.darkFont};
-  font-family: "Roboto", sans-serif;
   font-size: 1.2em;
   font-weight: normal;
   text-decoration: none;
@@ -55,21 +50,18 @@ const ExpenseItemSecondLine = styled.div`
 
 const ExpenseItemDate = styled.div`
   color: ${props => props.theme.lightFont};
-  font-family: "Roboto", sans-serif;
   font-size: 0.8em;
   font-weight: normal;
 `;
 
 const ExpenseItemEdit = styled.div`
   color: ${props => props.theme.themeColor};
-  font-family: "Roboto", sans-serif;
   font-size: 0.8em;
   font-weight: normal;
   text-decoration: underline;
 `;
 
 const ExpenseItemSummary = styled.h4`
-  font-family: "Roboto", sans-serif;
   font-size: 1em;
   font-weight: normal;
   margin: 0;
@@ -79,7 +71,6 @@ const ExpenseItemCost = styled.div``;
 
 const ExpenseItemNotes = styled.p`
   color: ${props => props.theme.lightFont};
-  font-family: "Roboto", sans-serif;
   font-size: 0.8em;
   font-weight: normal;
   font-style: italic;

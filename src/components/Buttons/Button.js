@@ -50,7 +50,6 @@ const StyledButtonText = styled.span.attrs(props => ({
       : "none"
 }))`
   font-size: 1em;
-  font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: ${props => props.color};
   text-decoration: ${props => props.textdecoration};

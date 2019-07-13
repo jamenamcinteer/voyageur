@@ -13,17 +13,13 @@ import { connect } from "react-redux";
 Modal.setAppElement("#root");
 
 const ModalHeader = styled.h3`
-  font-family: "Roboto", sans-serif;
   font-size: 1em;
   font-weight: normal;
-  color: ${props => props.theme.darkFont};
   margin-top: 0;
 `;
 
 const ModalLink = styled(Link)`
   display: block;
-  color: ${props => props.theme.darkFont};
-  font-family: "Roboto", sans-serif;
   padding: 10px 20px;
   border-top: 1px solid ${props => props.theme.themeColorSecondary};
   text-decoration: none;
@@ -31,9 +27,7 @@ const ModalLink = styled(Link)`
   margin-right: -20px;
 `;
 
-const DashboardHeader = styled.h4`
-  color: ${props => props.theme.darkFont};
-`;
+const DashboardHeader = styled.h4``;
 
 const Dashboard = props => {
   const [addExpenseModal, setAddExpenseModal] = useState(false);
@@ -136,7 +130,7 @@ const Dashboard = props => {
           })}
       </Modal>
       <div style={containerStyles}>
-        {/* <h4 style={{ color: props.theme.darkFont }}>Upcoming Trips</h4> */}
+        {/* <h4>Upcoming Trips</h4> */}
         {futureTrips.length > 0 &&
           futureTrips.map(trip => {
             const budgetItems = props.budgetItems.filter(
