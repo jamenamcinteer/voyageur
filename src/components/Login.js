@@ -52,12 +52,12 @@ const Login = props => {
             buttonType="primary"
             customStyles={{ background: { display: "inline-block" } }}
           />
-          <ButtonA
+          {/* <ButtonA
             to="/auth/facebook"
             buttonText="Sign In with Facebook"
             buttonType="primary"
             customStyles={{ background: { display: "inline-block" } }}
-          />
+          /> */}
         </AppContainer>
       </App>
     </div>
