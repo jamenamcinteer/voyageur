@@ -1,7 +1,7 @@
 import config from "universal-config";
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-// const FacebookStrategy = require("passport-facebook").Strategy;
+const FacebookStrategy = require("passport-facebook").Strategy;
 const mongoose = require("mongoose");
 
 const User = mongoose.model("users");
@@ -43,14 +43,29 @@ passport.use(
   )
 );
 
-// passport.use(
-//   new FacebookStrategy(
-//     {
-//       clientID: config.get("FACEBOOK_CLIENT_ID"),
-//       clientSecret: config.get("FACEBOOK_CLIENT_SECRET"),
-//       callbackURL: "/auth/facebook/callback",
-//       profileFields: ["id", "displayName", "email", "profile_pic"]
-//     },
-//     function(accessToken, refreshToken, profile, done) {}
-//   )
-// );
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: config.get("FACEBOOK_CLIENT_ID"),
+      clientSecret: config.get("FACEBOOK_CLIENT_SECRET"),
+      callbackURL: "/auth/facebook/callback",
+      profileFields: ["id", "displayName", "email", "picture"]
+    },
+    (accessToken, refreshToken, profile, done) => {
+      User.findOne({ facebookId: profile.id }).then(existingUser => {
+        if (existingUser) {
+          done(null, existingUser);
+        } else {
+          new User({
+            facebookId: profile.id,
+            displayName: profile.displayName,
+            email: profile.email ? profile.email : "",
+            photoURL: profile.photos ? profile.photos[0].value : ""
+          })
+            .save()
+            .then(user => done(null, user));
+        }
+      });
+    }
+  )
+);

@@ -50,6 +50,13 @@ const Login = props => {
             to="/auth/google"
             buttonText="Sign In with Google"
             buttonType="primary"
+            customStyles={{ background: { display: "inline-block" } }}
+          />
+          <ButtonLink
+            to="/auth/facebook"
+            buttonText="Sign In with Facebook"
+            buttonType="primary"
+            customStyles={{ background: { display: "inline-block" } }}
           />
         </AppContainer>
       </App>
