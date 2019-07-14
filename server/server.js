@@ -89,16 +89,16 @@ app.get("/photos", function(req, res) {
 });
 
 //production mode
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "..", "build"))); //
-  app.get("/*", (req, res) => {
-    res.sendfile(path.join((__dirname, "..", "build/index.html")));
-  });
-} else {
-  //build mode
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public/index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+app.use(express.static(path.join(__dirname, "..", "build"))); //
+app.get("/*", (req, res) => {
+  res.sendfile(path.join((__dirname, "..", "build/index.html")));
+});
+// } else {
+//   //build mode
+//   app.get("/*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "..", "public/index.html"));
+//   });
+// }
 
 app.listen(process.env.PORT || 3001, function() {});
