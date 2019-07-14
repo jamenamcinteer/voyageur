@@ -94,10 +94,11 @@ if (process.env.NODE_ENV === "production") {
   app.get("/*", (req, res) => {
     res.sendfile(path.join((__dirname, "..", "build/index.html")));
   });
+} else {
+  //build mode
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/index.html"));
+  });
 }
-//build mode
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public/index.html"));
-});
 
 app.listen(process.env.PORT || 3001, function() {});
