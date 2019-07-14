@@ -40,7 +40,20 @@ app.get("/", function(req, res) {
 });
 
 const publicPath = path.join(__dirname, "..", "public");
+
 app.use(express.static(publicPath));
+//production mode
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "..", "build"))); //
+  app.get("*", (req, res) => {
+    res.sendfile(path.join((__dirname, "..", "build/index.html")));
+  });
+}
+//build mode
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public/index.html"));
+});
+
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days before it expires
