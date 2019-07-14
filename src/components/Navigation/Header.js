@@ -38,6 +38,7 @@ const ProfileMenu = styled.div`
   width: calc(100vw - 50px);
   height: calc(100vh - 69px);
   box-shadow: -3px 3px 4px 2px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
 `;
 const ProfileMenuLink = styled.a`
   color: ${props => props.theme.darkFont};

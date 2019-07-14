@@ -9,7 +9,7 @@ import styled from "styled-components";
 const CardBackground = styled.div`
   background-color: #fff;
   border: 1px solid ${props => props.theme.themeColorSecondary};
-  margin: 20px 0;
+  // margin: 20px 0;
   padding: 20px;
 `;
 
