@@ -51,7 +51,7 @@
     "server-build": "babel server -d dist",
     "server": "node dist/index.js",
     "dev": "concurrently \"yarn run server-start\" \"yarn run start\"",
-    "heroku-postbuild": "yarn server-start && yarn build"
+    "heroku-postbuild": "concurrently \"yarn run server-start\" \"yarn run build\""
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
