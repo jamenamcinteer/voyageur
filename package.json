@@ -54,6 +54,7 @@
     "server-build": "babel server -d dist",
     "server": "node dist/index.js",
     "start": "yarn run server",
+    "dev": "concurrently \"yarn server-watch\" \"yarn client-start\"",
     "heroku-postbuild": "yarn server-build && yarn build"
   },
   "proxy": "http://localhost:3001",

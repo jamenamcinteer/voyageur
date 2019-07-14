@@ -42,17 +42,6 @@ app.use(cors(corsOptions));
 const publicPath = path.join(__dirname, "..", "public");
 
 app.use(express.static(publicPath));
-//production mode
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "..", "build"))); //
-  app.get("/", (req, res) => {
-    res.sendfile(path.join((__dirname, "..", "build/index.html")));
-  });
-}
-//build mode
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public/index.html"));
-});
 
 app.use(
   cookieSession({
@@ -97,6 +86,18 @@ app.get("/photos", function(req, res) {
       // console.log(json);
       res.send(json);
     });
+});
+
+//production mode
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "..", "build"))); //
+  app.get("/*", (req, res) => {
+    res.sendfile(path.join((__dirname, "..", "build/index.html")));
+  });
+}
+//build mode
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public/index.html"));
 });
 
 app.listen(3001, function() {});
