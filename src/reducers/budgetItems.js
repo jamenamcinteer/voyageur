@@ -1,6 +1,6 @@
 // Budget Items Reducer
 
-const budgetItemsReducerDefaultState = [];
+export const budgetItemsReducerDefaultState = [];
 
 export default (state = budgetItemsReducerDefaultState, action) => {
   switch (action.type) {

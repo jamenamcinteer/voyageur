@@ -1,6 +1,6 @@
 // Users Reducer
 
-const usersReducerDefaultState = [];
+export const usersReducerDefaultState = [];
 
 export default (state = usersReducerDefaultState, action) => {
   switch (action.type) {
