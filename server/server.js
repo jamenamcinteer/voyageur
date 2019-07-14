@@ -39,10 +39,6 @@ app.use(cors(corsOptions));
 //   res.send("Hello World!");
 // });
 
-const publicPath = path.join(__dirname, "..", "public");
-
-app.use(express.static(publicPath));
-
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days before it expires
@@ -89,16 +85,17 @@ app.get("/photos", function(req, res) {
 });
 
 //production mode
-// if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.join(__dirname, "..", "build"))); //
-app.get("/*", (req, res) => {
-  res.sendfile(path.join((__dirname, "..", "build/index.html")));
-});
-// } else {
-//   //build mode
-//   app.get("/*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "..", "public/index.html"));
-//   });
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "..", "build"))); //
+  app.get("/*", (req, res) => {
+    res.sendfile(path.join((__dirname, "..", "build/index.html")));
+  });
+} else {
+  //build mode
+  app.use(express.static(path.join(__dirname, "..", "public")));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/index.html"));
+  });
+}
 
 app.listen(process.env.PORT || 3001, function() {});
