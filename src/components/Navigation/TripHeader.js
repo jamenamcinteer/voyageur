@@ -54,6 +54,7 @@ const TripHeader = props => {
             title={props.title}
             theme={props.theme}
             backTo={props.backTo}
+            auth={props.auth}
           />
           <div style={{ position: "relative" }}>
             <div style={subheaderBackgroundStyles} />

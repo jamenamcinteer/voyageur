@@ -17,6 +17,7 @@ const EditTrip = props => {
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}
+            auth={props.auth}
           />
           <TripForm theme={props.theme} trip={trip} history={props.history} />
         </div>
@@ -29,7 +30,8 @@ const mapStateToProps = (state, props) => {
   return {
     trips: state.trips,
     budgetItems: state.budgetItems,
-    expenses: state.expenses
+    expenses: state.expenses,
+    auth: state.auth
   };
 };
 

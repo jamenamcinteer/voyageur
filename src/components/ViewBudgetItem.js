@@ -106,6 +106,7 @@ const ViewBudgetItem = props => {
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}
+            auth={props.auth}
           />
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
@@ -159,7 +160,8 @@ const mapStateToProps = state => {
   return {
     trips: state.trips,
     budgetItems: state.budgetItems,
-    expenses: state.expenses
+    expenses: state.expenses,
+    auth: state.auth
   };
 };
 

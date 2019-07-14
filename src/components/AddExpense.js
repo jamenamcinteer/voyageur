@@ -20,6 +20,7 @@ const AddExpense = props => {
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}
+            auth={props.auth}
           />
           <ExpenseForm
             theme={props.theme}
@@ -41,7 +42,8 @@ const mapStateToProps = (state, props) => {
     trips: state.trips,
     budgetItems: state.budgetItems,
     budgetCategories: state.budgetCategories,
-    expenses: state.expenses
+    expenses: state.expenses,
+    auth: state.auth
   };
 };
 

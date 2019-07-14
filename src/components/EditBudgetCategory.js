@@ -20,6 +20,7 @@ const EditBudgetCategory = props => {
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}
+            auth={props.auth}
           />
           <BudgetCategoryForm
             theme={props.theme}
@@ -38,7 +39,8 @@ const mapStateToProps = (state, props) => {
     trips: state.trips,
     budgetCategories: state.budgetCategories,
     budgetItems: state.budgetItems,
-    expenses: state.expenses
+    expenses: state.expenses,
+    auth: state.auth
   };
 };
 

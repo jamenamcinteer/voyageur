@@ -17,6 +17,7 @@ const AddBudgetCategory = props => {
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}
+            auth={props.auth}
           />
           <BudgetCategoryForm
             theme={props.theme}
@@ -33,7 +34,8 @@ const mapStateToProps = (state, props) => {
   return {
     trips: state.trips,
     budgetItems: state.budgetItems,
-    expenses: state.expenses
+    expenses: state.expenses,
+    auth: state.auth
   };
 };
 
