@@ -44,7 +44,7 @@ const Container0Top = styled.div`
 `;
 
 const OneButtonContainer = styled.div`
-  height: calc(100vh - 23px);
+  height: calc(100vh - 69px);
   width: 100vw;
   padding: 70px;
   display: flex;
@@ -102,7 +102,12 @@ const Dashboard = props => {
 
   return (
     <div>
-      <Header title="My Trips" theme={props.theme} backHide={true} />
+      <Header
+        title="My Trips"
+        theme={props.theme}
+        auth={props.auth}
+        backHide={true}
+      />
       {props.trips.length > 0 && (
         <div>
           <ButtonContainer>
@@ -232,7 +237,8 @@ const mapStateToProps = state => {
   return {
     trips: state.trips,
     budgetItems: state.budgetItems,
-    expenses: state.expenses
+    expenses: state.expenses,
+    auth: state.auth
   };
 };
 
