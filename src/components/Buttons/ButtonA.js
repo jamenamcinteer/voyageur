@@ -29,6 +29,13 @@ const StyledLink = styled.a.attrs(props => ({
   display: block;
   text-align: center;
   margin: 10px;
+
+  &:active {
+    transform: ${props =>
+      props.buttontype === "primary" || props.buttontype === "secondary"
+        ? "translateY(2px)"
+        : "translateY(0)"};
+  }
 `;
 
 const StyledLinkText = styled.span.attrs(props => ({

@@ -61,10 +61,10 @@ const TripForm = props => {
     props.trip ? props.trip.destination : ""
   );
   const [startDate, setStartDate] = useState(
-    props.trip ? moment(props.trip.startDate).format("MM/DD/YY") : null
+    props.trip ? moment(props.trip.startDate) : null
   );
   const [endDate, setEndDate] = useState(
-    props.trip ? moment(props.trip.endDate).format("MM/DD/YY") : null
+    props.trip ? moment(props.trip.endDate) : null
   );
   const [photo, setPhoto] = useState(props.trip ? props.trip.photo : "");
   const [photoAttribution, setPhotoAttribution] = useState(
@@ -221,6 +221,7 @@ const TripForm = props => {
           orientation="horizontal"
           numberOfMonths={1}
           // verticalHeight={350}
+          isOutsideRange={() => false}
         />
         <Error errors={errors} field="dates" style={{ marginTop: "10px" }} />
         {/* <TextInput
