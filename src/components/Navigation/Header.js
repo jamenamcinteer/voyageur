@@ -39,7 +39,7 @@ const ProfileMenu = styled.div`
   height: calc(100vh - 69px);
   box-shadow: -3px 3px 4px 2px rgba(0, 0, 0, 0.2);
 `;
-const ProfileMenuLink = styled(Link)`
+const ProfileMenuLink = styled.a`
   color: ${props => props.theme.darkFont};
   text-decoration: none;
   border-bottom: 1px solid ${props => props.theme.themeColorSecondary};
@@ -85,7 +85,7 @@ const Header = props => {
         />
         {menuOpen && (
           <ProfileMenu>
-            <ProfileMenuLink to="/auth/logout">Sign Out</ProfileMenuLink>
+            <ProfileMenuLink href="/auth/logout">Sign Out</ProfileMenuLink>
           </ProfileMenu>
         )}
       </ProfileButton>
