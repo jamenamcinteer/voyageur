@@ -35,9 +35,9 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// app.get("/", function(req, res) {
-//   res.send("Hello World!");
-// });
+app.get("/ping", function(req, res) {
+  res.send("pong");
+});
 
 app.use(
   cookieSession({
@@ -87,13 +87,13 @@ app.get("/photos", function(req, res) {
 //production mode
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "..", "build"))); //
-  app.get("/*", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendfile(path.join((__dirname, "..", "build/index.html")));
   });
 } else {
   //build mode
   app.use(express.static(path.join(__dirname, "..", "public")));
-  app.get("/*", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public/index.html"));
   });
 }

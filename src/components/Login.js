@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {} from "twix";
-import ButtonLink from "./Buttons/ButtonLink";
+import ButtonA from "./Buttons/ButtonA";
 
 const App = styled.div`
   height: 100vh;
@@ -46,18 +46,18 @@ const Login = props => {
         <AppContainer>
           <AppTitle>Voyageur</AppTitle>
           <AppSubtitle>Travel Budget Planner</AppSubtitle>
-          <ButtonLink
+          <ButtonA
             to="/auth/google"
             buttonText="Sign In with Google"
             buttonType="primary"
             customStyles={{ background: { display: "inline-block" } }}
           />
-          <ButtonLink
+          {/* <ButtonA
             to="/auth/facebook"
             buttonText="Sign In with Facebook"
             buttonType="primary"
             customStyles={{ background: { display: "inline-block" } }}
-          />
+          /> */}
         </AppContainer>
       </App>
     </div>
