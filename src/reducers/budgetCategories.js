@@ -1,6 +1,6 @@
 // Budget Categories Reducer
 
-const budgetCategoriesReducerDefaultState = [];
+export const budgetCategoriesReducerDefaultState = [];
 
 export default (state = budgetCategoriesReducerDefaultState, action) => {
   switch (action.type) {

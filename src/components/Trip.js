@@ -10,7 +10,7 @@ import { startRemoveExpense } from "../actions/expenses";
 import useSortAscendingAlphabetical from "../hooks/useSortAscendingAlphabetical";
 import Modal from "react-modal";
 import { ModalText } from "./StyledComponents/Modals";
-import { Container } from "./StyledComponents/Layout";
+import { Container, CardContainer } from "./StyledComponents/Layout";
 import { MainButtons } from "./StyledComponents/Forms";
 import { connect } from "react-redux";
 
@@ -73,7 +73,7 @@ const Trip = props => {
               />
             </Container>
           )}
-          <Container>
+          <CardContainer>
             {budgetCategories.length > 0 &&
               budgetCategories.map(budgetCategory => {
                 return (
@@ -88,7 +88,7 @@ const Trip = props => {
                   />
                 );
               })}
-          </Container>
+          </CardContainer>
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
               to={`/trip/${trip._id}/add-budget-category`}

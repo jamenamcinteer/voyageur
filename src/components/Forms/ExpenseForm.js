@@ -46,7 +46,7 @@ const ExpenseForm = props => {
   );
   const [cost, setCost] = useState(props.expense ? props.expense.cost : "");
   const [date, setDate] = useState(
-    props.expense ? moment(props.expense.date).format("MM/DD/YY") : null
+    props.expense ? moment(props.expense.date) : null
   );
   const [notes, setNotes] = useState(props.expense ? props.expense.notes : "");
   const [deleteModal, setDeleteModal] = useState(false);
@@ -268,6 +268,7 @@ const ExpenseForm = props => {
         }}
         orientation="horizontal"
         numberOfMonths={1}
+        isOutsideRange={() => false}
       />
       <Error errors={errors} field="date" style={{ marginTop: "10px" }} />
       <Textarea

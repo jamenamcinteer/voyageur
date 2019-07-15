@@ -34,6 +34,7 @@ const ExpenseItem = styled(Link)`
   font-size: 1.2em;
   font-weight: normal;
   text-decoration: none;
+  color: ${props => props.theme.darkFont};
 `;
 
 const ExpenseItemFirstLine = styled.div`

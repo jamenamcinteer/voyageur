@@ -9,7 +9,7 @@ import Modal from "react-modal";
 import styled from "styled-components";
 import {} from "twix";
 import { connect } from "react-redux";
-// import { Container } from "./StyledComponents/Layout";
+import { CardContainer } from "./StyledComponents/Layout";
 
 Modal.setAppElement("#root");
 
@@ -37,10 +37,15 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 10px;
-`;
 
-const Container0Top = styled.div`
-  margin: 0 20px;
+  @media (min-width: 1024px) {
+    justify-content: center;
+  }
+
+  button,
+  a {
+    max-width: 200px;
+  }
 `;
 
 const OneButtonContainer = styled.div`
@@ -161,7 +166,7 @@ const Dashboard = props => {
                 );
               })}
           </Modal>
-          <Container0Top>
+          <CardContainer>
             {/* <h4>Upcoming Trips</h4> */}
             {futureTrips.length > 0 &&
               futureTrips.map(trip => {
@@ -212,7 +217,7 @@ const Dashboard = props => {
                   />
                 );
               })}
-          </Container0Top>
+          </CardContainer>
         </div>
       )}
       {props.trips.length === 0 && (

@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render with redux with custom store 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div
+            class="sc-bdVaJa hZqfbl"
+          >
+            <a
+              href="/trip/1"
+            >
+              <svg
+                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+                version="1.1"
+                viewBox="0 0 199.404 199.404"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <polygon
+                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+                  />
+                </g>
+              </svg>
+            </a>
+            <div
+              class="sc-bwzfXH ebZROL"
+            >
+              Add Budget Category
+            </div>
+            <div
+              class="sc-htpNat KtFsv"
+            >
+              <img
+                alt=""
+                class="sc-bxivhb bfhPyW"
+                src="https://picsum.photos/id/947/45/45"
+              />
+            </div>
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
+            />
+            <div
+              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+            >
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+              >
+                <h2>
+                  Hawaii
+                </h2>
+                <h3>
+                  Dec 31, 1969 - Oct 1, 8307
+                </h3>
+              </div>
+              <div
+                style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+              >
+                <span
+                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+                />
+                <div
+                  style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+                >
+                  $595 of $2000
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-kAzzGY jucvHf"
+      >
+        <div
+          class="sc-bZQynM blxRiI"
+        >
+          <label
+            class="sc-gzVnrw sohPS"
+            for="1"
+          >
+            Name of Budget Category
+          </label>
+          <input
+            class="sc-htoDjs hNiZih"
+            id="1"
+            placeholder="Example: Airfare, Food, Activities, etc."
+            type="text"
+            value="Airfare"
+          />
+        </div>
+        <div />
+        <div
+          class="sc-dnqmqq jnbCEU"
+        >
+          <label
+            class="sc-iwsKbI dtSDPi"
+            for="2"
+          >
+            Notes (optional)
+          </label>
+          <textarea
+            class="sc-gZMcBi kEtTwg"
+            id="2"
+            type="text"
+          />
+        </div>
+        <div
+          class="sc-kGXeez EPBCl"
+        >
+          <div>
+            <button
+              class="sc-VigVT dzHiVp"
+              style="padding: 10px 0px;"
+            >
+              <span
+                class="sc-jTzLTM gVGdst"
+              >
+                Delete
+              </span>
+            </button>
+          </div>
+          <div
+            class="sc-kgoBCf fWbtNX"
+          >
+            <a
+              backgroundcolor="transparent"
+              border="0"
+              buttontype="link"
+              buttonwidth="auto"
+              class="sc-fjdhpX bbvnea"
+              href="/trip/1"
+              style="padding: 10px 0px;"
+            >
+              <span
+                class="sc-jzJRlG cphvgw"
+              >
+                Cancel
+              </span>
+            </a>
+            <button
+              class="sc-VigVT kMgnqA"
+            >
+              <span
+                class="sc-jTzLTM cntDpR"
+                color="#fff"
+              >
+                Save
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

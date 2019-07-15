@@ -29,6 +29,13 @@ const StyledButton = styled.button.attrs(props => ({
   display: block;
   text-align: center;
   margin: 10px;
+
+  &:active {
+    transform: ${props =>
+      props.buttontype === "primary" || props.buttontype === "secondary"
+        ? "translateY(2px)"
+        : "translateY(0)"};
+  }
 `;
 
 const StyledButtonText = styled.span.attrs(props => ({

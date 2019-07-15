@@ -1,6 +1,6 @@
 // Trips Reducer
 
-const tripsReducerDefaultState = [];
+export const tripsReducerDefaultState = [];
 
 export default (state = tripsReducerDefaultState, action) => {
   switch (action.type) {

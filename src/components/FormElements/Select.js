@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import uniqid from "uniqid";
 
 const Container = styled.div`
   margin: 20px 0;
@@ -26,11 +27,7 @@ const StyledSelect = styled.select`
 `;
 
 const Select = props => {
-  const ID =
-    "_" +
-    Math.random()
-      .toString(36)
-      .substr(2, 9);
+  const ID = uniqid();
 
   const [inputValue, setInputValue] = useState(props.value ? props.value : "");
 
