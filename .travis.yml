@@ -1,0 +1,13 @@
+language: node_js
+
+os:
+  - linux
+  - osx
+
+node_js:
+  - "8.10"
+
+script:
+  - yarn install
+  - yarn run test
+  - yarn run heroku-postbuild

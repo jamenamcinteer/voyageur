@@ -56,7 +56,7 @@ exports[`can render with redux with custom store 1`] = `
                   Hawaii
                 </h2>
                 <h3>
-                  Dec 31, 1969 - Oct 1, 8307
+                  Apr 26, 1970 - Oct 1, 8307
                 </h3>
               </div>
               <div
@@ -112,7 +112,7 @@ exports[`can render with redux with custom store 1`] = `
           <div
             class="sc-fjdhpX kYjTZe"
           >
-            Dec 31
+            Apr 26
           </div>
           <div
             class="sc-jzJRlG cqOjkm"

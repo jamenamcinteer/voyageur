@@ -3,7 +3,7 @@ export const trips = [
     _id: "1",
     uid: "1",
     destination: "Hawaii",
-    startDate: 0,
+    startDate: 10000000000,
     endDate: 200000000000000,
     photo:
       "https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ",
@@ -44,7 +44,7 @@ export const expenses = [
     currency: "USD",
     originalCost: "594.62",
     cost: "594.62",
-    date: 10,
+    date: 10000000000,
     notes: ""
   }
 ];
