@@ -6,7 +6,8 @@ os:
 
 node_js:
   - "node"
-  - "8.10.x"
+  - "8.10"
+  - "8.10"
 
 script:
   - yarn add
