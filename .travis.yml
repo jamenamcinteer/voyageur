@@ -7,9 +7,8 @@ os:
 node_js:
   - "node"
   - "8.10"
-  - "8.10"
 
 script:
-  - yarn add
+  - yarn install
   - yarn run test
   - yarn run heroku-postbuild

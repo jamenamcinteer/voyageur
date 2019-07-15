@@ -56,7 +56,7 @@ exports[`can render with redux with custom store 1`] = `
                   Hawaii
                 </h2>
                 <h3>
-                  Dec 31, 1969 - Oct 1, 8307
+                  Jan 1, 1970 - Oct 1, 8307
                 </h3>
               </div>
               <div
@@ -115,7 +115,7 @@ exports[`can render with redux with custom store 1`] = `
                     name="startDate"
                     placeholder="Start Date"
                     type="text"
-                    value="12/31/1969"
+                    value="01/01/1970"
                   />
                   <p
                     class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"

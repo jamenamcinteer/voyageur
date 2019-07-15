@@ -3,7 +3,7 @@ export const trips = [
     _id: "1",
     uid: "1",
     destination: "Hawaii",
-    startDate: 0,
+    startDate: 100000000,
     endDate: 200000000000000,
     photo:
       "https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ",
