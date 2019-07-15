@@ -44,7 +44,7 @@ export const expenses = [
     currency: "USD",
     originalCost: "594.62",
     cost: "594.62",
-    date: 10,
+    date: 10000000000,
     notes: ""
   }
 ];

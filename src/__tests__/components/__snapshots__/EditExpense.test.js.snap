@@ -210,7 +210,7 @@ exports[`can render with redux with custom store 1`] = `
                   name="date"
                   placeholder="Date"
                   type="text"
-                  value="12/31/1969"
+                  value="04/26/1970"
                 />
                 <p
                   class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
