@@ -12,6 +12,9 @@ const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
     font-family: "Roboto", sans-serif;
     color: ${props => props.theme.darkFont};
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   figcaption a {
     color: #fff;
