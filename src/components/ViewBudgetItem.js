@@ -50,7 +50,7 @@ const ExpenseItemSecondLine = styled.div`
 `;
 
 const ExpenseItemDate = styled.div`
-  color: ${props => props.theme.lightFont};
+  color: ${props => props.theme.darkFont};
   font-size: 0.8em;
   font-weight: normal;
 `;
