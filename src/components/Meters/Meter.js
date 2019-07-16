@@ -1,5 +1,30 @@
 import React from "react";
 import theme from "../../theme";
+import styled from "styled-components";
+
+const StyledMeter = styled.div`
+  width: 100%;
+  height: 25px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+`;
+
+const MeterProgress = styled.span`
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+`;
+
+const MeterAmount = styled.div`
+  position: absolute;
+  top: 0;
+  color: #fff;
+  left: 10px;
+  line-height: 25px;
+`;
 
 const Meter = props => {
   const displayOverviewBudget = () => {
@@ -29,35 +54,11 @@ const Meter = props => {
     return { width, backgroundColor };
   };
 
-  const meterStyles = {
-    width: "100%",
-    height: "25px",
-    position: "relative",
-    background: "#DCE0E3",
-    borderRadius: "5px"
-  };
-  const meterProgressStyles = {
-    display: "block",
-    height: "100%",
-    borderRadius: "5px",
-    position: "relative",
-    overflow: "hidden"
-  };
-  const meterAmountsStyles = {
-    position: "absolute",
-    top: "0",
-    color: "white",
-    left: "10px",
-    lineHeight: "25px"
-  };
-
   return (
-    <div style={meterStyles}>
-      <span
-        style={{ ...meterProgressStyles, ...handleOverviewProgressBar() }}
-      />
-      <div style={meterAmountsStyles}>{displayOverviewBudget()}</div>
-    </div>
+    <StyledMeter>
+      <MeterProgress style={handleOverviewProgressBar()} />
+      <MeterAmount>{displayOverviewBudget()}</MeterAmount>
+    </StyledMeter>
   );
 };
 

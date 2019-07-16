@@ -37,16 +37,16 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    style="position: relative;"
+    class="sc-dnqmqq hHLyWY"
   >
     <div
-      style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
+      class="sc-iwsKbI kJJCAh"
     />
     <div
-      style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+      class="sc-gZMcBi hiFDYw"
     >
       <div
-        style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+        class="sc-gqjmRU erqAtP"
       >
         <h2>
           Hawaii
@@ -56,13 +56,14 @@ exports[`can render with redux with custom store 1`] = `
         </h3>
       </div>
       <div
-        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+        class="sc-bZQynM kssguc"
       >
         <span
-          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
         />
         <div
-          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+          class="sc-htoDjs eFTFIK"
         >
           $595 of $2000
         </div>
@@ -70,18 +71,18 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-fjdhpX cEgVjZ"
+    class="sc-dxgOiQ jSmIIM"
     style="text-align: center;"
   >
     <a
       border="0"
       buttontype="primary"
-      class="sc-bZQynM hoURAa"
+      class="sc-VigVT egfiws"
       href="/trip/1/add-expense"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-gzVnrw dfkowZ"
+        class="sc-jTzLTM cntDpR"
         color="#fff"
       >
         Add Expense
@@ -89,13 +90,13 @@ exports[`can render with redux with custom store 1`] = `
     </a>
   </div>
   <div
-    class="sc-jzJRlG kQMCmT"
+    class="sc-ckVGcZ gZikyS"
   >
     <div
-      class="sc-gZMcBi ibexuG"
+      class="sc-kAzzGY djjpzf"
     >
       <h3
-        class="sc-gqjmRU cBbVf"
+        class="sc-chPdSV bsMEyv"
       >
         <span>
           Airfare
@@ -104,34 +105,35 @@ exports[`can render with redux with custom store 1`] = `
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
-          class="sc-bZQynM dqORwD"
+          class="sc-VigVT jTYWhV"
           href="/trip/1/budget-category/1/edit"
           style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
         >
           <span
-            class="sc-gzVnrw ejnAGc"
+            class="sc-jTzLTM gVGdst"
           >
             Edit
           </span>
         </a>
       </h3>
       <div
-        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+        class="sc-bZQynM kssguc"
       >
         <span
-          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
         />
         <div
-          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+          class="sc-htoDjs eFTFIK"
         >
           $595 of $2000
         </div>
       </div>
       <hr
-        class="sc-VigVT fgNDYA"
+        class="sc-kgoBCf laoPFe"
       />
       <h3
-        class="sc-iwsKbI cEoBnw"
+        class="sc-cSHVUG jhoblE"
       >
         <span>
           Flights
@@ -140,12 +142,12 @@ exports[`can render with redux with custom store 1`] = `
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
-          class="sc-bZQynM dqORwD"
+          class="sc-VigVT jTYWhV"
           href="/trip/1/budget-category/1/budget-item/1"
           style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
         >
           <span
-            class="sc-gzVnrw ejnAGc"
+            class="sc-jTzLTM gVGdst"
           >
             View Expenses
           </span>
@@ -154,42 +156,43 @@ exports[`can render with redux with custom store 1`] = `
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
-          class="sc-bZQynM dqORwD"
+          class="sc-VigVT jTYWhV"
           href="/trip/1/budget-category/1/budget-item/1/edit"
           style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
         >
           <span
-            class="sc-gzVnrw ejnAGc"
+            class="sc-jTzLTM gVGdst"
           >
             Edit
           </span>
         </a>
       </h3>
       <div
-        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+        class="sc-bZQynM kssguc"
       >
         <span
-          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
         />
         <div
-          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+          class="sc-htoDjs eFTFIK"
         >
           $595 of $2000
         </div>
       </div>
       <div
-        style="text-align: center;"
+        class="sc-kGXeez llrsyy"
       >
         <a
           backgroundcolor="#fff"
           border="1px solid undefined"
           buttontype="secondary"
-          class="sc-bZQynM hSUBqT"
+          class="sc-VigVT jHVPNq"
           href="/trip/1/budget-category/1/add-budget-item"
           style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
         >
           <span
-            class="sc-gzVnrw hcLogF"
+            class="sc-jTzLTM kxKxxq"
           >
             Add Budget Item
           </span>
@@ -198,19 +201,19 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-fjdhpX cEgVjZ"
+    class="sc-dxgOiQ jSmIIM"
     style="text-align: center;"
   >
     <a
       backgroundcolor="#fff"
       border="1px solid undefined"
       buttontype="secondary"
-      class="sc-bZQynM hSUBqT"
+      class="sc-VigVT jHVPNq"
       href="/trip/1/add-budget-category"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-gzVnrw hcLogF"
+        class="sc-jTzLTM kxKxxq"
       >
         Add Budget Category
       </span>
@@ -220,23 +223,23 @@ exports[`can render with redux with custom store 1`] = `
       backgroundcolor="transparent"
       border="0"
       buttontype="link"
-      class="sc-bZQynM dqORwD"
+      class="sc-VigVT jTYWhV"
       href="/trip/1/edit"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-gzVnrw ejnAGc"
+        class="sc-jTzLTM gVGdst"
       >
         Edit Trip
       </span>
     </a>
     <br />
     <button
-      class="sc-htoDjs bzHHuk"
+      class="sc-fjdhpX gYGvET"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-dnqmqq gdGOzX"
+        class="sc-jzJRlG cphvgw"
       >
         Delete Trip
       </span>

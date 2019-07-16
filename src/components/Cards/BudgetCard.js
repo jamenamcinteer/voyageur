@@ -27,6 +27,10 @@ const Divider = styled.hr`
   margin: 20px 0;
 `;
 
+const ButtonContainer = styled.div`
+  text-align: center;
+`;
+
 const BudgetCard = props => {
   const budgetItems = props.budgetItems.filter(
     bItem => bItem.budgetCategoryId === props.budgetCategory._id
@@ -71,7 +75,7 @@ const BudgetCard = props => {
             expenses={expenses}
           />
         ))}
-      <div style={{ textAlign: "center" }}>
+      <ButtonContainer>
         <ButtonLink
           to={`/trip/${props.budgetCategory.tripId}/budget-category/${
             props.budgetCategory._id
@@ -87,7 +91,7 @@ const BudgetCard = props => {
             }
           }}
         />
-      </div>
+      </ButtonContainer>
     </CardBackground>
   );
 };

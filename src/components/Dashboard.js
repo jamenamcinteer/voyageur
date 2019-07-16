@@ -48,7 +48,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const OneButtonContainer = styled.div`
+const OneButtonBackground = styled.div`
   height: calc(100vh - 69px);
   width: 100vw;
   padding: 70px;
@@ -69,6 +69,11 @@ const OneButtonContainer = styled.div`
     background-position: top right;
     filter: blur(1px) brightness(40%) grayscale(50%) sepia(10%);
   }
+`;
+
+const OneButtonContainer = styled.div`
+  position: relative;
+  width: 100%;
 `;
 
 const DashboardHeader = styled.h4``;
@@ -221,8 +226,8 @@ const Dashboard = props => {
         </React.Fragment>
       )}
       {props.trips.length === 0 && (
-        <OneButtonContainer>
-          <div style={{ position: "relative", width: "100%" }}>
+        <OneButtonBackground>
+          <OneButtonContainer>
             <ButtonLink
               to="/trip/add"
               buttonText="Add a Trip"
@@ -231,8 +236,8 @@ const Dashboard = props => {
                 text: { fontSize: "1.5em" }
               }}
             />
-          </div>
-        </OneButtonContainer>
+          </OneButtonContainer>
+        </OneButtonBackground>
       )}
     </React.Fragment>
   );

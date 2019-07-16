@@ -21,10 +21,10 @@ const GlobalStyles = createGlobalStyle`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <React.Fragment>
         <GlobalStyles />
         <AppRouter theme={theme} />
-      </div>
+      </React.Fragment>
     </ThemeProvider>
   );
 }
