@@ -14,7 +14,6 @@ import { startSetExpenses } from "./actions/expenses";
 import { startSetUsers } from "./actions/users";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
-import "./react_dates_overrides.css";
 
 const store = configureStore();
 
