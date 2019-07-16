@@ -7,9 +7,9 @@ const AddBudgetCategory = props => {
   const trip = props.trips.find(trip => trip._id === props.match.params.id);
 
   return (
-    <div>
+    <React.Fragment>
       {trip && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Add Budget Category"
             theme={props.theme}
@@ -24,9 +24,9 @@ const AddBudgetCategory = props => {
             trip={trip}
             history={props.history}
           />
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

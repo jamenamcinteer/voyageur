@@ -2,226 +2,212 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <a
+      href="/trip/1"
+    >
+      <svg
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <div
+      class="sc-bwzfXH ebZROL"
+    >
+      Edit Trip
+    </div>
+    <div
+      class="sc-htpNat KtFsv"
+    >
+      <img
+        alt=""
+        class="sc-bxivhb bfhPyW"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </div>
+  </div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
+    />
+    <div
+      style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+    >
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+      >
+        <h2>
+          Hawaii
+        </h2>
+        <h3>
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
+      </div>
+      <div
+        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+      >
+        <span
+          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
+        <div
+          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+        >
+          $595 of $2000
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-fjdhpX cEgVjZ"
+  >
+    <div
+      class="sc-bZQynM blxRiI"
+    >
+      <label
+        class="sc-gzVnrw sohPS"
+        for="1"
+      >
+        Destination
+      </label>
+      <input
+        class="sc-htoDjs hNiZih"
+        id="1"
+        type="text"
+        value="Hawaii"
+      />
+    </div>
+    <div
+      class="DateRangePicker DateRangePicker_1"
+    >
       <div>
-        <div>
+        <div
+          class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
+        >
           <div
-            class="sc-bdVaJa hZqfbl"
+            class="DateInput DateInput_1"
           >
-            <a
-              href="/trip/1"
+            <input
+              aria-describedby="DateInput__screen-reader-message-startDate"
+              aria-label="Start Date"
+              autocomplete="off"
+              class="DateInput_input DateInput_input_1"
+              id="startDate"
+              name="startDate"
+              placeholder="Start Date"
+              type="text"
+              value="04/26/1970"
+            />
+            <p
+              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-startDate"
             >
-              <svg
-                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-                version="1.1"
-                viewBox="0 0 199.404 199.404"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <polygon
-                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-                  />
-                </g>
-              </svg>
-            </a>
-            <div
-              class="sc-bwzfXH ebZROL"
-            >
-              Edit Trip
-            </div>
-            <div
-              class="sc-htpNat KtFsv"
-            >
-              <img
-                alt=""
-                class="sc-bxivhb bfhPyW"
-                src="https://picsum.photos/id/947/45/45"
-              />
-            </div>
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
           </div>
           <div
-            style="position: relative;"
+            aria-hidden="true"
+            class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
+            role="presentation"
           >
-            <div
-              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
-            />
-            <div
-              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+            <svg
+              class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+              focusable="false"
+              viewBox="0 0 1000 1000"
             >
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
-              >
-                <h2>
-                  Hawaii
-                </h2>
-                <h3>
-                  Apr 26, 1970 - Oct 1, 8307
-                </h3>
-              </div>
-              <div
-                style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
-              >
-                <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
-                />
-                <div
-                  style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-                >
-                  $595 of $2000
-                </div>
-              </div>
-            </div>
+              <path
+                d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
+              />
+            </svg>
+          </div>
+          <div
+            class="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-endDate"
+              aria-label="End Date"
+              autocomplete="off"
+              class="DateInput_input DateInput_input_1"
+              id="endDate"
+              name="endDate"
+              placeholder="End Date"
+              type="text"
+              value="10/01/8307"
+            />
+            <p
+              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-endDate"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="sc-fjdhpX cEgVjZ"
+    </div>
+    <button
+      class="sc-iwsKbI bsEJNb"
+      style="padding: 10px 0px;"
+    >
+      <span
+        class="sc-gZMcBi fEjKYB"
+      >
+        Change Photo
+      </span>
+    </button>
+    <div
+      class="sc-kAzzGY evwQxF"
+    >
+      <button
+        class="sc-iwsKbI bsEJNb"
+        style="padding: 10px 0px;"
+      >
+        <span
+          class="sc-gZMcBi fEjKYB"
         >
-          <div
-            class="sc-bZQynM blxRiI"
+          Delete
+        </span>
+      </button>
+      <div
+        class="sc-cSHVUG eJVCam"
+      >
+        <a
+          backgroundcolor="transparent"
+          border="0"
+          buttontype="link"
+          buttonwidth="auto"
+          class="sc-gqjmRU cVvmHR"
+          href="/"
+          style="padding: 10px 0px;"
+        >
+          <span
+            class="sc-VigVT hBprvu"
           >
-            <label
-              class="sc-gzVnrw sohPS"
-              for="1"
-            >
-              Destination
-            </label>
-            <input
-              class="sc-htoDjs hNiZih"
-              id="1"
-              type="text"
-              value="Hawaii"
-            />
-          </div>
-          <div />
-          <div
-            class="DateRangePicker DateRangePicker_1"
+            Cancel
+          </span>
+        </a>
+        <button
+          class="sc-iwsKbI NtbZn"
+        >
+          <span
+            class="sc-gZMcBi cnsAlJ"
+            color="#fff"
           >
-            <div>
-              <div
-                class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
-              >
-                <div
-                  class="DateInput DateInput_1"
-                >
-                  <input
-                    aria-describedby="DateInput__screen-reader-message-startDate"
-                    aria-label="Start Date"
-                    autocomplete="off"
-                    class="DateInput_input DateInput_input_1"
-                    id="startDate"
-                    name="startDate"
-                    placeholder="Start Date"
-                    type="text"
-                    value="04/26/1970"
-                  />
-                  <p
-                    class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-                    id="DateInput__screen-reader-message-startDate"
-                  >
-                    Press the down arrow key to interact with the calendar and
-  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-                  </p>
-                </div>
-                <div
-                  aria-hidden="true"
-                  class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
-                  role="presentation"
-                >
-                  <svg
-                    class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
-                    focusable="false"
-                    viewBox="0 0 1000 1000"
-                  >
-                    <path
-                      d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="DateInput DateInput_1"
-                >
-                  <input
-                    aria-describedby="DateInput__screen-reader-message-endDate"
-                    aria-label="End Date"
-                    autocomplete="off"
-                    class="DateInput_input DateInput_input_1"
-                    id="endDate"
-                    name="endDate"
-                    placeholder="End Date"
-                    type="text"
-                    value="10/01/8307"
-                  />
-                  <p
-                    class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-                    id="DateInput__screen-reader-message-endDate"
-                  >
-                    Press the down arrow key to interact with the calendar and
-  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div />
-          <button
-            class="sc-iwsKbI bsEJNb"
-            style="padding: 10px 0px;"
-          >
-            <span
-              class="sc-gZMcBi fEjKYB"
-            >
-              Change Photo
-            </span>
-          </button>
-          <div
-            class="sc-kAzzGY evwQxF"
-          >
-            <div>
-              <button
-                class="sc-iwsKbI bsEJNb"
-                style="padding: 10px 0px;"
-              >
-                <span
-                  class="sc-gZMcBi fEjKYB"
-                >
-                  Delete
-                </span>
-              </button>
-            </div>
-            <div
-              class="sc-cSHVUG eJVCam"
-            >
-              <a
-                backgroundcolor="transparent"
-                border="0"
-                buttontype="link"
-                buttonwidth="auto"
-                class="sc-gqjmRU cVvmHR"
-                href="/"
-                style="padding: 10px 0px;"
-              >
-                <span
-                  class="sc-VigVT hBprvu"
-                >
-                  Cancel
-                </span>
-              </a>
-              <button
-                class="sc-iwsKbI NtbZn"
-              >
-                <span
-                  class="sc-gZMcBi cnsAlJ"
-                  color="#fff"
-                >
-                  Save
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
+            Save
+          </span>
+        </button>
       </div>
     </div>
   </div>

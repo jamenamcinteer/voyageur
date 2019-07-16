@@ -21,7 +21,7 @@ const BudgetCardItem = props => {
 
   const actual = useBudgetCalculation("actual", expenses);
   return (
-    <div>
+    <React.Fragment>
       <CardHeader>
         <span>{props.budgetItem.budgetItem}</span>
         <ButtonLink
@@ -62,7 +62,7 @@ const BudgetCardItem = props => {
         actual={actual}
         budgeted={props.budgetItem.estimatedCost}
       />
-    </div>
+    </React.Fragment>
   );
 };
 

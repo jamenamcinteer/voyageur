@@ -47,9 +47,9 @@ const TripHeader = props => {
     .format({ monthFormat: "MMM", dayFormat: "D" });
 
   return (
-    <div>
+    <React.Fragment>
       {props.trip && (
-        <div>
+        <React.Fragment>
           <Header
             title={props.title}
             theme={props.theme}
@@ -66,9 +66,9 @@ const TripHeader = props => {
               <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
             </div>
           </div>
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

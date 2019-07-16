@@ -7,9 +7,9 @@ const EditTrip = props => {
   const trip = props.trips.find(trip => trip._id === props.match.params.id);
 
   return (
-    <div>
+    <React.Fragment>
       {trip && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Edit Trip"
             theme={props.theme}
@@ -20,9 +20,9 @@ const EditTrip = props => {
             auth={props.auth}
           />
           <TripForm theme={props.theme} trip={trip} history={props.history} />
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

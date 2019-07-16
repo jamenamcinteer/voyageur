@@ -10,9 +10,9 @@ const AddExpense = props => {
   const queryValues = queryString.parse(props.location.search);
 
   return (
-    <div>
+    <React.Fragment>
       {trip && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Add Expense"
             theme={props.theme}
@@ -31,9 +31,9 @@ const AddExpense = props => {
             budgetItems={props.budgetItems}
             history={props.history}
           />
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

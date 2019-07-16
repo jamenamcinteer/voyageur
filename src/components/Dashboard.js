@@ -106,7 +106,7 @@ const Dashboard = props => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <Header
         title="My Trips"
         theme={props.theme}
@@ -114,7 +114,7 @@ const Dashboard = props => {
         backHide={true}
       />
       {props.trips.length > 0 && (
-        <div>
+        <React.Fragment>
           <ButtonContainer>
             <ButtonLink
               to="/trip/add"
@@ -218,7 +218,7 @@ const Dashboard = props => {
                 );
               })}
           </CardContainer>
-        </div>
+        </React.Fragment>
       )}
       {props.trips.length === 0 && (
         <OneButtonContainer>
@@ -234,7 +234,7 @@ const Dashboard = props => {
           </div>
         </OneButtonContainer>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

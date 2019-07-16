@@ -100,7 +100,7 @@ const BudgetCategoryForm = props => {
       />
       <ButtonContainer showDelete={props.budgetCategory}>
         {props.budgetCategory && (
-          <div>
+          <React.Fragment>
             <Button
               handleClick={e => setDeleteModal(true)}
               buttonText="Delete"
@@ -152,7 +152,7 @@ const BudgetCategoryForm = props => {
                 />
               </MainButtons>
             </Modal>
-          </div>
+          </React.Fragment>
         )}
         <MainButtons>
           <ButtonLink

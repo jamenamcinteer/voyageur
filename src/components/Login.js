@@ -41,26 +41,24 @@ const AppSubtitle = styled.h2`
 
 const Login = props => {
   return (
-    <div>
-      <App>
-        <AppContainer>
-          <AppTitle>Voyageur</AppTitle>
-          <AppSubtitle>Travel Budget Planner</AppSubtitle>
-          <ButtonA
-            to="/auth/google"
-            buttonText="Sign In with Google"
-            buttonType="primary"
-            customStyles={{ background: { display: "inline-block" } }}
-          />
-          {/* <ButtonA
+    <App>
+      <AppContainer>
+        <AppTitle>Voyageur</AppTitle>
+        <AppSubtitle>Travel Budget Planner</AppSubtitle>
+        <ButtonA
+          to="/auth/google"
+          buttonText="Sign In with Google"
+          buttonType="primary"
+          customStyles={{ background: { display: "inline-block" } }}
+        />
+        {/* <ButtonA
             to="/auth/facebook"
             buttonText="Sign In with Facebook"
             buttonType="primary"
             customStyles={{ background: { display: "inline-block" } }}
           /> */}
-        </AppContainer>
-      </App>
-    </div>
+      </AppContainer>
+    </App>
   );
 };
 

@@ -2,143 +2,132 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
-      <div>
-        <div>
-          <div
-            class="sc-bdVaJa hZqfbl"
-          >
-            <a
-              href="/trip/1"
-            >
-              <svg
-                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-                version="1.1"
-                viewBox="0 0 199.404 199.404"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <polygon
-                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-                  />
-                </g>
-              </svg>
-            </a>
-            <div
-              class="sc-bwzfXH ebZROL"
-            >
-              Expenses
-            </div>
-            <div
-              class="sc-htpNat KtFsv"
-            >
-              <img
-                alt=""
-                class="sc-bxivhb bfhPyW"
-                src="https://picsum.photos/id/947/45/45"
-              />
-            </div>
-          </div>
-          <div
-            style="position: relative;"
-          >
-            <div
-              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
-            />
-            <div
-              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
-            >
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
-              >
-                <h2>
-                  Hawaii
-                </h2>
-                <h3>
-                  Apr 26, 1970 - Oct 1, 8307
-                </h3>
-              </div>
-              <div
-                style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
-              >
-                <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
-                />
-                <div
-                  style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-                >
-                  $595 of $2000
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="sc-bZQynM tkCbU"
-        style="text-align: center;"
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <a
+      href="/trip/1"
+    >
+      <svg
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <a
-          border="0"
-          buttontype="primary"
-          class="sc-htoDjs dPMOMQ"
-          href="/trip/1/add-expense?budgetCategory=undefined&budgetItem=1"
-          style="display: inline-block; width: auto;"
-        >
-          <span
-            class="sc-dnqmqq cdbcif"
-            color="#fff"
-          >
-            Add Expense
-          </span>
-        </a>
-      </div>
-      <h3
-        class="sc-iwsKbI kkPyuW"
-      >
-        Flights
-      </h3>
-      <p
-        class="sc-gZMcBi YhWOd"
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <div
+      class="sc-bwzfXH ebZROL"
+    >
+      Expenses
+    </div>
+    <div
+      class="sc-htpNat KtFsv"
+    >
+      <img
+        alt=""
+        class="sc-bxivhb bfhPyW"
+        src="https://picsum.photos/id/947/45/45"
       />
-      <a
-        class="sc-gqjmRU EyKoK"
-        href="/trip/1/budget-category/1/budget-item/1/expense/1"
-      >
-        <div
-          class="sc-VigVT bbMOtu"
-        >
-          <div
-            class="sc-fjdhpX kYjTZe"
-          >
-            Apr 26
-          </div>
-          <div
-            class="sc-jzJRlG cqOjkm"
-          >
-            Edit
-          </div>
-        </div>
-        <div
-          class="sc-jTzLTM cpndUA"
-        >
-          <h4
-            class="sc-cSHVUG fZzhIb"
-          >
-            Southwest
-          </h4>
-          <div
-            class="sc-kAzzGY jHprQs"
-          >
-            $594.62
-          </div>
-        </div>
-        <p
-          class="sc-chPdSV eZFrxh"
-        />
-      </a>
     </div>
   </div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
+    />
+    <div
+      style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+    >
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+      >
+        <h2>
+          Hawaii
+        </h2>
+        <h3>
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
+      </div>
+      <div
+        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+      >
+        <span
+          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
+        <div
+          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+        >
+          $595 of $2000
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-bZQynM tkCbU"
+    style="text-align: center;"
+  >
+    <a
+      border="0"
+      buttontype="primary"
+      class="sc-htoDjs dPMOMQ"
+      href="/trip/1/add-expense?budgetCategory=undefined&budgetItem=1"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-dnqmqq cdbcif"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </a>
+  </div>
+  <h3
+    class="sc-iwsKbI kkPyuW"
+  >
+    Flights
+  </h3>
+  <p
+    class="sc-gZMcBi YhWOd"
+  />
+  <a
+    class="sc-gqjmRU EyKoK"
+    href="/trip/1/budget-category/1/budget-item/1/expense/1"
+  >
+    <div
+      class="sc-VigVT bbMOtu"
+    >
+      <div
+        class="sc-fjdhpX kYjTZe"
+      >
+        Apr 26
+      </div>
+      <div
+        class="sc-jzJRlG cqOjkm"
+      >
+        Edit
+      </div>
+    </div>
+    <div
+      class="sc-jTzLTM cpndUA"
+    >
+      <h4
+        class="sc-cSHVUG fZzhIb"
+      >
+        Southwest
+      </h4>
+      <div
+        class="sc-kAzzGY jHprQs"
+      >
+        $594.62
+      </div>
+    </div>
+  </a>
 </DocumentFragment>
 `;

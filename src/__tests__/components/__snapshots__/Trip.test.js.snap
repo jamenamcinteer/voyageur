@@ -2,211 +2,182 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
-      <div>
-        <div>
-          <div
-            class="sc-bdVaJa hZqfbl"
-          >
-            <a
-              href="/"
-            >
-              <svg
-                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-                version="1.1"
-                viewBox="0 0 199.404 199.404"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <polygon
-                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-                  />
-                </g>
-              </svg>
-            </a>
-            <div
-              class="sc-bwzfXH ebZROL"
-            >
-              Trip Details
-            </div>
-            <div
-              class="sc-htpNat KtFsv"
-            >
-              <img
-                alt=""
-                class="sc-bxivhb bfhPyW"
-                src="https://picsum.photos/id/947/45/45"
-              />
-            </div>
-          </div>
-          <div
-            style="position: relative;"
-          >
-            <div
-              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
-            />
-            <div
-              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
-            >
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
-              >
-                <h2>
-                  Hawaii
-                </h2>
-                <h3>
-                  Apr 26, 1970 - Oct 1, 8307
-                </h3>
-              </div>
-              <div
-                style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
-              >
-                <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
-                />
-                <div
-                  style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-                >
-                  $595 of $2000
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <a
+      href="/"
+    >
+      <svg
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <div
+      class="sc-bwzfXH ebZROL"
+    >
+      Trip Details
+    </div>
+    <div
+      class="sc-htpNat KtFsv"
+    >
+      <img
+        alt=""
+        class="sc-bxivhb bfhPyW"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </div>
+  </div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
+    />
+    <div
+      style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+    >
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+      >
+        <h2>
+          Hawaii
+        </h2>
+        <h3>
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
       </div>
       <div
-        class="sc-fjdhpX cEgVjZ"
-        style="text-align: center;"
+        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
       >
+        <span
+          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
+        <div
+          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+        >
+          $595 of $2000
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-fjdhpX cEgVjZ"
+    style="text-align: center;"
+  >
+    <a
+      border="0"
+      buttontype="primary"
+      class="sc-bZQynM hoURAa"
+      href="/trip/1/add-expense"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-gzVnrw dfkowZ"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </a>
+  </div>
+  <div
+    class="sc-jzJRlG kQMCmT"
+  >
+    <div
+      class="sc-gZMcBi ibexuG"
+    >
+      <h3
+        class="sc-gqjmRU cBbVf"
+      >
+        <span>
+          Airfare
+        </span>
         <a
+          backgroundcolor="transparent"
           border="0"
-          buttontype="primary"
-          class="sc-bZQynM hoURAa"
-          href="/trip/1/add-expense"
-          style="display: inline-block; width: auto;"
+          buttontype="link"
+          class="sc-bZQynM dqORwD"
+          href="/trip/1/budget-category/1/edit"
+          style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
         >
           <span
-            class="sc-gzVnrw dfkowZ"
-            color="#fff"
+            class="sc-gzVnrw ejnAGc"
           >
-            Add Expense
+            Edit
           </span>
         </a>
-      </div>
+      </h3>
       <div
-        class="sc-jzJRlG kQMCmT"
+        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
       >
+        <span
+          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
         <div
-          class="sc-gZMcBi ibexuG"
+          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
         >
-          <h3
-            class="sc-gqjmRU cBbVf"
+          $595 of $2000
+        </div>
+      </div>
+      <hr
+        class="sc-VigVT fgNDYA"
+      />
+      <h3
+        class="sc-iwsKbI cEoBnw"
+      >
+        <span>
+          Flights
+        </span>
+        <a
+          backgroundcolor="transparent"
+          border="0"
+          buttontype="link"
+          class="sc-bZQynM dqORwD"
+          href="/trip/1/budget-category/1/budget-item/1"
+          style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
+        >
+          <span
+            class="sc-gzVnrw ejnAGc"
           >
-            <span>
-              Airfare
-            </span>
-            <a
-              backgroundcolor="transparent"
-              border="0"
-              buttontype="link"
-              class="sc-bZQynM dqORwD"
-              href="/trip/1/budget-category/1/edit"
-              style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
-            >
-              <span
-                class="sc-gzVnrw ejnAGc"
-              >
-                Edit
-              </span>
-            </a>
-          </h3>
-          <div
-            style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+            View Expenses
+          </span>
+        </a>
+        <a
+          backgroundcolor="transparent"
+          border="0"
+          buttontype="link"
+          class="sc-bZQynM dqORwD"
+          href="/trip/1/budget-category/1/budget-item/1/edit"
+          style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
+        >
+          <span
+            class="sc-gzVnrw ejnAGc"
           >
-            <span
-              style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
-            />
-            <div
-              style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-            >
-              $595 of $2000
-            </div>
-          </div>
-          <hr
-            class="sc-VigVT fgNDYA"
-          />
-          <div>
-            <h3
-              class="sc-iwsKbI cEoBnw"
-            >
-              <span>
-                Flights
-              </span>
-              <a
-                backgroundcolor="transparent"
-                border="0"
-                buttontype="link"
-                class="sc-bZQynM dqORwD"
-                href="/trip/1/budget-category/1/budget-item/1"
-                style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
-              >
-                <span
-                  class="sc-gzVnrw ejnAGc"
-                >
-                  View Expenses
-                </span>
-              </a>
-              <a
-                backgroundcolor="transparent"
-                border="0"
-                buttontype="link"
-                class="sc-bZQynM dqORwD"
-                href="/trip/1/budget-category/1/budget-item/1/edit"
-                style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
-              >
-                <span
-                  class="sc-gzVnrw ejnAGc"
-                >
-                  Edit
-                </span>
-              </a>
-            </h3>
-            <div
-              style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
-            >
-              <span
-                style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
-              />
-              <div
-                style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-              >
-                $595 of $2000
-              </div>
-            </div>
-          </div>
-          <div
-            style="text-align: center;"
-          >
-            <a
-              backgroundcolor="#fff"
-              border="1px solid undefined"
-              buttontype="secondary"
-              class="sc-bZQynM hSUBqT"
-              href="/trip/1/budget-category/1/add-budget-item"
-              style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
-            >
-              <span
-                class="sc-gzVnrw hcLogF"
-              >
-                Add Budget Item
-              </span>
-            </a>
-          </div>
+            Edit
+          </span>
+        </a>
+      </h3>
+      <div
+        style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+      >
+        <span
+          style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
+        <div
+          style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+        >
+          $595 of $2000
         </div>
       </div>
       <div
-        class="sc-fjdhpX cEgVjZ"
         style="text-align: center;"
       >
         <a
@@ -214,43 +185,62 @@ exports[`can render with redux with custom store 1`] = `
           border="1px solid undefined"
           buttontype="secondary"
           class="sc-bZQynM hSUBqT"
-          href="/trip/1/add-budget-category"
-          style="display: inline-block; width: auto;"
+          href="/trip/1/budget-category/1/add-budget-item"
+          style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
         >
           <span
             class="sc-gzVnrw hcLogF"
           >
-            Add Budget Category
+            Add Budget Item
           </span>
         </a>
-        <br />
-        <a
-          backgroundcolor="transparent"
-          border="0"
-          buttontype="link"
-          class="sc-bZQynM dqORwD"
-          href="/trip/1/edit"
-          style="display: inline-block; width: auto;"
-        >
-          <span
-            class="sc-gzVnrw ejnAGc"
-          >
-            Edit Trip
-          </span>
-        </a>
-        <br />
-        <button
-          class="sc-htoDjs bzHHuk"
-          style="display: inline-block; width: auto;"
-        >
-          <span
-            class="sc-dnqmqq gdGOzX"
-          >
-            Delete Trip
-          </span>
-        </button>
       </div>
     </div>
+  </div>
+  <div
+    class="sc-fjdhpX cEgVjZ"
+    style="text-align: center;"
+  >
+    <a
+      backgroundcolor="#fff"
+      border="1px solid undefined"
+      buttontype="secondary"
+      class="sc-bZQynM hSUBqT"
+      href="/trip/1/add-budget-category"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-gzVnrw hcLogF"
+      >
+        Add Budget Category
+      </span>
+    </a>
+    <br />
+    <a
+      backgroundcolor="transparent"
+      border="0"
+      buttontype="link"
+      class="sc-bZQynM dqORwD"
+      href="/trip/1/edit"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-gzVnrw ejnAGc"
+      >
+        Edit Trip
+      </span>
+    </a>
+    <br />
+    <button
+      class="sc-htoDjs bzHHuk"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-dnqmqq gdGOzX"
+      >
+        Delete Trip
+      </span>
+    </button>
   </div>
 </DocumentFragment>
 `;

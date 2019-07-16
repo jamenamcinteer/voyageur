@@ -45,9 +45,9 @@ const Trip = props => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {trip && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Trip Details"
             theme={props.theme}
@@ -176,9 +176,9 @@ const Trip = props => {
               </MainButtons>
             </Modal>
           </Container>
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

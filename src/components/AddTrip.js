@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 const AddTrip = props => {
   return (
-    <div>
+    <React.Fragment>
       <Header
         title="Add a Trip"
         theme={props.theme}
@@ -13,7 +13,7 @@ const AddTrip = props => {
         auth={props.auth}
       />
       <TripForm theme={props.theme} history={props.history} />
-    </div>
+    </React.Fragment>
   );
 };
 

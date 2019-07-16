@@ -2,170 +2,162 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="sc-bdVaJa hZqfbl"
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <a
+      href="/"
     >
-      <a
-        href="/"
+      <svg
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-          version="1.1"
-          viewBox="0 0 199.404 199.404"
-          xmlns="http://www.w3.org/2000/svg"
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <div
+      class="sc-bwzfXH ebZROL"
+    >
+      Add a Trip
+    </div>
+    <div
+      class="sc-htpNat KtFsv"
+    >
+      <img
+        alt=""
+        class="sc-bxivhb bfhPyW"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </div>
+  </div>
+  <div
+    class="sc-fjdhpX cEgVjZ"
+  >
+    <div
+      class="sc-bZQynM blxRiI"
+    >
+      <label
+        class="sc-gzVnrw sohPS"
+        for="1"
+      >
+        Destination
+      </label>
+      <input
+        class="sc-htoDjs hNiZih"
+        id="1"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="DateRangePicker DateRangePicker_1"
+    >
+      <div>
+        <div
+          class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
         >
-          <g>
-            <polygon
-              points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          <div
+            class="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-startDate"
+              aria-label="Start Date"
+              autocomplete="off"
+              class="DateInput_input DateInput_input_1"
+              id="startDate"
+              name="startDate"
+              placeholder="Start Date"
+              type="text"
+              value=""
             />
-          </g>
-        </svg>
-      </a>
-      <div
-        class="sc-bwzfXH ebZROL"
-      >
-        Add a Trip
-      </div>
-      <div
-        class="sc-htpNat KtFsv"
-      >
-        <img
-          alt=""
-          class="sc-bxivhb bfhPyW"
-          src="https://picsum.photos/id/947/45/45"
-        />
+            <p
+              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-startDate"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
+            role="presentation"
+          >
+            <svg
+              class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+              focusable="false"
+              viewBox="0 0 1000 1000"
+            >
+              <path
+                d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
+              />
+            </svg>
+          </div>
+          <div
+            class="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-endDate"
+              aria-label="End Date"
+              autocomplete="off"
+              class="DateInput_input DateInput_input_1"
+              id="endDate"
+              name="endDate"
+              placeholder="End Date"
+              type="text"
+              value=""
+            />
+            <p
+              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-endDate"
+            >
+              Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <div>
+    <div
+      class="sc-chPdSV iCLCng"
+    />
+    <div
+      class="sc-kAzzGY LGZmy"
+    >
       <div
-        class="sc-fjdhpX cEgVjZ"
+        class="sc-cSHVUG eJVCam"
       >
-        <div
-          class="sc-bZQynM blxRiI"
+        <a
+          backgroundcolor="transparent"
+          border="0"
+          buttontype="link"
+          buttonwidth="auto"
+          class="sc-gqjmRU cVvmHR"
+          href="/"
+          style="padding: 10px 0px;"
         >
-          <label
-            class="sc-gzVnrw sohPS"
-            for="1"
+          <span
+            class="sc-VigVT hBprvu"
           >
-            Destination
-          </label>
-          <input
-            class="sc-htoDjs hNiZih"
-            id="1"
-            type="text"
-            value=""
-          />
-        </div>
-        <div />
-        <div
-          class="DateRangePicker DateRangePicker_1"
+            Cancel
+          </span>
+        </a>
+        <button
+          class="sc-iwsKbI NtbZn"
         >
-          <div>
-            <div
-              class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
-            >
-              <div
-                class="DateInput DateInput_1"
-              >
-                <input
-                  aria-describedby="DateInput__screen-reader-message-startDate"
-                  aria-label="Start Date"
-                  autocomplete="off"
-                  class="DateInput_input DateInput_input_1"
-                  id="startDate"
-                  name="startDate"
-                  placeholder="Start Date"
-                  type="text"
-                  value=""
-                />
-                <p
-                  class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-                  id="DateInput__screen-reader-message-startDate"
-                >
-                  Press the down arrow key to interact with the calendar and
-  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-                </p>
-              </div>
-              <div
-                aria-hidden="true"
-                class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
-                role="presentation"
-              >
-                <svg
-                  class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
-                  focusable="false"
-                  viewBox="0 0 1000 1000"
-                >
-                  <path
-                    d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
-                  />
-                </svg>
-              </div>
-              <div
-                class="DateInput DateInput_1"
-              >
-                <input
-                  aria-describedby="DateInput__screen-reader-message-endDate"
-                  aria-label="End Date"
-                  autocomplete="off"
-                  class="DateInput_input DateInput_input_1"
-                  id="endDate"
-                  name="endDate"
-                  placeholder="End Date"
-                  type="text"
-                  value=""
-                />
-                <p
-                  class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-                  id="DateInput__screen-reader-message-endDate"
-                >
-                  Press the down arrow key to interact with the calendar and
-  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div />
-        <div>
-          <div
-            class="sc-chPdSV iCLCng"
-          />
-        </div>
-        <div
-          class="sc-kAzzGY LGZmy"
-        >
-          <div
-            class="sc-cSHVUG eJVCam"
+          <span
+            class="sc-gZMcBi cnsAlJ"
+            color="#fff"
           >
-            <a
-              backgroundcolor="transparent"
-              border="0"
-              buttontype="link"
-              buttonwidth="auto"
-              class="sc-gqjmRU cVvmHR"
-              href="/"
-              style="padding: 10px 0px;"
-            >
-              <span
-                class="sc-VigVT hBprvu"
-              >
-                Cancel
-              </span>
-            </a>
-            <button
-              class="sc-iwsKbI NtbZn"
-            >
-              <span
-                class="sc-gZMcBi cnsAlJ"
-                color="#fff"
-              >
-                Save
-              </span>
-            </button>
-          </div>
-        </div>
+            Save
+          </span>
+        </button>
       </div>
     </div>
   </div>
