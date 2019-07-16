@@ -6,6 +6,7 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 var compression = require("compression");
+var sslRedirect = require("heroku-ssl-redirect");
 var express = require("express");
 var cors = require("cors");
 require("./models/User");
@@ -20,6 +21,8 @@ mongoose.connect(config.get("MONGO_URI"));
 var app = express();
 
 app.use(compression());
+
+app.use(sslRedirect());
 
 app.use(bodyParser.json());
 
