@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 var whitelist = ["http://localhost:3000/", "http://localhost:3001/"];
 var corsOptions = {
   origin: function(origin, callback) {
-    // console.log(origin);
-    // console.log(whitelist.indexOf(origin));
+    console.log(origin);
+    console.log(whitelist.indexOf(origin));
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {

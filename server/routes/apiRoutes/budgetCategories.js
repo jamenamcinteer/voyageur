@@ -32,7 +32,7 @@ module.exports = app => {
     });
     update.isNew = false;
     update.save(err => {
-      if (err) res.send(err);
+      if (err) res.status(422).send(err);
       else {
         res.send({ message: "ok" });
       }
