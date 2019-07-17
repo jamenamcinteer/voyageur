@@ -20,7 +20,11 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var whitelist = ["http://localhost:3000/", "http://localhost:3001/"];
+var whitelist = [
+  "http://localhost:3000/",
+  "http://localhost:3001/",
+  "https://voyageur-staging.herokuapp.com"
+];
 var corsOptions = {
   origin: function(origin, callback) {
     console.log(origin);
