@@ -111,6 +111,20 @@ const ViewBudgetItem = props => {
           />
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
+              to={`/trip/${trip._id}/budget-category/${
+                props.match.params.budgetCategoryId
+              }/budget-item/${budgetItem._id}/edit`}
+              theme={props.theme}
+              buttonType="secondary"
+              buttonText="Edit Budget Item"
+              customStyles={{
+                background: {
+                  display: "inline-block",
+                  width: "auto"
+                }
+              }}
+            />
+            <ButtonLink
               to={`/trip/${trip._id}/add-expense?budgetCategory=${
                 props.match.params.budgetCategoryId
               }&budgetItem=${budgetItem._id}`}

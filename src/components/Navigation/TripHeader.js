@@ -4,6 +4,21 @@ import Meter from "../Meters/Meter";
 import moment from "moment";
 import {} from "twix";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
+import styled from "styled-components";
+
+const DestinationHeader = styled.h2`
+  font-size: 1.7em;
+  margin-top: 24px;
+  margin-bottom: 20px;
+`;
+const DatesHeader = styled.h3`
+  font-weight: normal;
+  margin: 0;
+`;
+const BudgetHeader = styled.h3`
+  font-weight: normal;
+  margin: 0;
+`;
 
 const TripHeader = props => {
   const subheaderBackgroundStyles = {
@@ -29,7 +44,7 @@ const TripHeader = props => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    height: "90px"
+    paddingBottom: "10px"
   };
 
   const budgetItems = props.budgetItems.filter(
@@ -59,9 +74,12 @@ const TripHeader = props => {
           <div style={{ position: "relative" }}>
             <div style={subheaderBackgroundStyles} />
             <div style={subheaderStyles}>
+              <DestinationHeader>{props.trip.destination}</DestinationHeader>
               <div style={subheaderTextStyles}>
-                <h2>{props.trip.destination}</h2>
-                <h3>{dates}</h3>
+                <DatesHeader>{dates}</DatesHeader>
+                <BudgetHeader>
+                  ${Math.ceil(actual)} / ${Math.ceil(budgeted)}
+                </BudgetHeader>
               </div>
               <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
             </div>
