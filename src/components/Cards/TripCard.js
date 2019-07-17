@@ -5,6 +5,7 @@ import moment from "moment";
 import {} from "twix";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
 import styled from "styled-components";
+import { FigCaption } from "../StyledComponents/Images";
 
 const CardBackground = styled.div`
   background-color: #fff;
@@ -47,17 +48,7 @@ const TripCard = props => {
             alt=""
             style={{ width: "100%", height: "200px" }}
           />
-          <figcaption
-            style={{
-              position: "absolute",
-              bottom: "4px",
-              backgroundColor: "#333",
-              color: "#FFF",
-              opacity: ".7",
-              padding: "5px",
-              width: "100%",
-              fontSize: ".75em"
-            }}
+          <FigCaption
             dangerouslySetInnerHTML={{ __html: props.photoAttribution }}
           />
         </CardImageContainer>

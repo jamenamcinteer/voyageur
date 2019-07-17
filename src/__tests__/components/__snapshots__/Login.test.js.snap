@@ -20,7 +20,7 @@ exports[`renders 1`] = `
           Travel Budget Planner
         </h2>
         <a
-          class="sc-bdVaJa fNsMgz"
+          class="sc-bdVaJa gtQkNQ"
           href="/auth/google"
           style="display: inline-block;"
         >

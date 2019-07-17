@@ -2,12 +2,6 @@ import React from "react";
 import theme from "../../theme";
 
 const Meter = props => {
-  const displayOverviewBudget = () => {
-    let actual = Math.ceil(props.actual);
-    let budgeted = Math.ceil(props.budgeted);
-
-    return "$" + actual + " of $" + budgeted;
-  };
   const handleOverviewProgressBar = () => {
     let actual = props.actual;
     let budgeted = props.budgeted;
@@ -31,7 +25,7 @@ const Meter = props => {
 
   const meterStyles = {
     width: "100%",
-    height: "25px",
+    height: "10px",
     position: "relative",
     background: "#DCE0E3",
     borderRadius: "5px"
@@ -43,20 +37,12 @@ const Meter = props => {
     position: "relative",
     overflow: "hidden"
   };
-  const meterAmountsStyles = {
-    position: "absolute",
-    top: "0",
-    color: "white",
-    left: "10px",
-    lineHeight: "25px"
-  };
 
   return (
     <div style={meterStyles}>
       <span
         style={{ ...meterProgressStyles, ...handleOverviewProgressBar() }}
       />
-      <div style={meterAmountsStyles}>{displayOverviewBudget()}</div>
     </div>
   );
 };

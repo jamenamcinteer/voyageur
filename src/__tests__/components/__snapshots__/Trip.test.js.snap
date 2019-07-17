@@ -13,6 +13,7 @@ exports[`can render with redux with custom store 1`] = `
               href="/"
             >
               <svg
+                aria-label="Go Back"
                 style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
                 version="1.1"
                 viewBox="0 0 199.404 199.404"
@@ -25,20 +26,20 @@ exports[`can render with redux with custom store 1`] = `
                 </g>
               </svg>
             </a>
-            <div
-              class="sc-bwzfXH ebZROL"
+            <h1
+              class="sc-bwzfXH OVfcq"
             >
               Trip Details
-            </div>
-            <div
-              class="sc-htpNat KtFsv"
+            </h1>
+            <button
+              class="sc-htpNat fqCEYg"
             >
               <img
-                alt=""
-                class="sc-bxivhb bfhPyW"
+                alt="Account Options"
+                class="sc-bxivhb jwtarI"
                 src="https://picsum.photos/id/947/45/45"
               />
-            </div>
+            </button>
           </div>
           <div
             style="position: relative;"
@@ -49,45 +50,49 @@ exports[`can render with redux with custom store 1`] = `
             <div
               style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
             >
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+              <h2
+                class="sc-bZQynM krdFRo"
               >
-                <h2>
-                  Hawaii
-                </h2>
-                <h3>
+                Hawaii
+              </h2>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;"
+              >
+                <h3
+                  class="sc-gzVnrw HgWFV"
+                >
                   Apr 26, 1970 - Oct 1, 8307
+                </h3>
+                <h3
+                  class="sc-htoDjs btYDzX"
+                >
+                  $595 / $2000
                 </h3>
               </div>
               <div
-                style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+                style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
               >
                 <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
                 />
-                <div
-                  style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-                >
-                  $595 of $2000
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="sc-fjdhpX cEgVjZ"
+        class="sc-jKJlTe bfKxYj"
         style="text-align: center;"
       >
         <a
           border="0"
           buttontype="primary"
-          class="sc-bZQynM hoURAa"
+          class="sc-dnqmqq bzwyzY"
           href="/trip/1/add-expense"
           style="display: inline-block; width: auto;"
         >
           <span
-            class="sc-gzVnrw dfkowZ"
+            class="sc-iwsKbI csPART"
             color="#fff"
           >
             Add Expense
@@ -95,94 +100,95 @@ exports[`can render with redux with custom store 1`] = `
         </a>
       </div>
       <div
-        class="sc-jzJRlG kQMCmT"
+        class="sc-eNQAEJ iJGPKs"
       >
         <div
-          class="sc-gZMcBi ibexuG"
+          class="sc-kAzzGY djjpzf"
         >
           <h3
-            class="sc-gqjmRU cBbVf"
+            class="sc-chPdSV bsMEyv"
           >
             <span>
               Airfare
             </span>
-            <a
-              backgroundcolor="transparent"
-              border="0"
-              buttontype="link"
-              class="sc-bZQynM dqORwD"
-              href="/trip/1/budget-category/1/edit"
-              style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
+            <span
+              class="sc-kgoBCf dwKaYX"
             >
-              <span
-                class="sc-gzVnrw ejnAGc"
-              >
-                Edit
-              </span>
-            </a>
+              $595 / $2000
+            </span>
           </h3>
           <div
-            style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+            class="sc-kGXeez klUFkB"
           >
-            <span
-              style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
-            />
             <div
-              style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-            >
-              $595 of $2000
-            </div>
-          </div>
-          <hr
-            class="sc-VigVT fgNDYA"
-          />
-          <div>
-            <h3
-              class="sc-iwsKbI cEoBnw"
-            >
-              <span>
-                Flights
-              </span>
-              <a
-                backgroundcolor="transparent"
-                border="0"
-                buttontype="link"
-                class="sc-bZQynM dqORwD"
-                href="/trip/1/budget-category/1/budget-item/1"
-                style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
-              >
-                <span
-                  class="sc-gzVnrw ejnAGc"
-                >
-                  View Expenses
-                </span>
-              </a>
-              <a
-                backgroundcolor="transparent"
-                border="0"
-                buttontype="link"
-                class="sc-bZQynM dqORwD"
-                href="/trip/1/budget-category/1/budget-item/1/edit"
-                style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
-              >
-                <span
-                  class="sc-gzVnrw ejnAGc"
-                >
-                  Edit
-                </span>
-              </a>
-            </h3>
-            <div
-              style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+              style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
             >
               <span
-                style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+                style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
               />
-              <div
-                style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
+            </div>
+            <a
+              class="sc-kpOJdX kachQg"
+              href="/trip/1/budget-category/1/edit"
+            >
+              <svg
+                aria-label="Edit"
+                style="fill: #0C7C88; padding: 5px; width: 30px; display: block;"
+                viewBox="0 0 528.899 528.899"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                $595 of $2000
+                <path
+                  d="M328.883 89.125l107.59 107.589-272.34 272.34L56.604 361.465l272.279-272.34zm189.23-25.948l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259 0l-45.961 45.961 107.59 107.59 53.611-53.611c14.382-14.383 14.382-37.577 0-51.959zM.3 512.69c-1.958 8.812 5.998 16.708 14.811 14.565l119.891-29.069L27.473 390.597.3 512.69z"
+                />
+              </svg>
+            </a>
+          </div>
+          <hr
+            class="sc-dxgOiQ jyCshM"
+          />
+          <div>
+            <a
+              class="sc-jTzLTM cEjHYa"
+              href="/trip/1/budget-category/1/budget-item/1"
+            >
+              <h3
+                class="sc-VigVT gJHUIe"
+              >
+                <span>
+                  Flights
+                </span>
+                <span
+                  class="sc-fjdhpX bpQheo"
+                >
+                  $595 / $2000
+                </span>
+              </h3>
+            </a>
+            <div
+              class="sc-jzJRlG fswDQX"
+            >
+              <div
+                style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+              >
+                <span
+                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
+                />
               </div>
+              <a
+                class="sc-cSHVUG SZAFG"
+                href="/trip/1/budget-category/1/budget-item/1/edit"
+              >
+                <svg
+                  aria-label="Edit"
+                  style="fill: #0C7C88; padding: 5px; width: 30px; display: block;"
+                  viewBox="0 0 528.899 528.899"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M328.883 89.125l107.59 107.589-272.34 272.34L56.604 361.465l272.279-272.34zm189.23-25.948l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259 0l-45.961 45.961 107.59 107.59 53.611-53.611c14.382-14.383 14.382-37.577 0-51.959zM.3 512.69c-1.958 8.812 5.998 16.708 14.811 14.565l119.891-29.069L27.473 390.597.3 512.69z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
           <div
@@ -192,12 +198,12 @@ exports[`can render with redux with custom store 1`] = `
               backgroundcolor="#fff"
               border="1px solid undefined"
               buttontype="secondary"
-              class="sc-bZQynM hSUBqT"
+              class="sc-dnqmqq jOrfEO"
               href="/trip/1/budget-category/1/add-budget-item"
               style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
             >
               <span
-                class="sc-gzVnrw hcLogF"
+                class="sc-iwsKbI iHcQhx"
               >
                 Add Budget Item
               </span>
@@ -206,19 +212,19 @@ exports[`can render with redux with custom store 1`] = `
         </div>
       </div>
       <div
-        class="sc-fjdhpX cEgVjZ"
+        class="sc-jKJlTe bfKxYj"
         style="text-align: center;"
       >
         <a
           backgroundcolor="#fff"
           border="1px solid undefined"
           buttontype="secondary"
-          class="sc-bZQynM hSUBqT"
+          class="sc-dnqmqq jOrfEO"
           href="/trip/1/add-budget-category"
           style="display: inline-block; width: auto;"
         >
           <span
-            class="sc-gzVnrw hcLogF"
+            class="sc-iwsKbI iHcQhx"
           >
             Add Budget Category
           </span>
@@ -228,23 +234,23 @@ exports[`can render with redux with custom store 1`] = `
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
-          class="sc-bZQynM dqORwD"
+          class="sc-dnqmqq hrnEGT"
           href="/trip/1/edit"
           style="display: inline-block; width: auto;"
         >
           <span
-            class="sc-gzVnrw ejnAGc"
+            class="sc-iwsKbI ivclys"
           >
             Edit Trip
           </span>
         </a>
         <br />
         <button
-          class="sc-htoDjs bzHHuk"
+          class="sc-gZMcBi bQvqv"
           style="display: inline-block; width: auto;"
         >
           <span
-            class="sc-dnqmqq gdGOzX"
+            class="sc-gqjmRU dlVmQZ"
           >
             Delete Trip
           </span>

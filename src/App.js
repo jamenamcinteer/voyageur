@@ -15,15 +15,18 @@ const GlobalStyles = createGlobalStyle`
   figcaption a {
     color: #fff;
   }
+  a:focus {
+    outline: 3px solid ${props => props.theme.focusBorder};
+  }
 `;
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <main>
         <GlobalStyles />
         <AppRouter theme={theme} />
-      </div>
+      </main>
     </ThemeProvider>
   );
 }

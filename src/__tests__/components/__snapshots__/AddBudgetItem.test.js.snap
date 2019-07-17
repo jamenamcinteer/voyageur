@@ -13,6 +13,7 @@ exports[`can render with redux with custom store 1`] = `
               href="/trip/1"
             >
               <svg
+                aria-label="Go Back"
                 style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
                 version="1.1"
                 viewBox="0 0 199.404 199.404"
@@ -25,20 +26,20 @@ exports[`can render with redux with custom store 1`] = `
                 </g>
               </svg>
             </a>
-            <div
-              class="sc-bwzfXH ebZROL"
+            <h1
+              class="sc-bwzfXH OVfcq"
             >
               Add Budget Item
-            </div>
-            <div
-              class="sc-htpNat KtFsv"
+            </h1>
+            <button
+              class="sc-htpNat fqCEYg"
             >
               <img
-                alt=""
-                class="sc-bxivhb bfhPyW"
+                alt="Account Options"
+                class="sc-bxivhb jwtarI"
                 src="https://picsum.photos/id/947/45/45"
               />
-            </div>
+            </button>
           </div>
           <div
             style="position: relative;"
@@ -49,37 +50,41 @@ exports[`can render with redux with custom store 1`] = `
             <div
               style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
             >
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; height: 90px;"
+              <h2
+                class="sc-bZQynM krdFRo"
               >
-                <h2>
-                  Hawaii
-                </h2>
-                <h3>
+                Hawaii
+              </h2>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;"
+              >
+                <h3
+                  class="sc-gzVnrw HgWFV"
+                >
                   Apr 26, 1970 - Oct 1, 8307
+                </h3>
+                <h3
+                  class="sc-htoDjs btYDzX"
+                >
+                  $595 / $2000
                 </h3>
               </div>
               <div
-                style="width: 100%; height: 25px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+                style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
               >
                 <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(26, 174, 159);"
+                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
                 />
-                <div
-                  style="position: absolute; top: 0px; color: white; left: 10px; line-height: 25px;"
-                >
-                  $595 of $2000
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="sc-cSHVUG bhLOSl"
+        class="sc-kgoBCf RJSBM"
       >
         <h3
-          class="sc-kpOJdX iUFbzx"
+          class="sc-jKJlTe ctrgMO"
         >
           <span>
             Budget Category: Airfare
@@ -88,47 +93,29 @@ exports[`can render with redux with custom store 1`] = `
             backgroundcolor="transparent"
             border="0"
             buttontype="link"
-            class="sc-fjdhpX bbvnea"
+            class="sc-kAzzGY fsudaQ"
             href="/trip/1"
             style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
           >
             <span
-              class="sc-jzJRlG cphvgw"
+              class="sc-chPdSV IudMt"
             >
               Change
             </span>
           </a>
         </h3>
         <div
-          class="sc-bZQynM blxRiI"
+          class="sc-dnqmqq jnbCEU"
         >
           <label
-            class="sc-gzVnrw sohPS"
+            class="sc-iwsKbI dtSDPi"
             for="1"
           >
             Name of Budget Item
           </label>
           <input
-            class="sc-htoDjs hNiZih"
+            class="sc-gZMcBi kJGmWv"
             id="1"
-            type="text"
-            value=""
-          />
-        </div>
-        <div />
-        <div
-          class="sc-bZQynM blxRiI"
-        >
-          <label
-            class="sc-gzVnrw sohPS"
-            for="2"
-          >
-            Estimated Cost ($)
-          </label>
-          <input
-            class="sc-htoDjs hNiZih"
-            id="2"
-            placeholder="0.00"
             type="text"
             value=""
           />
@@ -139,42 +126,60 @@ exports[`can render with redux with custom store 1`] = `
         >
           <label
             class="sc-iwsKbI dtSDPi"
+            for="2"
+          >
+            Estimated Cost ($)
+          </label>
+          <input
+            class="sc-gZMcBi kJGmWv"
+            id="2"
+            placeholder="0.00"
+            type="text"
+            value=""
+          />
+        </div>
+        <div />
+        <div
+          class="sc-gqjmRU jgsBPr"
+        >
+          <label
+            class="sc-VigVT hqhiep"
             for="3"
           >
             Notes (optional)
           </label>
           <textarea
-            class="sc-gZMcBi kEtTwg"
+            class="sc-jTzLTM cHGIjj"
             id="3"
             type="text"
           />
         </div>
         <div
-          class="sc-kgoBCf eZNNpy"
+          class="sc-dxgOiQ VLeUZ"
         >
           <div
-            class="sc-chPdSV hATzHZ"
+            class="sc-kpOJdX ibexlj"
           >
             <a
               backgroundcolor="transparent"
               border="0"
               buttontype="link"
               buttonwidth="auto"
-              class="sc-fjdhpX bbvnea"
+              class="sc-kAzzGY fsudaQ"
               href="/trip/1"
               style="padding: 10px 0px;"
             >
               <span
-                class="sc-jzJRlG cphvgw"
+                class="sc-chPdSV IudMt"
               >
                 Cancel
               </span>
             </a>
             <button
-              class="sc-VigVT kMgnqA"
+              class="sc-jzJRlG hjpZFG"
             >
               <span
-                class="sc-jTzLTM cntDpR"
+                class="sc-cSHVUG hQiayu"
                 color="#fff"
               >
                 Save
