@@ -38,35 +38,35 @@ exports[`can render with redux with custom store 1`] = `
     </button>
   </div>
   <div
-    class="sc-gqjmRU giWxzf"
+    class="sc-gZMcBi irilpd"
   >
     <div
-      class="sc-VigVT gaKuEu"
+      class="sc-gqjmRU jdetvG"
     />
     <div
-      class="sc-jTzLTM bCKeMJ"
+      class="sc-VigVT bjQgmE"
     >
       <h2
-        class="sc-dnqmqq cknTFO"
+        class="sc-htoDjs eJUAaw"
       >
         Hawaii
       </h2>
       <div
-        class="sc-fjdhpX bwGKTX"
+        class="sc-jTzLTM hwwuHy"
       >
         <h3
-          class="sc-iwsKbI kGErDA"
+          class="sc-dnqmqq jgPViO"
         >
           Apr 26, 1970 - Oct 1, 8307
         </h3>
         <h3
-          class="sc-gZMcBi jjuknu"
+          class="sc-iwsKbI kGErDA"
         >
           $595 / $2000
         </h3>
       </div>
       <div
-        class="sc-bZQynM kssguc"
+        class="sc-bZQynM bJqPLz"
       >
         <span
           class="sc-gzVnrw daRrCx"
@@ -76,19 +76,19 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-jKJlTe bfKxYj"
+    class="sc-ckVGcZ jWQnQO"
   >
     <div
-      class="sc-jzJRlG IjJtL"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-cSHVUG cRQPO"
+        class="sc-jzJRlG ddfqFX"
         for="1"
       >
         Destination
       </label>
       <input
-        class="sc-kAzzGY fnqkhj"
+        class="sc-cSHVUG gMdUiP"
         id="1"
         type="text"
         value="Hawaii"
@@ -164,51 +164,51 @@ exports[`can render with redux with custom store 1`] = `
       </div>
     </div>
     <button
-      class="sc-kgoBCf kIiqpy"
+      class="sc-chPdSV cWCjRk"
       style="padding: 10px 0px;"
     >
       <span
-        class="sc-kGXeez XqQGe"
+        class="sc-kgoBCf jOukbh"
       >
         Change Photo
       </span>
     </button>
     <div
-      class="sc-kEYyzF eWweWs"
+      class="sc-hMqMXs ZOCRt"
     >
       <button
-        class="sc-kgoBCf kIiqpy"
+        class="sc-chPdSV cWCjRk"
         style="padding: 10px 0px;"
       >
         <span
-          class="sc-kGXeez XqQGe"
+          class="sc-kgoBCf jOukbh"
         >
           Delete
         </span>
       </button>
       <div
-        class="sc-hMqMXs jmsAuy"
+        class="sc-eNQAEJ XEuOY"
       >
         <a
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="sc-kpOJdX jvyJdG"
+          class="sc-kGXeez hPXLNi"
           href="/"
           style="padding: 10px 0px;"
         >
           <span
-            class="sc-dxgOiQ igSPKh"
+            class="sc-kpOJdX edYuyx"
           >
             Cancel
           </span>
         </a>
         <button
-          class="sc-kgoBCf dYHsBq"
+          class="sc-chPdSV lnDAMS"
         >
           <span
-            class="sc-kGXeez dRkePS"
+            class="sc-kgoBCf jHsowC"
             color="#fff"
           >
             Save

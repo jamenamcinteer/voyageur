@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledMeter = styled.div`
   width: 100%;
-  height: 25px;
+  height: 10px;
   position: relative;
   background: #dce0e3;
   border-radius: 5px;
@@ -16,14 +16,6 @@ const MeterProgress = styled.span`
   border-radius: 5px;
   position: relative;
   overflow: hidden;
-`;
-
-const MeterAmount = styled.div`
-  position: absolute;
-  top: 0;
-  color: #fff;
-  left: 10px;
-  line-height: 25px;
 `;
 
 const Meter = props => {

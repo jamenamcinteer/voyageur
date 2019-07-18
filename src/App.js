@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a:focus {
     outline: 3px solid ${props => props.theme.focusBorder};
+  }
   body {
     .DateInput {
       width: calc(50% - 12px);

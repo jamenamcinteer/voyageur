@@ -38,35 +38,35 @@ exports[`can render with redux with custom store 1`] = `
     </button>
   </div>
   <div
-    class="sc-gqjmRU giWxzf"
+    class="sc-gZMcBi irilpd"
   >
     <div
-      class="sc-VigVT gaKuEu"
+      class="sc-gqjmRU jdetvG"
     />
     <div
-      class="sc-jTzLTM bCKeMJ"
+      class="sc-VigVT bjQgmE"
     >
       <h2
-        class="sc-dnqmqq cknTFO"
+        class="sc-htoDjs eJUAaw"
       >
         Hawaii
       </h2>
       <div
-        class="sc-fjdhpX bwGKTX"
+        class="sc-jTzLTM hwwuHy"
       >
         <h3
-          class="sc-iwsKbI kGErDA"
+          class="sc-dnqmqq jgPViO"
         >
           Apr 26, 1970 - Oct 1, 8307
         </h3>
         <h3
-          class="sc-gZMcBi jjuknu"
+          class="sc-iwsKbI kGErDA"
         >
           $595 / $2000
         </h3>
       </div>
       <div
-        class="sc-bZQynM kssguc"
+        class="sc-bZQynM bJqPLz"
       >
         <span
           class="sc-gzVnrw daRrCx"
@@ -76,10 +76,10 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-hMqMXs iuWZXQ"
+    class="sc-eNQAEJ foKLuV"
   >
     <h3
-      class="sc-eHgmQL fXIGIR"
+      class="sc-hSdWYo iOFpWc"
     >
       <span>
         Budget Category: Airfare
@@ -88,44 +88,44 @@ exports[`can render with redux with custom store 1`] = `
         backgroundcolor="transparent"
         border="0"
         buttontype="link"
-        class="sc-jKJlTe bdDcOC"
+        class="sc-ckVGcZ lamJJh"
         href="/trip/1"
         style="padding: 0px 10px; margin: 0px; width: auto; font-size: .8em;"
       >
         <span
-          class="sc-eNQAEJ DRszw"
+          class="sc-jKJlTe cBpjwl"
         >
           Change
         </span>
       </a>
     </h3>
     <div
-      class="sc-jzJRlG IjJtL"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-cSHVUG cRQPO"
+        class="sc-jzJRlG ddfqFX"
         for="1"
       >
         Name of Budget Item
       </label>
       <input
-        class="sc-kAzzGY fnqkhj"
+        class="sc-cSHVUG gMdUiP"
         id="1"
         type="text"
         value="Flights"
       />
     </div>
     <div
-      class="sc-jzJRlG IjJtL"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-cSHVUG cRQPO"
+        class="sc-jzJRlG ddfqFX"
         for="2"
       >
         Estimated Cost ($)
       </label>
       <input
-        class="sc-kAzzGY fnqkhj"
+        class="sc-cSHVUG gMdUiP"
         id="2"
         placeholder="0.00"
         type="text"
@@ -133,56 +133,56 @@ exports[`can render with redux with custom store 1`] = `
       />
     </div>
     <div
-      class="sc-chPdSV ggauqL"
+      class="sc-kAzzGY kDHigu"
     >
       <label
-        class="sc-kgoBCf jWugst"
+        class="sc-chPdSV dWjhBN"
         for="3"
       >
         Notes (optional)
       </label>
       <textarea
-        class="sc-kGXeez dqJaTn"
+        class="sc-kgoBCf kPOuft"
         id="3"
         type="text"
       />
     </div>
     <div
-      class="sc-iAyFgw bmSzBj"
+      class="sc-kkGfuU kKenyH"
     >
       <button
-        class="sc-dxgOiQ hWyPmj"
+        class="sc-kpOJdX gTDkiN"
         style="padding: 10px 0px;"
       >
         <span
-          class="sc-ckVGcZ fdKCQg"
+          class="sc-dxgOiQ igSPKh"
         >
           Delete
         </span>
       </button>
       <div
-        class="sc-kkGfuU cOuTTm"
+        class="sc-kEYyzF jkbtSX"
       >
         <a
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="sc-jKJlTe bdDcOC"
+          class="sc-ckVGcZ lamJJh"
           href="/trip/1"
           style="padding: 10px 0px;"
         >
           <span
-            class="sc-eNQAEJ DRszw"
+            class="sc-jKJlTe cBpjwl"
           >
             Cancel
           </span>
         </a>
         <button
-          class="sc-dxgOiQ cJxUzR"
+          class="sc-kpOJdX dgoBcT"
         >
           <span
-            class="sc-ckVGcZ inkaIh"
+            class="sc-dxgOiQ iZtcok"
             color="#fff"
           >
             Save

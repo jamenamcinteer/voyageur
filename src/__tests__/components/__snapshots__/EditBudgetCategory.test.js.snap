@@ -38,35 +38,35 @@ exports[`can render with redux with custom store 1`] = `
     </button>
   </div>
   <div
-    class="sc-gqjmRU giWxzf"
+    class="sc-gZMcBi irilpd"
   >
     <div
-      class="sc-VigVT gaKuEu"
+      class="sc-gqjmRU jdetvG"
     />
     <div
-      class="sc-jTzLTM bCKeMJ"
+      class="sc-VigVT bjQgmE"
     >
       <h2
-        class="sc-dnqmqq cknTFO"
+        class="sc-htoDjs eJUAaw"
       >
         Hawaii
       </h2>
       <div
-        class="sc-fjdhpX bwGKTX"
+        class="sc-jTzLTM hwwuHy"
       >
         <h3
-          class="sc-iwsKbI kGErDA"
+          class="sc-dnqmqq jgPViO"
         >
           Apr 26, 1970 - Oct 1, 8307
         </h3>
         <h3
-          class="sc-gZMcBi jjuknu"
+          class="sc-iwsKbI kGErDA"
         >
           $595 / $2000
         </h3>
       </div>
       <div
-        class="sc-bZQynM kssguc"
+        class="sc-bZQynM bJqPLz"
       >
         <span
           class="sc-gzVnrw daRrCx"
@@ -76,19 +76,19 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-kEYyzF iRGgAI"
+    class="sc-hMqMXs iuWZXQ"
   >
     <div
-      class="sc-jzJRlG IjJtL"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-cSHVUG cRQPO"
+        class="sc-jzJRlG ddfqFX"
         for="1"
       >
         Name of Budget Category
       </label>
       <input
-        class="sc-kAzzGY fnqkhj"
+        class="sc-cSHVUG gMdUiP"
         id="1"
         placeholder="Example: Airfare, Food, Activities, etc."
         type="text"
@@ -96,56 +96,56 @@ exports[`can render with redux with custom store 1`] = `
       />
     </div>
     <div
-      class="sc-chPdSV ggauqL"
+      class="sc-kAzzGY kDHigu"
     >
       <label
-        class="sc-kgoBCf jWugst"
+        class="sc-chPdSV dWjhBN"
         for="2"
       >
         Notes (optional)
       </label>
       <textarea
-        class="sc-kGXeez dqJaTn"
+        class="sc-kgoBCf kPOuft"
         id="2"
         type="text"
       />
     </div>
     <div
-      class="sc-hSdWYo gpAqGf"
+      class="sc-iAyFgw bmSzBj"
     >
       <button
-        class="sc-dxgOiQ hWyPmj"
+        class="sc-kpOJdX gTDkiN"
         style="padding: 10px 0px;"
       >
         <span
-          class="sc-ckVGcZ fdKCQg"
+          class="sc-dxgOiQ igSPKh"
         >
           Delete
         </span>
       </button>
       <div
-        class="sc-iAyFgw drEWVX"
+        class="sc-kkGfuU cOuTTm"
       >
         <a
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="sc-jKJlTe bdDcOC"
+          class="sc-ckVGcZ lamJJh"
           href="/trip/1"
           style="padding: 10px 0px;"
         >
           <span
-            class="sc-eNQAEJ DRszw"
+            class="sc-jKJlTe cBpjwl"
           >
             Cancel
           </span>
         </a>
         <button
-          class="sc-dxgOiQ cJxUzR"
+          class="sc-kpOJdX dgoBcT"
         >
           <span
-            class="sc-ckVGcZ inkaIh"
+            class="sc-dxgOiQ iZtcok"
             color="#fff"
           >
             Save

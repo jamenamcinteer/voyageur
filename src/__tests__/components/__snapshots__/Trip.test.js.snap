@@ -38,35 +38,35 @@ exports[`can render with redux with custom store 1`] = `
     </button>
   </div>
   <div
-    class="sc-gqjmRU giWxzf"
+    class="sc-gZMcBi irilpd"
   >
     <div
-      class="sc-VigVT gaKuEu"
+      class="sc-gqjmRU jdetvG"
     />
     <div
-      class="sc-jTzLTM bCKeMJ"
+      class="sc-VigVT bjQgmE"
     >
       <h2
-        class="sc-dnqmqq cknTFO"
+        class="sc-htoDjs eJUAaw"
       >
         Hawaii
       </h2>
       <div
-        class="sc-fjdhpX bwGKTX"
+        class="sc-jTzLTM hwwuHy"
       >
         <h3
-          class="sc-iwsKbI kGErDA"
+          class="sc-dnqmqq jgPViO"
         >
           Apr 26, 1970 - Oct 1, 8307
         </h3>
         <h3
-          class="sc-gZMcBi jjuknu"
+          class="sc-iwsKbI kGErDA"
         >
           $595 / $2000
         </h3>
       </div>
       <div
-        class="sc-bZQynM kssguc"
+        class="sc-bZQynM bJqPLz"
       >
         <span
           class="sc-gzVnrw daRrCx"
@@ -76,18 +76,18 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-cvbbAY ewQxPI"
+    class="sc-eHgmQL dVovqt"
     style="text-align: center;"
   >
     <a
       border="0"
       buttontype="primary"
-      class="sc-jzJRlG cyIibp"
+      class="sc-fjdhpX hWrGoY"
       href="/trip/1/add-expense"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-cSHVUG hQiayu"
+        class="sc-jzJRlG gLLVms"
         color="#fff"
       >
         Add Expense
@@ -95,28 +95,28 @@ exports[`can render with redux with custom store 1`] = `
     </a>
   </div>
   <div
-    class="sc-jWBwVP frmqFj"
+    class="sc-cvbbAY jZSbQA"
   >
     <div
-      class="sc-jKJlTe eWaihL"
+      class="sc-ckVGcZ jutrEE"
     >
       <h3
-        class="sc-eNQAEJ eEhvrI"
+        class="sc-jKJlTe huPcXk"
       >
         <span>
           Airfare
         </span>
         <span
-          class="sc-hMqMXs epjGrR"
+          class="sc-eNQAEJ gUOWvj"
         >
           $595 / $2000
         </span>
       </h3>
       <div
-        class="sc-kEYyzF fEebBv"
+        class="sc-hMqMXs hfbTqN"
       >
         <div
-          class="sc-bZQynM kssguc"
+          class="sc-bZQynM bJqPLz"
         >
           <span
             class="sc-gzVnrw daRrCx"
@@ -124,7 +124,7 @@ exports[`can render with redux with custom store 1`] = `
           />
         </div>
         <a
-          class="sc-kkGfuU iNXuX"
+          class="sc-kEYyzF aOQKm"
           href="/trip/1/budget-category/1/edit"
         >
           <svg
@@ -140,31 +140,31 @@ exports[`can render with redux with custom store 1`] = `
         </a>
       </div>
       <hr
-        class="sc-iAyFgw bwlMGS"
+        class="sc-kkGfuU pwRGK"
       />
       <div>
         <a
-          class="sc-kGXeez cUQEDV"
+          class="sc-kgoBCf inJPmH"
           href="/trip/1/budget-category/1/budget-item/1"
         >
           <h3
-            class="sc-kgoBCf ddwmMr"
+            class="sc-chPdSV kukxAS"
           >
             <span>
               Flights
             </span>
             <span
-              class="sc-kpOJdX hkRHZQ"
+              class="sc-kGXeez jCKLxH"
             >
               $595 / $2000
             </span>
           </h3>
         </a>
         <div
-          class="sc-dxgOiQ cVbTDD"
+          class="sc-kpOJdX caepzu"
         >
           <div
-            class="sc-bZQynM kssguc"
+            class="sc-bZQynM bJqPLz"
           >
             <span
               class="sc-gzVnrw daRrCx"
@@ -172,7 +172,7 @@ exports[`can render with redux with custom store 1`] = `
             />
           </div>
           <a
-            class="sc-ckVGcZ lnhsQh"
+            class="sc-dxgOiQ hTVfts"
             href="/trip/1/budget-category/1/budget-item/1/edit"
           >
             <svg
@@ -189,18 +189,18 @@ exports[`can render with redux with custom store 1`] = `
         </div>
       </div>
       <div
-        class="sc-hSdWYo fSIVUD"
+        class="sc-iAyFgw ingqVW"
       >
         <a
           backgroundcolor="#fff"
           border="1px solid undefined"
           buttontype="secondary"
-          class="sc-jzJRlG hrRLXt"
+          class="sc-fjdhpX hPjvLD"
           href="/trip/1/budget-category/1/add-budget-item"
           style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
         >
           <span
-            class="sc-cSHVUG hcxqQH"
+            class="sc-jzJRlG bdJePF"
           >
             Add Budget Item
           </span>
@@ -209,19 +209,19 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-cvbbAY ewQxPI"
+    class="sc-eHgmQL dVovqt"
     style="text-align: center;"
   >
     <a
       backgroundcolor="#fff"
       border="1px solid undefined"
       buttontype="secondary"
-      class="sc-jzJRlG hrRLXt"
+      class="sc-fjdhpX hPjvLD"
       href="/trip/1/add-budget-category"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-cSHVUG hcxqQH"
+        class="sc-jzJRlG bdJePF"
       >
         Add Budget Category
       </span>
@@ -231,23 +231,23 @@ exports[`can render with redux with custom store 1`] = `
       backgroundcolor="transparent"
       border="0"
       buttontype="link"
-      class="sc-jzJRlG ktkWMu"
+      class="sc-fjdhpX cPSYhm"
       href="/trip/1/edit"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-cSHVUG gAvioZ"
+        class="sc-jzJRlG cphvgw"
       >
         Edit Trip
       </span>
     </a>
     <br />
     <button
-      class="sc-kAzzGY bAsBUl"
+      class="sc-cSHVUG eEEEQl"
       style="display: inline-block; width: auto;"
     >
       <span
-        class="sc-chPdSV IudMt"
+        class="sc-kAzzGY fnAiYw"
       >
         Delete Trip
       </span>

@@ -38,35 +38,35 @@ exports[`can render with redux with custom store 1`] = `
     </button>
   </div>
   <div
-    class="sc-gqjmRU giWxzf"
+    class="sc-gZMcBi irilpd"
   >
     <div
-      class="sc-VigVT gaKuEu"
+      class="sc-gqjmRU jdetvG"
     />
     <div
-      class="sc-jTzLTM bCKeMJ"
+      class="sc-VigVT bjQgmE"
     >
       <h2
-        class="sc-dnqmqq cknTFO"
+        class="sc-htoDjs eJUAaw"
       >
         Hawaii
       </h2>
       <div
-        class="sc-fjdhpX bwGKTX"
+        class="sc-jTzLTM hwwuHy"
       >
         <h3
-          class="sc-iwsKbI kGErDA"
+          class="sc-dnqmqq jgPViO"
         >
           Apr 26, 1970 - Oct 1, 8307
         </h3>
         <h3
-          class="sc-gZMcBi jjuknu"
+          class="sc-iwsKbI kGErDA"
         >
           $595 / $2000
         </h3>
       </div>
       <div
-        class="sc-bZQynM kssguc"
+        class="sc-bZQynM bJqPLz"
       >
         <span
           class="sc-gzVnrw daRrCx"
@@ -76,19 +76,19 @@ exports[`can render with redux with custom store 1`] = `
     </div>
   </div>
   <div
-    class="sc-iAyFgw liuGQO"
+    class="sc-kkGfuU hexiOn"
   >
     <div
-      class="sc-chPdSV ggauqL"
+      class="sc-kAzzGY kDHigu"
     >
       <label
-        class="sc-kgoBCf jWugst"
+        class="sc-chPdSV dWjhBN"
         for="7"
       >
         Budget Category
       </label>
       <select
-        class="sc-kGXeez igobmm"
+        class="sc-kgoBCf hstQNX"
         id="7"
       >
         <option
@@ -104,16 +104,16 @@ exports[`can render with redux with custom store 1`] = `
       </select>
     </div>
     <div
-      class="sc-chPdSV ggauqL"
+      class="sc-kAzzGY kDHigu"
     >
       <label
-        class="sc-kgoBCf jWugst"
+        class="sc-chPdSV dWjhBN"
         for="8"
       >
         Budget Item
       </label>
       <select
-        class="sc-kGXeez igobmm"
+        class="sc-kgoBCf hstQNX"
         id="8"
       >
         <option
@@ -129,32 +129,32 @@ exports[`can render with redux with custom store 1`] = `
       </select>
     </div>
     <div
-      class="sc-jzJRlG IjJtL"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-cSHVUG cRQPO"
+        class="sc-jzJRlG ddfqFX"
         for="9"
       >
         Summary of Expense
       </label>
       <input
-        class="sc-kAzzGY fnqkhj"
+        class="sc-cSHVUG gMdUiP"
         id="9"
         type="text"
         value="Southwest"
       />
     </div>
     <div
-      class="sc-chPdSV ggauqL"
+      class="sc-kAzzGY kDHigu"
     >
       <label
-        class="sc-kgoBCf jWugst"
+        class="sc-chPdSV dWjhBN"
         for="10"
       >
         Currency
       </label>
       <select
-        class="sc-kGXeez igobmm"
+        class="sc-kgoBCf hstQNX"
         id="10"
       >
         <option
@@ -165,16 +165,16 @@ exports[`can render with redux with custom store 1`] = `
       </select>
     </div>
     <div
-      class="sc-jzJRlG IjJtL"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-cSHVUG cRQPO"
+        class="sc-jzJRlG ddfqFX"
         for="11"
       >
         Amount Spent ($)
       </label>
       <input
-        class="sc-kAzzGY fnqkhj"
+        class="sc-cSHVUG gMdUiP"
         id="11"
         placeholder="0.00"
         type="text"
@@ -182,7 +182,7 @@ exports[`can render with redux with custom store 1`] = `
       />
     </div>
     <h4
-      class="sc-brqgnP dAAUQp"
+      class="sc-jWBwVP behuWI"
     >
       Date of Expense
     </h4>
@@ -219,46 +219,46 @@ exports[`can render with redux with custom store 1`] = `
       </div>
     </div>
     <div
-      class="sc-kpOJdX gmjvWo"
+      class="sc-kGXeez eHIZIH"
     >
       <label
-        class="sc-dxgOiQ iSJjZo"
+        class="sc-kpOJdX dUAXOm"
         for="12"
       >
         Notes (optional)
       </label>
       <textarea
-        class="sc-ckVGcZ ghlYtQ"
+        class="sc-dxgOiQ hMmbJw"
         id="12"
         type="text"
       />
     </div>
     <div
-      class="sc-cvbbAY cRSpJc"
+      class="sc-eHgmQL bybbGU"
     >
       <div
-        class="sc-eHgmQL cCPhbK"
+        class="sc-hSdWYo dLBuhP"
       >
         <a
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="sc-kEYyzF cTKVSV"
+          class="sc-hMqMXs gfHGTf"
           href="/trip/1"
           style="padding: 10px 0px;"
         >
           <span
-            class="sc-kkGfuU eoArlz"
+            class="sc-kEYyzF gjCxaV"
           >
             Cancel
           </span>
         </a>
         <button
-          class="sc-eNQAEJ ivClSM"
+          class="sc-jKJlTe bYhPIb"
         >
           <span
-            class="sc-hMqMXs dzkwxq"
+            class="sc-eNQAEJ iRrFMS"
             color="#fff"
           >
             Save
