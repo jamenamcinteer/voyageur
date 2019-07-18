@@ -94,31 +94,10 @@ exports[`can render with redux with custom store 1`] = `
         <option
           value=""
         >
-          <label
-            class="sc-VigVT hqhiep"
-            for="8"
-          >
-            Budget Item
-          </label>
-          <select
-            class="sc-jTzLTM cdLRxU"
-            id="8"
-          >
-            <option
-              value=""
-            >
-              Select budget item...
-            </option>
-            <option
-              value="1"
-            >
-              Flights
-            </option>
-          </select>
-        </div>
-        <div />
-        <div
-          class="sc-dnqmqq jnbCEU"
+          Select category...
+        </option>
+        <option
+          value="1"
         >
           Airfare
         </option>
@@ -140,26 +119,10 @@ exports[`can render with redux with custom store 1`] = `
         <option
           value=""
         >
-          <label
-            class="sc-VigVT hqhiep"
-            for="10"
-          >
-            Currency
-          </label>
-          <select
-            class="sc-jTzLTM cdLRxU"
-            id="10"
-          >
-            <option
-              value="USD"
-            >
-              USD ($)
-            </option>
-          </select>
-        </div>
-        <div />
-        <div
-          class="sc-dnqmqq jnbCEU"
+          Select budget item...
+        </option>
+        <option
+          value="1"
         >
           Flights
         </option>
@@ -298,33 +261,9 @@ exports[`can render with redux with custom store 1`] = `
             class="sc-eNQAEJ iRrFMS"
             color="#fff"
           >
-            <a
-              backgroundcolor="transparent"
-              border="0"
-              buttontype="link"
-              buttonwidth="auto"
-              class="sc-kGXeez hPXLNi"
-              href="/trip/1"
-              style="padding: 10px 0px;"
-            >
-              <span
-                class="sc-kpOJdX edYuyx"
-              >
-                Cancel
-              </span>
-            </a>
-            <button
-              class="sc-chPdSV lnDAMS"
-            >
-              <span
-                class="sc-kgoBCf jHsowC"
-                color="#fff"
-              >
-                Save
-              </span>
-            </button>
-          </div>
-        </div>
+            Save
+          </span>
+        </button>
       </div>
     </div>
   </div>

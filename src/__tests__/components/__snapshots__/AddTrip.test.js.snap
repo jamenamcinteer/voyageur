@@ -90,23 +90,33 @@ exports[`can render with redux with custom store 1`] = `
             class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
             role="presentation"
           >
-            <a
-              backgroundcolor="transparent"
-              border="0"
-              buttontype="link"
-              buttonwidth="auto"
-              class="sc-gqjmRU cPUkZs"
-              href="/"
-              style="padding: 10px 0px;"
+            <svg
+              class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+              focusable="false"
+              viewBox="0 0 1000 1000"
             >
-              <span
-                class="sc-VigVT hBprvu"
-              >
-                Cancel
-              </span>
-            </a>
-            <button
-              class="sc-iwsKbI jMxyUY"
+              <path
+                d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
+              />
+            </svg>
+          </div>
+          <div
+            class="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-endDate"
+              aria-label="End Date"
+              autocomplete="off"
+              class="DateInput_input DateInput_input_1"
+              id="endDate"
+              name="endDate"
+              placeholder="End Date"
+              type="text"
+              value=""
+            />
+            <p
+              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-endDate"
             >
               Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
