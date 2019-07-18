@@ -9,49 +9,33 @@ exports[`can render with redux with custom store 1`] = `
       href="/"
     >
       <svg
+        aria-label="Go Back"
         style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
         version="1.1"
         viewBox="0 0 199.404 199.404"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          aria-label="Go Back"
-          style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-          version="1.1"
-          viewBox="0 0 199.404 199.404"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <polygon
-              points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-            />
-          </g>
-        </svg>
-      </a>
-      <h1
-        class="sc-bwzfXH OVfcq"
-      >
-        Add a Trip
-      </h1>
-      <button
-        class="sc-htpNat fqCEYg"
-      >
-        <img
-          alt="Account Options"
-          class="sc-bxivhb jwtarI"
-          src="https://picsum.photos/id/947/45/45"
-        />
-      </button>
-    </div>
-    <div
-      class="sc-htpNat KtFsv"
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <h1
+      class="sc-bwzfXH OVfcq"
+    >
+      Add a Trip
+    </h1>
+    <button
+      class="sc-htpNat fqCEYg"
     >
       <img
-        alt=""
-        class="sc-bxivhb bfhPyW"
+        alt="Account Options"
+        class="sc-bxivhb jwtarI"
         src="https://picsum.photos/id/947/45/45"
       />
-    </div>
+    </button>
   </div>
   <div
     class="sc-fjdhpX cEgVjZ"
@@ -145,7 +129,7 @@ exports[`can render with redux with custom store 1`] = `
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="sc-gqjmRU cVvmHR"
+          class="sc-gqjmRU cPUkZs"
           href="/"
           style="padding: 10px 0px;"
         >
@@ -156,7 +140,7 @@ exports[`can render with redux with custom store 1`] = `
           </span>
         </a>
         <button
-          class="sc-iwsKbI NtbZn"
+          class="sc-iwsKbI jMxyUY"
         >
           <span
             class="sc-gZMcBi cnsAlJ"

@@ -2,119 +2,97 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
-      <div>
-        <div>
-          <div
-            class="sc-bdVaJa hZqfbl"
-          >
-            <a
-              href="/trip/1"
-            >
-              <svg
-                aria-label="Go Back"
-                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-                version="1.1"
-                viewBox="0 0 199.404 199.404"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <polygon
-                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-                  />
-                </g>
-              </svg>
-            </a>
-            <h1
-              class="sc-bwzfXH OVfcq"
-            >
-              Add Expense
-            </h1>
-            <button
-              class="sc-htpNat fqCEYg"
-            >
-              <img
-                alt="Account Options"
-                class="sc-bxivhb jwtarI"
-                src="https://picsum.photos/id/947/45/45"
-              />
-            </button>
-          </div>
-          <div
-            style="position: relative;"
-          >
-            <div
-              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
-            />
-            <div
-              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
-            >
-              <h2
-                class="sc-bZQynM krdFRo"
-              >
-                Hawaii
-              </h2>
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;"
-              >
-                <h3
-                  class="sc-gzVnrw HgWFV"
-                >
-                  Apr 26, 1970 - Oct 1, 8307
-                </h3>
-                <h3
-                  class="sc-htoDjs btYDzX"
-                >
-                  $595 / $2000
-                </h3>
-              </div>
-              <div
-                style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
-              >
-                <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <a
+      href="/trip/1"
+    >
+      <svg
+        aria-label="Go Back"
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <h1
+      class="sc-bwzfXH OVfcq"
+    >
+      Add Expense
+    </h1>
+    <button
+      class="sc-htpNat fqCEYg"
+    >
+      <img
+        alt="Account Options"
+        class="sc-bxivhb jwtarI"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </button>
+  </div>
+  <div
+    class="sc-gZMcBi irilpd"
+  >
+    <div
+      class="sc-gqjmRU jdetvG"
+    />
+    <div
+      class="sc-VigVT bjQgmE"
+    >
+      <h2
+        class="sc-htoDjs eJUAaw"
+      >
+        Hawaii
+      </h2>
+      <div
+        class="sc-jTzLTM hwwuHy"
+      >
+        <h3
+          class="sc-dnqmqq jgPViO"
+        >
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
+        <h3
+          class="sc-iwsKbI kGErDA"
+        >
+          $595 / $2000
+        </h3>
       </div>
       <div
-        class="sc-dxgOiQ jSmIIM"
+        class="sc-bZQynM bJqPLz"
       >
         <span
           class="sc-gzVnrw daRrCx"
-          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+          style="width: 29.731%; background-color: rgb(12, 124, 136);"
         />
-        <div
-          class="sc-gqjmRU jgsBPr"
-        >
-          <label
-            class="sc-VigVT hqhiep"
-            for="1"
-          >
-            Budget Category
-          </label>
-          <select
-            class="sc-jTzLTM cdLRxU"
-            id="1"
-          >
-            <option
-              value=""
-            >
-              Select category...
-            </option>
-            <option
-              value="1"
-            >
-              Airfare
-            </option>
-          </select>
-        </div>
-        <div />
-        <div
-          class="sc-gqjmRU jgsBPr"
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-kkGfuU hexiOn"
+  >
+    <div
+      class="sc-kAzzGY kDHigu"
+    >
+      <label
+        class="sc-chPdSV dWjhBN"
+        for="1"
+      >
+        Budget Category
+      </label>
+      <select
+        class="sc-kgoBCf hstQNX"
+        id="1"
+      >
+        <option
+          value=""
         >
           <label
             class="sc-VigVT hqhiep"
@@ -137,77 +115,77 @@ exports[`can render with redux with custom store 1`] = `
         <div
           class="sc-dnqmqq jnbCEU"
         >
-          <label
-            class="sc-iwsKbI dtSDPi"
-            for="3"
-          >
-            Summary of Expense
-          </label>
-          <input
-            class="sc-gZMcBi kJGmWv"
-            id="3"
-            type="text"
-            value=""
-          />
-        </div>
-        <div />
-        <div
-          class="sc-gqjmRU jgsBPr"
+          Airfare
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-kAzzGY kDHigu"
+    >
+      <label
+        class="sc-chPdSV dWjhBN"
+        for="2"
+      >
+        Budget Item
+      </label>
+      <select
+        class="sc-kgoBCf hstQNX"
+        id="2"
+      >
+        <option
+          value=""
         >
-          <label
-            class="sc-VigVT hqhiep"
-            for="4"
-          >
-            Currency
-          </label>
-          <select
-            class="sc-jTzLTM cdLRxU"
-            id="4"
-          >
-            <option
-              value="USD"
-            >
-              USD ($)
-            </option>
-          </select>
-        </div>
-        <div />
-        <div
-          class="sc-dnqmqq jnbCEU"
-        >
-          <label
-            class="sc-iwsKbI dtSDPi"
-            for="5"
-          >
-            Amount Spent ($)
-          </label>
-          <input
-            class="sc-gZMcBi kJGmWv"
-            id="5"
-            placeholder="0.00"
-            type="text"
-            value=""
-          />
-        </div>
-        <div />
-        <h4
-          class="sc-kEYyzF gQWBiG"
+          Select budget item...
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-fjdhpX joeOdX"
+    >
+      <label
+        class="sc-jzJRlG ddfqFX"
+        for="3"
+      >
+        Summary of Expense
+      </label>
+      <input
+        class="sc-cSHVUG gMdUiP"
+        id="3"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-kAzzGY kDHigu"
+    >
+      <label
+        class="sc-chPdSV dWjhBN"
+        for="4"
+      >
+        Currency
+      </label>
+      <select
+        class="sc-kgoBCf hstQNX"
+        id="4"
+      >
+        <option
+          value="USD"
         >
           USD ($)
         </option>
       </select>
     </div>
     <div
-      class="sc-VigVT gvowFa"
+      class="sc-fjdhpX joeOdX"
     >
       <label
-        class="sc-jTzLTM bNEnbO"
+        class="sc-jzJRlG ddfqFX"
         for="5"
       >
         Amount Spent ($)
       </label>
       <input
-        class="sc-fjdhpX juXCUk"
+        class="sc-cSHVUG gMdUiP"
         id="5"
         placeholder="0.00"
         type="text"
@@ -215,7 +193,7 @@ exports[`can render with redux with custom store 1`] = `
       />
     </div>
     <h4
-      class="sc-eHgmQL buzNGe"
+      class="sc-jWBwVP behuWI"
     >
       Date of Expense
     </h4>
@@ -249,27 +227,50 @@ exports[`can render with redux with custom store 1`] = `
             </p>
           </div>
         </div>
-        <div />
-        <div
-          class="sc-fjdhpX joeOdX"
+      </div>
+    </div>
+    <div
+      class="sc-kGXeez eHIZIH"
+    >
+      <label
+        class="sc-kpOJdX dUAXOm"
+        for="6"
+      >
+        Notes (optional)
+      </label>
+      <textarea
+        class="sc-dxgOiQ hMmbJw"
+        id="6"
+        type="text"
+      />
+    </div>
+    <div
+      class="sc-eHgmQL bybbGU"
+    >
+      <div
+        class="sc-hSdWYo dLBuhP"
+      >
+        <a
+          backgroundcolor="transparent"
+          border="0"
+          buttontype="link"
+          buttonwidth="auto"
+          class="sc-hMqMXs gfHGTf"
+          href="/trip/1"
+          style="padding: 10px 0px;"
         >
-          <label
-            class="sc-jzJRlG ddfqFX"
-            for="6"
+          <span
+            class="sc-kEYyzF gjCxaV"
           >
-            Notes (optional)
-          </label>
-          <textarea
-            class="sc-cSHVUG UKBk"
-            id="6"
-            type="text"
-          />
-        </div>
-        <div
-          class="sc-eNQAEJ vNCuo"
+            Cancel
+          </span>
+        </a>
+        <button
+          class="sc-jKJlTe bYhPIb"
         >
-          <div
-            class="sc-jKJlTe qCTgj"
+          <span
+            class="sc-eNQAEJ iRrFMS"
+            color="#fff"
           >
             <a
               backgroundcolor="transparent"
