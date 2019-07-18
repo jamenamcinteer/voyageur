@@ -27,12 +27,6 @@ const MeterAmount = styled.div`
 `;
 
 const Meter = props => {
-  const displayOverviewBudget = () => {
-    let actual = Math.ceil(props.actual);
-    let budgeted = Math.ceil(props.budgeted);
-
-    return "$" + actual + " of $" + budgeted;
-  };
   const handleOverviewProgressBar = () => {
     let actual = props.actual;
     let budgeted = props.budgeted;
@@ -57,7 +51,6 @@ const Meter = props => {
   return (
     <StyledMeter>
       <MeterProgress style={handleOverviewProgressBar()} />
-      <MeterAmount>{displayOverviewBudget()}</MeterAmount>
     </StyledMeter>
   );
 };

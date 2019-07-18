@@ -6,6 +6,20 @@ import {} from "twix";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
 import styled from "styled-components";
 
+const DestinationHeader = styled.h2`
+  font-size: 1.7em;
+  margin-top: 24px;
+  margin-bottom: 20px;
+`;
+const DatesHeader = styled.h3`
+  font-weight: normal;
+  margin: 0;
+`;
+const BudgetHeader = styled.h3`
+  font-weight: normal;
+  margin: 0;
+`;
+
 const SubheaderContaienr = styled.div`
   position: relative;
 `;
@@ -34,7 +48,7 @@ const SubheaderText = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  padding-bottom: 10px;
 `;
 
 const TripHeader = props => {
@@ -65,9 +79,12 @@ const TripHeader = props => {
           <SubheaderContaienr>
             <SubheaderBackground photo={props.trip.photo} />
             <Subheader>
+              <DestinationHeader>{props.trip.destination}</DestinationHeader>
               <SubheaderText>
-                <h2>{props.trip.destination}</h2>
-                <h3>{dates}</h3>
+                <DatesHeader>{dates}</DatesHeader>
+                <BudgetHeader>
+                  ${Math.ceil(actual)} / ${Math.ceil(budgeted)}
+                </BudgetHeader>
               </SubheaderText>
               <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
             </Subheader>

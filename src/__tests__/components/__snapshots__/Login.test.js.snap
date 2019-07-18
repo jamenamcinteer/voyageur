@@ -11,21 +11,20 @@ exports[`renders 1`] = `
       <h1
         class="sc-ifAKCX kxMoYE"
       >
-        Voyageur
-      </h1>
-      <h2
-        class="sc-EHOje iMeQMt"
-      >
-        Travel Budget Planner
-      </h2>
-      <a
-        class="sc-bdVaJa fNsMgz"
-        href="/auth/google"
-        style="display: inline-block;"
-      >
-        <span
-          class="sc-bwzfXH hAnPLf"
-          color="#fff"
+        <h1
+          class="sc-ifAKCX kxMoYE"
+        >
+          Voyageur
+        </h1>
+        <h2
+          class="sc-EHOje iMeQMt"
+        >
+          Travel Budget Planner
+        </h2>
+        <a
+          class="sc-bdVaJa gtQkNQ"
+          href="/auth/google"
+          style="display: inline-block;"
         >
           Sign In with Google
         </span>

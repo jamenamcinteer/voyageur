@@ -170,6 +170,14 @@ const Dashboard = props => {
                   </ModalLink>
                 );
               })}
+            <Button
+              handleClick={e => setAddExpenseModal(false)}
+              buttonText="Cancel"
+              buttonType="link"
+              customStyles={{
+                background: { padding: "10px 0", margin: "0", float: "right" }
+              }}
+            />
           </Modal>
           <CardContainer>
             {/* <h4>Upcoming Trips</h4> */}

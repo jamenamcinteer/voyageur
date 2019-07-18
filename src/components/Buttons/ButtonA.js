@@ -29,12 +29,49 @@ const StyledLink = styled.a.attrs(props => ({
   display: block;
   text-align: center;
   margin: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+
+  > * {
+    position: relative;
+  }
+  &:before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 0;
+    padding-top: 0;
+
+    border-radius: 100%;
+
+    background-color: rgba(236, 240, 241, 0.3);
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  &:active:before {
+    width: 120%;
+    padding-top: 120%;
+
+    transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+  }
 
   &:active {
     transform: ${props =>
       props.buttontype === "primary" || props.buttontype === "secondary"
         ? "translateY(2px)"
         : "translateY(0)"};
+  }
+  &:focus {
+    outline: 3px solid ${props => props.theme.focusBorder};
   }
 `;
 

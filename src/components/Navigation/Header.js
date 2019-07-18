@@ -4,7 +4,7 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 const HeaderBackground = styled.div`
-  background-color: ${props => props.theme.themeColorLight};
+  background-color: ${props => props.theme.headerBackground};
   padding: 10px 20px;
   // text-align: center;
   display: flex;
@@ -12,21 +12,33 @@ const HeaderBackground = styled.div`
   align-items: center;
 `;
 
-const HeaderText = styled.div`
+const HeaderText = styled.h1`
   font-size: 1.2em;
   font-weight: normal;
+  color: ${props => props.theme.headerForeground};
 `;
 
-const ProfileButton = styled.div``;
-const ProfileImage = styled.img`
-  border-radius: 100px;
-  border: 2px solid
+const ProfileButton = styled.button`
+  background: 0;
+  border: 0;
+  padding: 0;
+  border: 3px solid
     ${props =>
       props.selected
         ? props.theme.themeColor
-        : props.theme.themeColorSecondaryLight};
+        : props.theme.themeColorSecondary};
+  border-radius: 100px;
+
+  &:focus {
+    outline: 0;
+    border: 3px solid ${props => props.theme.focusBorder};
+  }
+`;
+const ProfileImage = styled.img`
+  border-radius: 100px;
   width: 45px;
   height: 45px;
+  display: block;
 `;
 const ProfileMenu = styled.div`
   position: absolute;
@@ -46,13 +58,15 @@ const ProfileMenuLink = styled.a`
   border-bottom: 1px solid ${props => props.theme.themeColorSecondary};
   display: block;
   padding: 20px;
+  text-align: left;
+  font-size: 1.2em;
 `;
 
 const Header = props => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const svgStyles = {
-    fill: theme.darkFont,
+    fill: theme.headerForeground,
     width: "20px",
     height: "20px",
     float: "left",
@@ -69,6 +83,7 @@ const Header = props => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 199.404 199.404"
             style={svgStyles}
+            aria-label="Go Back"
           >
             <g>
               <polygon points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	" />
@@ -77,13 +92,8 @@ const Header = props => {
         </Link>
       )}
       <HeaderText>{props.title}</HeaderText>
-      <ProfileButton>
-        <ProfileImage
-          src={props.auth.photoURL}
-          alt=""
-          onClick={e => setMenuOpen(!menuOpen)}
-          selected={menuOpen}
-        />
+      <ProfileButton onClick={e => setMenuOpen(!menuOpen)} selected={menuOpen}>
+        <ProfileImage src={props.auth.photoURL} alt="Account Options" />
         {menuOpen && (
           <ProfileMenu>
             <ProfileMenuLink href="/auth/logout">Sign Out</ProfileMenuLink>

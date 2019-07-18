@@ -2,70 +2,82 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdVaJa hZqfbl"
-  >
-    <a
-      href="/trip/1"
-    >
-      <svg
-        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-        version="1.1"
-        viewBox="0 0 199.404 199.404"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <polygon
-            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-          />
-        </g>
-      </svg>
-    </a>
-    <div
-      class="sc-bwzfXH ebZROL"
-    >
-      Edit Trip
-    </div>
-    <div
-      class="sc-htpNat KtFsv"
-    >
-      <img
-        alt=""
-        class="sc-bxivhb bfhPyW"
-        src="https://picsum.photos/id/947/45/45"
-      />
-    </div>
-  </div>
-  <div
-    class="sc-dnqmqq hHLyWY"
-  >
-    <div
-      class="sc-iwsKbI kJJCAh"
-    />
-    <div
-      class="sc-gZMcBi hiFDYw"
-    >
-      <div
-        class="sc-gqjmRU erqAtP"
-      >
-        <h2>
-          Hawaii
-        </h2>
-        <h3>
-          Apr 26, 1970 - Oct 1, 8307
-        </h3>
-      </div>
-      <div
-        class="sc-bZQynM kssguc"
-      >
-        <span
-          class="sc-gzVnrw daRrCx"
-          style="width: 29.731%; background-color: rgb(26, 174, 159);"
-        />
-        <div
-          class="sc-htoDjs eFTFIK"
-        >
-          $595 of $2000
+  <div>
+    <div>
+      <div>
+        <div>
+          <div
+            class="sc-bdVaJa hZqfbl"
+          >
+            <a
+              href="/trip/1"
+            >
+              <svg
+                aria-label="Go Back"
+                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+                version="1.1"
+                viewBox="0 0 199.404 199.404"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <polygon
+                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+                  />
+                </g>
+              </svg>
+            </a>
+            <h1
+              class="sc-bwzfXH OVfcq"
+            >
+              Edit Trip
+            </h1>
+            <button
+              class="sc-htpNat fqCEYg"
+            >
+              <img
+                alt="Account Options"
+                class="sc-bxivhb jwtarI"
+                src="https://picsum.photos/id/947/45/45"
+              />
+            </button>
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
+            />
+            <div
+              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
+            >
+              <h2
+                class="sc-bZQynM krdFRo"
+              >
+                Hawaii
+              </h2>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;"
+              >
+                <h3
+                  class="sc-gzVnrw HgWFV"
+                >
+                  Apr 26, 1970 - Oct 1, 8307
+                </h3>
+                <h3
+                  class="sc-htoDjs btYDzX"
+                >
+                  $595 / $2000
+                </h3>
+              </div>
+              <div
+                style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
+              >
+                <span
+                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -94,19 +106,20 @@ exports[`can render with redux with custom store 1`] = `
     >
       <div>
         <div
-          class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
+          class="sc-kAzzGY jucvHf"
         >
           <div
-            class="DateInput DateInput_1"
+            class="sc-dnqmqq jnbCEU"
           >
+            <label
+              class="sc-iwsKbI dtSDPi"
+              for="1"
+            >
+              Destination
+            </label>
             <input
-              aria-describedby="DateInput__screen-reader-message-startDate"
-              aria-label="Start Date"
-              autocomplete="off"
-              class="DateInput_input DateInput_input_1"
-              id="startDate"
-              name="startDate"
-              placeholder="Start Date"
+              class="sc-gZMcBi kJGmWv"
+              id="1"
               type="text"
               value="04/26/1970"
             />
@@ -118,15 +131,13 @@ exports[`can render with redux with custom store 1`] = `
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
             </p>
           </div>
-          <div
-            aria-hidden="true"
-            class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
-            role="presentation"
+          <div />
+          <button
+            class="sc-VigVT efIboi"
+            style="padding: 10px 0px;"
           >
-            <svg
-              class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
-              focusable="false"
-              viewBox="0 0 1000 1000"
+            <span
+              class="sc-jTzLTM gVGdst"
             >
               <path
                 d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
@@ -134,26 +145,49 @@ exports[`can render with redux with custom store 1`] = `
             </svg>
           </div>
           <div
-            class="DateInput DateInput_1"
+            class="sc-kGXeez EPBCl"
           >
-            <input
-              aria-describedby="DateInput__screen-reader-message-endDate"
-              aria-label="End Date"
-              autocomplete="off"
-              class="DateInput_input DateInput_input_1"
-              id="endDate"
-              name="endDate"
-              placeholder="End Date"
-              type="text"
-              value="10/01/8307"
-            />
-            <p
-              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-endDate"
+            <div>
+              <button
+                class="sc-VigVT efIboi"
+                style="padding: 10px 0px;"
+              >
+                <span
+                  class="sc-jTzLTM gVGdst"
+                >
+                  Delete
+                </span>
+              </button>
+            </div>
+            <div
+              class="sc-kgoBCf fWbtNX"
             >
-              Press the down arrow key to interact with the calendar and
-  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-            </p>
+              <a
+                backgroundcolor="transparent"
+                border="0"
+                buttontype="link"
+                buttonwidth="auto"
+                class="sc-fjdhpX cPSYhm"
+                href="/"
+                style="padding: 10px 0px;"
+              >
+                <span
+                  class="sc-jzJRlG cphvgw"
+                >
+                  Cancel
+                </span>
+              </a>
+              <button
+                class="sc-VigVT fLcMOh"
+              >
+                <span
+                  class="sc-jTzLTM cntDpR"
+                  color="#fff"
+                >
+                  Save
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

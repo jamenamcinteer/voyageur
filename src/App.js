@@ -18,6 +18,8 @@ const GlobalStyles = createGlobalStyle`
   figcaption a {
     color: #fff;
   }
+  a:focus {
+    outline: 3px solid ${props => props.theme.focusBorder};
   body {
     .DateInput {
       width: calc(50% - 12px);
@@ -57,10 +59,10 @@ const GlobalStyles = createGlobalStyle`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <React.Fragment>
+      <main>
         <GlobalStyles />
         <AppRouter theme={theme} />
-      </React.Fragment>
+      </main>
     </ThemeProvider>
   );
 }
