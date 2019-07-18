@@ -2,157 +2,145 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
-      <div>
-        <div>
-          <div
-            class="sc-bdVaJa hZqfbl"
-          >
-            <a
-              href="/trip/1"
-            >
-              <svg
-                aria-label="Go Back"
-                style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-                version="1.1"
-                viewBox="0 0 199.404 199.404"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <polygon
-                    points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-                  />
-                </g>
-              </svg>
-            </a>
-            <h1
-              class="sc-bwzfXH OVfcq"
-            >
-              Add Budget Category
-            </h1>
-            <button
-              class="sc-htpNat fqCEYg"
-            >
-              <img
-                alt="Account Options"
-                class="sc-bxivhb jwtarI"
-                src="https://picsum.photos/id/947/45/45"
-              />
-            </button>
-          </div>
-          <div
-            style="position: relative;"
-          >
-            <div
-              style="background-image: url(https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint); background-repeat: no-repeat; background-size: cover; filter: brightness(0.6); height: 150px;"
-            />
-            <div
-              style="height: 150px; padding: 0px 20px; color: rgb(255, 255, 255); font-size: 1em; font-weight: normal; position: absolute; width: 100%; top: 0px;"
-            >
-              <h2
-                class="sc-bZQynM krdFRo"
-              >
-                Hawaii
-              </h2>
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;"
-              >
-                <h3
-                  class="sc-gzVnrw HgWFV"
-                >
-                  Apr 26, 1970 - Oct 1, 8307
-                </h3>
-                <h3
-                  class="sc-htoDjs btYDzX"
-                >
-                  $595 / $2000
-                </h3>
-              </div>
-              <div
-                style="width: 100%; height: 10px; position: relative; background: rgb(220, 224, 227); border-radius: 5px;"
-              >
-                <span
-                  style="display: block; height: 100%; border-radius: 5px; position: relative; overflow: hidden; width: 29.731%; background-color: rgb(12, 124, 136);"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <a
+      href="/trip/1"
+    >
+      <svg
+        aria-label="Go Back"
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <h1
+      class="sc-bwzfXH OVfcq"
+    >
+      Add Budget Category
+    </h1>
+    <button
+      class="sc-htpNat fqCEYg"
+    >
+      <img
+        alt="Account Options"
+        class="sc-bxivhb jwtarI"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </button>
+  </div>
+  <div
+    class="sc-gqjmRU giWxzf"
+  >
+    <div
+      class="sc-VigVT gaKuEu"
+    />
+    <div
+      class="sc-jTzLTM bCKeMJ"
+    >
+      <h2
+        class="sc-dnqmqq cknTFO"
+      >
+        Hawaii
+      </h2>
+      <div
+        class="sc-fjdhpX bwGKTX"
+      >
+        <h3
+          class="sc-iwsKbI kGErDA"
+        >
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
+        <h3
+          class="sc-gZMcBi jjuknu"
+        >
+          $595 / $2000
+        </h3>
       </div>
       <div
-        class="sc-kGXeez eDEywD"
+        class="sc-bZQynM kssguc"
       >
         <span
           class="sc-gzVnrw daRrCx"
-          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+          style="width: 29.731%; background-color: rgb(12, 124, 136);"
         />
-        <div
-          class="sc-dnqmqq jnbCEU"
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-kEYyzF iRGgAI"
+  >
+    <div
+      class="sc-jzJRlG IjJtL"
+    >
+      <label
+        class="sc-cSHVUG cRQPO"
+        for="1"
+      >
+        Name of Budget Category
+      </label>
+      <input
+        class="sc-kAzzGY fnqkhj"
+        id="1"
+        placeholder="Example: Airfare, Food, Activities, etc."
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-chPdSV ggauqL"
+    >
+      <label
+        class="sc-kgoBCf jWugst"
+        for="2"
+      >
+        Notes (optional)
+      </label>
+      <textarea
+        class="sc-kGXeez dqJaTn"
+        id="2"
+        type="text"
+      />
+    </div>
+    <div
+      class="sc-hSdWYo cuSYRO"
+    >
+      <div
+        class="sc-iAyFgw drEWVX"
+      >
+        <a
+          backgroundcolor="transparent"
+          border="0"
+          buttontype="link"
+          buttonwidth="auto"
+          class="sc-jKJlTe bdDcOC"
+          href="/trip/1"
+          style="padding: 10px 0px;"
         >
-          <label
-            class="sc-iwsKbI dtSDPi"
-            for="1"
+          <span
+            class="sc-eNQAEJ DRszw"
           >
-            Name of Budget Category
-          </label>
-          <input
-            class="sc-gZMcBi kJGmWv"
-            id="1"
-            placeholder="Example: Airfare, Food, Activities, etc."
-            type="text"
-            value=""
-          />
-        </div>
-        <div />
-        <div
-          class="sc-gqjmRU jgsBPr"
+            Cancel
+          </span>
+        </a>
+        <button
+          class="sc-dxgOiQ cJxUzR"
         >
-          <label
-            class="sc-VigVT hqhiep"
-            for="2"
+          <span
+            class="sc-ckVGcZ inkaIh"
+            color="#fff"
           >
-            Notes (optional)
-          </label>
-          <textarea
-            class="sc-jTzLTM cHGIjj"
-            id="2"
-            type="text"
-          />
-        </div>
-        <div
-          class="sc-ckVGcZ bSJQwx"
-        >
-          <div
-            class="sc-dxgOiQ lmtbyg"
-          >
-            <a
-              backgroundcolor="transparent"
-              border="0"
-              buttontype="link"
-              buttonwidth="auto"
-              class="sc-kAzzGY fsudaQ"
-              href="/trip/1"
-              style="padding: 10px 0px;"
-            >
-              <span
-                class="sc-chPdSV IudMt"
-              >
-                Cancel
-              </span>
-            </a>
-            <button
-              class="sc-jzJRlG hjpZFG"
-            >
-              <span
-                class="sc-cSHVUG hQiayu"
-                color="#fff"
-              >
-                Save
-              </span>
-            </button>
-          </div>
-        </div>
+            Save
+          </span>
+        </button>
       </div>
     </div>
   </div>
