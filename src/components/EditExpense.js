@@ -12,9 +12,9 @@ const EditExpense = props => {
   );
 
   return (
-    <div>
+    <React.Fragment>
       {expense && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Edit Expense"
             theme={props.theme}
@@ -34,9 +34,9 @@ const EditExpense = props => {
             budgetItems={props.budgetItems}
             history={props.history}
           />
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

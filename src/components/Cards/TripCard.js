@@ -32,6 +32,11 @@ const CardImageContainer = styled.div`
   position: relative;
 `;
 
+const CardImage = styled.img`
+  width: 100%;
+  height: 200px;
+`;
+
 const TripCard = props => {
   const actual = useBudgetCalculation("actual", props.expenses);
   const budgeted = useBudgetCalculation("budgeted", props.budgetItems);
@@ -43,10 +48,9 @@ const TripCard = props => {
     <Link to={props.to} style={{ textDecoration: "none" }}>
       <CardBackground>
         <CardImageContainer>
-          <img
+          <CardImage
             src={`${props.photo}&w=333&h=200&fit=crop&crop=focalpoint`}
             alt=""
-            style={{ width: "100%", height: "200px" }}
           />
           <FigCaption
             dangerouslySetInnerHTML={{ __html: props.photoAttribution }}

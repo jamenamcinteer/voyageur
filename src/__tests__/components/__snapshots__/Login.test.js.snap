@@ -2,12 +2,14 @@
 
 exports[`renders 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="sc-htpNat eTyPZp"
+  >
     <div
-      class="sc-htpNat kQGlvF"
+      class="sc-bxivhb fACChQ"
     >
-      <div
-        class="sc-bxivhb fACChQ"
+      <h1
+        class="sc-ifAKCX kxMoYE"
       >
         <h1
           class="sc-ifAKCX kxMoYE"
@@ -24,14 +26,9 @@ exports[`renders 1`] = `
           href="/auth/google"
           style="display: inline-block;"
         >
-          <span
-            class="sc-bwzfXH hAnPLf"
-            color="#fff"
-          >
-            Sign In with Google
-          </span>
-        </a>
-      </div>
+          Sign In with Google
+        </span>
+      </a>
     </div>
   </div>
 </DocumentFragment>

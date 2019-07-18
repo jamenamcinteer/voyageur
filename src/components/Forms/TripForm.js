@@ -195,7 +195,7 @@ const TripForm = props => {
     props.history.push("/");
   };
   return (
-    <div>
+    <React.Fragment>
       <Container>
         <TextInput
           theme={props.theme}
@@ -247,7 +247,7 @@ const TripForm = props => {
           />
         )}
         {showPhotoOptions && (
-          <div>
+          <React.Fragment>
             {photoOptions.length > 0 && <PhotoLabel>Photo</PhotoLabel>}
             <PhotoOptions>
               {photoOptions.length > 0 &&
@@ -274,11 +274,11 @@ const TripForm = props => {
                   );
                 })}
             </PhotoOptions>
-          </div>
+          </React.Fragment>
         )}
         <ButtonContainer showDelete={props.trip}>
           {props.trip && (
-            <div>
+            <React.Fragment>
               <Button
                 theme={props.theme}
                 handleClick={e => setDeleteModal(true)}
@@ -333,7 +333,7 @@ const TripForm = props => {
                   />
                 </MainButtons>
               </Modal>
-            </div>
+            </React.Fragment>
           )}
           <MainButtons>
             <ButtonLink
@@ -355,7 +355,7 @@ const TripForm = props => {
           </MainButtons>
         </ButtonContainer>
       </Container>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -83,6 +83,10 @@ exports[`can render with redux with custom store 1`] = `
       <div
         class="sc-dxgOiQ jSmIIM"
       >
+        <span
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
         <div
           class="sc-gqjmRU jgsBPr"
         >
@@ -194,38 +198,60 @@ exports[`can render with redux with custom store 1`] = `
         <h4
           class="sc-kEYyzF gQWBiG"
         >
-          Date of Expense
-        </h4>
+          USD ($)
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-VigVT gvowFa"
+    >
+      <label
+        class="sc-jTzLTM bNEnbO"
+        for="11"
+      >
+        Amount Spent ($)
+      </label>
+      <input
+        class="sc-fjdhpX juXCUk"
+        id="11"
+        placeholder="0.00"
+        type="text"
+        value="594.62"
+      />
+    </div>
+    <h4
+      class="sc-eHgmQL buzNGe"
+    >
+      Date of Expense
+    </h4>
+    <div
+      class="SingleDatePicker SingleDatePicker_1"
+    >
+      <div>
         <div
-          class="SingleDatePicker SingleDatePicker_1"
+          class="SingleDatePickerInput SingleDatePickerInput_1 SingleDatePickerInput__withBorder SingleDatePickerInput__withBorder_2"
         >
-          <div>
-            <div
-              class="SingleDatePickerInput SingleDatePickerInput_1 SingleDatePickerInput__withBorder SingleDatePickerInput__withBorder_2"
+          <div
+            class="DateInput DateInput_1"
+          >
+            <input
+              aria-describedby="DateInput__screen-reader-message-date"
+              aria-label="Date"
+              autocomplete="off"
+              class="DateInput_input DateInput_input_1"
+              id="date"
+              name="date"
+              placeholder="Date"
+              type="text"
+              value="04/26/1970"
+            />
+            <p
+              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+              id="DateInput__screen-reader-message-date"
             >
-              <div
-                class="DateInput DateInput_1"
-              >
-                <input
-                  aria-describedby="DateInput__screen-reader-message-date"
-                  aria-label="Date"
-                  autocomplete="off"
-                  class="DateInput_input DateInput_input_1"
-                  id="date"
-                  name="date"
-                  placeholder="Date"
-                  type="text"
-                  value="04/26/1970"
-                />
-                <p
-                  class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-                  id="DateInput__screen-reader-message-date"
-                >
-                  Press the down arrow key to interact with the calendar and
+              Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-                </p>
-              </div>
-            </div>
+            </p>
           </div>
         </div>
         <div />

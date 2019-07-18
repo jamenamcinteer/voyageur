@@ -11,7 +11,7 @@ const StyledError = styled.div`
 
 const Error = props => {
   return (
-    <div>
+    <React.Fragment>
       {props.errors.filter(err => err.field === props.field).length > 0 &&
         props.errors.map((err, index) => {
           if (err.field === props.field) {
@@ -23,7 +23,7 @@ const Error = props => {
           }
           return true;
         })}
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -104,6 +104,14 @@ exports[`can render with redux with custom store 1`] = `
             </span>
           </a>
         </h3>
+      </div>
+      <div
+        class="sc-bZQynM kssguc"
+      >
+        <span
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
         <div
           class="sc-dnqmqq jnbCEU"
         >

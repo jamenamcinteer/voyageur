@@ -97,9 +97,9 @@ const ViewBudgetItem = props => {
   );
 
   return (
-    <div>
+    <React.Fragment>
       {budgetItem && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Expenses"
             theme={props.theme}
@@ -161,13 +161,15 @@ const ViewBudgetItem = props => {
                     <ExpenseItemSummary>{expense.summary}</ExpenseItemSummary>
                     <ExpenseItemCost>${expense.cost}</ExpenseItemCost>
                   </ExpenseItemSecondLine>
-                  <ExpenseItemNotes>{expense.notes}</ExpenseItemNotes>
+                  {expense.notes && (
+                    <ExpenseItemNotes>{expense.notes}</ExpenseItemNotes>
+                  )}
                 </ExpenseItem>
               );
             })}
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

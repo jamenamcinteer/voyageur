@@ -10,9 +10,9 @@ const EditBudgetCategory = props => {
   );
 
   return (
-    <div>
+    <React.Fragment>
       {trip && (
-        <div>
+        <React.Fragment>
           <TripHeader
             title="Add Budget Category"
             theme={props.theme}
@@ -28,9 +28,9 @@ const EditBudgetCategory = props => {
             budgetCategory={budgetCategory}
             history={props.history}
           />
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

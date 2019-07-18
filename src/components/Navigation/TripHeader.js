@@ -20,33 +20,38 @@ const BudgetHeader = styled.h3`
   margin: 0;
 `;
 
-const TripHeader = props => {
-  const subheaderBackgroundStyles = {
-    backgroundImage: `url(${
-      props.trip.photo
-    }&w=300&h=100&fit=crop&crop=focalpoint)`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    filter: "brightness(0.6)",
-    height: "150px"
-  };
-  const subheaderStyles = {
-    height: "150px",
-    padding: "0 20px",
-    color: "#fff",
-    fontSize: "1em",
-    fontWeight: "normal",
-    position: "absolute",
-    width: "100%",
-    top: "0"
-  };
-  const subheaderTextStyles = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingBottom: "10px"
-  };
+const SubheaderContaienr = styled.div`
+  position: relative;
+`;
 
+const SubheaderBackground = styled.div`
+  background-image: url("${props =>
+    props.photo}&w=300&h=100&fit=crop&crop=focalpoint");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.6);
+  height: 150px;
+`;
+
+const Subheader = styled.div`
+  height: 150px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: normal;
+  position: absolute;
+  width: 100%;
+  top: 0;
+`;
+
+const SubheaderText = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+`;
+
+const TripHeader = props => {
   const budgetItems = props.budgetItems.filter(
     bItem => bItem.tripId === props.trip._id
   );
@@ -62,31 +67,31 @@ const TripHeader = props => {
     .format({ monthFormat: "MMM", dayFormat: "D" });
 
   return (
-    <div>
+    <React.Fragment>
       {props.trip && (
-        <div>
+        <React.Fragment>
           <Header
             title={props.title}
             theme={props.theme}
             backTo={props.backTo}
             auth={props.auth}
           />
-          <div style={{ position: "relative" }}>
-            <div style={subheaderBackgroundStyles} />
-            <div style={subheaderStyles}>
+          <SubheaderContaienr>
+            <SubheaderBackground photo={props.trip.photo} />
+            <Subheader>
               <DestinationHeader>{props.trip.destination}</DestinationHeader>
-              <div style={subheaderTextStyles}>
+              <SubheaderText>
                 <DatesHeader>{dates}</DatesHeader>
                 <BudgetHeader>
                   ${Math.ceil(actual)} / ${Math.ceil(budgeted)}
                 </BudgetHeader>
-              </div>
+              </SubheaderText>
               <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
-            </div>
-          </div>
-        </div>
+            </Subheader>
+          </SubheaderContaienr>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

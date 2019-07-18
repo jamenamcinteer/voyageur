@@ -84,7 +84,51 @@ exports[`can render with redux with custom store 1`] = `
         class="sc-jKJlTe bfKxYj"
         style="text-align: center;"
       >
+        <span
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
+        <div
+          class="sc-htoDjs eFTFIK"
+        >
+          $595 of $2000
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-dxgOiQ jSmIIM"
+    style="text-align: center;"
+  >
+    <a
+      border="0"
+      buttontype="primary"
+      class="sc-VigVT egfiws"
+      href="/trip/1/add-expense"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-jTzLTM cntDpR"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </a>
+  </div>
+  <div
+    class="sc-ckVGcZ gZikyS"
+  >
+    <div
+      class="sc-kAzzGY djjpzf"
+    >
+      <h3
+        class="sc-chPdSV bsMEyv"
+      >
+        <span>
+          Airfare
+        </span>
         <a
+          backgroundcolor="transparent"
           border="0"
           buttontype="primary"
           class="sc-dnqmqq bzwyzY"
@@ -95,13 +139,17 @@ exports[`can render with redux with custom store 1`] = `
             class="sc-iwsKbI csPART"
             color="#fff"
           >
-            Add Expense
+            Edit
           </span>
         </a>
-      </div>
+      </h3>
       <div
         class="sc-eNQAEJ iJGPKs"
       >
+        <span
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
         <div
           class="sc-kAzzGY djjpzf"
         >
@@ -215,6 +263,9 @@ exports[`can render with redux with custom store 1`] = `
         class="sc-jKJlTe bfKxYj"
         style="text-align: center;"
       >
+        <span>
+          Flights
+        </span>
         <a
           backgroundcolor="#fff"
           border="1px solid undefined"
@@ -226,10 +277,9 @@ exports[`can render with redux with custom store 1`] = `
           <span
             class="sc-iwsKbI iHcQhx"
           >
-            Add Budget Category
+            View Expenses
           </span>
         </a>
-        <br />
         <a
           backgroundcolor="transparent"
           border="0"
@@ -241,7 +291,7 @@ exports[`can render with redux with custom store 1`] = `
           <span
             class="sc-iwsKbI ivclys"
           >
-            Edit Trip
+            Edit
           </span>
         </a>
         <br />
@@ -252,11 +302,56 @@ exports[`can render with redux with custom store 1`] = `
           <span
             class="sc-gqjmRU dlVmQZ"
           >
-            Delete Trip
+            Add Budget Item
           </span>
-        </button>
+        </a>
       </div>
     </div>
+  </div>
+  <div
+    class="sc-dxgOiQ jSmIIM"
+    style="text-align: center;"
+  >
+    <a
+      backgroundcolor="#fff"
+      border="1px solid undefined"
+      buttontype="secondary"
+      class="sc-VigVT jHVPNq"
+      href="/trip/1/add-budget-category"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-jTzLTM kxKxxq"
+      >
+        Add Budget Category
+      </span>
+    </a>
+    <br />
+    <a
+      backgroundcolor="transparent"
+      border="0"
+      buttontype="link"
+      class="sc-VigVT jTYWhV"
+      href="/trip/1/edit"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-jTzLTM gVGdst"
+      >
+        Edit Trip
+      </span>
+    </a>
+    <br />
+    <button
+      class="sc-fjdhpX gYGvET"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-jzJRlG cphvgw"
+      >
+        Delete Trip
+      </span>
+    </button>
   </div>
 </DocumentFragment>
 `;

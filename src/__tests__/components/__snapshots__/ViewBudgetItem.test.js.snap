@@ -125,6 +125,10 @@ exports[`can render with redux with custom store 1`] = `
         class="sc-fjdhpX grVBQl"
         href="/trip/1/budget-category/1/budget-item/1/expense/1"
       >
+        <span
+          class="sc-gzVnrw daRrCx"
+          style="width: 29.731%; background-color: rgb(26, 174, 159);"
+        />
         <div
           class="sc-jzJRlG eFxIKS"
         >
@@ -159,5 +163,65 @@ exports[`can render with redux with custom store 1`] = `
       </a>
     </div>
   </div>
+  <div
+    class="sc-VigVT inHdkh"
+    style="text-align: center;"
+  >
+    <a
+      border="0"
+      buttontype="primary"
+      class="sc-fjdhpX gOLRXm"
+      href="/trip/1/add-expense?budgetCategory=undefined&budgetItem=1"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="sc-jzJRlG gLLVms"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </a>
+  </div>
+  <h3
+    class="sc-cSHVUG CNtvp"
+  >
+    Flights
+  </h3>
+  <p
+    class="sc-kAzzGY kofHkh"
+  />
+  <a
+    class="sc-chPdSV dEDldx"
+    href="/trip/1/budget-category/1/budget-item/1/expense/1"
+  >
+    <div
+      class="sc-kgoBCf cgWsbB"
+    >
+      <div
+        class="sc-kpOJdX cLmwrx"
+      >
+        Apr 26
+      </div>
+      <div
+        class="sc-dxgOiQ jiNTvo"
+      >
+        Edit
+      </div>
+    </div>
+    <div
+      class="sc-kGXeez czCHO"
+    >
+      <h4
+        class="sc-ckVGcZ kOFVvr"
+      >
+        Southwest
+      </h4>
+      <div
+        class="sc-jKJlTe loXQau"
+      >
+        $594.62
+      </div>
+    </div>
+  </a>
 </DocumentFragment>
 `;
