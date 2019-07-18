@@ -175,9 +175,33 @@ exports[`can render with redux with custom store 1`] = `
             class="sc-dxgOiQ iZtcok"
             color="#fff"
           >
-            Save
-          </span>
-        </button>
+            <a
+              backgroundcolor="transparent"
+              border="0"
+              buttontype="link"
+              buttonwidth="auto"
+              class="sc-kAzzGY fsudaQ"
+              href="/trip/1"
+              style="padding: 10px 0px;"
+            >
+              <span
+                class="sc-chPdSV IudMt"
+              >
+                Cancel
+              </span>
+            </a>
+            <button
+              class="sc-jzJRlG hjpZFG"
+            >
+              <span
+                class="sc-cSHVUG hQiayu"
+                color="#fff"
+              >
+                Save
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
