@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render with redux with custom store 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa hZqfbl"
+  >
+    <h1
+      class="sc-bwzfXH OVfcq"
+    >
+      My Trips
+    </h1>
+    <button
+      class="sc-htpNat fqCEYg"
+    >
+      <img
+        alt="Account Options"
+        class="sc-bxivhb jwtarI"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </button>
+  </div>
+  <div
+    class="sc-kpOJdX jPikXZ"
+  >
+    <a
+      backgroundcolor="#fff"
+      border="1px solid undefined"
+      buttontype="secondary"
+      buttonwidth="50%"
+      class="sc-bZQynM UJWoS"
+      href="/trip/add"
+    >
+      <span
+        class="sc-gzVnrw hcLogF"
+      >
+        Add a Trip
+      </span>
+    </a>
+    <button
+      class="sc-htoDjs chvIWi"
+    >
+      <span
+        class="sc-dnqmqq cdbcif"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </button>
+  </div>
+  <div
+    class="sc-chPdSV dMqxZk"
+  >
+    <a
+      href="/trip/1"
+      style="text-decoration: none;"
+    >
+      <div
+        class="sc-VigVT ceDYKS"
+      >
+        <div
+          class="sc-jzJRlG fGssWB"
+        >
+          <img
+            alt=""
+            class="sc-cSHVUG jOgSRz"
+            src="https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=333&h=200&fit=crop&crop=focalpoint"
+          />
+          <figcaption
+            class="sc-gqjmRU jxkBnx"
+          >
+            photo attribution
+          </figcaption>
+        </div>
+        <h1
+          class="sc-jTzLTM iURfty"
+        >
+          Hawaii
+        </h1>
+        <h2
+          class="sc-fjdhpX dweNwu"
+        >
+          Apr 26, 1970 - Oct 1, 8307
+        </h2>
+        <div
+          class="sc-iwsKbI cMHGWw"
+        >
+          <span
+            class="sc-gZMcBi bFMdaZ"
+            style="width: 29.731%; background-color: rgb(12, 124, 136);"
+          />
+        </div>
+      </div>
+    </a>
+  </div>
+</DocumentFragment>
+`;

@@ -11,8 +11,6 @@ import {} from "twix";
 import { connect } from "react-redux";
 import { CardContainer } from "./StyledComponents/Layout";
 
-Modal.setAppElement("#root");
-
 const ModalHeader = styled.h3`
   font-size: 1em;
   font-weight: normal;
