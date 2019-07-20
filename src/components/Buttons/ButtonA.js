@@ -113,12 +113,17 @@ const ButtonLink = props => {
 
   return (
     <StyledLink
+      data-testid={props.id && `button${props.id}`}
       buttonwidth={props.buttonWidth}
       buttontype={props.buttonType}
       href={props.to}
       style={customStyles.background}
     >
-      <StyledLinkText buttontype={props.buttonType} style={customStyles.text}>
+      <StyledLinkText
+        data-testid={props.id && `buttonText${props.id}`}
+        buttontype={props.buttonType}
+        style={customStyles.text}
+      >
         {props.buttonText}
       </StyledLinkText>
     </StyledLink>

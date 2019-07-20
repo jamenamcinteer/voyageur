@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render passed props and respond to callback props 1`] = `
+<DocumentFragment>
+  <a
+    backgroundcolor="#fff"
+    border="1px solid undefined"
+    buttontype="secondary"
+    buttonwidth="75px"
+    class="sc-bdVaJa dmGgTf"
+    data-testid="button1"
+    href="/"
+    style="background-color: orange;"
+  >
+    <span
+      class="sc-bwzfXH knFLdz"
+      data-testid="buttonText1"
+      style="color: teal;"
+    >
+      TEST
+    </span>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`should render with no props 1`] = `
+<DocumentFragment>
+  <a
+    border="0"
+    class="sc-bdVaJa fMfgFT"
+    href="/"
+  >
+    <span
+      class="sc-bwzfXH hAnPLf"
+      color="#fff"
+    />
+  </a>
+</DocumentFragment>
+`;

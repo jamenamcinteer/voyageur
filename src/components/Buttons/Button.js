@@ -112,12 +112,17 @@ const Button = props => {
 
   return (
     <StyledButton
+      data-testid={props.id && `button${props.id}`}
       onClick={props.handleClick}
       buttonwidth={props.buttonWidth}
       buttontype={props.buttonType}
       style={customStyles.background}
     >
-      <StyledButtonText buttontype={props.buttonType} style={customStyles.text}>
+      <StyledButtonText
+        data-testid={props.id && `buttonText${props.id}`}
+        buttontype={props.buttonType}
+        style={customStyles.text}
+      >
         {props.buttonText}
       </StyledButtonText>
     </StyledButton>

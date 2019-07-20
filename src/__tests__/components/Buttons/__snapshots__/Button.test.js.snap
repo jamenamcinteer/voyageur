@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render passed props and respond to callback props 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdVaJa hSCVtU"
+    data-testid="button1"
+    style="background-color: orange;"
+  >
+    <span
+      class="sc-bwzfXH knFLdz"
+      data-testid="buttonText1"
+      style="color: teal;"
+    >
+      TEST
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`should render with no props 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdVaJa hJocZt"
+  >
+    <span
+      class="sc-bwzfXH hAnPLf"
+      color="#fff"
+    />
+  </button>
+</DocumentFragment>
+`;
