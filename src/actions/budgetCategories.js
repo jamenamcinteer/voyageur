@@ -7,8 +7,13 @@ export const addBudgetCategory = budgetCategory => ({
 
 export const startAddBudgetCategory = budgetCategory => {
   return async dispatch => {
-    const res = await axios.post("/api/budgetCategories", budgetCategory);
-    dispatch(addBudgetCategory(res.data));
+    try {
+      const res = await axios.post("/api/budgetCategories", budgetCategory);
+      dispatch(addBudgetCategory(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -19,8 +24,13 @@ export const removeBudgetCategory = ({ id } = {}) => ({
 
 export const startRemoveBudgetCategory = ({ id } = {}) => {
   return async dispatch => {
-    await axios.delete(`/api/budgetCategories/${id}`);
-    dispatch(removeBudgetCategory(id));
+    try {
+      const res = await axios.delete(`/api/budgetCategories/${id}`);
+      dispatch(removeBudgetCategory(id));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -32,8 +42,13 @@ export const editBudgetCategory = (id, updates) => ({
 
 export const startEditBudgetCategory = (id, updates) => {
   return async dispatch => {
-    await axios.put(`/api/budgetCategories/${id}`, updates);
-    dispatch(editBudgetCategory(id, updates));
+    try {
+      const res = await axios.put(`/api/budgetCategories/${id}`, updates);
+      dispatch(editBudgetCategory(id, updates));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 

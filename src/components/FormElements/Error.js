@@ -16,7 +16,11 @@ const Error = props => {
         props.errors.map((err, index) => {
           if (err.field === props.field) {
             return (
-              <StyledError key={index} style={props.style}>
+              <StyledError
+                key={index}
+                style={props.style}
+                data-testid={props.dataTestid}
+              >
                 {err.error}
               </StyledError>
             );

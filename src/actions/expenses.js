@@ -19,8 +19,13 @@ export const removeExpense = ({ id } = {}) => ({
 
 export const startRemoveExpense = ({ id } = {}) => {
   return async dispatch => {
-    await axios.delete(`/api/expenses/${id}`);
-    dispatch(removeExpense(id));
+    try {
+      const res = await axios.delete(`/api/expenses/${id}`);
+      dispatch(removeExpense(id));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
