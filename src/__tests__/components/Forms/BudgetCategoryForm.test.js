@@ -181,6 +181,7 @@ test("should display modal after clicking Delete and redirect to trip page after
       budgetItems={budgetItems}
       expenses={expenses}
       history={historyMock}
+      isTest={true}
     />,
     { store }
   );

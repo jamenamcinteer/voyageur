@@ -118,6 +118,7 @@ const BudgetCategoryForm = props => {
               isOpen={deleteModal}
               onRequestClose={e => setDeleteModal(false)}
               contentLabel="Delete Modal"
+              ariaHideApp={props.isTest ? false : true}
               style={{
                 overlay: {
                   backgroundColor: "rgba(0,0,0,.5)"
@@ -190,7 +191,7 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 BudgetCategoryForm.propTypes = {
-  trip: PropTypes.object
+  trip: PropTypes.object.isRequired
 };
 
 export default connect(
