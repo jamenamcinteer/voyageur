@@ -148,6 +148,7 @@ const BudgetCategoryForm = props => {
                   buttonType="link"
                   buttonDisplay="inline"
                   customStyles={{ background: { padding: "10px 0" } }}
+                  dataTestid="closeModal"
                 />
                 <Button
                   handleClick={deleteBudgetCategory}

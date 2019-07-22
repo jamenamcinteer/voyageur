@@ -114,7 +114,7 @@ const ButtonLink = props => {
 
   return (
     <StyledLink
-      data-testid={props.id && `button${props.id}`}
+      data-testid={(props.id && `button${props.id}`) || props.dataTestid}
       buttonwidth={props.buttonWidth}
       buttontype={props.buttonType}
       to={props.to}

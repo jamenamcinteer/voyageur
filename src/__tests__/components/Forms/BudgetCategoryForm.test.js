@@ -1,11 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent } from "@testing-library/react";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import tripsReducer, {
-  tripsReducerDefaultState
-} from "../../../reducers/trips";
-import { Router } from "react-router-dom";
+import { cleanup, fireEvent } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import BudgetCategoryForm from "../../../components/Forms/BudgetCategoryForm";
 import {
@@ -19,30 +13,9 @@ import thunk from "redux-thunk";
 import configureStore from "redux-mock-store";
 import { toMatchDiffSnapshot } from "snapshot-diff";
 import { toBeInTheDocument } from "@testing-library/jest-dom";
-import "jest-styled-components";
-// import theme from "../../../theme";
+import { renderWithReduxRouterAndTheme } from "../../../testUtils/helpers/renderHelpers";
 
 expect.extend({ toMatchDiffSnapshot, toBeInTheDocument });
-
-function renderWithReduxAndRouter(
-  ui,
-  {
-    initialState,
-    store = createStore(tripsReducer, tripsReducerDefaultState),
-    route = "/",
-    history = createMemoryHistory({ initialEntries: [route] })
-  } = {}
-) {
-  return {
-    ...render(
-      <Provider store={store}>
-        <Router history={history}>{ui}</Router>
-      </Provider>
-    ),
-    store,
-    history
-  };
-}
 
 afterEach(cleanup);
 
@@ -51,25 +24,18 @@ jest.mock("uniqid", () => {
   return () => value++;
 });
 
-// test("can render with redux", () => {
-//   const { asFragment } = renderWithReduxAndRouter(
-//     <BudgetCategoryForm trip={trips[0]} />
-//   );
-//   expect(asFragment()).toMatchSnapshot();
-// });
+const mockStore = configureStore([thunk]);
+const store = mockStore({
+  trips,
+  budgetCategories,
+  budgetItems,
+  expenses,
+  auth
+});
+const historyMock = { push: jest.fn() };
 
 test("should render passed props and respond to callback props", done => {
-  const mockStore = configureStore([thunk]);
-  const store = mockStore({
-    trips,
-    budgetCategories,
-    budgetItems,
-    expenses,
-    auth
-  });
-  const historyMock = { push: jest.fn() };
-
-  const { getByText, getByLabelText } = renderWithReduxAndRouter(
+  const { getByText, getByLabelText } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm trip={trips[0]} history={historyMock} />,
     { store }
   );
@@ -88,16 +54,7 @@ test("should render passed props and respond to callback props", done => {
 });
 
 test("should display error if name of budget category is empty after clicking Save", () => {
-  const mockStore = configureStore([thunk]);
-  const store = mockStore({
-    trips,
-    budgetCategories,
-    budgetItems,
-    expenses,
-    auth
-  });
-
-  const { getByTestId, getByText } = renderWithReduxAndRouter(
+  const { getByTestId, getByText } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm
       trip={trips[0]}
       history={createMemoryHistory({ initialEntries: ["/"] })}
@@ -110,17 +67,11 @@ test("should display error if name of budget category is empty after clicking Sa
 });
 
 test("should render passed budget category and handle edits correctly", done => {
-  const mockStore = configureStore([thunk]);
-  const store = mockStore({
-    trips,
-    budgetCategories,
-    budgetItems,
-    expenses,
-    auth
-  });
-  const historyMock = { push: jest.fn() };
-
-  const { getByTestId, getByText, getByLabelText } = renderWithReduxAndRouter(
+  const {
+    getByTestId,
+    getByText,
+    getByLabelText
+  } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm
       trip={trips[0]}
       budgetCategory={budgetCategories[0]}
@@ -164,17 +115,7 @@ test("should render passed budget category and handle edits correctly", done => 
 });
 
 test("should display modal after clicking Delete and redirect to trip page after confirming delete", done => {
-  const mockStore = configureStore([thunk]);
-  const store = mockStore({
-    trips,
-    budgetCategories,
-    budgetItems,
-    expenses,
-    auth
-  });
-  const historyMock = { push: jest.fn() };
-
-  const { getByText } = renderWithReduxAndRouter(
+  const { getByText, getByTestId, queryByText } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm
       trip={trips[0]}
       budgetCategory={budgetCategories[0]}
@@ -189,10 +130,10 @@ test("should display modal after clicking Delete and redirect to trip page after
   getByText("Delete").click();
   expect(getByText("Yes, Delete")).toBeInTheDocument();
 
-  // getByText("Cancel").click();
-  // expect(getByText("Yes, Delete")).not.toBeInTheDocument();
+  getByTestId("closeModal").click();
+  expect(queryByText("Yes, Delete")).toBeNull();
 
-  // getByText("Delete").click();
+  getByText("Delete").click();
   getByText("Yes, Delete").click();
 
   setTimeout(() => {

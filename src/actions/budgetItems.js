@@ -7,8 +7,13 @@ export const addBudgetItem = budgetItem => ({
 
 export const startAddBudgetItem = budgetItem => {
   return async dispatch => {
-    const res = await axios.post("/api/budgetItems", budgetItem);
-    dispatch(addBudgetItem(res.data));
+    try {
+      const res = await axios.post("/api/budgetItems", budgetItem);
+      dispatch(addBudgetItem(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -37,8 +42,13 @@ export const editBudgetItem = (id, updates) => ({
 
 export const startEditBudgetItem = (id, updates) => {
   return async dispatch => {
-    await axios.put(`/api/budgetItems/${id}`, updates);
-    dispatch(editBudgetItem(id, updates));
+    try {
+      const res = await axios.put(`/api/budgetItems/${id}`, updates);
+      dispatch(editBudgetItem(id, updates));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -49,7 +59,12 @@ export const setBudgetItems = budgetItems => ({
 
 export const startSetBudgetItems = () => {
   return async dispatch => {
-    const res = await axios.get("/api/budgetItems");
-    dispatch(setBudgetItems(res.data));
+    try {
+      const res = await axios.get("/api/budgetItems");
+      dispatch(setBudgetItems(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };

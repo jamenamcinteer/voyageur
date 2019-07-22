@@ -112,7 +112,7 @@ const Button = props => {
 
   return (
     <StyledButton
-      data-testid={props.id && `button${props.id}`}
+      data-testid={(props.id && `button${props.id}`) || props.dataTestid}
       onClick={props.handleClick}
       buttonwidth={props.buttonWidth}
       buttontype={props.buttonType}
