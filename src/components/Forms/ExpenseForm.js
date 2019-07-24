@@ -15,6 +15,7 @@ import moment from "moment";
 import { connect } from "react-redux";
 import { SingleDatePicker } from "react-dates";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const DateLabel = styled.h4`
   font-size: 0.8em;
@@ -199,7 +200,6 @@ const ExpenseForm = props => {
   return (
     <Container>
       <Select
-        theme={props.theme}
         label="Budget Category"
         value={budgetCategoryId}
         options={budgetCategoryOptions}
@@ -218,33 +218,33 @@ const ExpenseForm = props => {
           }
           return true;
         })} */}
-      <Error errors={errors} field="budgetCategory" />
+      <Error
+        errors={errors}
+        field="budgetCategory"
+        dataTestid="budgetCategoryError"
+      />
       <Select
-        theme={props.theme}
         label="Budget Item"
         value={budgetItemId}
         options={budgetItemOptions}
         placeholder="Select budget item..."
         handleChange={setBudgetItemId}
       />
-      <Error errors={errors} field="budgetItem" />
+      <Error errors={errors} field="budgetItem" dataTestid="budgetItemError" />
       <TextInput
-        theme={props.theme}
         label="Summary of Expense"
         value={summary}
         handleChange={setSummary}
       />
-      <Error errors={errors} field="summary" />
+      <Error errors={errors} field="summary" dataTestid="summaryError" />
       <Select
-        theme={props.theme}
         label="Currency"
         value={currency}
         options={currencyOptions}
         handleChange={setCurrency}
       />
-      <Error errors={errors} field="currency" />
+      <Error errors={errors} field="currency" dataTestid="currencyError" />
       <TextInput
-        theme={props.theme}
         label={`Amount Spent (${
           currencyOptions.find(
             currencyOption => currencyOption.value === currency
@@ -254,7 +254,7 @@ const ExpenseForm = props => {
         value={cost}
         handleChange={setCost}
       />
-      <Error errors={errors} field="amount" />
+      <Error errors={errors} field="amount" dataTestid="amountError" />
       <DateLabel>Date of Expense</DateLabel>
       <SingleDatePicker
         id="date"
@@ -270,18 +270,21 @@ const ExpenseForm = props => {
         numberOfMonths={1}
         isOutsideRange={() => false}
       />
-      <Error errors={errors} field="date" style={{ marginTop: "10px" }} />
+      <Error
+        errors={errors}
+        field="date"
+        style={{ marginTop: "10px" }}
+        dataTestid="dateError"
+      />
       <Textarea
-        theme={props.theme}
         label="Notes (optional)"
         value={notes}
         handleChange={setNotes}
       />
-      <ButtonContainer showDelete={props.budgetItem}>
-        {props.budgetItem && (
+      <ButtonContainer showDelete={props.expense}>
+        {props.expense && (
           <React.Fragment>
             <Button
-              theme={props.theme}
               handleClick={e => setDeleteModal(true)}
               buttonText="Delete"
               buttonWidth="auto"
@@ -290,6 +293,7 @@ const ExpenseForm = props => {
               customStyles={{ background: { padding: "10px 0" } }}
             />
             <Modal
+              ariaHideApp={props.isTest ? false : true}
               isOpen={deleteModal}
               onRequestClose={e => setDeleteModal(false)}
               contentLabel="Delete Modal"
@@ -315,16 +319,15 @@ const ExpenseForm = props => {
               </ModalText>
               <MainButtons>
                 <Button
-                  theme={props.theme}
                   handleClick={e => setDeleteModal(false)}
                   buttonText="Cancel"
                   buttonWidth="auto"
                   buttonType="link"
                   buttonDisplay="inline"
                   customStyles={{ background: { padding: "10px 0" } }}
+                  dataTestid="closeModal"
                 />
                 <Button
-                  theme={props.theme}
                   handleClick={deleteExpense}
                   buttonText="Yes, Delete"
                   buttonWidth="auto"
@@ -337,7 +340,6 @@ const ExpenseForm = props => {
         )}
         <MainButtons>
           <ButtonLink
-            theme={props.theme}
             to={`/trip/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
@@ -346,7 +348,6 @@ const ExpenseForm = props => {
             customStyles={{ background: { padding: "10px 0" } }}
           />
           <Button
-            theme={props.theme}
             buttonText="Save"
             buttonWidth="auto"
             buttonDisplay="inline"
@@ -363,6 +364,15 @@ const mapDispatchToProps = (dispatch, props) => ({
   startEditExpense: (id, updates) => dispatch(startEditExpense(id, updates)),
   startRemoveExpense: id => dispatch(startRemoveExpense(id))
 });
+
+ExpenseForm.propTypes = {
+  trip: PropTypes.object.isRequired,
+  budgetCategories: PropTypes.array.isRequired,
+  budgetItems: PropTypes.array.isRequired,
+  expense: PropTypes.object,
+  budgetCategoryId: PropTypes.string,
+  budgetItemId: PropTypes.string
+};
 
 export default connect(
   null,

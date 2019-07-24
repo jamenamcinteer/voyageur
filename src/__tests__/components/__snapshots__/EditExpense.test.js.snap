@@ -262,12 +262,144 @@ exports[`can render with redux with custom store 1`] = `
   border: 2px solid #0C7C88;
 }
 
-.c15 {
+.c12 {
+  background-color: transparent;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c12 > * {
+  position: relative;
+}
+
+.c12:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c12:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c12:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c12:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c17 {
   background-color: #0C7C88;
   border: 0;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1em;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c17 > * {
+  position: relative;
+}
+
+.c17:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c17:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c17:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c17:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c13 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #D24157;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c18 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15 {
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
   width: auto;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -323,72 +455,6 @@ exports[`can render with redux with custom store 1`] = `
 .c16 {
   font-size: 1em;
   font-weight: normal;
-  color: #fff;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c13 {
-  background-color: transparent;
-  border: 0;
-  font-size: 1em;
-  padding: 10px 20px;
-  border-radius: 5px;
-  width: auto;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  margin: 10px;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.c13 > * {
-  position: relative;
-}
-
-.c13:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  width: 0;
-  padding-top: 0;
-  border-radius: 100%;
-  background-color: rgba(236,240,241,0.3);
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c13:active:before {
-  width: 120%;
-  padding-top: 120%;
-  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-}
-
-.c13:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.c13:focus {
-  outline: 3px solid #A63E26;
-}
-
-.c14 {
-  font-size: 1em;
-  font-weight: normal;
   color: #0C7C88;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -398,7 +464,7 @@ exports[`can render with redux with custom store 1`] = `
   margin: 20px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -412,7 +478,7 @@ exports[`can render with redux with custom store 1`] = `
 .c11 {
   margin: 0 -10px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .c7 {
@@ -582,30 +648,41 @@ exports[`can render with redux with custom store 1`] = `
     <div
       class="c11"
     >
-      <div
+      <button
         class="c12"
+        style="padding: 10px 0px;"
+      >
+        <span
+          class="c13"
+          color="#D24157"
+        >
+          Delete
+        </span>
+      </button>
+      <div
+        class="c14"
       >
         <a
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="c13"
+          class="c15"
           href="/trip/1"
           style="padding: 10px 0px;"
         >
           <span
-            class="c14"
+            class="c16"
             color="#0C7C88"
           >
             Cancel
           </span>
         </a>
         <button
-          class="c15"
+          class="c17"
         >
           <span
-            class="c16"
+            class="c18"
             color="#fff"
           >
             Save
