@@ -19,6 +19,7 @@ import { Container } from "../StyledComponents/Layout";
 import { MainButtons, ButtonContainer } from "../StyledComponents/Forms";
 import { connect } from "react-redux";
 import { DateRangePicker } from "react-dates";
+import PropTypes from "prop-types";
 
 const PhotoOptions = styled.div`
   display: grid;
@@ -167,7 +168,7 @@ const TripForm = props => {
         photoAttribution
       };
 
-      console.log(newTrip);
+      // console.log(newTrip);
 
       props.startAddTrip(newTrip);
 
@@ -198,13 +199,16 @@ const TripForm = props => {
     <React.Fragment>
       <Container>
         <TextInput
-          theme={props.theme}
           label="Destination"
           value={destination}
           handleChange={setDestination}
           handleBlur={getPhoto}
         />
-        <Error errors={errors} field="destination" />
+        <Error
+          errors={errors}
+          field="destination"
+          dataTestid="destinationError"
+        />
         <DateRangePicker
           startDateId="startDate"
           endDateId="endDate"
@@ -223,7 +227,12 @@ const TripForm = props => {
           // verticalHeight={350}
           isOutsideRange={() => false}
         />
-        <Error errors={errors} field="dates" style={{ marginTop: "10px" }} />
+        <Error
+          errors={errors}
+          field="dates"
+          style={{ marginTop: "10px" }}
+          dataTestid="datesError"
+        />
         {/* <TextInput
           theme={props.theme}
           label="Start Date"
@@ -251,7 +260,7 @@ const TripForm = props => {
             {photoOptions.length > 0 && <PhotoLabel>Photo</PhotoLabel>}
             <PhotoOptions>
               {photoOptions.length > 0 &&
-                photos.map(aPhoto => {
+                photos.map((aPhoto, index) => {
                   return (
                     <PhotoOption
                       key={aPhoto.id}
@@ -263,6 +272,11 @@ const TripForm = props => {
                         }&w=150&h=90&fit=crop&crop=focalpoint`}
                         alt=""
                         onClick={e => handleSelectPhoto(aPhoto.id)}
+                        data-testid={
+                          aPhoto.id === selectedPhotoOption
+                            ? `photoSelected${index}`
+                            : `photo${index}`
+                        }
                       />
                       <FigCaption
                         dangerouslySetInnerHTML={{
@@ -280,7 +294,6 @@ const TripForm = props => {
           {props.trip && (
             <React.Fragment>
               <Button
-                theme={props.theme}
                 handleClick={e => setDeleteModal(true)}
                 buttonText="Delete"
                 buttonWidth="auto"
@@ -289,6 +302,7 @@ const TripForm = props => {
                 customStyles={{ background: { padding: "10px 0" } }}
               />
               <Modal
+                ariaHideApp={props.isTest ? false : true}
                 isOpen={deleteModal}
                 onRequestClose={e => setDeleteModal(false)}
                 contentLabel="Delete Modal"
@@ -315,16 +329,15 @@ const TripForm = props => {
                 </ModalText>
                 <MainButtons>
                   <Button
-                    theme={props.theme}
                     handleClick={e => setDeleteModal(false)}
                     buttonText="Cancel"
                     buttonWidth="auto"
                     buttonType="link"
                     buttonDisplay="inline"
                     customStyles={{ background: { padding: "10px 0" } }}
+                    dataTestid="closeModal"
                   />
                   <Button
-                    theme={props.theme}
                     handleClick={deleteTrip}
                     buttonText="Yes, Delete"
                     buttonWidth="auto"
@@ -337,7 +350,6 @@ const TripForm = props => {
           )}
           <MainButtons>
             <ButtonLink
-              theme={props.theme}
               to="/"
               buttonText="Cancel"
               buttonWidth="auto"
@@ -346,7 +358,6 @@ const TripForm = props => {
               customStyles={{ background: { padding: "10px 0" } }}
             />
             <Button
-              theme={props.theme}
               buttonText="Save"
               buttonWidth="auto"
               buttonDisplay="inline"
@@ -367,6 +378,14 @@ const mapDispatchToProps = (dispatch, props) => ({
   startRemoveBudgetItem: id => dispatch(startRemoveBudgetItem(id)),
   startRemoveExpense: id => dispatch(startRemoveExpense(id))
 });
+
+TripForm.propTypes = {
+  trip: PropTypes.object,
+  budgetCategories: PropTypes.array,
+  budgetItems: PropTypes.array,
+  expenses: PropTypes.array,
+  isTest: PropTypes.bool
+};
 
 export default connect(
   null,
