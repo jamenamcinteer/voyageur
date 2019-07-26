@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with theme and passed props as numbers 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c1 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+      style="width: 50%; background-color: rgb(12, 124, 136);"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render with theme and passed props as strings 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c1 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+<div
+    class="c0"
+  >
+    <span
+      class="c1"
+      style="width: 50%; background-color: rgb(12, 124, 136);"
+    />
+  </div>
+</DocumentFragment>
+`;
