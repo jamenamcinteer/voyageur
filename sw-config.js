@@ -1,19 +1,23 @@
 module.exports = {
   runtimeCaching: [
     {
-      urlPattern: "/auth",
+      urlPattern: "/auth/google/",
       handler: "networkFirst"
     },
     {
-      urlPattern: "/api",
+      urlPattern: "/auth/",
       handler: "networkFirst"
     },
     {
-      urlPattern: "/ping",
+      urlPattern: "/api/",
       handler: "networkFirst"
     },
     {
-      urlPattern: "/photos",
+      urlPattern: "/ping/",
+      handler: "networkFirst"
+    },
+    {
+      urlPattern: "/photos/",
       handler: "networkFirst"
     }
   ]
