@@ -55,7 +55,7 @@
   },
   "scripts": {
     "client-start": "react-scripts start",
-    "build": "react-scripts build && cra-append-sw --config sw-config.js",
+    "build": "react-scripts build && cra-append-sw sw-config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server-watch": "nodemon --watch server --exec yarn server-start",
