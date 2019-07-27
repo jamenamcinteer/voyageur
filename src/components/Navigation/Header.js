@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import theme from "../../theme";
+import PropTypes from "prop-types";
 
 const HeaderBackground = styled.div`
   background-color: ${props => props.theme.headerBackground};
@@ -102,6 +103,13 @@ const Header = props => {
       </ProfileButton>
     </HeaderBackground>
   );
+};
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  auth: PropTypes.object.isRequired,
+  backHide: PropTypes.bool,
+  backTo: PropTypes.string
 };
 
 export default Header;

@@ -134,6 +134,7 @@ const Trip = props => {
               isOpen={deleteModal}
               onRequestClose={e => setDeleteModal(false)}
               contentLabel="Delete Modal"
+              ariaHideApp={props.isTest ? false : true}
               style={{
                 overlay: {
                   backgroundColor: "rgba(0,0,0,.5)"
@@ -164,6 +165,7 @@ const Trip = props => {
                   buttonType="link"
                   buttonDisplay="inline"
                   customStyles={{ background: { padding: "10px 0" } }}
+                  dataTestid="closeModal"
                 />
                 <Button
                   theme={props.theme}

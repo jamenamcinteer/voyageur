@@ -9,8 +9,13 @@ export const editUser = (id, updates) => ({
 
 export const startEditUser = (id, updates) => {
   return async dispatch => {
-    await axios.put(`/api/users/${id}`, updates);
-    dispatch(editUser(id, updates));
+    try {
+      const res = await axios.put(`/api/users/${id}`, updates);
+      dispatch(editUser(id, updates));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -22,8 +27,13 @@ export const setUsers = users => ({
 
 export const startSetUsers = id => {
   return async (dispatch, getState) => {
-    const res = await axios.get(`/api/users/${id}`);
-    dispatch(setUsers(res.data));
+    try {
+      const res = await axios.get(`/api/users/${id}`);
+      dispatch(setUsers(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 

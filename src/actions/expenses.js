@@ -7,8 +7,13 @@ export const addExpense = expense => ({
 
 export const startAddExpense = expense => {
   return async dispatch => {
-    const res = await axios.post("/api/expenses", expense);
-    dispatch(addExpense(res.data));
+    try {
+      const res = await axios.post("/api/expenses", expense);
+      dispatch(addExpense(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -19,8 +24,13 @@ export const removeExpense = ({ id } = {}) => ({
 
 export const startRemoveExpense = ({ id } = {}) => {
   return async dispatch => {
-    await axios.delete(`/api/expenses/${id}`);
-    dispatch(removeExpense(id));
+    try {
+      const res = await axios.delete(`/api/expenses/${id}`);
+      dispatch(removeExpense(id));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -32,8 +42,13 @@ export const editExpense = (id, updates) => ({
 
 export const startEditExpense = (id, updates) => {
   return async dispatch => {
-    await axios.put(`/api/expenses/${id}`, updates);
-    dispatch(editExpense(id, updates));
+    try {
+      const res = await axios.put(`/api/expenses/${id}`, updates);
+      dispatch(editExpense(id, updates));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -44,7 +59,12 @@ export const setExpenses = expenses => ({
 
 export const startSetExpenses = () => {
   return async dispatch => {
-    const res = await axios.get("/api/expenses");
-    dispatch(setExpenses(res.data));
+    try {
+      const res = await axios.get("/api/expenses");
+      dispatch(setExpenses(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };

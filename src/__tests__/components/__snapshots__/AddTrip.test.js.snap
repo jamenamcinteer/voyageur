@@ -2,8 +2,51 @@
 
 exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdVaJa hZqfbl"
+  .c0 {
+  background-color: #dfe7ed;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #4b5c6b;
+}
+
+.c2 {
+  background: 0;
+  border: 0;
+  padding: 0;
+  border: 3px solid #c7d2db;
+  border-radius: 100px;
+}
+
+.c2:focus {
+  outline: 0;
+  border: 3px solid #A63E26;
+}
+
+.c3 {
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+
+<div
+    class="c0"
   >
     <a
       href="/"
@@ -23,34 +66,218 @@ exports[`can render with redux with custom store 1`] = `
       </svg>
     </a>
     <h1
-      class="sc-bwzfXH OVfcq"
+      class="c1"
     >
       Add a Trip
     </h1>
     <button
-      class="sc-htpNat fqCEYg"
+      class="c2"
     >
       <img
         alt="Account Options"
-        class="sc-bxivhb jwtarI"
+        class="c3"
         src="https://picsum.photos/id/947/45/45"
       />
     </button>
   </div>
-  <div
-    class="sc-fjdhpX cEgVjZ"
+  .c1 {
+  margin: 20px 0;
+}
+
+.c2 {
+  display: block;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.c3 {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #c7d2db;
+  font-size: 1em;
+  padding: 7px 10px;
+}
+
+.c3:focus {
+  outline: 0;
+  border: 2px solid #0C7C88;
+}
+
+.c9 {
+  background-color: #0C7C88;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c9 > * {
+  position: relative;
+}
+
+.c9:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c9:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c9:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c9:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c10 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7 {
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c7 > * {
+  position: relative;
+}
+
+.c7:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c7:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c7:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c7:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c8 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #0C7C88;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  margin: 20px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c5 {
+  margin: 0 -10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.c4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-bZQynM blxRiI"
+      class="c1"
     >
       <label
-        class="sc-gzVnrw sohPS"
+        class="c2"
         for="1"
       >
         Destination
       </label>
       <input
-        class="sc-htoDjs hNiZih"
+        class="c3"
         id="1"
         type="text"
         value=""
@@ -126,34 +353,35 @@ exports[`can render with redux with custom store 1`] = `
       </div>
     </div>
     <div
-      class="sc-chPdSV iCLCng"
+      class="c4"
     />
     <div
-      class="sc-kAzzGY LGZmy"
+      class="c5"
     >
       <div
-        class="sc-cSHVUG eJVCam"
+        class="c6"
       >
         <a
           backgroundcolor="transparent"
           border="0"
           buttontype="link"
           buttonwidth="auto"
-          class="sc-gqjmRU cPUkZs"
+          class="c7"
           href="/"
           style="padding: 10px 0px;"
         >
           <span
-            class="sc-VigVT hBprvu"
+            class="c8"
+            color="#0C7C88"
           >
             Cancel
           </span>
         </a>
         <button
-          class="sc-iwsKbI jMxyUY"
+          class="c9"
         >
           <span
-            class="sc-gZMcBi cnsAlJ"
+            class="c10"
             color="#fff"
           >
             Save

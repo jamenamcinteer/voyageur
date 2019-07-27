@@ -11,8 +11,6 @@ import {} from "twix";
 import { connect } from "react-redux";
 import { CardContainer } from "./StyledComponents/Layout";
 
-Modal.setAppElement("#root");
-
 const ModalHeader = styled.h3`
   font-size: 1em;
   font-weight: normal;
@@ -140,6 +138,7 @@ const Dashboard = props => {
             isOpen={addExpenseModal}
             onRequestClose={e => setAddExpenseModal(false)}
             contentLabel="Add Expense Modal"
+            ariaHideApp={props.isTest ? false : true}
             style={{
               overlay: {
                 backgroundColor: "rgba(0,0,0,.5)"
@@ -177,6 +176,7 @@ const Dashboard = props => {
               customStyles={{
                 background: { padding: "10px 0", margin: "0", float: "right" }
               }}
+              dataTestid="closeModal"
             />
           </Modal>
           <CardContainer>

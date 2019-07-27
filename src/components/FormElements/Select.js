@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import uniqid from "uniqid";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   margin: 20px 0;
@@ -43,7 +44,8 @@ const Select = props => {
         id={ID}
       >
         {props.placeholder && <option value="">{props.placeholder}</option>}
-        {props.options.length > 0 &&
+        {props.options &&
+          props.options.length > 0 &&
           props.options.map(option => {
             return (
               <option key={option.value} value={option.value}>
@@ -54,6 +56,13 @@ const Select = props => {
       </StyledSelect>
     </Container>
   );
+};
+
+Select.propTypes = {
+  options: PropTypes.array,
+  label: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string
 };
 
 export default Select;

@@ -7,8 +7,13 @@ export const addTrip = trip => ({
 
 export const startAddTrip = trip => {
   return async dispatch => {
-    const res = await axios.post("/api/trips", trip);
-    dispatch(addTrip(res.data));
+    try {
+      const res = await axios.post("/api/trips", trip);
+      dispatch(addTrip(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -19,8 +24,13 @@ export const removeTrip = ({ id } = {}) => ({
 
 export const startRemoveTrip = ({ id } = {}) => {
   return async dispatch => {
-    await axios.delete(`/api/trips/${id}`);
-    dispatch(removeTrip(id));
+    try {
+      const res = await axios.delete(`/api/trips/${id}`);
+      dispatch(removeTrip(id));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -32,8 +42,13 @@ export const editTrip = (id, updates) => ({
 
 export const startEditTrip = (id, updates) => {
   return async dispatch => {
-    await axios.put(`/api/trips/${id}`, updates);
-    dispatch(editTrip(id, updates));
+    try {
+      const res = await axios.put(`/api/trips/${id}`, updates);
+      dispatch(editTrip(id, updates));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };
 
@@ -44,7 +59,12 @@ export const setTrips = trips => ({
 
 export const startSetTrips = () => {
   return async dispatch => {
-    const res = await axios.get("/api/trips");
-    dispatch(setTrips(res.data));
+    try {
+      const res = await axios.get("/api/trips");
+      dispatch(setTrips(res.data));
+      return res.data;
+    } catch (error) {
+      return error;
+    }
   };
 };

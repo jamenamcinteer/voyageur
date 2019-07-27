@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render with redux with custom store 1`] = `
+<DocumentFragment>
+  .c0 {
+  background-color: #dfe7ed;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #4b5c6b;
+}
+
+.c2 {
+  background: 0;
+  border: 0;
+  padding: 0;
+  border: 3px solid #c7d2db;
+  border-radius: 100px;
+}
+
+.c2:focus {
+  outline: 0;
+  border: 3px solid #A63E26;
+}
+
+.c3 {
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+
+<div
+    class="c0"
+  >
+    <h1
+      class="c1"
+    >
+      My Trips
+    </h1>
+    <button
+      class="c2"
+    >
+      <img
+        alt="Account Options"
+        class="c3"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </button>
+  </div>
+  .c1 {
+  background-color: #fff;
+  border: 1px solid #0C7C88;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 50%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c1 > * {
+  position: relative;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c1:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c1:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c2 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #0C7C88;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 {
+  background-color: #0C7C88;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 50%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c3 > * {
+  position: relative;
+}
+
+.c3:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c3:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c3:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c3:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c4 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+.c0 button,
+.c0 a {
+  max-width: 200px;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <a
+      backgroundcolor="#fff"
+      border="1px solid #0C7C88"
+      buttontype="secondary"
+      buttonwidth="50%"
+      class="c1"
+      href="/trip/add"
+    >
+      <span
+        class="c2"
+        color="#0C7C88"
+      >
+        Add a Trip
+      </span>
+    </a>
+    <button
+      class="c3"
+    >
+      <span
+        class="c4"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </button>
+  </div>
+  .c7 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c8 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c4 {
+  position: absolute;
+  bottom: 4px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  width: 100%;
+  font-size: 0.75em;
+}
+
+.c4 a {
+  color: #fff;
+}
+
+.c1 {
+  background-color: #fff;
+  border: 1px solid #c7d2db;
+  padding: 20px;
+}
+
+.c5 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #4b5c6b;
+}
+
+.c6 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #4b5c6b;
+}
+
+.c2 {
+  width: calc(100% + 40px);
+  margin: -20px -20px 0 -20px;
+  position: relative;
+}
+
+.c3 {
+  width: 100%;
+  height: 200px;
+}
+
+.c0 {
+  margin: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+}
+
+<div
+    class="c0"
+  >
+    <a
+      href="/trip/1"
+      style="text-decoration: none;"
+    >
+      <div
+        class="c1"
+      >
+        <div
+          class="c2"
+        >
+          <img
+            alt=""
+            class="c3"
+            src="https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=333&h=200&fit=crop&crop=focalpoint"
+          />
+          <figcaption
+            class="c4"
+          >
+            photo attribution
+          </figcaption>
+        </div>
+        <h1
+          class="c5"
+        >
+          Hawaii
+        </h1>
+        <h2
+          class="c6"
+        >
+          Apr 26, 1970 - Oct 1, 8307
+        </h2>
+        <div
+          class="c7"
+        >
+          <span
+            class="c8"
+            style="width: 29.731%; background-color: rgb(12, 124, 136);"
+          />
+        </div>
+      </div>
+    </a>
+  </div>
+</DocumentFragment>
+`;

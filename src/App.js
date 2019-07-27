@@ -3,6 +3,9 @@ import AppRouter from "./routers/AppRouter";
 // import "./App.css";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./theme";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 const GlobalStyles = createGlobalStyle`
   * {

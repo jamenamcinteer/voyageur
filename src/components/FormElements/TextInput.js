@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import uniqid from "uniqid";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   margin: 20px 0;
@@ -47,6 +48,14 @@ const TextInput = props => {
       />
     </Container>
   );
+};
+
+TextInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func
 };
 
 export default TextInput;

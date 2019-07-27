@@ -16,6 +16,7 @@ import Modal from "react-modal";
 import { ModalText } from "../StyledComponents/Modals";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const BudgetCategoryHeader = styled.h3`
   display: flex;
@@ -100,7 +101,6 @@ const BudgetItemForm = props => {
         <span>Budget Category: {budgetCategory.budgetCategory}</span>
         <ButtonLink
           to={`/trip/${trip._id}`}
-          theme={props.theme}
           buttonType="link"
           buttonText="Change"
           customStyles={{
@@ -114,22 +114,23 @@ const BudgetItemForm = props => {
         />
       </BudgetCategoryHeader>
       <TextInput
-        theme={props.theme}
         label="Name of Budget Item"
         value={budgetItem}
         handleChange={setBudgetItem}
       />
-      <Error errors={errors} field="budgetItem" />
+      <Error errors={errors} field="budgetItem" dataTestid="budgetItemError" />
       <TextInput
-        theme={props.theme}
         label="Estimated Cost ($)"
         placeholder="0.00"
         value={estimatedCost}
         handleChange={setEstimatedCost}
       />
-      <Error errors={errors} field="estimatedCost" />
+      <Error
+        errors={errors}
+        field="estimatedCost"
+        dataTestid="estimatedCostError"
+      />
       <Textarea
-        theme={props.theme}
         label="Notes (optional)"
         value={notes}
         handleChange={setNotes}
@@ -138,7 +139,6 @@ const BudgetItemForm = props => {
         {props.budgetItem && (
           <React.Fragment>
             <Button
-              theme={props.theme}
               handleClick={e => setDeleteModal(true)}
               buttonText="Delete"
               buttonWidth="auto"
@@ -150,6 +150,7 @@ const BudgetItemForm = props => {
               isOpen={deleteModal}
               onRequestClose={e => setDeleteModal(false)}
               contentLabel="Delete Modal"
+              ariaHideApp={props.isTest ? false : true}
               style={{
                 overlay: {
                   backgroundColor: "rgba(0,0,0,.5)"
@@ -173,16 +174,15 @@ const BudgetItemForm = props => {
               </ModalText>
               <MainButtons>
                 <Button
-                  theme={props.theme}
                   handleClick={e => setDeleteModal(false)}
                   buttonText="Cancel"
                   buttonWidth="auto"
                   buttonType="link"
                   buttonDisplay="inline"
                   customStyles={{ background: { padding: "10px 0" } }}
+                  dataTestid="closeModal"
                 />
                 <Button
-                  theme={props.theme}
                   handleClick={deleteBudgetItem}
                   buttonText="Yes, Delete"
                   buttonWidth="auto"
@@ -195,7 +195,6 @@ const BudgetItemForm = props => {
         )}
         <MainButtons>
           <ButtonLink
-            theme={props.theme}
             to={`/trip/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
@@ -204,7 +203,6 @@ const BudgetItemForm = props => {
             customStyles={{ background: { padding: "10px 0" } }}
           />
           <Button
-            theme={props.theme}
             buttonText="Save"
             buttonWidth="auto"
             buttonDisplay="inline"
@@ -223,6 +221,13 @@ const mapDispatchToProps = (dispatch, props) => ({
   startRemoveBudgetItem: id => dispatch(startRemoveBudgetItem(id)),
   startRemoveExpense: id => dispatch(startRemoveExpense(id))
 });
+
+BudgetItemForm.propTypes = {
+  budgetCategory: PropTypes.object.isRequired,
+  trip: PropTypes.object.isRequired,
+  budgetItem: PropTypes.object,
+  expenses: PropTypes.array
+};
 
 export default connect(
   null,

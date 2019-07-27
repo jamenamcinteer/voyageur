@@ -16,6 +16,7 @@ import { ModalText } from "../StyledComponents/Modals";
 import { Container } from "../StyledComponents/Layout";
 import { MainButtons, ButtonContainer } from "../StyledComponents/Forms";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const BudgetCategoryForm = props => {
   const [budgetCategory, setBudgetCategory] = useState(
@@ -29,7 +30,7 @@ const BudgetCategoryForm = props => {
 
   const trip = props.trip;
 
-  const handleClick = () => {
+  const handleClick = async () => {
     let errorsArr = [];
     if (!budgetCategory) {
       errorsArr.push({
@@ -48,7 +49,7 @@ const BudgetCategoryForm = props => {
         notes
       };
 
-      props.startEditBudgetCategory(
+      await props.startEditBudgetCategory(
         props.budgetCategory._id,
         updatedBudgetCategory
       );
@@ -61,22 +62,22 @@ const BudgetCategoryForm = props => {
         notes
       };
 
-      props.startAddBudgetCategory(newBudgetCategory);
+      await props.startAddBudgetCategory(newBudgetCategory);
 
       props.history.push(`/trip/${trip._id}`);
     }
   };
 
-  const deleteBudgetCategory = () => {
-    props.startRemoveBudgetCategory(props.budgetCategory._id);
+  const deleteBudgetCategory = async () => {
+    await props.startRemoveBudgetCategory(props.budgetCategory._id);
 
-    props.budgetItems.map(i => {
+    await props.budgetItems.map(i => {
       if (i.budgetCategoryId === props.budgetCategory._id)
         props.startRemoveBudgetItem(i._id);
       return true;
     });
 
-    props.expenses.map(i => {
+    await props.expenses.map(i => {
       if (i.budgetCategoryId === trip._id) props.startRemoveExpense(i._id);
       return true;
     });
@@ -92,7 +93,11 @@ const BudgetCategoryForm = props => {
         handleChange={setBudgetCategory}
         placeholder="Example: Airfare, Food, Activities, etc."
       />
-      <Error errors={errors} field="budgetCategory" />
+      <Error
+        errors={errors}
+        field="budgetCategory"
+        dataTestid="budgetCategoryError"
+      />
       <Textarea
         label="Notes (optional)"
         value={notes}
@@ -113,6 +118,7 @@ const BudgetCategoryForm = props => {
               isOpen={deleteModal}
               onRequestClose={e => setDeleteModal(false)}
               contentLabel="Delete Modal"
+              ariaHideApp={props.isTest ? false : true}
               style={{
                 overlay: {
                   backgroundColor: "rgba(0,0,0,.5)"
@@ -142,6 +148,7 @@ const BudgetCategoryForm = props => {
                   buttonType="link"
                   buttonDisplay="inline"
                   customStyles={{ background: { padding: "10px 0" } }}
+                  dataTestid="closeModal"
                 />
                 <Button
                   handleClick={deleteBudgetCategory}
@@ -183,6 +190,10 @@ const mapDispatchToProps = (dispatch, props) => ({
   startRemoveBudgetItem: id => dispatch(startRemoveBudgetItem(id)),
   startRemoveExpense: id => dispatch(startRemoveExpense(id))
 });
+
+BudgetCategoryForm.propTypes = {
+  trip: PropTypes.object.isRequired
+};
 
 export default connect(
   null,

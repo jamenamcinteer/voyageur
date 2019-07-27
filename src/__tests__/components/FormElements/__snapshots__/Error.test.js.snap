@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with theme and passed props 1`] = `
+<DocumentFragment>
+  .c0 {
+  color: #D24157;
+}
+
+.c0:first-child {
+  margin-top: -10px;
+}
+
+<div
+    class="c0"
+  >
+    This field is required.
+  </div>
+</DocumentFragment>
+`;

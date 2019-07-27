@@ -26,6 +26,8 @@ const EditBudgetCategory = props => {
             theme={props.theme}
             trip={trip}
             budgetCategory={budgetCategory}
+            budgetItems={props.budgetItems}
+            expenses={props.expenses}
             history={props.history}
           />
         </React.Fragment>

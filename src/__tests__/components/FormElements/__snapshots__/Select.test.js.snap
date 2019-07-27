@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with theme and passed props 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 20px 0;
+}
+
+.c1 {
+  display: block;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.c2 {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #c7d2db;
+  font-size: 1em;
+  padding: 7px 10px;
+  background: #fff;
+}
+
+.c2:focus {
+  outline: 0;
+  border: 2px solid #0C7C88;
+}
+
+<div
+    class="c0"
+  >
+    <label
+      class="c1"
+      for="1"
+    >
+      Select Options
+    </label>
+    <select
+      class="c2"
+      id="1"
+    >
+      <option
+        value="1"
+      >
+        Option 1
+      </option>
+      <option
+        value="2"
+      >
+        Option 2
+      </option>
+      <option
+        value="3"
+      >
+        Option 3
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
+`;

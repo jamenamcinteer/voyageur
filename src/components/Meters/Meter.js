@@ -1,6 +1,7 @@
 import React from "react";
 import theme from "../../theme";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledMeter = styled.div`
   width: 100%;
@@ -30,7 +31,7 @@ const Meter = props => {
     if (width > 100) {
       width = 100;
       // backgroundColor = props.theme.themeColorRed;
-      backgroundColor = props.theme.themeColorRed;
+      backgroundColor = theme.themeColorRed;
     }
     if (budgeted === 0) {
       width = 0;
@@ -45,6 +46,11 @@ const Meter = props => {
       <MeterProgress style={handleOverviewProgressBar()} />
     </StyledMeter>
   );
+};
+
+Meter.propTypes = {
+  actual: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  budgeted: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
 };
 
 export default Meter;
