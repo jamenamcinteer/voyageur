@@ -5,6 +5,7 @@ import moment from "moment";
 import {} from "twix";
 import useBudgetCalculation from "../../hooks/useBudgetCalculation";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const DestinationHeader = styled.h2`
   font-size: 1.7em;
@@ -70,12 +71,7 @@ const TripHeader = props => {
     <React.Fragment>
       {props.trip && (
         <React.Fragment>
-          <Header
-            title={props.title}
-            theme={props.theme}
-            backTo={props.backTo}
-            auth={props.auth}
-          />
+          <Header title={props.title} backTo={props.backTo} auth={props.auth} />
           <SubheaderContaienr>
             <SubheaderBackground photo={props.trip.photo} />
             <Subheader>
@@ -86,13 +82,22 @@ const TripHeader = props => {
                   ${Math.ceil(actual)} / ${Math.ceil(budgeted)}
                 </BudgetHeader>
               </SubheaderText>
-              <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
+              <Meter actual={actual} budgeted={budgeted} />
             </Subheader>
           </SubheaderContaienr>
         </React.Fragment>
       )}
     </React.Fragment>
   );
+};
+
+TripHeader.propTypes = {
+  trip: PropTypes.object.isRequired,
+  budgetItems: PropTypes.array.isRequired,
+  expenses: PropTypes.array.isRequired,
+  auth: PropTypes.object.isRequired,
+  backTo: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default TripHeader;
