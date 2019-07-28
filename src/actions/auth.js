@@ -27,7 +27,7 @@ export const startLogin = () => {
       );
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("auth"));
-      if (res._id) {
+      if (res) {
         dispatch(login(res._id, res.displayName, res.email, res.photoURL));
       } else {
         return error;
