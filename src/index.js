@@ -63,7 +63,7 @@ store.dispatch(startLogin()).then(() => {
         store.dispatch(startSetBudgetCategories()).then(() => {
           store.dispatch(startSetBudgetItems()).then(() => {
             store.dispatch(startSetExpenses()).then(() => {
-              // renderApp();
+              renderApp();
               // history.push("/");
             });
           });
