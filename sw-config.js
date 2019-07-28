@@ -1,6 +1,6 @@
 module.exports = {
   staticFileGlobs: [
-    "build/**/*.html",
+    "build/**/*.{html,png,jpg,gif,svg}",
     "build/manifest.json",
     "build/static/**/!(*map*)"
   ],
