@@ -20,7 +20,6 @@
     "concurrently": "^4.1.1",
     "cookie-session": "^1.3.3",
     "cors": "^2.8.5",
-    "cra-append-sw": "^2.6.1",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "graphql": "^14.4.2",

@@ -1,6 +1,6 @@
 module.exports = {
   staticFileGlobs: [
-    "build/**/*.{html,js,css,png,jpg,gif,svg}",
+    "build/**/*.html",
     "build/manifest.json",
     "build/static/**/!(*map*)"
   ],
@@ -8,15 +8,11 @@ module.exports = {
   swFilePath: "./build/service-worker.js",
   stripPrefix: "build/",
   navigateFallback: "/index.html",
-  navigateFallbackWhitelist: [/^\/trip\//],
+  navigateFallbackWhitelist: [/^\/trip\//, /^\/login\//],
   runtimeCaching: [
     {
       urlPattern: "'/'",
       handler: "networkFirst"
-    },
-    {
-      urlPattern: "/auth/google/",
-      handler: "networkOnly"
     },
     {
       urlPattern: "/auth/",
