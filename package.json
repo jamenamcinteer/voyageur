@@ -46,6 +46,7 @@
     "redux-thunk": "^2.3.0",
     "snapshot-diff": "^0.5.2",
     "styled-components": "^4.3.2",
+    "sw-precache-cra": "^1.0.0-alpha.2",
     "twix": "^1.2.1",
     "uniqid": "^5.0.3",
     "universal-config": "^0.3.0",
@@ -53,7 +54,7 @@
   },
   "scripts": {
     "client-start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sw-precache-cra --config=sw-config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server-watch": "nodemon --watch server --exec yarn server-start",
