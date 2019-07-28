@@ -1,6 +1,6 @@
 module.exports = {
   staticFileGlobs: [
-    "build/*.html",
+    "build/**/*.{js,css,png,jpg,gif,svg}",
     "build/manifest.json",
     "build/static/**/!(*map*)"
   ],
@@ -8,6 +8,10 @@ module.exports = {
   swFilePath: "./build/service-worker.js",
   stripPrefix: "build/",
   runtimeCaching: [
+    {
+      urlPattern: "'/'",
+      handler: "networkFirst"
+    },
     {
       urlPattern: "/auth/google/",
       handler: "networkOnly"
