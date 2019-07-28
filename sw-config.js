@@ -7,6 +7,8 @@ module.exports = {
   staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
   swFilePath: "./build/service-worker.js",
   stripPrefix: "build/",
+  navigateFallback: "/index.html",
+  navigateFallbackWhitelist: [/^\/trip\//],
   runtimeCaching: [
     {
       urlPattern: "'/'",
