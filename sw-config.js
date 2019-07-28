@@ -16,7 +16,7 @@ module.exports = {
     },
     {
       urlPattern: "/auth/",
-      handler: "networkOnly"
+      handler: "networkFirst"
     },
     {
       urlPattern: "/api/",
