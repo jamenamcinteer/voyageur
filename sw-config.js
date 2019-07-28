@@ -1,12 +1,20 @@
 module.exports = {
+  staticFileGlobs: [
+    "build/*.html",
+    "build/manifest.json",
+    "build/static/**/!(*map*)"
+  ],
+  staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+  swFilePath: "./build/service-worker.js",
+  stripPrefix: "build/",
   runtimeCaching: [
     {
       urlPattern: "/auth/google/",
-      handler: "networkFirst"
+      handler: "networkOnly"
     },
     {
       urlPattern: "/auth/",
-      handler: "networkFirst"
+      handler: "networkOnly"
     },
     {
       urlPattern: "/api/",
@@ -14,7 +22,7 @@ module.exports = {
     },
     {
       urlPattern: "/ping/",
-      handler: "networkFirst"
+      handler: "networkOnly"
     },
     {
       urlPattern: "/photos/",
