@@ -9,6 +9,14 @@ export const startAddBudgetCategory = budgetCategory => {
   return async dispatch => {
     try {
       const res = await axios.post("/api/budgetCategories", budgetCategory);
+      let budgetCategories = JSON.parse(
+        localStorage.getItem("budgetCategories")
+      );
+      budgetCategories.push(res.data);
+      localStorage.setItem(
+        "budgetCategories",
+        JSON.stringify(budgetCategories)
+      );
       dispatch(addBudgetCategory(res.data));
       return res.data;
     } catch (error) {
@@ -26,6 +34,7 @@ export const startRemoveBudgetCategory = ({ id } = {}) => {
   return async dispatch => {
     try {
       const res = await axios.delete(`/api/budgetCategories/${id}`);
+      localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(removeBudgetCategory(id));
       return res.data;
     } catch (error) {
@@ -44,6 +53,7 @@ export const startEditBudgetCategory = (id, updates) => {
   return async dispatch => {
     try {
       const res = await axios.put(`/api/budgetCategories/${id}`, updates);
+      localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(editBudgetCategory(id, updates));
       return res.data;
     } catch (error) {
@@ -59,7 +69,18 @@ export const setBudgetCategories = budgetCategories => ({
 
 export const startSetBudgetCategories = () => {
   return async dispatch => {
-    const res = await axios.get("/api/budgetCategories");
-    dispatch(setBudgetCategories(res.data));
+    try {
+      const res = await axios.get("/api/budgetCategories");
+      localStorage.setItem("budgetCategories", JSON.stringify(res.data));
+      dispatch(setBudgetCategories(res.data));
+      return res.data;
+    } catch (error) {
+      const res = JSON.parse(localStorage.getItem("budgetCategories"));
+      if (res) {
+        dispatch(setBudgetCategories(res));
+      } else {
+        return error;
+      }
+    }
   };
 };

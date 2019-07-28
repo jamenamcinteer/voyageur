@@ -34,7 +34,10 @@ module.exports = app => {
     update.save(err => {
       if (err) res.send(err);
       else {
-        res.send({ message: "ok" });
+        // res.send({ message: "ok" });
+        BudgetCategory.find({ uid: req.user._id }, function(err, data) {
+          res.send(data);
+        });
       }
     });
   });
@@ -45,7 +48,10 @@ module.exports = app => {
       req.body,
       (err, data) => {
         if (!err) {
-          res.send({ message: "deleted" });
+          // res.send({ message: "deleted" });
+          BudgetCategory.find({ uid: req.user._id }, function(err, data) {
+            res.send(data);
+          });
         } else {
           res.send(err);
         }

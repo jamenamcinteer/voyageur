@@ -9,6 +9,9 @@ export const startAddBudgetItem = budgetItem => {
   return async dispatch => {
     try {
       const res = await axios.post("/api/budgetItems", budgetItem);
+      let budgetItems = JSON.parse(localStorage.getItem("budgetItems"));
+      budgetItems.push(res.data);
+      localStorage.setItem("budgetItems", JSON.stringify(budgetItems));
       dispatch(addBudgetItem(res.data));
       return res.data;
     } catch (error) {
@@ -26,6 +29,7 @@ export const startRemoveBudgetItem = ({ id } = {}) => {
   return async dispatch => {
     try {
       const res = await axios.delete(`/api/budgetItems/${id}`);
+      localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(removeBudgetItem(id));
       return res.data;
     } catch (error) {
@@ -44,6 +48,7 @@ export const startEditBudgetItem = (id, updates) => {
   return async dispatch => {
     try {
       const res = await axios.put(`/api/budgetItems/${id}`, updates);
+      localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(editBudgetItem(id, updates));
       return res.data;
     } catch (error) {
@@ -61,10 +66,16 @@ export const startSetBudgetItems = () => {
   return async dispatch => {
     try {
       const res = await axios.get("/api/budgetItems");
+      localStorage.setItem("budgetItems", JSON.stringify(res.data));
       dispatch(setBudgetItems(res.data));
       return res.data;
     } catch (error) {
-      return error;
+      const res = JSON.parse(localStorage.getItem("budgetItems"));
+      if (res) {
+        dispatch(setBudgetItems(res));
+      } else {
+        return error;
+      }
     }
   };
 };

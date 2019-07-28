@@ -11,7 +11,7 @@ import { startSetTrips } from "./actions/trips";
 import { startSetBudgetCategories } from "./actions/budgetCategories";
 import { startSetBudgetItems } from "./actions/budgetItems";
 import { startSetExpenses } from "./actions/expenses";
-import { startSetUsers } from "./actions/users";
+// import { startSetUsers } from "./actions/users";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 
@@ -38,18 +38,18 @@ ReactDOM.render(<LoadingPage />, document.getElementById("root"));
 
 store.dispatch(startLogin()).then(() => {
   if (store.getState().auth.uid) {
-    store.dispatch(startSetUsers(store.getState().auth.uid)).then(() => {
-      store.dispatch(startSetTrips()).then(() => {
-        store.dispatch(startSetBudgetCategories()).then(() => {
-          store.dispatch(startSetBudgetItems()).then(() => {
-            store.dispatch(startSetExpenses()).then(() => {
-              renderApp();
-              // history.push("/");
-            });
+    // store.dispatch(startSetUsers(store.getState().auth.uid)).then(() => {
+    store.dispatch(startSetTrips()).then(() => {
+      store.dispatch(startSetBudgetCategories()).then(() => {
+        store.dispatch(startSetBudgetItems()).then(() => {
+          store.dispatch(startSetExpenses()).then(() => {
+            renderApp();
+            // history.push("/");
           });
         });
       });
     });
+    // });
   } else {
     renderApp();
     if (history.location.pathname === "/") {
