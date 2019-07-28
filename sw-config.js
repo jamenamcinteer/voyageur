@@ -29,6 +29,14 @@ module.exports = {
     {
       urlPattern: "/photos/",
       handler: "networkFirst"
+    },
+    {
+      urlPattern: /^https:\/\/lh5\.googleusercontent\.com\//,
+      handler: "networkFirst"
+    },
+    {
+      urlPattern: /^https:\/\/images\.unsplash\.com\//,
+      handler: "networkFirst"
     }
   ]
 };
