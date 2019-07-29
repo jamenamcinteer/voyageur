@@ -34,7 +34,10 @@ module.exports = app => {
     update.save(err => {
       if (err) res.send(err);
       else {
-        res.send({ message: "ok" });
+        // res.send({ message: "ok" });
+        Trip.find({ uid: req.user._id }, function(err, trips) {
+          res.send(trips);
+        });
       }
     });
   });
@@ -45,7 +48,10 @@ module.exports = app => {
       req.body,
       (err, data) => {
         if (!err) {
-          res.send({ message: "deleted" });
+          // res.send({ message: "deleted" });
+          Trip.find({ uid: req.user._id }, function(err, trips) {
+            res.send(trips);
+          });
         } else {
           res.send(err);
         }

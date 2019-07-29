@@ -1,6 +1,6 @@
 module.exports = {
   staticFileGlobs: [
-    "build/**/*.html",
+    "build/**/*.{html,png,jpg,gif,svg}",
     "build/manifest.json",
     "build/static/**/!(*map*)"
   ],
@@ -16,7 +16,7 @@ module.exports = {
     },
     {
       urlPattern: "/auth/",
-      handler: "networkOnly"
+      handler: "networkFirst"
     },
     {
       urlPattern: "/api/",
@@ -28,6 +28,14 @@ module.exports = {
     },
     {
       urlPattern: "/photos/",
+      handler: "networkFirst"
+    },
+    {
+      urlPattern: /^https:\/\/lh5\.googleusercontent\.com\//,
+      handler: "networkFirst"
+    },
+    {
+      urlPattern: /^https:\/\/images\.unsplash\.com\//,
       handler: "networkFirst"
     }
   ]

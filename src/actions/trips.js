@@ -9,9 +9,16 @@ export const startAddTrip = trip => {
   return async dispatch => {
     try {
       const res = await axios.post("/api/trips", trip);
+      let trips = JSON.parse(localStorage.getItem("trips"));
+      trips.push(res.data);
+      localStorage.setItem("trips", JSON.stringify(trips));
       dispatch(addTrip(res.data));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -26,9 +33,14 @@ export const startRemoveTrip = ({ id } = {}) => {
   return async dispatch => {
     try {
       const res = await axios.delete(`/api/trips/${id}`);
+      localStorage.setItem("trips", JSON.stringify(res.data));
       dispatch(removeTrip(id));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -44,9 +56,14 @@ export const startEditTrip = (id, updates) => {
   return async dispatch => {
     try {
       const res = await axios.put(`/api/trips/${id}`, updates);
+      localStorage.setItem("trips", JSON.stringify(res.data));
       dispatch(editTrip(id, updates));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -61,10 +78,20 @@ export const startSetTrips = () => {
   return async dispatch => {
     try {
       const res = await axios.get("/api/trips");
+      localStorage.setItem("trips", JSON.stringify(res.data));
       dispatch(setTrips(res.data));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      return error;
+      const res = JSON.parse(localStorage.getItem("trips"));
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
+      if (res) {
+        dispatch(setTrips(res));
+      } else {
+        return error;
+      }
     }
   };
 };
