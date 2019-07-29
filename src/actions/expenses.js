@@ -13,8 +13,10 @@ export const startAddExpense = expense => {
       expenses.push(res.data);
       localStorage.setItem("expenses", JSON.stringify(expenses));
       dispatch(addExpense(res.data));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      localStorage.setItem("isOffline", "true");
       return error;
     }
   };
@@ -31,8 +33,10 @@ export const startRemoveExpense = ({ id } = {}) => {
       const res = await axios.delete(`/api/expenses/${id}`);
       localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(removeExpense(id));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      localStorage.setItem("isOffline", "true");
       return error;
     }
   };
@@ -50,8 +54,10 @@ export const startEditExpense = (id, updates) => {
       const res = await axios.put(`/api/expenses/${id}`, updates);
       localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(editExpense(id, updates));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      localStorage.setItem("isOffline", "true");
       return error;
     }
   };
@@ -68,9 +74,11 @@ export const startSetExpenses = () => {
       const res = await axios.get("/api/expenses");
       localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(setExpenses(res.data));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("expenses"));
+      localStorage.setItem("isOffline", "true");
       if (res) {
         dispatch(setExpenses(res));
       } else {

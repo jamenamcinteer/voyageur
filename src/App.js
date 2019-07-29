@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AppRouter from "./routers/AppRouter";
 // import "./App.css";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "./theme";
 import Modal from "react-modal";
 
@@ -60,12 +60,35 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const Offline = styled.div`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: calc(100vw - 10px);
+  padding: 5px;
+  background: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+`;
+
 function App() {
+  const [isOffline, setIsOffline] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem("isOffline") === "true") {
+      setIsOffline(true);
+    }
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <main>
         <GlobalStyles />
         <AppRouter theme={theme} />
+        {isOffline && (
+          <Offline>You are offline. This app is now read-only.</Offline>
+        )}
       </main>
     </ThemeProvider>
   );

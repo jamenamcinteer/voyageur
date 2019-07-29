@@ -18,8 +18,10 @@ export const startAddBudgetCategory = budgetCategory => {
         JSON.stringify(budgetCategories)
       );
       dispatch(addBudgetCategory(res.data));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      localStorage.setItem("isOffline", "true");
       return error;
     }
   };
@@ -36,8 +38,10 @@ export const startRemoveBudgetCategory = ({ id } = {}) => {
       const res = await axios.delete(`/api/budgetCategories/${id}`);
       localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(removeBudgetCategory(id));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      localStorage.setItem("isOffline", "true");
       return error;
     }
   };
@@ -55,8 +59,10 @@ export const startEditBudgetCategory = (id, updates) => {
       const res = await axios.put(`/api/budgetCategories/${id}`, updates);
       localStorage.setItem("expenses", JSON.stringify(res.data));
       dispatch(editBudgetCategory(id, updates));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
+      localStorage.setItem("isOffline", "true");
       return error;
     }
   };
@@ -73,9 +79,11 @@ export const startSetBudgetCategories = () => {
       const res = await axios.get("/api/budgetCategories");
       localStorage.setItem("budgetCategories", JSON.stringify(res.data));
       dispatch(setBudgetCategories(res.data));
+      localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("budgetCategories"));
+      localStorage.setItem("isOffline", "true");
       if (res) {
         dispatch(setBudgetCategories(res));
       } else {

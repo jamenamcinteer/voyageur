@@ -25,13 +25,15 @@ export const startLogin = () => {
           res.data.photoURL
         )
       );
+      localStorage.setItem("isOffline", "false");
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("auth"));
       if (res) {
         dispatch(login(res._id, res.displayName, res.email, res.photoURL));
       } else {
+        localStorage.setItem("isOffline", "true");
+        console.log(error);
         return error;
-        // need to load a message on the react app
       }
     }
   };
