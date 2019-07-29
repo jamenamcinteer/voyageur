@@ -28,10 +28,9 @@ export const startLogin = () => {
       localStorage.setItem("isOffline", "false");
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("auth"));
-      console.log(error.message);
-      // if (error.includes("Network Error")) {
-      //   localStorage.setItem("isOffline", "true");
-      // }
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       if (res) {
         dispatch(login(res._id, res.displayName, res.email, res.photoURL));
       } else {

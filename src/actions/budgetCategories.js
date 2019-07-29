@@ -21,9 +21,9 @@ export const startAddBudgetCategory = budgetCategory => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      // if (error.includes("Network Error")) {
-      //   localStorage.setItem("isOffline", "true");
-      // }
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -43,9 +43,9 @@ export const startRemoveBudgetCategory = ({ id } = {}) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      // if (error.includes("Network Error")) {
-      //   localStorage.setItem("isOffline", "true");
-      // }
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -66,9 +66,9 @@ export const startEditBudgetCategory = (id, updates) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      // if (error.includes("Network Error")) {
-      //   localStorage.setItem("isOffline", "true");
-      // }
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -89,9 +89,9 @@ export const startSetBudgetCategories = () => {
       return res.data;
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("budgetCategories"));
-      // if (error.includes("Network Error")) {
-      //   localStorage.setItem("isOffline", "true");
-      // }
+      if (error.message === "Network Error") {
+        localStorage.setItem("isOffline", "true");
+      }
       if (res) {
         dispatch(setBudgetCategories(res));
       } else {
