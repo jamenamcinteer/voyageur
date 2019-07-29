@@ -14,11 +14,31 @@ import { startSetExpenses } from "./actions/expenses";
 // import { startSetUsers } from "./actions/users";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
+import Loader from "react-loader-spinner";
+import theme from "./theme";
+import styled from "styled-components";
 
 const store = configureStore();
 
+const LoaderContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const LoadingPage = () => {
-  return <p>loading...</p>;
+  return (
+    <LoaderContainer>
+      <Loader
+        type="RevolvingDot"
+        color={theme.themeColorLight}
+        height="75"
+        width="75"
+      />
+    </LoaderContainer>
+  );
 };
 
 const jsx = (
