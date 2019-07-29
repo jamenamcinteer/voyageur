@@ -65,7 +65,7 @@ const Offline = styled.div`
   left: 0;
   bottom: 0;
   width: calc(100vw - 10px);
-  padding: 5px;
+  padding: 15px;
   background: rgba(51, 51, 51, 0.9);
   color: #fff;
   margin: 5px;
