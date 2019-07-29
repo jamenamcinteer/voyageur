@@ -16,7 +16,9 @@ export const startAddTrip = trip => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -57,7 +59,9 @@ export const startEditTrip = (id, updates) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -78,7 +82,9 @@ export const startSetTrips = () => {
       return res.data;
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("trips"));
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       if (res) {
         dispatch(setTrips(res));
       } else {

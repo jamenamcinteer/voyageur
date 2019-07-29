@@ -28,8 +28,10 @@ export const startLogin = () => {
       localStorage.setItem("isOffline", "false");
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("auth"));
-      localStorage.setItem("isOffline", "true");
-      console.log(error);
+      console.log(error.includes("Network Error"));
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       if (res) {
         dispatch(login(res._id, res.displayName, res.email, res.photoURL));
       } else {

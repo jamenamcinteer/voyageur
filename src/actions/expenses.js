@@ -16,7 +16,9 @@ export const startAddExpense = expense => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -36,7 +38,9 @@ export const startRemoveExpense = ({ id } = {}) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -57,7 +61,9 @@ export const startEditExpense = (id, updates) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -78,7 +84,9 @@ export const startSetExpenses = () => {
       return res.data;
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("expenses"));
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       if (res) {
         dispatch(setExpenses(res));
       } else {

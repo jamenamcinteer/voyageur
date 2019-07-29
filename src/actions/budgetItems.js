@@ -16,7 +16,9 @@ export const startAddBudgetItem = budgetItem => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -36,7 +38,9 @@ export const startRemoveBudgetItem = ({ id } = {}) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -57,7 +61,9 @@ export const startEditBudgetItem = (id, updates) => {
       localStorage.setItem("isOffline", "false");
       return res.data;
     } catch (error) {
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       return error;
     }
   };
@@ -78,7 +84,9 @@ export const startSetBudgetItems = () => {
       return res.data;
     } catch (error) {
       const res = JSON.parse(localStorage.getItem("budgetItems"));
-      localStorage.setItem("isOffline", "true");
+      if (error.includes("Network Error")) {
+        localStorage.setItem("isOffline", "true");
+      }
       if (res) {
         dispatch(setBudgetItems(res));
       } else {
