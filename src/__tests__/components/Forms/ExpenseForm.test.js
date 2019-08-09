@@ -89,7 +89,7 @@ test("should render passed props and save with required data", done => {
   // expect(firstRender).toMatchDiffSnapshot(asFragment());
 
   setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
+    expect(historyMock.push.mock.calls[0]).toEqual([`/trip-budget/${trips[0]._id}`]);
     done();
   }, 2000);
 });
@@ -330,7 +330,7 @@ test("should render passed expense and handle edits correctly", done => {
   // Save and redirect to trip page
   getByText("Save").click();
   setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
+    expect(historyMock.push.mock.calls[0]).toEqual([`/trip-budget/${trips[0]._id}`]);
     done();
   }, 2000);
 });
@@ -357,7 +357,7 @@ test("should display modal after clicking Delete and redirect to trip page after
   getByText("Delete").click();
 
   setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
+    expect(historyMock.push.mock.calls[0]).toEqual([`/trip-budget/${trips[0]._id}`]);
     done();
   }, 2000);
 });

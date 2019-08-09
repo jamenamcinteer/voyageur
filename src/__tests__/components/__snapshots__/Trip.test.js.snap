@@ -269,7 +269,7 @@ exports[`can render with redux with custom store 1`] = `
       border="0"
       buttontype="primary"
       class="c1"
-      href="/trip/1/add-expense"
+      href="/trip-budget/1/add-expense"
       style="display: inline-block; width: auto;"
     >
       <span
@@ -497,7 +497,7 @@ exports[`can render with redux with custom store 1`] = `
         </div>
         <a
           class="c7"
-          href="/trip/1/budget-category/1/edit"
+          href="/trip-budget/1/budget-category/1/edit"
         >
           <svg
             aria-label="Edit"
@@ -517,7 +517,7 @@ exports[`can render with redux with custom store 1`] = `
       <div>
         <a
           class="c9"
-          href="/trip/1/budget-category/1/budget-item/1"
+          href="/trip-budget/1/budget-category/1/budget-item/1"
         >
           <h3
             class="c10"
@@ -545,7 +545,7 @@ exports[`can render with redux with custom store 1`] = `
           </div>
           <a
             class="c13"
-            href="/trip/1/budget-category/1/budget-item/1/edit"
+            href="/trip-budget/1/budget-category/1/budget-item/1/edit"
           >
             <svg
               aria-label="Edit"
@@ -568,7 +568,7 @@ exports[`can render with redux with custom store 1`] = `
           border="1px solid #0C7C88"
           buttontype="secondary"
           class="c15"
-          href="/trip/1/budget-category/1/add-budget-item"
+          href="/trip-budget/1/budget-category/1/add-budget-item"
           style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
         >
           <span
@@ -792,7 +792,7 @@ exports[`can render with redux with custom store 1`] = `
       border="1px solid #0C7C88"
       buttontype="secondary"
       class="c1"
-      href="/trip/1/add-budget-category"
+      href="/trip-budget/1/add-budget-category"
       style="display: inline-block; width: auto;"
     >
       <span

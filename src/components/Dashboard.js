@@ -161,7 +161,7 @@ const Dashboard = props => {
               futureTrips.map((trip, index) => {
                 return (
                   <ModalLink
-                    to={`/trip/${trip._id}/add-expense`}
+                    to={`/trip-budget/${trip._id}/add-expense`}
                     key={trip._id}
                   >
                     {trip.destination} ({getDates(trip.startDate, trip.endDate)}

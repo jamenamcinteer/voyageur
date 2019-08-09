@@ -53,7 +53,7 @@ const BudgetCategoryForm = props => {
         props.budgetCategory._id,
         updatedBudgetCategory
       );
-      props.history.push(`/trip/${trip._id}`);
+      props.history.push(`/trip-budget/${trip._id}`);
     } else {
       const newBudgetCategory = {
         // id: uniqid(),
@@ -64,7 +64,7 @@ const BudgetCategoryForm = props => {
 
       await props.startAddBudgetCategory(newBudgetCategory);
 
-      props.history.push(`/trip/${trip._id}`);
+      props.history.push(`/trip-budget/${trip._id}`);
     }
   };
 
@@ -82,7 +82,7 @@ const BudgetCategoryForm = props => {
       return true;
     });
 
-    props.history.push(`/trip/${trip._id}`);
+    props.history.push(`/trip-budget/${trip._id}`);
   };
 
   return (
@@ -163,7 +163,7 @@ const BudgetCategoryForm = props => {
         )}
         <MainButtons>
           <ButtonLink
-            to={`/trip/${trip._id}`}
+            to={`/trip-budget/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
             buttonType="link"

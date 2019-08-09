@@ -49,7 +49,7 @@ exports[`can render with redux with custom store 1`] = `
     class="c0"
   >
     <a
-      href="/trip/1"
+      href="/trip-budget/1"
     >
       <svg
         aria-label="Go Back"
@@ -438,7 +438,7 @@ exports[`can render with redux with custom store 1`] = `
           buttontype="link"
           buttonwidth="auto"
           class="c9"
-          href="/trip/1"
+          href="/trip-budget/1"
           style="padding: 10px 0px;"
         >
           <span

@@ -56,7 +56,7 @@ const BudgetCardItem = props => {
   return (
     <div>
       <CardLink
-        to={`/trip/${props.budgetItem.tripId}/budget-category/${
+        to={`/trip-budget/${props.budgetItem.tripId}/budget-category/${
           props.budgetItem.budgetCategoryId
         }/budget-item/${props.budgetItem._id}`}
       >
@@ -74,7 +74,7 @@ const BudgetCardItem = props => {
           budgeted={props.budgetItem.estimatedCost}
         />
         <PencilLink
-          to={`/trip/${props.budgetItem.tripId}/budget-category/${
+          to={`/trip-budget/${props.budgetItem.tripId}/budget-category/${
             props.budgetItem.budgetCategoryId
           }/budget-item/${props.budgetItem._id}/edit`}
         >

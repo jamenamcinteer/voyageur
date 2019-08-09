@@ -78,7 +78,7 @@ const BudgetCard = props => {
           budgeted={useBudgetCalculation("budgeted", budgetItems)}
         />
         <PencilLink
-          to={`/trip/${props.budgetCategory.tripId}/budget-category/${
+          to={`/trip-budget/${props.budgetCategory.tripId}/budget-category/${
             props.budgetCategory._id
           }/edit`}
         >
@@ -104,7 +104,7 @@ const BudgetCard = props => {
         ))}
       <ButtonContainer>
         <ButtonLink
-          to={`/trip/${props.budgetCategory.tripId}/budget-category/${
+          to={`/trip-budget/${props.budgetCategory.tripId}/budget-category/${
             props.budgetCategory._id
           }/add-budget-item`}
           buttonText="Add Budget Item"

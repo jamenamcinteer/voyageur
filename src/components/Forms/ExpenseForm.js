@@ -154,7 +154,7 @@ const ExpenseForm = props => {
 
       props.startEditExpense(props.expense._id, updatedExpense);
 
-      props.history.push(`/trip/${trip._id}`);
+      props.history.push(`/trip-budget/${trip._id}`);
     } else {
       const newExpense = {
         tripId: trip._id,
@@ -170,7 +170,7 @@ const ExpenseForm = props => {
 
       props.startAddExpense(newExpense);
 
-      props.history.push(`/trip/${trip._id}`);
+      props.history.push(`/trip-budget/${trip._id}`);
     }
   };
 
@@ -194,7 +194,7 @@ const ExpenseForm = props => {
   const deleteExpense = () => {
     startRemoveExpense(props.expense._id);
 
-    props.history.push(`/trip/${trip._id}`);
+    props.history.push(`/trip-budget/${trip._id}`);
   };
 
   return (
@@ -340,7 +340,7 @@ const ExpenseForm = props => {
         )}
         <MainButtons>
           <ButtonLink
-            to={`/trip/${trip._id}`}
+            to={`/trip-budget/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
             buttonType="link"

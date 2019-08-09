@@ -67,7 +67,7 @@ const BudgetItemForm = props => {
       };
 
       props.startEditBudgetItem(props.budgetItem._id, updatedBudgetItem);
-      props.history.push(`/trip/${trip._id}`);
+      props.history.push(`/trip-budget/${trip._id}`);
     } else {
       const newBudgetItem = {
         tripId: trip._id,
@@ -79,7 +79,7 @@ const BudgetItemForm = props => {
 
       props.startAddBudgetItem(newBudgetItem);
 
-      props.history.push(`/trip/${trip._id}`);
+      props.history.push(`/trip-budget/${trip._id}`);
     }
   };
 
@@ -92,7 +92,7 @@ const BudgetItemForm = props => {
       return true;
     });
 
-    props.history.push(`/trip/${trip._id}`);
+    props.history.push(`/trip-budget/${trip._id}`);
   };
 
   return (
@@ -100,7 +100,7 @@ const BudgetItemForm = props => {
       <BudgetCategoryHeader>
         <span>Budget Category: {budgetCategory.budgetCategory}</span>
         <ButtonLink
-          to={`/trip/${trip._id}`}
+          to={`/trip-budget/${trip._id}`}
           buttonType="link"
           buttonText="Change"
           customStyles={{
@@ -195,7 +195,7 @@ const BudgetItemForm = props => {
         )}
         <MainButtons>
           <ButtonLink
-            to={`/trip/${trip._id}`}
+            to={`/trip-budget/${trip._id}`}
             buttonText="Cancel"
             buttonWidth="auto"
             buttonType="link"

@@ -103,7 +103,7 @@ const ViewBudgetItem = props => {
           <TripHeader
             title="Expenses"
             theme={props.theme}
-            backTo={`/trip/${trip._id}`}
+            backTo={`/trip-budget/${trip._id}`}
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}
@@ -111,7 +111,7 @@ const ViewBudgetItem = props => {
           />
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
-              to={`/trip/${trip._id}/budget-category/${
+              to={`/trip-budget/${trip._id}/budget-category/${
                 props.match.params.budgetCategoryId
               }/budget-item/${budgetItem._id}/edit`}
               theme={props.theme}
@@ -125,7 +125,7 @@ const ViewBudgetItem = props => {
               }}
             />
             <ButtonLink
-              to={`/trip/${trip._id}/add-expense?budgetCategory=${
+              to={`/trip-budget/${trip._id}/add-expense?budgetCategory=${
                 props.match.params.budgetCategoryId
               }&budgetItem=${budgetItem._id}`}
               buttonText="Add Expense"
@@ -147,7 +147,7 @@ const ViewBudgetItem = props => {
               return (
                 <ExpenseItem
                   key={expense._id}
-                  to={`/trip/${expense.tripId}/budget-category/${
+                  to={`/trip-budget/${expense.tripId}/budget-category/${
                     expense.budgetCategoryId
                   }/budget-item/${expense.budgetItemId}/expense/${expense._id}`}
                 >

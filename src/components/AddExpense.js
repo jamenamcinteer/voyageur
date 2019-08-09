@@ -16,7 +16,7 @@ const AddExpense = props => {
           <TripHeader
             title="Add Expense"
             theme={props.theme}
-            backTo={`/trip/${trip._id}`}
+            backTo={`/trip-budget/${trip._id}`}
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}

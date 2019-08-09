@@ -13,7 +13,7 @@ const AddBudgetCategory = props => {
           <TripHeader
             title="Add Budget Category"
             theme={props.theme}
-            backTo={`/trip/${props.match.params.id}`}
+            backTo={`/trip-budget/${props.match.params.id}`}
             trip={trip}
             budgetItems={props.budgetItems}
             expenses={props.expenses}

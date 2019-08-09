@@ -14,6 +14,7 @@ import ViewBudgetItem from "../components/ViewBudgetItem";
 import AddExpense from "../components/AddExpense";
 import EditExpense from "../components/EditExpense";
 import Trip from "../components/Trip";
+import TripBudget from "../components/TripBudget";
 
 export const history = createBrowserHistory();
 
@@ -26,38 +27,39 @@ const AppRouter = props => {
         <Route path="/trip/add" component={AddTrip} exact={true} />
         <Route path="/trip/:id" component={Trip} exact={true} />
         <Route path="/trip/:id/edit" component={EditTrip} exact={true} />
+        <Route path="/trip-budget/:id" component={TripBudget} exact={true} />
         <Route
-          path="/trip/:id/add-budget-category"
+          path="/trip-budget/:id/add-budget-category"
           component={AddBudgetCategory}
           exact={true}
         />
         <Route
-          path="/trip/:id/add-expense"
+          path="/trip-budget/:id/add-expense"
           component={AddExpense}
           exact={true}
         />
         <Route
-          path="/trip/:id/budget-category/:budgetCategoryId/edit"
+          path="/trip-budget/:id/budget-category/:budgetCategoryId/edit"
           component={EditBudgetCategory}
           exact={true}
         />
         <Route
-          path="/trip/:id/budget-category/:budgetCategoryId/add-budget-item"
+          path="/trip-budget/:id/budget-category/:budgetCategoryId/add-budget-item"
           component={AddBudgetItem}
           exact={true}
         />
         <Route
-          path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId"
+          path="/trip-budget/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId"
           component={ViewBudgetItem}
           exact={true}
         />
         <Route
-          path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId/edit"
+          path="/trip-budget/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId/edit"
           component={EditBudgetItem}
           exact={true}
         />
         <Route
-          path="/trip/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId/expense/:expenseId"
+          path="/trip-budget/:id/budget-category/:budgetCategoryId/budget-item/:budgetItemId/expense/:expenseId"
           component={EditExpense}
           exact={true}
         />
