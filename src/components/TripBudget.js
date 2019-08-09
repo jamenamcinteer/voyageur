@@ -1,5 +1,5 @@
 import React from "react";
-import TripHeader from "./Navigation/TripHeader";
+import TripHeader from "./Navigation/TripBudgetHeader";
 import ButtonLink from "./Buttons/ButtonLink";
 import BudgetCard from "./Cards/BudgetCard";
 import useSortAscendingAlphabetical from "../hooks/useSortAscendingAlphabetical";

@@ -1,5 +1,5 @@
 import React from "react";
-import TripHeader from "./Navigation/TripHeader";
+import TripHeader from "./Navigation/TripBudgetHeader";
 import queryString from "query-string";
 import { connect } from "react-redux";
 import ExpenseForm from "./Forms/ExpenseForm";

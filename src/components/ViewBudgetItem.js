@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TripHeader from "./Navigation/TripHeader";
+import TripHeader from "./Navigation/TripBudgetHeader";
 import { Container } from "./StyledComponents/Layout";
 import ButtonLink from "./Buttons/ButtonLink";
 import styled from "styled-components";

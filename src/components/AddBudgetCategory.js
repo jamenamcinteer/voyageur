@@ -1,5 +1,5 @@
 import React from "react";
-import TripHeader from "./Navigation/TripHeader";
+import TripHeader from "./Navigation/TripBudgetHeader";
 import BudgetCategoryForm from "./Forms/BudgetCategoryForm";
 import { connect } from "react-redux";
 
