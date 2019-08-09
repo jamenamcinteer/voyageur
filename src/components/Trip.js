@@ -2,26 +2,21 @@ import React, { useState } from "react";
 import TripHeader from "./Navigation/TripHeader";
 import ButtonLink from "./Buttons/ButtonLink";
 import Button from "./Buttons/Button";
-import BudgetCard from "./Cards/BudgetCard";
 import { startRemoveTrip } from "../actions/trips";
 import { startRemoveBudgetCategory } from "../actions/budgetCategories";
 import { startRemoveBudgetItem } from "../actions/budgetItems";
 import { startRemoveExpense } from "../actions/expenses";
-import useSortAscendingAlphabetical from "../hooks/useSortAscendingAlphabetical";
 import Modal from "react-modal";
 import { ModalText } from "./StyledComponents/Modals";
 import { Container, CardContainer } from "./StyledComponents/Layout";
 import { MainButtons } from "./StyledComponents/Forms";
 import { connect } from "react-redux";
+import ToolCard from "./Cards/ToolCard";
 
 const Trip = props => {
   const [deleteModal, setDeleteModal] = useState(false);
 
   const trip = props.trips.find(trip => trip._id === props.match.params.id);
-  const budgetCategories = useSortAscendingAlphabetical(
-    props.budgetCategories.filter(bCategory => bCategory.tripId === trip._id),
-    "budgetCategory"
-  );
 
   const deleteTrip = () => {
     startRemoveTrip(trip._id);
@@ -74,37 +69,28 @@ const Trip = props => {
             </Container>
           )}
           <CardContainer>
-            {budgetCategories.length > 0 &&
-              budgetCategories.map(budgetCategory => {
-                return (
-                  <BudgetCard
-                    key={budgetCategory._id}
-                    actual={2130}
-                    budgeted={3760}
-                    theme={props.theme}
-                    budgetCategory={budgetCategory}
-                    budgetItems={props.budgetItems}
-                    expenses={props.expenses}
-                  />
-                );
-              })}
+            {/* <ToolCard
+              to={`/trip-itinerary/${trip._id}`}
+              title="Itinerary"
+              type="itinerary"
+            /> */}
+            <ToolCard
+              to={`/trip-budget/${trip._id}`}
+              title="Budget"
+              type="budget"
+            />
+            {/* <ToolCard
+              to={`/trip-todo/${trip._id}`}
+              title="To Do List"
+              type="todolist"
+            />
+            <ToolCard
+              to={`/trip-packing/${trip._id}`}
+              title="Packing List"
+              type="packinglist"
+            /> */}
           </CardContainer>
           <Container style={{ ...{ textAlign: "center" } }}>
-            <ButtonLink
-              to={`/trip-budget/${trip._id}/add-budget-category`}
-              buttonText="Add Budget Category"
-              buttonType={
-                props.budgetCategories.length > 0 ? "secondary" : "primary"
-              }
-              theme={props.theme}
-              customStyles={{
-                background: {
-                  display: "inline-block",
-                  width: "auto"
-                }
-              }}
-            />
-            <br />
             <ButtonLink
               to={`/trip/${trip._id}/edit`}
               buttonText="Edit Trip"
