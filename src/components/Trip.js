@@ -48,8 +48,6 @@ const Trip = props => {
             theme={props.theme}
             backTo="/"
             trip={trip}
-            budgetItems={props.budgetItems}
-            expenses={props.expenses}
             auth={props.auth}
           />
           {props.budgetCategories.length > 0 && props.budgetItems.length > 0 && (

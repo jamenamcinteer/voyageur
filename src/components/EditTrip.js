@@ -15,8 +15,6 @@ const EditTrip = props => {
             theme={props.theme}
             backTo={`/trip/${props.match.params.id}`}
             trip={trip}
-            budgetItems={props.budgetItems}
-            expenses={props.expenses}
             auth={props.auth}
           />
           <TripForm theme={props.theme} trip={trip} history={props.history} />

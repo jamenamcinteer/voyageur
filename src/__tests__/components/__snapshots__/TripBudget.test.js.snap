@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render with redux with custom store 1`] = `
+<DocumentFragment>
+  .c0 {
+  background-color: #dfe7ed;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #4b5c6b;
+}
+
+.c2 {
+  background: 0;
+  border: 0;
+  padding: 0;
+  border: 3px solid #c7d2db;
+  border-radius: 100px;
+}
+
+.c2:focus {
+  outline: 0;
+  border: 3px solid #A63E26;
+}
+
+.c3 {
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+
+<div
+    class="c0"
+  >
+    <a
+      href="/trip/1"
+    >
+      <svg
+        aria-label="Go Back"
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <h1
+      class="c1"
+    >
+      Trip Budget
+    </h1>
+    <button
+      class="c2"
+    >
+      <img
+        alt="Account Options"
+        class="c3"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </button>
+  </div>
+  .c7 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c8 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c3 {
+  font-size: 1.7em;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.c5 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.c6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  background-image: url("https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
+  height: 150px;
+}
+
+.c2 {
+  height: 150px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: normal;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    >
+      <h2
+        class="c3"
+      >
+        Hawaii
+      </h2>
+      <div
+        class="c4"
+      >
+        <h3
+          class="c5"
+        >
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
+        <h3
+          class="c6"
+        >
+          $595 / $2000
+        </h3>
+      </div>
+      <div
+        class="c7"
+      >
+        <span
+          class="c8"
+          style="width: 29.731%; background-color: rgb(12, 124, 136);"
+        />
+      </div>
+    </div>
+  </div>
+  .c1 {
+  background-color: #0C7C88;
+  border: 0;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c1 > * {
+  position: relative;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c1:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c1:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c2 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  margin: 20px;
+}
+
+<div
+    class="c0"
+    style="text-align: center;"
+  >
+    <a
+      backgroundcolor="#0C7C88"
+      border="0"
+      buttontype="primary"
+      class="c1"
+      href="/trip-budget/1/add-expense"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="c2"
+        color="#fff"
+      >
+        Add Expense
+      </span>
+    </a>
+  </div>
+  .c5 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c6 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c15 {
+  background-color: #fff;
+  border: 1px solid #0C7C88;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c15 > * {
+  position: relative;
+}
+
+.c15:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c15:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c15:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c15:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c16 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #0C7C88;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c10 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 20px 0 5px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-tap-highlight-color: #c7d2db;
+}
+
+.c9 {
+  color: #4b5c6b;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.c9:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c11 {
+  font-size: 0.8em;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13 {
+  margin-right: -5px;
+  margin-left: 5px;
+}
+
+.c1 {
+  background-color: #ffffff;
+  border: 1px solid #c7d2db;
+  margin: 20px 0;
+  margin-top: 0;
+  padding: 20px;
+}
+
+.c2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0 0 5px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-size: 0.8em;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  margin-right: -5px;
+  margin-left: 5px;
+}
+
+.c8 {
+  border: 1px solid #c7d2db;
+  margin: 20px 0;
+}
+
+.c14 {
+  text-align: center;
+}
+
+.c0 {
+  margin: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        <span>
+          Airfare
+        </span>
+        <span
+          class="c3"
+        >
+          $595 / $2000
+        </span>
+      </h3>
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+            style="width: 29.731%; background-color: rgb(12, 124, 136);"
+          />
+        </div>
+        <a
+          class="c7"
+          href="/trip-budget/1/budget-category/1/edit"
+        >
+          <svg
+            aria-label="Edit"
+            style="fill: #0C7C88; padding: 5px; width: 30px; display: block;"
+            viewBox="0 0 528.899 528.899"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M328.883 89.125l107.59 107.589-272.34 272.34L56.604 361.465l272.279-272.34zm189.23-25.948l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259 0l-45.961 45.961 107.59 107.59 53.611-53.611c14.382-14.383 14.382-37.577 0-51.959zM.3 512.69c-1.958 8.812 5.998 16.708 14.811 14.565l119.891-29.069L27.473 390.597.3 512.69z"
+            />
+          </svg>
+        </a>
+      </div>
+      <hr
+        class="c8"
+      />
+      <div>
+        <a
+          class="c9"
+          href="/trip-budget/1/budget-category/1/budget-item/1"
+        >
+          <h3
+            class="c10"
+          >
+            <span>
+              Flights
+            </span>
+            <span
+              class="c11"
+            >
+              $595 / $2000
+            </span>
+          </h3>
+        </a>
+        <div
+          class="c12"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+              style="width: 29.731%; background-color: rgb(12, 124, 136);"
+            />
+          </div>
+          <a
+            class="c13"
+            href="/trip-budget/1/budget-category/1/budget-item/1/edit"
+          >
+            <svg
+              aria-label="Edit"
+              style="fill: #0C7C88; padding: 5px; width: 30px; display: block;"
+              viewBox="0 0 528.899 528.899"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M328.883 89.125l107.59 107.589-272.34 272.34L56.604 361.465l272.279-272.34zm189.23-25.948l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259 0l-45.961 45.961 107.59 107.59 53.611-53.611c14.382-14.383 14.382-37.577 0-51.959zM.3 512.69c-1.958 8.812 5.998 16.708 14.811 14.565l119.891-29.069L27.473 390.597.3 512.69z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="c14"
+      >
+        <a
+          backgroundcolor="#fff"
+          border="1px solid #0C7C88"
+          buttontype="secondary"
+          class="c15"
+          href="/trip-budget/1/budget-category/1/add-budget-item"
+          style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
+        >
+          <span
+            class="c16"
+            color="#0C7C88"
+          >
+            Add Budget Item
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  .c1 {
+  background-color: #fff;
+  border: 1px solid #0C7C88;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c1 > * {
+  position: relative;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c1:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c1:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c2 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #0C7C88;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  margin: 20px;
+}
+
+<div
+    class="c0"
+    style="text-align: center;"
+  >
+    <a
+      backgroundcolor="#fff"
+      border="1px solid #0C7C88"
+      buttontype="secondary"
+      class="c1"
+      href="/trip-budget/1/add-budget-category"
+      style="display: inline-block; width: auto;"
+    >
+      <span
+        class="c2"
+        color="#0C7C88"
+      >
+        Add Budget Category
+      </span>
+    </a>
+  </div>
+</DocumentFragment>
+`;

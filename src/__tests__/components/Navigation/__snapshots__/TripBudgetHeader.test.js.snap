@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with theme and passed props 1`] = `
+<DocumentFragment>
+  .c0 {
+  background-color: #dfe7ed;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #4b5c6b;
+}
+
+.c2 {
+  background: 0;
+  border: 0;
+  padding: 0;
+  border: 3px solid #c7d2db;
+  border-radius: 100px;
+}
+
+.c2:focus {
+  outline: 0;
+  border: 3px solid #A63E26;
+}
+
+.c3 {
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+
+<div
+    class="c0"
+  >
+    <a
+      href="/"
+    >
+      <svg
+        aria-label="Go Back"
+        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+        version="1.1"
+        viewBox="0 0 199.404 199.404"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <polygon
+            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+          />
+        </g>
+      </svg>
+    </a>
+    <h1
+      class="c1"
+    >
+      Test Header
+    </h1>
+    <button
+      class="c2"
+    >
+      <img
+        alt="Account Options"
+        class="c3"
+        src="https://picsum.photos/id/947/45/45"
+      />
+    </button>
+  </div>
+  .c7 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c8 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c3 {
+  font-size: 1.7em;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.c5 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.c6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  background-image: url("https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: brightness(0.6);
+  filter: brightness(0.6);
+  height: 150px;
+}
+
+.c2 {
+  height: 150px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: normal;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    >
+      <h2
+        class="c3"
+      >
+        Hawaii
+      </h2>
+      <div
+        class="c4"
+      >
+        <h3
+          class="c5"
+        >
+          Apr 26, 1970 - Oct 1, 8307
+        </h3>
+        <h3
+          class="c6"
+        >
+          $595 / $2000
+        </h3>
+      </div>
+      <div
+        class="c7"
+      >
+        <span
+          class="c8"
+          style="width: 29.731%; background-color: rgb(12, 124, 136);"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

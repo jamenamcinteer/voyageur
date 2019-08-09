@@ -72,8 +72,6 @@ const TripHeader = props => {
 
 TripHeader.propTypes = {
   trip: PropTypes.object.isRequired,
-  budgetItems: PropTypes.array.isRequired,
-  expenses: PropTypes.array.isRequired,
   auth: PropTypes.object.isRequired,
   backTo: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
