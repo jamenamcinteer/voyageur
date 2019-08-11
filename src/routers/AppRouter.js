@@ -15,6 +15,7 @@ import AddExpense from "../components/AddExpense";
 import EditExpense from "../components/EditExpense";
 import Trip from "../components/Trip";
 import TripBudget from "../components/TripBudget";
+import TripTodo from "../components/TripTodo";
 
 export const history = createBrowserHistory();
 
@@ -27,6 +28,7 @@ const AppRouter = props => {
         <Route path="/trip/add" component={AddTrip} exact={true} />
         <Route path="/trip/:id" component={Trip} exact={true} />
         <Route path="/trip/:id/edit" component={EditTrip} exact={true} />
+        <Route path="/trip-todo/:id" component={TripTodo} exact={true} />
         <Route path="/trip-budget/:id" component={TripBudget} exact={true} />
         <Route
           path="/trip-budget/:id/add-budget-category"

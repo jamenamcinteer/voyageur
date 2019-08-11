@@ -5,6 +5,7 @@ import tripsReducer from "./reducers/trips";
 import budgetCategoriesReducer from "./reducers/budgetCategories";
 import budgetItemsReducer from "./reducers/budgetItems";
 import expensesReducer from "./reducers/expenses";
+import checklistsReducer from "./reducers/checklists";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -15,7 +16,8 @@ export default () => {
       trips: tripsReducer,
       budgetCategories: budgetCategoriesReducer,
       budgetItems: budgetItemsReducer,
-      expenses: expensesReducer
+      expenses: expensesReducer,
+      checklists: checklistsReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );
