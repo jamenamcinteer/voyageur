@@ -77,12 +77,12 @@ const Trip = props => {
               title="Budget"
               type="budget"
             />
-            {/* <ToolCard
+            <ToolCard
               to={`/trip-todo/${trip._id}`}
               title="To Do List"
               type="todolist"
             />
-            <ToolCard
+            {/* <ToolCard
               to={`/trip-packing/${trip._id}`}
               title="Packing List"
               type="packinglist"

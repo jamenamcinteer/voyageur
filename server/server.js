@@ -14,6 +14,8 @@ require("./models/Trip");
 require("./models/BudgetCategory");
 require("./models/BudgetItem");
 require("./models/Expense");
+require("./models/Checklist");
+require("./models/ChecklistItem");
 require("./services/passport");
 
 mongoose.connect(config.get("MONGO_URI"));
@@ -64,6 +66,8 @@ require("./routes/apiRoutes/budgetCategories")(app);
 require("./routes/apiRoutes/budgetItems")(app);
 require("./routes/apiRoutes/expenses")(app);
 require("./routes/apiRoutes/users")(app);
+require("./routes/apiRoutes/checklists")(app);
+require("./routes/apiRoutes/checklistItems")(app);
 
 const unsplash = new Unsplash({
   applicationId: config.get("UNSPLASH_APPLICATION_ID"),
