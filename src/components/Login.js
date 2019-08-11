@@ -45,7 +45,7 @@ const Login = props => {
     <App>
       <AppContainer>
         <AppTitle>Voyageur</AppTitle>
-        <AppSubtitle>Travel Budget Planner</AppSubtitle>
+        <AppSubtitle>Travel Planner</AppSubtitle>
         <ButtonA
           to="/auth/google"
           buttonText="Sign In with Google"
