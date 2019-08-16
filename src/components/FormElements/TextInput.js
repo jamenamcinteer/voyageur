@@ -7,21 +7,33 @@ const Container = styled.div`
   margin: 20px 0;
 `;
 const Label = styled.label`
-  display: block;
+  display: ${props => (props.styleType === "thin" ? `none` : `block`)};
   font-size: 0.8em;
   font-weight: bold;
 `;
 
 const Input = styled.input`
   width: 100%;
-  border-radius: 5px;
-  border: 2px solid ${props => props.theme.themeColorSecondary};
+  border-radius: ${props => (props.styleType === "thin" ? `0` : `5px`)};
+  border: ${props =>
+    props.styleType === "thin"
+      ? `0`
+      : `2px solid ${props.theme.themeColorSecondary}`};
+  border-bottom: ${props =>
+    props.styleType === "thin"
+      ? `1px solid ${props.theme.themeColorSecondary}`
+      : `2px solid ${props.theme.themeColorSecondary}`};
   font-size: 1em;
   padding: 7px 10px;
 
   &:focus {
     outline: 0;
-    border: 2px solid ${props => props.theme.themeColor};
+    border: border: ${props =>
+      props.styleType === "thin" ? `0` : `2px solid ${props.theme.themeColor}`};
+    border-bottom: ${props =>
+      props.styleType === "thin"
+        ? `1px solid ${props.theme.themeColor}`
+        : `2px solid ${props.theme.themeColor}`};
   }
 `;
 
@@ -32,7 +44,9 @@ const TextInput = props => {
 
   return (
     <Container>
-      <Label htmlFor={ID}>{props.label}</Label>
+      <Label htmlFor={ID} styleType={props.styleType}>
+        {props.label}
+      </Label>
       <Input
         placeholder={props.placeholder}
         onChange={e => {
@@ -45,6 +59,8 @@ const TextInput = props => {
         value={inputValue}
         type="text"
         id={ID}
+        styleType={props.styleType}
+        aria-label={props.styleType === "thin" ? props.label : ""}
       />
     </Container>
   );
@@ -55,7 +71,8 @@ TextInput.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func
+  handleBlur: PropTypes.func,
+  styleType: PropTypes.string
 };
 
 export default TextInput;

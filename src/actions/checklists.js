@@ -55,6 +55,8 @@ export const editChecklist = (id, updates) => ({
 export const startEditChecklist = (id, updates) => {
   return async dispatch => {
     try {
+      console.log("startEditChecklist");
+      console.log(id, updates);
       const res = await axios.put(`/api/checklists/${id}`, updates);
       localStorage.setItem("checklists", JSON.stringify(res.data));
       dispatch(editChecklist(id, updates));
