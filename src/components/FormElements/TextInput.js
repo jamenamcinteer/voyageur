@@ -37,13 +37,13 @@ const Input = styled.input`
   }
 `;
 
-const TextInput = props => {
+const TextInput = React.forwardRef((props, ref) => {
   const ID = uniqid();
 
   const [inputValue, setInputValue] = useState(props.value ? props.value : "");
 
   return (
-    <Container>
+    <Container style={props.style ? props.style.container : null}>
       <Label htmlFor={ID} styleType={props.styleType}>
         {props.label}
       </Label>
@@ -61,10 +61,11 @@ const TextInput = props => {
         id={ID}
         styleType={props.styleType}
         aria-label={props.styleType === "thin" ? props.label : ""}
+        ref={ref}
       />
     </Container>
   );
-};
+});
 
 TextInput.propTypes = {
   label: PropTypes.string.isRequired,

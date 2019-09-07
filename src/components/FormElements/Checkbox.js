@@ -74,7 +74,7 @@ const TextInput = props => {
   // const [inputValue, setInputValue] = useState(props.value ? props.value : "");
 
   return (
-    <label>
+    <label style={props.style ? props.style.label : null}>
       <CheckboxContainer>
         <HiddenCheckbox checked={props.checked} onChange={props.handleChange} />
         <StyledCheckbox checked={props.checked}>
