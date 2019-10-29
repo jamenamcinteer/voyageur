@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, wait } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import BudgetCategoryForm from "../../../components/Forms/BudgetCategoryForm";
 import {
@@ -34,7 +34,7 @@ const store = mockStore({
 });
 const historyMock = { push: jest.fn() };
 
-test("should render passed props and respond to callback props", done => {
+test("should render passed props and respond to callback props", async () => {
   const { getByText, getByLabelText } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm trip={trips[0]} history={historyMock} />,
     { store }
@@ -47,10 +47,7 @@ test("should render passed props and respond to callback props", done => {
   getByText("Save").click();
   // expect(startAddBudgetCategory).toHaveBeenCalledTimes(1);
 
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });
 
 test("should display error if name of budget category is empty after clicking Save", () => {
@@ -66,7 +63,7 @@ test("should display error if name of budget category is empty after clicking Sa
   expect(getByTestId("budgetCategoryError")).toBeInTheDocument();
 });
 
-test("should render passed budget category and handle edits correctly", done => {
+test("should render passed budget category and handle edits correctly", async () => {
   const {
     getByTestId,
     getByText,
@@ -108,13 +105,11 @@ test("should render passed budget category and handle edits correctly", done => 
 
   // Save and redirect to trip page
   getByText("Save").click();
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });
 
-test("should display modal after clicking Delete and redirect to trip page after confirming delete", done => {
+test("should display modal after clicking Delete and redirect to trip page after confirming delete", async () => {
   const { getByText, getByTestId, queryByText } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm
       trip={trips[0]}
@@ -135,9 +130,5 @@ test("should display modal after clicking Delete and redirect to trip page after
 
   getByText("Delete").click();
   getByText("Yes, Delete").click();
-
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });

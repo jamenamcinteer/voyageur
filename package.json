@@ -54,7 +54,8 @@
   "scripts": {
     "client-start": "react-scripts start",
     "build": "react-scripts build && sw-precache-cra --config=sw-config.js",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test",
+    "coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "server-watch": "nodemon --watch server --exec yarn server-start",
     "server-start": "yarn server-build && yarn server",
