@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, wait } from "@testing-library/react";
 // import { createMemoryHistory } from "history";
 import ExpenseForm from "../../../components/Forms/ExpenseForm";
 import {
@@ -42,7 +42,7 @@ const amountField = "Amount Spent ($)";
 const dateField = "Date";
 const notesField = "Notes (optional)";
 
-test("should render passed props and save with required data", done => {
+test("should render passed props and save with required data", async () => {
   const {
     getByText,
     getByLabelText
@@ -87,11 +87,7 @@ test("should render passed props and save with required data", done => {
   getByText("Save").click();
 
   // expect(firstRender).toMatchDiffSnapshot(asFragment());
-
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });
 
 test("should display errors if required fields are empty", () => {
@@ -252,7 +248,7 @@ test("should display error if date is not valid", () => {
   expect(queryByTestId("dateError")).toBeNull();
 });
 
-test("should render passed expense and handle edits correctly", done => {
+test("should render passed expense and handle edits correctly", async () => {
   const {
     getByText,
     getByTestId,
@@ -329,13 +325,10 @@ test("should render passed expense and handle edits correctly", done => {
 
   // Save and redirect to trip page
   getByText("Save").click();
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });
 
-test("should display modal after clicking Delete and redirect to trip page after confirming delete", done => {
+test("should display modal after clicking Delete and redirect to trip page after confirming delete", async () => {
   const { getByText, getByTestId, queryByText } = renderWithReduxRouterAndTheme(
     <ExpenseForm
       trip={trips[0]}
@@ -355,11 +348,7 @@ test("should display modal after clicking Delete and redirect to trip page after
   expect(queryByText("Yes, Delete")).toBeNull();
 
   getByText("Delete").click();
-
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });
 
 test("should pre-populate budget category and budget item if they are passed as props", () => {
