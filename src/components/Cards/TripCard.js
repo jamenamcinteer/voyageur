@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Meter from "../Meters/Meter";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -12,6 +12,13 @@ const CardBackground = styled.div`
   border: 1px solid ${props => props.theme.themeColorSecondary};
   // margin: 20px 0;
   padding: 20px;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-gap: 40px;
+    padding-bottom: 0;
+  }
 `;
 
 const CardHeader = styled.h1`
@@ -35,6 +42,7 @@ const CardImageContainer = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: 200px;
+  display: block;
 `;
 
 const TripCard = props => {
@@ -44,21 +52,39 @@ const TripCard = props => {
   const dates = moment(props.startDate)
     .twix(props.endDate, { allDay: true })
     .format({ monthFormat: "MMM", dayFormat: "D" });
+
+  const [imgWidth, setImgWidth] = useState(
+    window.innerWidth >= 700 && window.innerWidth < 1024 ? 352
+    : window.innerWidth >= 1024 ? 320
+    : window.innerWidth - 40
+  )
+  useEffect(() => {
+    function updateSize() {
+      if(window.innerWidth >= 700 && window.innerWidth < 1024) setImgWidth(352)
+      else if(window.innerWidth >= 1024) setImgWidth(320)
+      else setImgWidth(window.innerWidth - 40)
+    }
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, [])
+
   return (
     <Link to={props.to} style={{ textDecoration: "none" }}>
       <CardBackground>
         <CardImageContainer>
           <CardImage
-            src={`${props.photo}&w=333&h=200&fit=crop&crop=focalpoint`}
+            src={`${props.photo}&w=${imgWidth}&h=200&fit=crop&crop=focalpoint`}
             alt=""
           />
           <FigCaption
             dangerouslySetInnerHTML={{ __html: props.photoAttribution }}
           />
         </CardImageContainer>
-        <CardHeader>{props.destination}</CardHeader>
-        <CardSubheader>{dates}</CardSubheader>
-        <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
+        <div>
+          <CardHeader>{props.destination}</CardHeader>
+          <CardSubheader>{dates}</CardSubheader>
+          <Meter theme={props.theme} actual={actual} budgeted={budgeted} />
+        </div>
       </CardBackground>
     </Link>
   );

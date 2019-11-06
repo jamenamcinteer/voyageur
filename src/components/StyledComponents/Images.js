@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FigCaption = styled.figcaption`
   position: absolute;
-  bottom: 4px;
+  bottom: 0;
   background-color: #333;
   color: #fff;
   // opacity: 0.9;

@@ -2,6 +2,7 @@ import React from "react";
 import TripHeader from "./Navigation/TripHeader";
 import BudgetCategoryForm from "./Forms/BudgetCategoryForm";
 import { connect } from "react-redux";
+import { PageSection } from "./StyledComponents/Layout";
 
 const AddBudgetCategory = props => {
   const trip = props.trips.find(trip => trip._id === props.match.params.id);
@@ -19,11 +20,13 @@ const AddBudgetCategory = props => {
             expenses={props.expenses}
             auth={props.auth}
           />
-          <BudgetCategoryForm
-            theme={props.theme}
-            trip={trip}
-            history={props.history}
-          />
+          <PageSection>
+            <BudgetCategoryForm
+              theme={props.theme}
+              trip={trip}
+              history={props.history}
+            />
+          </PageSection>
         </React.Fragment>
       )}
     </React.Fragment>

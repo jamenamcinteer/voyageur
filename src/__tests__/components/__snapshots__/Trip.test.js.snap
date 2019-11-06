@@ -4,6 +4,12 @@ exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: #dfe7ed;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -19,13 +25,13 @@ exports[`can render with redux with custom store 1`] = `
   align-items: center;
 }
 
-.c1 {
+.c2 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c3 {
   background: 0;
   border: 0;
   padding: 0;
@@ -33,53 +39,57 @@ exports[`can render with redux with custom store 1`] = `
   border-radius: 100px;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
   border: 3px solid #A63E26;
 }
 
-.c3 {
+.c4 {
   border-radius: 100px;
   width: 45px;
   height: 45px;
   display: block;
 }
 
-<div
+<header
     class="c0"
   >
-    <a
-      href="/"
-    >
-      <svg
-        aria-label="Go Back"
-        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-        version="1.1"
-        viewBox="0 0 199.404 199.404"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <polygon
-            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-          />
-        </g>
-      </svg>
-    </a>
-    <h1
+    <div
       class="c1"
     >
-      Trip Details
-    </h1>
-    <button
-      class="c2"
-    >
-      <img
-        alt="Account Options"
+      <a
+        href="/"
+      >
+        <svg
+          aria-label="Go Back"
+          style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+          version="1.1"
+          viewBox="0 0 199.404 199.404"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <polygon
+              points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+            />
+          </g>
+        </svg>
+      </a>
+      <h1
+        class="c2"
+      >
+        Trip Details
+      </h1>
+      <button
         class="c3"
-        src="https://picsum.photos/id/947/45/45"
-      />
-    </button>
-  </div>
+      >
+        <img
+          alt="Account Options"
+          class="c4"
+          src="https://picsum.photos/id/947/45/45"
+        />
+      </button>
+    </div>
+  </header>
   .c7 {
   width: 100%;
   height: 10px;
@@ -117,7 +127,7 @@ exports[`can render with redux with custom store 1`] = `
 }
 
 .c1 {
-  background-image: url("https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint");
+  background-image: url("https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=1024&h=150&fit=crop&crop=focalpoint");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-filter: brightness(0.6);
@@ -134,6 +144,8 @@ exports[`can render with redux with custom store 1`] = `
   position: absolute;
   width: 100%;
   top: 0;
+  max-width: 960px;
+  width: 100%;
 }
 
 .c4 {
@@ -152,7 +164,13 @@ exports[`can render with redux with custom store 1`] = `
   padding-bottom: 10px;
 }
 
-<div
+@media (min-width:1024px) {
+  .c2 {
+    left: calc(50% - 480px);
+  }
+}
+
+<section
     class="c0"
   >
     <div
@@ -189,8 +207,24 @@ exports[`can render with redux with custom store 1`] = `
         />
       </div>
     </div>
-  </div>
-  .c1 {
+  </section>
+  .c9 {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background: #dce0e3;
+  border-radius: 5px;
+}
+
+.c10 {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c2 {
   background-color: #0C7C88;
   border: 0;
   font-size: 1em;
@@ -208,11 +242,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c1 > * {
+.c2 > * {
   position: relative;
 }
 
-.c1:before {
+.c2:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -231,72 +265,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c1:active:before {
+.c2:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c1:active {
+.c2:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c1:focus {
+.c2:focus {
   outline: 3px solid #A63E26;
 }
 
-.c2 {
-  font-size: 1em;
-  font-weight: normal;
-  color: #fff;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 {
-  margin: 20px;
-}
-
-<div
-    class="c0"
-    style="text-align: center;"
-  >
-    <a
-      backgroundcolor="#0C7C88"
-      border="0"
-      buttontype="primary"
-      class="c1"
-      href="/trip/1/add-expense"
-      style="display: inline-block; width: auto;"
-    >
-      <span
-        class="c2"
-        color="#fff"
-      >
-        Add Expense
-      </span>
-    </a>
-  </div>
-  .c5 {
-  width: 100%;
-  height: 10px;
-  position: relative;
-  background: #dce0e3;
-  border-radius: 5px;
-}
-
-.c6 {
-  display: block;
-  height: 100%;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-}
-
-.c15 {
+.c19 {
   background-color: #fff;
   border: 1px solid #0C7C88;
   font-size: 1em;
@@ -314,11 +300,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c15 > * {
+.c19 > * {
   position: relative;
 }
 
-.c15:before {
+.c19:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -337,24 +323,90 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c15:active:before {
+.c19:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c15:active {
+.c19:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c15:focus {
+.c19:focus {
   outline: 3px solid #A63E26;
 }
 
-.c16 {
+.c21 {
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c21 > * {
+  position: relative;
+}
+
+.c21:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c21:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c21:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c21:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c3 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c20 {
   font-size: 1em;
   font-weight: normal;
   color: #0C7C88;
@@ -362,7 +414,81 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: none;
 }
 
-.c10 {
+.c22 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #0C7C88;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c23 {
+  background-color: transparent;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  width: auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c23 > * {
+  position: relative;
+}
+
+.c23:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236,240,241,0.3);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c23:active:before {
+  width: 120%;
+  padding-top: 120%;
+  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
+}
+
+.c23:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c23:focus {
+  outline: 3px solid #A63E26;
+}
+
+.c24 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #D24157;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c14 {
   font-size: 1.2em;
   font-weight: normal;
   margin: 20px 0 5px 0;
@@ -377,22 +503,22 @@ exports[`can render with redux with custom store 1`] = `
   -webkit-tap-highlight-color: #c7d2db;
 }
 
-.c9 {
+.c13 {
   color: #4b5c6b;
   -webkit-text-decoration: none;
   text-decoration: none;
   display: block;
 }
 
-.c9:focus {
+.c13:focus {
   outline: 3px solid #A63E26;
 }
 
-.c11 {
+.c15 {
   font-size: 0.8em;
 }
 
-.c12 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -403,12 +529,12 @@ exports[`can render with redux with custom store 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c17 {
   margin-right: -5px;
   margin-left: 5px;
 }
 
-.c1 {
+.c5 {
   background-color: #ffffff;
   border: 1px solid #c7d2db;
   margin: 20px 0;
@@ -416,7 +542,7 @@ exports[`can render with redux with custom store 1`] = `
   padding: 20px;
 }
 
-.c2 {
+.c6 {
   font-size: 1.2em;
   font-weight: normal;
   margin: 0 0 5px 0;
@@ -430,11 +556,11 @@ exports[`can render with redux with custom store 1`] = `
   justify-content: space-between;
 }
 
-.c3 {
+.c7 {
   font-size: 0.8em;
 }
 
-.c4 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -445,107 +571,92 @@ exports[`can render with redux with custom store 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c11 {
   margin-right: -5px;
   margin-left: 5px;
 }
 
-.c8 {
+.c12 {
   border: 1px solid #c7d2db;
   margin: 20px 0;
 }
 
-.c14 {
+.c18 {
   text-align: center;
 }
 
-.c0 {
+.c1 {
+  margin: 20px;
+}
+
+.c4 {
   margin: 20px;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
 }
 
-<div
+.c0 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+<section
     class="c0"
   >
     <div
       class="c1"
+      style="text-align: center;"
     >
-      <h3
+      <a
+        backgroundcolor="#0C7C88"
+        border="0"
+        buttontype="primary"
         class="c2"
+        href="/trip/1/add-expense"
+        style="display: inline-block; width: auto;"
       >
-        <span>
-          Airfare
-        </span>
         <span
           class="c3"
+          color="#fff"
         >
-          $595 / $2000
+          Add Expense
         </span>
-      </h3>
+      </a>
+    </div>
+    <div
+      class="c4"
+    >
       <div
-        class="c4"
+        class="c5"
       >
-        <div
-          class="c5"
+        <h3
+          class="c6"
         >
+          <span>
+            Airfare
+          </span>
           <span
-            class="c6"
-            style="width: 29.731%; background-color: rgb(12, 124, 136);"
-          />
-        </div>
-        <a
-          class="c7"
-          href="/trip/1/budget-category/1/edit"
-        >
-          <svg
-            aria-label="Edit"
-            style="fill: #0C7C88; padding: 5px; width: 30px; display: block;"
-            viewBox="0 0 528.899 528.899"
-            xmlns="http://www.w3.org/2000/svg"
+            class="c7"
           >
-            <path
-              d="M328.883 89.125l107.59 107.589-272.34 272.34L56.604 361.465l272.279-272.34zm189.23-25.948l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259 0l-45.961 45.961 107.59 107.59 53.611-53.611c14.382-14.383 14.382-37.577 0-51.959zM.3 512.69c-1.958 8.812 5.998 16.708 14.811 14.565l119.891-29.069L27.473 390.597.3 512.69z"
-            />
-          </svg>
-        </a>
-      </div>
-      <hr
-        class="c8"
-      />
-      <div>
-        <a
-          class="c9"
-          href="/trip/1/budget-category/1/budget-item/1"
-        >
-          <h3
-            class="c10"
-          >
-            <span>
-              Flights
-            </span>
-            <span
-              class="c11"
-            >
-              $595 / $2000
-            </span>
-          </h3>
-        </a>
+            $595 / $2000
+          </span>
+        </h3>
         <div
-          class="c12"
+          class="c8"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c10"
               style="width: 29.731%; background-color: rgb(12, 124, 136);"
             />
           </div>
           <a
-            class="c13"
-            href="/trip/1/budget-category/1/budget-item/1/edit"
+            class="c11"
+            href="/trip/1/budget-category/1/edit"
           >
             <svg
               aria-label="Edit"
@@ -559,277 +670,124 @@ exports[`can render with redux with custom store 1`] = `
             </svg>
           </a>
         </div>
-      </div>
-      <div
-        class="c14"
-      >
-        <a
-          backgroundcolor="#fff"
-          border="1px solid #0C7C88"
-          buttontype="secondary"
-          class="c15"
-          href="/trip/1/budget-category/1/add-budget-item"
-          style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
-        >
-          <span
-            class="c16"
-            color="#0C7C88"
+        <hr
+          class="c12"
+        />
+        <div>
+          <a
+            class="c13"
+            href="/trip/1/budget-category/1/budget-item/1"
           >
-            Add Budget Item
-          </span>
-        </a>
+            <h3
+              class="c14"
+            >
+              <span>
+                Flights
+              </span>
+              <span
+                class="c15"
+              >
+                $595 / $2000
+              </span>
+            </h3>
+          </a>
+          <div
+            class="c16"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+                style="width: 29.731%; background-color: rgb(12, 124, 136);"
+              />
+            </div>
+            <a
+              class="c17"
+              href="/trip/1/budget-category/1/budget-item/1/edit"
+            >
+              <svg
+                aria-label="Edit"
+                style="fill: #0C7C88; padding: 5px; width: 30px; display: block;"
+                viewBox="0 0 528.899 528.899"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M328.883 89.125l107.59 107.589-272.34 272.34L56.604 361.465l272.279-272.34zm189.23-25.948l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259 0l-45.961 45.961 107.59 107.59 53.611-53.611c14.382-14.383 14.382-37.577 0-51.959zM.3 512.69c-1.958 8.812 5.998 16.708 14.811 14.565l119.891-29.069L27.473 390.597.3 512.69z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="c18"
+        >
+          <a
+            backgroundcolor="#fff"
+            border="1px solid #0C7C88"
+            buttontype="secondary"
+            class="c19"
+            href="/trip/1/budget-category/1/add-budget-item"
+            style="display: inline-block; width: auto; margin: 20px 0px 0px 0px;"
+          >
+            <span
+              class="c20"
+              color="#0C7C88"
+            >
+              Add Budget Item
+            </span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  .c1 {
-  background-color: #fff;
-  border: 1px solid #0C7C88;
-  font-size: 1em;
-  padding: 10px 20px;
-  border-radius: 5px;
-  width: auto;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  margin: 10px;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.c1 > * {
-  position: relative;
-}
-
-.c1:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  width: 0;
-  padding-top: 0;
-  border-radius: 100%;
-  background-color: rgba(236,240,241,0.3);
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c1:active:before {
-  width: 120%;
-  padding-top: 120%;
-  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-}
-
-.c1:active {
-  -webkit-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
-}
-
-.c1:focus {
-  outline: 3px solid #A63E26;
-}
-
-.c3 {
-  background-color: transparent;
-  border: 0;
-  font-size: 1em;
-  padding: 10px 20px;
-  border-radius: 5px;
-  width: auto;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  margin: 10px;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.c3 > * {
-  position: relative;
-}
-
-.c3:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  width: 0;
-  padding-top: 0;
-  border-radius: 100%;
-  background-color: rgba(236,240,241,0.3);
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c3:active:before {
-  width: 120%;
-  padding-top: 120%;
-  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-}
-
-.c3:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.c3:focus {
-  outline: 3px solid #A63E26;
-}
-
-.c2 {
-  font-size: 1em;
-  font-weight: normal;
-  color: #0C7C88;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c4 {
-  font-size: 1em;
-  font-weight: normal;
-  color: #0C7C88;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c5 {
-  background-color: transparent;
-  border: 0;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-  width: auto;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  margin: 10px;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.c5 > * {
-  position: relative;
-}
-
-.c5:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  width: 0;
-  padding-top: 0;
-  border-radius: 100%;
-  background-color: rgba(236,240,241,0.3);
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c5:active:before {
-  width: 120%;
-  padding-top: 120%;
-  -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-  transition: width 0.2s ease-out,padding-top 0.2s ease-out;
-}
-
-.c5:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.c5:focus {
-  outline: 3px solid #A63E26;
-}
-
-.c6 {
-  font-size: 1em;
-  font-weight: normal;
-  color: #D24157;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0 {
-  margin: 20px;
-}
-
-<div
-    class="c0"
-    style="text-align: center;"
-  >
-    <a
-      backgroundcolor="#fff"
-      border="1px solid #0C7C88"
-      buttontype="secondary"
+    <div
       class="c1"
-      href="/trip/1/add-budget-category"
-      style="display: inline-block; width: auto;"
+      style="text-align: center;"
     >
-      <span
-        class="c2"
-        color="#0C7C88"
+      <a
+        backgroundcolor="#fff"
+        border="1px solid #0C7C88"
+        buttontype="secondary"
+        class="c19"
+        href="/trip/1/add-budget-category"
+        style="display: inline-block; width: auto;"
       >
-        Add Budget Category
-      </span>
-    </a>
-    <br />
-    <a
-      backgroundcolor="transparent"
-      border="0"
-      buttontype="link"
-      class="c3"
-      href="/trip/1/edit"
-      style="display: inline-block; width: auto;"
-    >
-      <span
-        class="c4"
-        color="#0C7C88"
+        <span
+          class="c20"
+          color="#0C7C88"
+        >
+          Add Budget Category
+        </span>
+      </a>
+      <br />
+      <a
+        backgroundcolor="transparent"
+        border="0"
+        buttontype="link"
+        class="c21"
+        href="/trip/1/edit"
+        style="display: inline-block; width: auto;"
       >
-        Edit Trip
-      </span>
-    </a>
-    <br />
-    <button
-      class="c5"
-      style="display: inline-block; width: auto;"
-    >
-      <span
-        class="c6"
-        color="#D24157"
+        <span
+          class="c22"
+          color="#0C7C88"
+        >
+          Edit Trip
+        </span>
+      </a>
+      <br />
+      <button
+        class="c23"
+        style="display: inline-block; width: auto;"
       >
-        Delete Trip
-      </span>
-    </button>
-  </div>
+        <span
+          class="c24"
+          color="#D24157"
+        >
+          Delete Trip
+        </span>
+      </button>
+    </div>
+  </section>
 </DocumentFragment>
 `;

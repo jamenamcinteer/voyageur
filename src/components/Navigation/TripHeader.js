@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Meter from "../Meters/Meter";
 import moment from "moment";
@@ -21,13 +21,13 @@ const BudgetHeader = styled.h3`
   margin: 0;
 `;
 
-const SubheaderContaienr = styled.div`
+const SubheaderContaienr = styled.section`
   position: relative;
 `;
 
 const SubheaderBackground = styled.div`
   background-image: url("${props =>
-    props.photo}&w=300&h=100&fit=crop&crop=focalpoint");
+    props.photo}&w=${props => props.vw}&h=150&fit=crop&crop=focalpoint");
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(0.6);
@@ -43,6 +43,12 @@ const Subheader = styled.div`
   position: absolute;
   width: 100%;
   top: 0;
+  max-width: 960px;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    left: calc(50% - 480px);
+  }
 `;
 
 const SubheaderText = styled.div`
@@ -67,13 +73,23 @@ const TripHeader = props => {
     .twix(props.trip.endDate, { allDay: true })
     .format({ monthFormat: "MMM", dayFormat: "D" });
 
+  const [vw, setVw] = useState(window.innerWidth)
+  useEffect(() => {
+    function updateSize() {
+      setVw(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, [])
+
   return (
     <React.Fragment>
       {props.trip && (
         <React.Fragment>
           <Header title={props.title} backTo={props.backTo} auth={props.auth} />
           <SubheaderContaienr>
-            <SubheaderBackground photo={props.trip.photo} />
+            <SubheaderBackground photo={props.trip.photo} vw={vw} />
             <Subheader>
               <DestinationHeader>{props.trip.destination}</DestinationHeader>
               <SubheaderText>

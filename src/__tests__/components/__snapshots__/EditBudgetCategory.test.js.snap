@@ -4,6 +4,12 @@ exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: #dfe7ed;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -19,13 +25,13 @@ exports[`can render with redux with custom store 1`] = `
   align-items: center;
 }
 
-.c1 {
+.c2 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c3 {
   background: 0;
   border: 0;
   padding: 0;
@@ -33,53 +39,57 @@ exports[`can render with redux with custom store 1`] = `
   border-radius: 100px;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
   border: 3px solid #A63E26;
 }
 
-.c3 {
+.c4 {
   border-radius: 100px;
   width: 45px;
   height: 45px;
   display: block;
 }
 
-<div
+<header
     class="c0"
   >
-    <a
-      href="/trip/1"
-    >
-      <svg
-        aria-label="Go Back"
-        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-        version="1.1"
-        viewBox="0 0 199.404 199.404"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <polygon
-            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-          />
-        </g>
-      </svg>
-    </a>
-    <h1
+    <div
       class="c1"
     >
-      Add Budget Category
-    </h1>
-    <button
-      class="c2"
-    >
-      <img
-        alt="Account Options"
+      <a
+        href="/trip/1"
+      >
+        <svg
+          aria-label="Go Back"
+          style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+          version="1.1"
+          viewBox="0 0 199.404 199.404"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <polygon
+              points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+            />
+          </g>
+        </svg>
+      </a>
+      <h1
+        class="c2"
+      >
+        Add Budget Category
+      </h1>
+      <button
         class="c3"
-        src="https://picsum.photos/id/947/45/45"
-      />
-    </button>
-  </div>
+      >
+        <img
+          alt="Account Options"
+          class="c4"
+          src="https://picsum.photos/id/947/45/45"
+        />
+      </button>
+    </div>
+  </header>
   .c7 {
   width: 100%;
   height: 10px;
@@ -117,7 +127,7 @@ exports[`can render with redux with custom store 1`] = `
 }
 
 .c1 {
-  background-image: url("https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=300&h=100&fit=crop&crop=focalpoint");
+  background-image: url("https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=1024&h=150&fit=crop&crop=focalpoint");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-filter: brightness(0.6);
@@ -134,6 +144,8 @@ exports[`can render with redux with custom store 1`] = `
   position: absolute;
   width: 100%;
   top: 0;
+  max-width: 960px;
+  width: 100%;
 }
 
 .c4 {
@@ -152,7 +164,13 @@ exports[`can render with redux with custom store 1`] = `
   padding-bottom: 10px;
 }
 
-<div
+@media (min-width:1024px) {
+  .c2 {
+    left: calc(50% - 480px);
+  }
+}
+
+<section
     class="c0"
   >
     <div
@@ -189,18 +207,18 @@ exports[`can render with redux with custom store 1`] = `
         />
       </div>
     </div>
-  </div>
-  .c1 {
+  </section>
+  .c2 {
   margin: 20px 0;
 }
 
-.c2 {
+.c3 {
   display: block;
   font-size: 0.8em;
   font-weight: bold;
 }
 
-.c3 {
+.c4 {
   width: 100%;
   border-radius: 5px;
   border: 2px solid #c7d2db;
@@ -208,22 +226,22 @@ exports[`can render with redux with custom store 1`] = `
   padding: 7px 10px;
 }
 
-.c3:focus {
+.c4:focus {
   outline: 0;
   border: 2px solid #0C7C88;
 }
 
-.c4 {
+.c5 {
   margin: 20px 0;
 }
 
-.c5 {
+.c6 {
   display: block;
   font-size: 0.8em;
   font-weight: bold;
 }
 
-.c6 {
+.c7 {
   width: 100%;
   border-radius: 5px;
   border: 2px solid #c7d2db;
@@ -233,12 +251,12 @@ exports[`can render with redux with custom store 1`] = `
   font-family: "Roboto",sans-serif;
 }
 
-.c6:focus {
+.c7:focus {
   outline: 0;
   border: 2px solid #0C7C88;
 }
 
-.c8 {
+.c9 {
   background-color: transparent;
   border: 0;
   padding: 10px 20px;
@@ -256,11 +274,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c8 > * {
+.c9 > * {
   position: relative;
 }
 
-.c8:before {
+.c9:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -279,24 +297,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c8:active:before {
+.c9:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c8:active {
+.c9:active {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.c8:focus {
+.c9:focus {
   outline: 3px solid #A63E26;
 }
 
-.c13 {
+.c14 {
   background-color: #0C7C88;
   border: 0;
   padding: 10px 20px;
@@ -314,11 +332,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c13 > * {
+.c14 > * {
   position: relative;
 }
 
-.c13:before {
+.c14:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -337,24 +355,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c13:active:before {
+.c14:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c13:active {
+.c14:active {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.c13:focus {
+.c14:focus {
   outline: 3px solid #A63E26;
 }
 
-.c9 {
+.c10 {
   font-size: 1em;
   font-weight: normal;
   color: #D24157;
@@ -362,7 +380,7 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: underline;
 }
 
-.c14 {
+.c15 {
   font-size: 1em;
   font-weight: normal;
   color: #fff;
@@ -370,7 +388,7 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: none;
 }
 
-.c11 {
+.c12 {
   background-color: transparent;
   border: 0;
   font-size: 1em;
@@ -388,11 +406,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c11 > * {
+.c12 > * {
   position: relative;
 }
 
-.c11:before {
+.c12:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -411,24 +429,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c11:active:before {
+.c12:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c11:active {
+.c12:active {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.c11:focus {
+.c12:focus {
   outline: 3px solid #A63E26;
 }
 
-.c12 {
+.c13 {
   font-size: 1em;
   font-weight: normal;
   color: #0C7C88;
@@ -436,11 +454,17 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: underline;
 }
 
-.c0 {
+.c1 {
   margin: 20px;
 }
 
-.c10 {
+.c0 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -451,92 +475,96 @@ exports[`can render with redux with custom store 1`] = `
   justify-content: flex-end;
 }
 
-.c7 {
+.c8 {
   margin: 0 -10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-<div
+<section
     class="c0"
   >
     <div
       class="c1"
     >
-      <label
-        class="c2"
-        for="1"
-      >
-        Name of Budget Category
-      </label>
-      <input
-        class="c3"
-        id="1"
-        placeholder="Example: Airfare, Food, Activities, etc."
-        type="text"
-        value="Airfare"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <label
-        class="c5"
-        for="2"
-      >
-        Notes (optional)
-      </label>
-      <textarea
-        class="c6"
-        id="2"
-        type="text"
-      />
-    </div>
-    <div
-      class="c7"
-    >
-      <button
-        class="c8"
-        style="padding: 10px 0px;"
-      >
-        <span
-          class="c9"
-          color="#D24157"
-        >
-          Delete
-        </span>
-      </button>
       <div
-        class="c10"
+        class="c2"
       >
-        <a
-          backgroundcolor="transparent"
-          border="0"
-          buttontype="link"
-          buttonwidth="auto"
-          class="c11"
-          href="/trip/1"
-          style="padding: 10px 0px;"
+        <label
+          class="c3"
+          for="1"
         >
-          <span
-            class="c12"
-            color="#0C7C88"
-          >
-            Cancel
-          </span>
-        </a>
+          Name of Budget Category
+        </label>
+        <input
+          class="c4"
+          id="1"
+          placeholder="Example: Airfare, Food, Activities, etc."
+          type="text"
+          value="Airfare"
+        />
+      </div>
+      <div
+        class="c5"
+      >
+        <label
+          class="c6"
+          for="2"
+        >
+          Notes (optional)
+        </label>
+        <textarea
+          class="c7"
+          id="2"
+          type="text"
+        />
+      </div>
+      <div
+        class="c8"
+      >
         <button
-          class="c13"
+          class="c9"
+          style="padding: 10px 0px; text-align: left;"
         >
           <span
-            class="c14"
-            color="#fff"
+            class="c10"
+            color="#D24157"
           >
-            Save
+            Delete
           </span>
         </button>
+        <div
+          class="c11"
+        >
+          <a
+            backgroundcolor="transparent"
+            border="0"
+            buttontype="link"
+            buttonwidth="auto"
+            class="c12"
+            href="/trip/1"
+            style="padding: 10px 0px;"
+          >
+            <span
+              class="c13"
+              color="#0C7C88"
+            >
+              Cancel
+            </span>
+          </a>
+          <button
+            class="c14"
+          >
+            <span
+              class="c15"
+              color="#fff"
+            >
+              Save
+            </span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;

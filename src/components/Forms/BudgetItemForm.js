@@ -144,7 +144,7 @@ const BudgetItemForm = props => {
               buttonWidth="auto"
               buttonType="delete"
               buttonDisplay="inline"
-              customStyles={{ background: { padding: "10px 0" } }}
+              customStyles={{ background: { padding: "10px 0", textAlign: "left" } }}
             />
             <Modal
               isOpen={deleteModal}

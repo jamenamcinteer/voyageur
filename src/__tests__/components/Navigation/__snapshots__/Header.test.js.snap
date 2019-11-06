@@ -4,6 +4,12 @@ exports[`should render with theme and passed props and with back button 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: #dfe7ed;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -19,13 +25,13 @@ exports[`should render with theme and passed props and with back button 1`] = `
   align-items: center;
 }
 
-.c1 {
+.c2 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c3 {
   background: 0;
   border: 0;
   padding: 0;
@@ -33,53 +39,57 @@ exports[`should render with theme and passed props and with back button 1`] = `
   border-radius: 100px;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
   border: 3px solid #A63E26;
 }
 
-.c3 {
+.c4 {
   border-radius: 100px;
   width: 45px;
   height: 45px;
   display: block;
 }
 
-<div
+<header
     class="c0"
   >
-    <a
-      href="/"
-    >
-      <svg
-        aria-label="Go Back"
-        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-        version="1.1"
-        viewBox="0 0 199.404 199.404"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <polygon
-            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-          />
-        </g>
-      </svg>
-    </a>
-    <h1
+    <div
       class="c1"
     >
-      Test Header
-    </h1>
-    <button
-      class="c2"
-    >
-      <img
-        alt="Account Options"
+      <a
+        href="/"
+      >
+        <svg
+          aria-label="Go Back"
+          style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+          version="1.1"
+          viewBox="0 0 199.404 199.404"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <polygon
+              points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+            />
+          </g>
+        </svg>
+      </a>
+      <h1
+        class="c2"
+      >
+        Test Header
+      </h1>
+      <button
         class="c3"
-        src="/some-image.png"
-      />
-    </button>
-  </div>
+      >
+        <img
+          alt="Account Options"
+          class="c4"
+          src="/some-image.png"
+        />
+      </button>
+    </div>
+  </header>
 </DocumentFragment>
 `;
 
@@ -87,6 +97,12 @@ exports[`should render with theme and passed props and with no back button 1`] =
 <DocumentFragment>
   .c0 {
   background-color: #dfe7ed;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -102,13 +118,13 @@ exports[`should render with theme and passed props and with no back button 1`] =
   align-items: center;
 }
 
-.c1 {
+.c2 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c3 {
   background: 0;
   border: 0;
   padding: 0;
@@ -116,35 +132,39 @@ exports[`should render with theme and passed props and with no back button 1`] =
   border-radius: 100px;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
   border: 3px solid #A63E26;
 }
 
-.c3 {
+.c4 {
   border-radius: 100px;
   width: 45px;
   height: 45px;
   display: block;
 }
 
-<div
+<header
     class="c0"
   >
-    <h1
+    <div
       class="c1"
     >
-      Test Header
-    </h1>
-    <button
-      class="c2"
-    >
-      <img
-        alt="Account Options"
+      <h1
+        class="c2"
+      >
+        Test Header
+      </h1>
+      <button
         class="c3"
-        src="/some-image.png"
-      />
-    </button>
-  </div>
+      >
+        <img
+          alt="Account Options"
+          class="c4"
+          src="/some-image.png"
+        />
+      </button>
+    </div>
+  </header>
 </DocumentFragment>
 `;
