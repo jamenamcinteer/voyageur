@@ -25,6 +25,8 @@ const store = createStore(() => ({
 }));
 
 const historyMock = { push: jest.fn() };
+// Object.defineProperty(window, 'innerWidth', {writable: true, configurable: true, value: 200})
+window.innerWidth = 1024
 
 test("can render with redux with custom store", () => {
   const { asFragment } = renderWithReduxRouterAndTheme(<Dashboard />, {

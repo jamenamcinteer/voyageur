@@ -53,7 +53,11 @@ const TripCard = props => {
     .twix(props.endDate, { allDay: true })
     .format({ monthFormat: "MMM", dayFormat: "D" });
 
-  const [imgWidth, setImgWidth] = useState(333)
+  const [imgWidth, setImgWidth] = useState(
+    window.innerWidth >= 700 && window.innerWidth < 1024 ? 352
+    : window.innerWidth >= 1024 ? 320
+    : window.innerWidth - 40
+  )
   useEffect(() => {
     function updateSize() {
       if(window.innerWidth >= 700 && window.innerWidth < 1024) setImgWidth(352)
@@ -61,7 +65,6 @@ const TripCard = props => {
       else setImgWidth(window.innerWidth - 40)
     }
     window.addEventListener('resize', updateSize);
-    updateSize();
     return () => window.removeEventListener('resize', updateSize);
   }, [])
 

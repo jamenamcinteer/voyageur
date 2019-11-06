@@ -362,7 +362,7 @@ exports[`can render with redux with custom store 1`] = `
             <img
               alt=""
               class="c9"
-              src="https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=333&h=200&fit=crop&crop=focalpoint"
+              src="https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=320&h=200&fit=crop&crop=focalpoint"
             />
             <figcaption
               class="c10"
