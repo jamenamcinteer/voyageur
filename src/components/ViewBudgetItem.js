@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TripHeader from "./Navigation/TripHeader";
-import { Container } from "./StyledComponents/Layout";
+import { Container, PageSection } from "./StyledComponents/Layout";
 import ButtonLink from "./Buttons/ButtonLink";
 import styled from "styled-components";
 import useSortDescendingNumerical from "../hooks/useSortDescendingNumerical";
@@ -109,6 +109,7 @@ const ViewBudgetItem = props => {
             expenses={props.expenses}
             auth={props.auth}
           />
+          <PageSection>
           <Container style={{ ...{ textAlign: "center" } }}>
             <ButtonLink
               to={`/trip/${trip._id}/budget-category/${
@@ -167,6 +168,7 @@ const ViewBudgetItem = props => {
                 </ExpenseItem>
               );
             })}
+          </PageSection>
         </React.Fragment>
       )}
     </React.Fragment>

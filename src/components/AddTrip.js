@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Navigation/Header";
 import TripForm from "./Forms/TripForm";
+import { PageSection } from "./StyledComponents/Layout";
 import { connect } from "react-redux";
 
 const AddTrip = props => {
@@ -12,7 +13,9 @@ const AddTrip = props => {
         backTo="/"
         auth={props.auth}
       />
-      <TripForm theme={props.theme} history={props.history} />
+      <PageSection>
+        <TripForm theme={props.theme} history={props.history} />
+      </PageSection>
     </React.Fragment>
   );
 };

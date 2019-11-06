@@ -4,6 +4,12 @@ exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: #dfe7ed;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -19,13 +25,13 @@ exports[`can render with redux with custom store 1`] = `
   align-items: center;
 }
 
-.c1 {
+.c2 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c3 {
   background: 0;
   border: 0;
   padding: 0;
@@ -33,37 +39,41 @@ exports[`can render with redux with custom store 1`] = `
   border-radius: 100px;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
   border: 3px solid #A63E26;
 }
 
-.c3 {
+.c4 {
   border-radius: 100px;
   width: 45px;
   height: 45px;
   display: block;
 }
 
-<div
+<header
     class="c0"
   >
-    <h1
+    <div
       class="c1"
     >
-      My Trips
-    </h1>
-    <button
-      class="c2"
-    >
-      <img
-        alt="Account Options"
+      <h1
+        class="c2"
+      >
+        My Trips
+      </h1>
+      <button
         class="c3"
-        src="https://picsum.photos/id/947/45/45"
-      />
-    </button>
-  </div>
-  .c1 {
+      >
+        <img
+          alt="Account Options"
+          class="c4"
+          src="https://picsum.photos/id/947/45/45"
+        />
+      </button>
+    </div>
+  </header>
+  .c2 {
   background-color: #fff;
   border: 1px solid #0C7C88;
   font-size: 1em;
@@ -81,11 +91,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c1 > * {
+.c2 > * {
   position: relative;
 }
 
-.c1:before {
+.c2:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -104,24 +114,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c1:active:before {
+.c2:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c1:active {
+.c2:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c1:focus {
+.c2:focus {
   outline: 3px solid #A63E26;
 }
 
-.c2 {
+.c3 {
   font-size: 1em;
   font-weight: normal;
   color: #0C7C88;
@@ -129,7 +139,7 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: none;
 }
 
-.c3 {
+.c4 {
   background-color: #0C7C88;
   border: 0;
   padding: 10px 20px;
@@ -147,11 +157,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c3 > * {
+.c4 > * {
   position: relative;
 }
 
-.c3:before {
+.c4:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -170,24 +180,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c3:active:before {
+.c4:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c3:active {
+.c4:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c3:focus {
+.c4:focus {
   outline: 3px solid #A63E26;
 }
 
-.c4 {
+.c5 {
   font-size: 1em;
   font-weight: normal;
   color: #fff;
@@ -195,62 +205,7 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: none;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: 20px 10px;
-}
-
-.c0 button,
-.c0 a {
-  max-width: 200px;
-}
-
-@media (min-width:1024px) {
-  .c0 {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-}
-
-<div
-    class="c0"
-  >
-    <a
-      backgroundcolor="#fff"
-      border="1px solid #0C7C88"
-      buttontype="secondary"
-      buttonwidth="50%"
-      class="c1"
-      href="/trip/add"
-    >
-      <span
-        class="c2"
-        color="#0C7C88"
-      >
-        Add a Trip
-      </span>
-    </a>
-    <button
-      class="c3"
-    >
-      <span
-        class="c4"
-        color="#fff"
-      >
-        Add Expense
-      </span>
-    </button>
-  </div>
-  .c7 {
+.c13 {
   width: 100%;
   height: 10px;
   position: relative;
@@ -258,7 +213,7 @@ exports[`can render with redux with custom store 1`] = `
   border-radius: 5px;
 }
 
-.c8 {
+.c14 {
   display: block;
   height: 100%;
   border-radius: 5px;
@@ -266,9 +221,9 @@ exports[`can render with redux with custom store 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c10 {
   position: absolute;
-  bottom: 4px;
+  bottom: 0;
   background-color: #333;
   color: #fff;
   padding: 5px;
@@ -276,90 +231,174 @@ exports[`can render with redux with custom store 1`] = `
   font-size: 0.75em;
 }
 
-.c4 a {
+.c10 a {
   color: #fff;
 }
 
-.c1 {
+.c7 {
   background-color: #fff;
   border: 1px solid #c7d2db;
   padding: 20px;
 }
 
-.c5 {
+.c11 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c6 {
+.c12 {
   font-size: 1em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c8 {
   width: calc(100% + 40px);
   margin: -20px -20px 0 -20px;
   position: relative;
 }
 
-.c3 {
+.c9 {
   width: 100%;
   height: 200px;
+  display: block;
 }
 
-.c0 {
+.c15 {
+  margin: 20px;
+}
+
+.c6 {
   margin: 20px;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
 }
 
-<div
+.c0 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+
+.c1 button,
+.c1 a {
+  max-width: 200px;
+}
+
+@media (min-width:1024px) {
+  .c7 {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-gap: 40px;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c6 {
+    display: block;
+  }
+}
+
+<section
     class="c0"
   >
-    <a
-      href="/trip/1"
-      style="text-decoration: none;"
+    <div
+      class="c1"
     >
-      <div
-        class="c1"
+      <a
+        backgroundcolor="#fff"
+        border="1px solid #0C7C88"
+        buttontype="secondary"
+        buttonwidth="50%"
+        class="c2"
+        href="/trip/add"
       >
-        <div
-          class="c2"
+        <span
+          class="c3"
+          color="#0C7C88"
         >
-          <img
-            alt=""
-            class="c3"
-            src="https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=333&h=200&fit=crop&crop=focalpoint"
-          />
-          <figcaption
-            class="c4"
-          >
-            photo attribution
-          </figcaption>
-        </div>
-        <h1
+          Add a Trip
+        </span>
+      </a>
+      <button
+        class="c4"
+      >
+        <span
           class="c5"
+          color="#fff"
         >
-          Hawaii
-        </h1>
-        <h2
-          class="c6"
-        >
-          Apr 26, 1970 - Oct 1, 8307
-        </h2>
+          Add Expense
+        </span>
+      </button>
+    </div>
+    <div
+      class="c6"
+    >
+      <a
+        href="/trip/1"
+        style="text-decoration: none;"
+      >
         <div
           class="c7"
         >
-          <span
+          <div
             class="c8"
-            style="width: 29.731%; background-color: rgb(12, 124, 136);"
-          />
+          >
+            <img
+              alt=""
+              class="c9"
+              src="https://images.unsplash.com/photo-1549317487-92cec5e76645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5ODc0fQ&w=333&h=200&fit=crop&crop=focalpoint"
+            />
+            <figcaption
+              class="c10"
+            >
+              photo attribution
+            </figcaption>
+          </div>
+          <div>
+            <h1
+              class="c11"
+            >
+              Hawaii
+            </h1>
+            <h2
+              class="c12"
+            >
+              Apr 26, 1970 - Oct 1, 8307
+            </h2>
+            <div
+              class="c13"
+            >
+              <span
+                class="c14"
+                style="width: 29.731%; background-color: rgb(12, 124, 136);"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </a>
-  </div>
+      </a>
+    </div>
+    <div
+      class="c15"
+    />
+    <div
+      class="c6"
+    />
+  </section>
 </DocumentFragment>
 `;

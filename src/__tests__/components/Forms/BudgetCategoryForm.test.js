@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, wait } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import BudgetCategoryForm from "../../../components/Forms/BudgetCategoryForm";
 import {
@@ -34,7 +34,7 @@ const store = mockStore({
 });
 const historyMock = { push: jest.fn() };
 
-test("should render passed props and respond to callback props", done => {
+test("should render passed props and respond to callback props", async () => {
   const { getByText, getByLabelText } = renderWithReduxRouterAndTheme(
     <BudgetCategoryForm trip={trips[0]} history={historyMock} />,
     { store }
@@ -46,11 +46,12 @@ test("should render passed props and respond to callback props", done => {
   });
   getByText("Save").click();
   // expect(startAddBudgetCategory).toHaveBeenCalledTimes(1);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
-    done();
-  }, 2000);
+  // setTimeout(() => {
+  //   expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]);
+  //   done();
+  // }, 2000);
 });
 
 test("should display error if name of budget category is empty after clicking Save", () => {

@@ -4,14 +4,20 @@ import styled from "styled-components";
 import theme from "../../theme";
 import PropTypes from "prop-types";
 
-const HeaderBackground = styled.div`
+const HeaderBackground = styled.header`
   background-color: ${props => props.theme.headerBackground};
+`;
+
+const HeaderWrapper = styled.div`
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   // text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 const HeaderText = styled.h1`
   font-size: 1.2em;
@@ -52,6 +58,10 @@ const ProfileMenu = styled.div`
   height: calc(100vh - 69px);
   box-shadow: -3px 3px 4px 2px rgba(0, 0, 0, 0.2);
   max-width: 400px;
+
+  @media (min-width: 1024px) {
+    right: calc(50% - 480px);
+  }
 `;
 const ProfileMenuLink = styled.a`
   color: ${props => props.theme.darkFont};
@@ -77,6 +87,7 @@ const Header = props => {
 
   return (
     <HeaderBackground>
+      <HeaderWrapper>
       {!props.backHide && (
         <Link to={props.backTo}>
           <svg
@@ -101,6 +112,7 @@ const Header = props => {
           </ProfileMenu>
         )}
       </ProfileButton>
+      </HeaderWrapper>
     </HeaderBackground>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import TripHeader from "./Navigation/TripHeader";
+import { PageSection } from "./StyledComponents/Layout";
 import { connect } from "react-redux";
 
 import ExpenseForm from "./Forms/ExpenseForm";
@@ -26,14 +27,16 @@ const EditExpense = props => {
             expenses={props.expenses}
             auth={props.auth}
           />
-          <ExpenseForm
-            expense={expense}
-            theme={props.theme}
-            trip={trip}
-            budgetCategories={props.budgetCategories}
-            budgetItems={props.budgetItems}
-            history={props.history}
-          />
+          <PageSection>
+            <ExpenseForm
+              expense={expense}
+              theme={props.theme}
+              trip={trip}
+              budgetCategories={props.budgetCategories}
+              budgetItems={props.budgetItems}
+              history={props.history}
+            />
+          </PageSection>
         </React.Fragment>
       )}
     </React.Fragment>

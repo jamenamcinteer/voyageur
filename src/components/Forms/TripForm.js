@@ -43,7 +43,7 @@ const Img = styled.img`
 
 const FigCaption = styled.figcaption`
   position: absolute;
-  bottom: ${props => (props.selected ? 0 : "4px")};
+  bottom: 0;
   background-color: #333;
   color: #fff;
   opacity: 0.7;
@@ -248,7 +248,7 @@ const TripForm = props => {
 
         {!showPhotoOptions && (
           <Button
-            handleClick={e => setShowPhotoOptions(true)}
+            handleClick={() => {getPhoto();setShowPhotoOptions(true)}}
             buttonText="Change Photo"
             buttonWidth="auto"
             buttonType="link"
@@ -299,7 +299,7 @@ const TripForm = props => {
                 buttonWidth="auto"
                 buttonType="delete"
                 buttonDisplay="inline"
-                customStyles={{ background: { padding: "10px 0" } }}
+                customStyles={{ background: { padding: "10px 0", textAlign: "left" } }}
               />
               <Modal
                 ariaHideApp={props.isTest ? false : true}
