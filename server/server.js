@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
+const csurf = require('csurf');
+const cookieParser = require('cookie-parser');
 var compression = require("compression");
 var sslRedirect = require("heroku-ssl-redirect");
 var express = require("express");
@@ -20,11 +22,19 @@ mongoose.connect(config.get("MONGO_URI"));
 
 var app = express();
 
+const csrfMiddleware = csurf({
+  cookie: true
+})
+
 app.use(compression());
 
 app.use(sslRedirect());
 
 app.use(bodyParser.json());
+
+app.use(cookieParser());
+
+app.use(csrfMiddleware);
 
 var whitelist = [
   "http://localhost:3000/",
@@ -98,12 +108,14 @@ app.get("/photos", function(req, res) {
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "..", "build"))); //
   app.get("*", (req, res) => {
+    res.cookie('token', req.csrfToken())
     res.sendfile(path.join((__dirname, "..", "build/index.html")));
   });
 } else {
   //build mode
   app.use(express.static(path.join(__dirname, "..", "public")));
   app.get("*", (req, res) => {
+    res.cookie('token', req.csrfToken())
     res.sendFile(path.join(__dirname, "..", "public/index.html"));
   });
 }

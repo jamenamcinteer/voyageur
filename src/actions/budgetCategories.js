@@ -8,7 +8,10 @@ export const addBudgetCategory = budgetCategory => ({
 export const startAddBudgetCategory = budgetCategory => {
   return async dispatch => {
     try {
-      const res = await axios.post("/api/budgetCategories", budgetCategory);
+      const headers = {
+        'XSRF-Token': document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1")
+      }
+      const res = await axios.post("/api/budgetCategories", budgetCategory, headers);
       let budgetCategories = JSON.parse(
         localStorage.getItem("budgetCategories")
       );
