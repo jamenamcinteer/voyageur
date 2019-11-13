@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, fireEvent } from "@testing-library/react";
+import { cleanup, fireEvent, wait } from "@testing-library/react";
 import TripForm from "../../../components/Forms/TripForm";
 import {
   trips,
@@ -39,7 +39,7 @@ const destinationField = "Destination";
 const startDateField = "Start Date";
 const endDateField = "End Date";
 
-test("should render minimal passed props and respond to callback props", done => {
+test("should render minimal passed props and respond to callback props", async () => {
   const { getByText, getByLabelText } = renderWithReduxRouterAndTheme(
     <TripForm history={historyMock} />,
     { store }
@@ -55,11 +55,7 @@ test("should render minimal passed props and respond to callback props", done =>
     target: { value: "04/18/2019" }
   });
   getByText("Save").click();
-
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/`]))
 });
 
 test("should display error if Destination is empty after clicking Save", () => {
@@ -356,7 +352,7 @@ test("should render passed trip and handle edits correctly", done => {
     });
     fireEvent.blur(getByLabelText(destinationField));
 
-    process.nextTick(() => {
+    process.nextTick(async () => {
       fireEvent.click(getByTestId("photo1"));
 
       fireEvent.change(getByLabelText(startDateField), {
@@ -369,17 +365,14 @@ test("should render passed trip and handle edits correctly", done => {
 
       // Save and redirect to dashboard page
       getByText("Save").click();
-
-      setTimeout(() => {
-        expect(historyMock.push.mock.calls[0]).toEqual([`/`]);
-        global.fetch.mockClear();
-        done();
-      }, 2000);
+      await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/`]))
+      global.fetch.mockClear()
+      done()
     });
   });
 });
 
-test("should display modal after clicking Delete and redirect to dashboard page after confirming delete", done => {
+test("should display modal after clicking Delete and redirect to dashboard page after confirming delete", async () => {
   const { getByText, getByTestId, queryByText } = renderWithReduxRouterAndTheme(
     <TripForm
       trip={trips[0]}
@@ -399,9 +392,5 @@ test("should display modal after clicking Delete and redirect to dashboard page 
   expect(queryByText("Yes, Delete")).toBeNull();
 
   getByText("Delete").click();
-
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/`]))
 });

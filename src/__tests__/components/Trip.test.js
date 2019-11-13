@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup } from "@testing-library/react";
+import { cleanup, wait } from "@testing-library/react";
 import { createStore } from "redux";
 import Trip from "../../components/Trip";
 import {
@@ -37,7 +37,7 @@ test("can render with redux with custom store", () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test("should display modal after clicking Delete and redirect to Dashboard page after confirming delete", done => {
+test("should display modal after clicking Delete and redirect to Dashboard page after confirming delete", async () => {
   const { getByText, getByTestId, queryByText } = renderWithReduxRouterAndTheme(
     <Trip
       match={{ params: { id: "1" } }}
@@ -55,9 +55,5 @@ test("should display modal after clicking Delete and redirect to Dashboard page 
 
   getByText("Delete Trip").click();
   getByText("Yes, Delete").click();
-
-  setTimeout(() => {
-    expect(historyMock.push.mock.calls[0]).toEqual([`/`]);
-    done();
-  }, 2000);
+  await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/`]))
 });
