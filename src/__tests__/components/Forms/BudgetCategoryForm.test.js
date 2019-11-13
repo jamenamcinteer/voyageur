@@ -47,7 +47,6 @@ test("should render passed props and respond to callback props", async () => {
   });
   getByText("Save").click();
   // expect(startAddBudgetCategory).toHaveBeenCalledTimes(1);
-
   await wait(() => expect(historyMock.push.mock.calls[0]).toEqual([`/trip/${trips[0]._id}`]))
 });
 

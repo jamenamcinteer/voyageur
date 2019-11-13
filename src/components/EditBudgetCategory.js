@@ -1,6 +1,7 @@
 import React from "react";
 import TripHeader from "./Navigation/TripHeader";
 import BudgetCategoryForm from "./Forms/BudgetCategoryForm";
+import { PageSection } from "./StyledComponents/Layout";
 import { connect } from "react-redux";
 
 const EditBudgetCategory = props => {
@@ -22,14 +23,16 @@ const EditBudgetCategory = props => {
             expenses={props.expenses}
             auth={props.auth}
           />
-          <BudgetCategoryForm
-            theme={props.theme}
-            trip={trip}
-            budgetCategory={budgetCategory}
-            budgetItems={props.budgetItems}
-            expenses={props.expenses}
-            history={props.history}
-          />
+          <PageSection>
+            <BudgetCategoryForm
+              theme={props.theme}
+              trip={trip}
+              budgetCategory={budgetCategory}
+              budgetItems={props.budgetItems}
+              expenses={props.expenses}
+              history={props.history}
+            />
+          </PageSection>
         </React.Fragment>
       )}
     </React.Fragment>

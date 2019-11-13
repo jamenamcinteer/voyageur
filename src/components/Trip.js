@@ -10,7 +10,7 @@ import { startRemoveExpense } from "../actions/expenses";
 import useSortAscendingAlphabetical from "../hooks/useSortAscendingAlphabetical";
 import Modal from "react-modal";
 import { ModalText } from "./StyledComponents/Modals";
-import { Container, CardContainer } from "./StyledComponents/Layout";
+import { Container, CardContainer, PageSection } from "./StyledComponents/Layout";
 import { MainButtons } from "./StyledComponents/Forms";
 import { connect } from "react-redux";
 
@@ -57,6 +57,7 @@ const Trip = props => {
             expenses={props.expenses}
             auth={props.auth}
           />
+          <PageSection>
           {props.budgetCategories.length > 0 && props.budgetItems.length > 0 && (
             <Container style={{ ...{ textAlign: "center" } }}>
               <ButtonLink
@@ -178,6 +179,7 @@ const Trip = props => {
               </MainButtons>
             </Modal>
           </Container>
+          </PageSection>
         </React.Fragment>
       )}
     </React.Fragment>

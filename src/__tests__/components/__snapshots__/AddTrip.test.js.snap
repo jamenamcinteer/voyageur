@@ -4,6 +4,12 @@ exports[`can render with redux with custom store 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: #dfe7ed;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -19,13 +25,13 @@ exports[`can render with redux with custom store 1`] = `
   align-items: center;
 }
 
-.c1 {
+.c2 {
   font-size: 1.2em;
   font-weight: normal;
   color: #4b5c6b;
 }
 
-.c2 {
+.c3 {
   background: 0;
   border: 0;
   padding: 0;
@@ -33,64 +39,68 @@ exports[`can render with redux with custom store 1`] = `
   border-radius: 100px;
 }
 
-.c2:focus {
+.c3:focus {
   outline: 0;
   border: 3px solid #A63E26;
 }
 
-.c3 {
+.c4 {
   border-radius: 100px;
   width: 45px;
   height: 45px;
   display: block;
 }
 
-<div
+<header
     class="c0"
   >
-    <a
-      href="/"
-    >
-      <svg
-        aria-label="Go Back"
-        style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
-        version="1.1"
-        viewBox="0 0 199.404 199.404"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <polygon
-            points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
-          />
-        </g>
-      </svg>
-    </a>
-    <h1
+    <div
       class="c1"
     >
-      Add a Trip
-    </h1>
-    <button
-      class="c2"
-    >
-      <img
-        alt="Account Options"
+      <a
+        href="/"
+      >
+        <svg
+          aria-label="Go Back"
+          style="fill: #4b5c6b; width: 20px; height: 20px; float: left; margin-top: 2px;"
+          version="1.1"
+          viewBox="0 0 199.404 199.404"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <polygon
+              points="135.412,0 35.709,99.702 135.412,199.404 163.695,171.119 92.277,99.702 163.695,28.285 	"
+            />
+          </g>
+        </svg>
+      </a>
+      <h1
+        class="c2"
+      >
+        Add a Trip
+      </h1>
+      <button
         class="c3"
-        src="https://picsum.photos/id/947/45/45"
-      />
-    </button>
-  </div>
-  .c1 {
+      >
+        <img
+          alt="Account Options"
+          class="c4"
+          src="https://picsum.photos/id/947/45/45"
+        />
+      </button>
+    </div>
+  </header>
+  .c2 {
   margin: 20px 0;
 }
 
-.c2 {
+.c3 {
   display: block;
   font-size: 0.8em;
   font-weight: bold;
 }
 
-.c3 {
+.c4 {
   width: 100%;
   border-radius: 5px;
   border: 2px solid #c7d2db;
@@ -98,12 +108,12 @@ exports[`can render with redux with custom store 1`] = `
   padding: 7px 10px;
 }
 
-.c3:focus {
+.c4:focus {
   outline: 0;
   border: 2px solid #0C7C88;
 }
 
-.c9 {
+.c10 {
   background-color: #0C7C88;
   border: 0;
   padding: 10px 20px;
@@ -121,11 +131,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c9 > * {
+.c10 > * {
   position: relative;
 }
 
-.c9:before {
+.c10:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -144,24 +154,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c9:active:before {
+.c10:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c9:active {
+.c10:active {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.c9:focus {
+.c10:focus {
   outline: 3px solid #A63E26;
 }
 
-.c10 {
+.c11 {
   font-size: 1em;
   font-weight: normal;
   color: #fff;
@@ -169,7 +179,7 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: none;
 }
 
-.c7 {
+.c8 {
   background-color: transparent;
   border: 0;
   font-size: 1em;
@@ -187,11 +197,11 @@ exports[`can render with redux with custom store 1`] = `
   transition: background-color 0.3s;
 }
 
-.c7 > * {
+.c8 > * {
   position: relative;
 }
 
-.c7:before {
+.c8:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -210,24 +220,24 @@ exports[`can render with redux with custom store 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c7:active:before {
+.c8:active:before {
   width: 120%;
   padding-top: 120%;
   -webkit-transition: width 0.2s ease-out,padding-top 0.2s ease-out;
   transition: width 0.2s ease-out,padding-top 0.2s ease-out;
 }
 
-.c7:active {
+.c8:active {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.c7:focus {
+.c8:focus {
   outline: 3px solid #A63E26;
 }
 
-.c8 {
+.c9 {
   font-size: 1em;
   font-weight: normal;
   color: #0C7C88;
@@ -235,11 +245,17 @@ exports[`can render with redux with custom store 1`] = `
   text-decoration: underline;
 }
 
-.c0 {
+.c1 {
   margin: 20px;
 }
 
-.c6 {
+.c0 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -250,13 +266,13 @@ exports[`can render with redux with custom store 1`] = `
   justify-content: flex-end;
 }
 
-.c5 {
+.c6 {
   margin: 0 -10px;
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.c4 {
+.c5 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
@@ -264,131 +280,135 @@ exports[`can render with redux with custom store 1`] = `
   overflow-y: auto;
 }
 
-<div
+<section
     class="c0"
   >
     <div
       class="c1"
     >
-      <label
+      <div
         class="c2"
-        for="1"
       >
-        Destination
-      </label>
-      <input
-        class="c3"
-        id="1"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="DateRangePicker DateRangePicker_1"
-    >
-      <div>
-        <div
-          class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
+        <label
+          class="c3"
+          for="1"
         >
+          Destination
+        </label>
+        <input
+          class="c4"
+          id="1"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="DateRangePicker DateRangePicker_1"
+      >
+        <div>
           <div
-            class="DateInput DateInput_1"
+            class="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
           >
-            <input
-              aria-describedby="DateInput__screen-reader-message-startDate"
-              aria-label="Start Date"
-              autocomplete="off"
-              class="DateInput_input DateInput_input_1"
-              id="startDate"
-              name="startDate"
-              placeholder="Start Date"
-              type="text"
-              value=""
-            />
-            <p
-              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-startDate"
+            <div
+              class="DateInput DateInput_1"
             >
-              Press the down arrow key to interact with the calendar and
-  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-            </p>
-          </div>
-          <div
-            aria-hidden="true"
-            class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
-            role="presentation"
-          >
-            <svg
-              class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
-              focusable="false"
-              viewBox="0 0 1000 1000"
-            >
-              <path
-                d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
+              <input
+                aria-describedby="DateInput__screen-reader-message-startDate"
+                aria-label="Start Date"
+                autocomplete="off"
+                class="DateInput_input DateInput_input_1"
+                id="startDate"
+                name="startDate"
+                placeholder="Start Date"
+                type="text"
+                value=""
               />
-            </svg>
-          </div>
-          <div
-            class="DateInput DateInput_1"
-          >
-            <input
-              aria-describedby="DateInput__screen-reader-message-endDate"
-              aria-label="End Date"
-              autocomplete="off"
-              class="DateInput_input DateInput_input_1"
-              id="endDate"
-              name="endDate"
-              placeholder="End Date"
-              type="text"
-              value=""
-            />
-            <p
-              class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-endDate"
-            >
-              Press the down arrow key to interact with the calendar and
+              <p
+                class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+                id="DateInput__screen-reader-message-startDate"
+              >
+                Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-            </p>
+              </p>
+            </div>
+            <div
+              aria-hidden="true"
+              class="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
+              role="presentation"
+            >
+              <svg
+                class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+                focusable="false"
+                viewBox="0 0 1000 1000"
+              >
+                <path
+                  d="M694 242l249 250c12 11 12 21 1 32L694 773c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210-210H68c-13 0-23-10-23-23s10-23 23-23h806L662 275c-21-22 11-54 32-33z"
+                />
+              </svg>
+            </div>
+            <div
+              class="DateInput DateInput_1"
+            >
+              <input
+                aria-describedby="DateInput__screen-reader-message-endDate"
+                aria-label="End Date"
+                autocomplete="off"
+                class="DateInput_input DateInput_input_1"
+                id="endDate"
+                name="endDate"
+                placeholder="End Date"
+                type="text"
+                value=""
+              />
+              <p
+                class="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+                id="DateInput__screen-reader-message-endDate"
+              >
+                Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="c4"
-    />
-    <div
-      class="c5"
-    >
+      <div
+        class="c5"
+      />
       <div
         class="c6"
       >
-        <a
-          backgroundcolor="transparent"
-          border="0"
-          buttontype="link"
-          buttonwidth="auto"
+        <div
           class="c7"
-          href="/"
-          style="padding: 10px 0px;"
         >
-          <span
+          <a
+            backgroundcolor="transparent"
+            border="0"
+            buttontype="link"
+            buttonwidth="auto"
             class="c8"
-            color="#0C7C88"
+            href="/"
+            style="padding: 10px 0px;"
           >
-            Cancel
-          </span>
-        </a>
-        <button
-          class="c9"
-        >
-          <span
+            <span
+              class="c9"
+              color="#0C7C88"
+            >
+              Cancel
+            </span>
+          </a>
+          <button
             class="c10"
-            color="#fff"
           >
-            Save
-          </span>
-        </button>
+            <span
+              class="c11"
+              color="#fff"
+            >
+              Save
+            </span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;
