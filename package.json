@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "heroku-ssl-redirect": "^0.0.4",
     "jest-styled-components": "^6.3.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.6.4",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
